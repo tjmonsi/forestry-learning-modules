@@ -1,0 +1,30 @@
+:host
+  display inline-block
+  position relative
+
+.lazy-picture-thumbnail
+  position absolute
+  width 100%
+  opacity 1
+  border-radius var(--border-radius, 0)
+
+  &.lazy-picture-image-loaded
+    opacity 0
+
+.lazy-picture-image
+  width 100%
+  opacity 0
+  border-radius var(--border-radius, 0)
+
+  &.lazy-picture-image-loaded
+    opacity 1
+
+.lazy-picture-thumbnail, .lazy-picture-image
+  transition opacity 1s
+  &:not([src])
+    opacity 0
+
+  &[cover]
+    height 100%
+    width 100%
+    object-fit cover

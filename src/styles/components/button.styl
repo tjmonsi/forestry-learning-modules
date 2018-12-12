@@ -1,0 +1,64 @@
+@import '../general/color.styl'
+@import '../general/typography.styl'
+
+button-base()
+  body-base($light)
+  position relative
+  text-decoration none
+  text-align center
+  cursor pointer
+  background $teal
+  border none
+  padding 12px 24px
+  // margin 12px 0
+  shadow(1)
+
+  &::before
+    /* Position the pseudo-element. */
+    content ' '
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+
+    /* Create the box shadow at expanded size. */
+    shadow(2)
+
+    /* Hidden by default. */
+    opacity 0
+    transition opacity 200ms
+
+
+  &:hover
+    text-decoration none
+
+  &:focus, &:active
+    box-shadow none
+
+  &:hover::before
+    opacity 1
+
+  &:focus::before, &:active::before
+    opacity 0
+
+  &[disabled]
+    color $gray
+    background $light
+
+button-class()
+  .button
+    button-base()
+    display block
+  button.button
+      width 100%
+
+button-inline-class()
+  .button-inline
+    button-base()
+    display inline-block
+
+button-base-ghost()
+  button-base()
+  background white
+  color $teal

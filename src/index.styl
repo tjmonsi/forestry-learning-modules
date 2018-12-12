@@ -1,0 +1,88 @@
+@import './styles/general/color.styl'
+@import './styles/general/typography.styl'
+@import './styles/general/roboto.styl'
+@import './styles/general/product-sans.styl'
+@import './styles/general/box-sizing.styl'
+
+html
+  baseSize()
+
+body
+  margin: 0
+  padding: 0
+  font-family: sans-serif
+
+body.font-loaded
+  body()
+
+.core-lite-loader
+  position absolute
+  top 0
+  left 0
+  height 100vh
+  width 100vw
+  text-align center
+  align-items center
+  background $gray-4
+  transition opacity 0.5s
+  overflow-y auto
+  display flex
+
+.loader-center
+  flex 1
+
+.loader-icon
+  max-width 500px
+  margin 60px 24px 24px
+
+.hide
+  display none
+
+.loader-text, .loader-text-no-script
+  paragraph()
+  max-width 720px
+  margin 0 auto
+  padding 12px 24px
+  @media screen and (max-width: 450px)
+    font-size 1.6rem
+
+.loader-text-list-no-script, .loader-text-list-script
+  paragraph()
+  margin 0
+  list-style-type none
+  padding 0 24px 24px
+  @media screen and (max-width: 450px)
+    font-size 1.6rem
+
+  li
+    margin 0
+    padding 12px 0
+    list-style-type none
+
+    @media screen and (max-width: 450px)
+      padding 6px 0
+
+    a
+      color $orange
+      text-decoration none
+
+@keyframes zoomIn
+  from
+    opacity 0
+    transform scale3d(0.3, 0.3, 0.3)
+
+  50%
+    opacity 1
+
+.zoomIn
+  animation-name zoomIn
+
+.animated
+  animation-duration 1s
+  animation-fill-mode both
+
+  &.infinite
+    animation-iteration-count infinite
+
+.snackbar-lite
+  paragraph()

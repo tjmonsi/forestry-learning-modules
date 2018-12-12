@@ -1,0 +1,16 @@
+base-grid()
+  display grid
+
+base-inline-grid()
+  display inline-grid
+
+grid-col-fr(num)
+  grid-template-columns repeat(num, 1fr)
+
+// Mixins with classes
+grid-fr(num)
+  .grid
+    base-grid()
+    &.col-{num}
+      grid-col-fr(num)
+

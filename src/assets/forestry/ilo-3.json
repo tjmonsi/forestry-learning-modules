@@ -1,0 +1,35 @@
+{
+  "baseURL": "/assets/forestry",
+  "events": {
+    "event-01": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true
+              },
+              "style": [
+                {
+                  "key": "z-index",
+                  "value": 0
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "objects": {
+    "object-01": {
+      "type": "image",
+      "src": "/images/start.jpg"
+    }
+  },
+  "eventStart": "event-01"
+}
