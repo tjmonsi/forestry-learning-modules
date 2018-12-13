@@ -3,6 +3,7 @@
   "events": {
     "event-01": {
       "default": "trigger-01",
+      "click": "trigger-02",
       "triggers": {
         "trigger-01": {
           "type": "load",
@@ -11,14 +12,358 @@
               "objectId": "object-01",
               "id": "object-01",
               "meta": {
-                "fullscreen": true
+                "fullscreen": true,
+                "cover": true
               },
               "style": [
-                {
-                  "key": "z-index",
-                  "value": 0
-                }
+                "z-index: 0"
               ]
+            },
+            {
+              "objectId": "object-02",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 24px",
+                "margin: 0",
+                "bottom: 0",
+                "left: 0"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-02"
+        }
+      }
+    },
+    "event-02": {
+      "default": "trigger-01",
+      "click": "trigger-02",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-03",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-04",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "color: white",
+                "font-weight: bold",
+                "padding: 48px",
+                "margin: 0",
+                "bottom: 0",
+                "left: 0",
+                "display: flex",
+                "align-items: center",
+                "height: 100vh",
+                "width: 100vw",
+                "box-sizing: border-box"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-03"
+        }
+      }
+    },
+    "event-03": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-05",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-06",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left"
+              },
+              "style": [
+                "z-index: 1",
+                "bottom: 0"
+              ]
+            },
+            {
+              "objectId": "object-09",
+              "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smaller-character"
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-07",
+              "id": "object-03",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-08"
+        },
+        "trigger-03": {
+          "type": "dialogue",
+          "objectId": "object-10"
+        },
+        "trigger-04": {
+          "type": "dialogue",
+          "objectId": "object-07"
+        },
+        "trigger-05": {
+          "type": "dialogue",
+          "objectId": "object-11"
+        },
+        "trigger-06": {
+          "type": "dialogue",
+          "objectId": "object-08"
+        },
+        "trigger-07": {
+          "type": "dialogue",
+          "objectId": "object-12"
+        },
+        "trigger-08": {
+          "type": "dialogue",
+          "objectId": "object-09"
+        },
+        "trigger-09": {
+          "type": "next",
+          "event": "event-04"
+        },
+        "trigger-10": {
+          "type": "dialogue",
+          "objectId": "object-10"
+        }
+      }
+    },
+    "event-04": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-03"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-05",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-06",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left"
+              },
+              "style": [
+                "z-index: 1",
+                "bottom: 0"
+              ]
+            },
+            {
+              "objectId": "object-14",
+              "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "tablet-small tablet-right"
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-15",
+              "id": "object-05",
+              "meta": {
+                "cover": false
+              },
+              "relative": "object-14",
+              "style": [
+                "z-index: 2",
+                "display: flex",
+                "align-items: center",
+                "text-align: center",
+                "font-weight: bold",
+                "font-size: 1.5rem",
+                "padding: 48px"
+              ]
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-03",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-17"
+        },
+        "trigger-03": {
+          "type": "dialogue",
+          "objectId": "object-18"
+        },
+        "trigger-04": {
+          "type": "dialogue",
+          "objectId": "object-16"
+        },
+        "trigger-05": {
+          "type": "dialogue",
+          "objectId": "object-19"
+        },
+        "trigger-06": {
+          "type": "dialogue",
+          "objectId": "object-17"
+        },
+        "trigger-07": {
+          "type": "next",
+          "event": "event-05"
+        },
+        "trigger-08": {
+          "type": "dialogue",
+          "objectId": "object-18"
+        }
+      }
+    },
+    "event-05": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-03"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-14",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-21",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "image-left"
+              },
+              "style": [
+                "z-index: 1",
+                "top: 15%"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-04",
+              "meta": {
+                "classList": "image-right"
+              },
+              "style": [
+                "z-index: 1",
+                "top: 10%",
+                "right: 15%",
+                "height: 300px",
+                "background: #ddd",
+                "padding: 24px"
+              ],
+              "default": {
+                "color": "brownish-black",
+                "grain": "cross",
+                "odor": "none",
+                "taste": "none",
+                "texture": "moderately-fine",
+                "hardness": "hard",
+                "weight": "heavy",
+                "luster": "lustrous",
+                "shape": "round",
+                "size": "moderately-small",
+                "number": "moderately-numerous",
+                "topography": "diffuse-porous",
+                "type": ["solitary","radial-2-3"],
+                "tyloses": "present",
+                "deposits": "white",
+                "parenchyma": ["apotracheal-diffuse", "paratracheal-vasicentric"],
+                "wood-rays": "narrow",
+                "ripple": "absent",
+                "ducts": "absent"
+              },
+              "answer": {
+                "color": "brownish-black",
+                "grain": "cross",
+                "odor": "none",
+                "taste": "none",
+                "texture": "moderately-fine",
+                "hardness": "hard",
+                "weight": "heavy",
+                "luster": "lustrous",
+                "shape": "round",
+                "size": "moderately-small",
+                "number": "moderately-numerous",
+                "topography": "diffuse-porous",
+                "type": ["solitary","radial-2-3"],
+                "tyloses": "present",
+                "deposits": "white",
+                "parenchyma": ["apotracheal-diffuse", "paratracheal-vasicentric"],
+                "wood-rays": "narrow",
+                "ripple": "absent",
+                "ducts": "absent"
+              }
+            },
+            {
+              "objectId": "object-20",
+              "id": "object-03",
+              "type": "dialogue"
             }
           ]
         }
@@ -29,6 +374,328 @@
     "object-01": {
       "type": "image",
       "src": "/images/start.jpg"
+    },
+    "object-02": {
+      "type": "text",
+      "text": "GROSS FEATURES OF SELECTED PHILIPPINE WOOD SPECIES"
+    },
+    "object-03": {
+      "type": "image",
+      "src": "/images/golden-shower.jpg"
+    },
+    "object-04": {
+      "type": "text",
+      "text": "Objectives of the Learning Object\n\n1. review with the gross features of selected Philippine wood species, and\n\n2. identify these species on the basis of its gross features."
+    },
+    "object-05": {
+      "type": "image",
+      "src": "/images/xylarium.jpg"
+    },
+    "object-06": {
+      "type": "image",
+      "src": "/images/supervisor.png"
+    },
+    "object-09": {
+      "type": "image",
+      "src": "/images/forester-2.png"
+    },
+    "object-07": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "Supervisor Vic is orienting their newly hired Forester, Sue",
+      "next": "trigger-02"
+    },
+    "object-08": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "Hi Sue! Welcome to your first day at work.",
+      "next": "trigger-03",
+      "prev": "trigger-04"
+    },
+    "object-10": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": " I will assign you at the checkpoint today where you need to verify the identity of the logs harvested by different logging companies and collect the corresponding forest charges. ",
+      "next": "trigger-05",
+      "prev": "trigger-06"
+    },
+    "object-11": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "We need to look at its gross features, specifically its physical and structural features",
+      "next": "trigger-07",
+      "prev": "trigger-08"
+    },
+    "object-12": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "But before deployment, let us go to our xylarium to review these features that will be used to identify selected Philippine wood species.",
+      "next": "trigger-09",
+      "prev": "trigger-10"
+    },
+    "object-13": {
+      "type": "dialogue",
+      "character": "Sue",
+      "text": "Well noted, Sir. Reviewing these features will be very helpful to me. Let me just get my things and I will follow you in the xylarium.",
+      "next": "trigger-11",
+      "prev": "trigger-12"
+    },
+    "object-14": {
+      "type": "image",
+      "src": "/images/tablet.png"
+    },
+    "object-15": {
+      "type": "text",
+      "text": "Physical and Structural Features of Selected Philippine Wood Species"
+    },
+    "object-16": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "Ok, let’s start.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-17": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": " If you can recall, physical features are those features that can be perceived by the senses and can be observed even without the use of a hand lens, while structural features refer to the types and patterns of cells that make up the wood.",
+      "next": "trigger-03",
+      "prev": "trigger-04"
+    },
+    "object-18": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "We will focus more on the structural features since these are more reliable bases of identification.",
+      "next": "trigger-05",
+      "prev": "trigger-06"
+    },
+    "object-19": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "We also need to take note of the distinct features of each species to help facilitate in identification.",
+      "next": "trigger-07",
+      "prev": "trigger-08"
+    },
+    "object-20": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "Let us examine selected species under the family Fabaceae. We will start with AYANGILE, Acacia confusa",
+      "next": "trigger-00",
+      "prev": "trigger-02"
+    },
+    "object-21": {
+      "type": "image",
+      "src": "/images/ayangile-cross.jpg"
+    },
+    "object-22": {
+      "type": "form",
+      "form": {
+        "physical": {
+          "name": "Physical Features",
+          "items": {
+            "color": {
+              "name": "Color",
+              "type": "select",
+              "options": {
+                "brownish-black": "Brownish Black"
+              }
+            },
+            "grain": {
+              "name": "Grain",
+              "type": "select",
+              "options": {
+                "cross": "Cross",
+                "straight": "Straight"
+              }
+            },
+            "odor": {
+              "name": "Odor",
+              "type": "select",
+              "options": {
+                "none": "Without distinct odor",
+                "odor": "With distinct odor"
+              }
+            },
+            "taste": {
+              "name": "Taste",
+              "type": "select",
+              "options": {
+                "none": "Without distinct taste",
+                "taste": "With distinct taste"
+              }
+            },
+            "texture": {
+              "name": "Texture",
+              "type": "select",
+              "options": {
+                "very-fine": "Very Fine",
+                "fine": "Fine",
+                "moderately-fine": "Moderately Fine",
+                "moderately-coarse": "Moderately Coarse",
+                "coarse": "Coarse"
+              }
+            },
+            "hardness": {
+              "name": "Hardness",
+              "type": "select",
+              "options": {
+                "soft": "Soft",
+                "moderately-soft": "Moderately Soft",
+                "moderately-hard": "Moderately Hard",
+                "hard": "Hard"
+              }
+            },
+            "weight": {
+              "name": "Weight",
+              "type": "select",
+              "options": {
+                "light": "Light",
+                "moderately-light": "Moderately Light",
+                "moderately-heavy": "Moderately Heavy",
+                "heavy": "heavy"
+              }
+            },
+            "luster": {
+              "name": "Luster",
+              "type": "select",
+              "options": {
+                "dull": "Dull",
+                "quite-lustrous": "Quite Lustrous",
+                "lustrous": "Lustrous"
+              }
+            }
+          }
+        },
+        "structural": {
+          "name": "Structural Features",
+          "items": {
+            "shape": {
+              "name": "Pore Shape",
+              "type": "select",
+              "options": {
+                "round": "Round",
+                "oval": "Oval",
+                "angular": "Angular"
+              }
+            },
+            "size": {
+              "name": "Pore Size",
+              "type": "select",
+              "options": {
+                "minute": "Minute",
+                "small": "Small",
+                "moderately-small": "Moderately Small",
+                "moderately-large": "Moderately Large",
+                "large": "Large"
+              }
+            },
+            "number": {
+              "name": "Pore Number",
+              "type": "select",
+              "options": {
+                "few": "Few",
+                "moderately-few": "Moderately Small",
+                "moderately-numerous": "Moderately Numerous",
+                "numerous": "Numerous"
+              }
+            },
+            "topography": {
+              "name": "Pore Topography",
+              "type": "select",
+              "options": {
+                "diffuse-porous": "Diffuse Porous",
+                "ring-porous": "Ring Porous",
+                "semi-ring-porous": "Semi-ring Porous"
+              }
+            },
+            "type": {
+              "name": "Pore Types and Arrangement",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "solitary": "Solitary",
+                "radial-2-3": "Radial multiple 2-3",
+                "radial-2-4": "Radial multiple 2-4",
+                "tangential-2-3": "Tangential multiple 2-3",
+                "tangential-2-4": "Tangential multiple 2-4",
+                "pore-cluster": "Pore Cluster",
+                "radial-chain": "Radial chain",
+                "radial-line": "Radial line",
+                "echelon": "Echelon",
+                "flame": "Flame-like/Dendritic",
+                "tangential-festoons": "Tangential festoons",
+                "ulmiform": "Ulmiform"
+              }
+            },
+            "tyloses": {
+              "name": "Pore Tyloses",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "deposits": {
+              "name": "Pore Deposits",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "white": "White deposit",
+                "yellow": "Yellow deposit",
+                "red": "Red deposit",
+                "orange": "Orange deposit",
+                "black": "Black deposit"
+              }
+            },
+            "parenchyma": {
+              "name": "Parenchyma",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "apotracheal-concentric": "Apotracheal Concentric",
+                "apotracheal-diffuse": "Apotracheal Diffuse",
+                "apotracheal-diffuse-in-aggregates": "Apotracheal Diffuse in aggregates",
+                "paratracheal-scanty": "Paratracheal Scanty",
+                "unilaterally-paratracheal": "Unilaterally paratracheal",
+                "paratracheal-vasicentric": "Paratracheal Vasicentric",
+                "paratracheal-aliform": "Paratracheal Aliform",
+                "paratracheal-aliform-confluent": "Paratreacheal Aliform confluent",
+                "paratracheal-banded-confluent": "Paratracheal Banded confluent",
+                "boundary": "Boundary"
+              }
+            },
+            "wood-rays": {
+              "name": "Wood Rays",
+              "type": "select",
+              "options": {
+                "narrow": "Narrow",
+                "moderately-broad": "Moderately broad",
+                "broad": "Broad",
+                "combination": "Combination of moderately broad and narrow"
+              }
+            },
+            "ripple": {
+              "name": "Ripple-Marks",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "ducts": {
+              "name": "Ducts",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "diffuse-oil": "Diffuse Oil Ducts",
+                "diffuse-resin": "Diffuse Resin Ducts",
+                "concentric-oil": "Concentric Oil Ducts",
+                "concentric-resin": "Concentric Resin Ducts"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "eventStart": "event-01"

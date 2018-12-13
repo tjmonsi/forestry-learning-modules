@@ -93,6 +93,7 @@
     "stylus-loader": "^3.0.2",
     "superstatic": "^6.0.3",
     "text-loader": "0.0.1",
+    "typescript-styled-plugin": "^0.13.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
     "webpack": "^4.25.1",
     "webpack-bundle-analyzer": "^3.0.3",

@@ -5,6 +5,7 @@ import { updateState } from './utils/state.js';
 const core = document.querySelector('core-lite');
 core.addEventListener('current-route-change', routeChanged);
 core.addEventListener('router-param-object-change', routeParamObjectChanged);
+core.addEventListener('query-object-change', queryParamObjectChanged);
 window.addEventListener('click', closeSidebar);
 const loader = document.querySelector('.core-lite-loader');
 
@@ -15,6 +16,10 @@ function routeChanged ({ detail: route }) {
 
 function routeParamObjectChanged ({ detail: params }) {
   updateState('params', params);
+}
+
+function queryParamObjectChanged ({ detail: query }) {
+  updateState('query', query);
 }
 
 function closeSidebar ({ target }) {

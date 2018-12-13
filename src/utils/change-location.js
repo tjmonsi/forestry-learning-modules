@@ -1,4 +1,4 @@
-export const changeLocation = location => {
+export const changeLocation = (location, dontDispatch) => {
   window.history.pushState({}, '', location);
-  window.dispatchEvent(new window.CustomEvent('location-change'));
+  if (!dontDispatch) window.dispatchEvent(new window.CustomEvent('location-change'));
 };
