@@ -1,0 +1,103 @@
+:host
+  display block
+  height 100vh
+
+body
+  background-color #efefef
+
+@media screen and (max-width: 500px)
+    margin 6rem 12px
+    max-width none
+    width auto
+
+.topics-group
+  display: flex
+  flex-direction column
+
+.lesson-name 
+  width 35%
+  padding 12px 20px
+  margin-left 30%
+  margin-bottom 12px
+  margin-top 12px
+  box-sizing border-box
+  border 2px solid #ccc
+  border-radius 4px
+  background-color #f8f8f8
+  resize none
+
+input
+  height 40px
+
+.topic-name, .subtopic-name
+  width 35%
+  padding 12px 20px
+  margin-bottom 12px
+  box-sizing border-box
+  border 2px solid #ccc
+  border-radius 4px
+  background-color #f8f8f8
+  resize none
+
+.topic-name
+  margin-left 35%
+  margin-top 12px
+
+.subtopic-name
+  margin-left 40%
+
+.lesson-button
+  margin-left 30%
+  margin-top 12px
+
+.topic-button
+  margin-left 35%
+  margin-top 12px
+
+.subtopic-button
+  margin-left 40%
+
+button
+  border-radius 4px
+  background-color #c5d5db
+  border none
+  text-decoration none
+  font-size 16px
+  // padding 5px 15px
+  padding 10px
+  margin-right 12px
+ 
+.save
+  transition all 0.5s
+
+.save
+   width 40%
+  
+
+.save span
+  cursor pointer
+  display inline-block
+  position relative
+  transition 0.5s
+
+.save span:after 
+  content '\00bb'
+  position absolute
+  opacity 0
+  top 0
+  right -20px
+  transition 0.5s
+
+
+.save:hover span 
+  padding-right 25px
+
+
+.save:hover span:after 
+  opacity 1
+  right 0
+
+.button-group
+  margin-top 10%
+  padding-left 35%
+

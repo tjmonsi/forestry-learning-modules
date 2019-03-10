@@ -14,6 +14,14 @@
     {
       "source": "/",
       "destination": "/index.html"
+    },
+    {
+      "source": "/forms",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/narrative-editing",
+      "destination": "/index.html"
     }
   ]
 }

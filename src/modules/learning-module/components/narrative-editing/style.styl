@@ -1,0 +1,85 @@
+.scene
+  position relative;
+  width 100vw
+  height 100vh
+  overflow hidden
+
+.fullscreen
+  width 100vw
+  height 100vh
+
+.absolute
+  position absolute
+  display block
+
+.dialogue
+  bottom 0
+  left 0
+  right 0
+  background rgba(255, 255, 255, 0.75);
+  color black
+  font-size 1rem
+  padding 24px
+  box-sizing border-box
+  z-index 10000
+
+.button
+  font-size 1rem
+  background teal
+  color white
+  padding 12px 24px
+
+.character
+  width: 50%
+  bottom: 0
+
+  @media screen and (max-width: 1280px)
+    width: 40%
+
+  @media screen and (max-width: 1100px)
+    width 75%
+
+  @media screen and (max-width: 800px)
+    width 100%
+
+.smaller-character
+  width: 42.5%
+
+.character-center
+  left: 25%
+
+  @media screen and (max-width: 1100px)
+    left: 12.5%
+
+  @media screen and (max-width: 800px)
+    left: 0
+
+.character-left
+  left: 0
+
+.character-right
+  right: 5%
+
+.tablet-small
+  width 50%
+
+
+.tablet-right
+  right 0
+  top 25%
+
+  @media screen and (max-width: 1280px)
+    top 10%
+
+
+.image-left
+  left: 5%
+
+.image-right
+  right: 5%
+
+.overflow
+  overflow: auto
+
+.form
+  height 80vh

@@ -27,6 +27,8 @@ const theme = {
 
 const fragments = {
   'page-home': 'src/pages/page-home/index.js',
+  'page-form': 'src/pages/page-form/index.js',
+  'page-narrative-editing': 'src/pages/page-narrative-editing/index.js',
   'page-not-found': 'src/pages/page-not-found/index.js'
 };
 
@@ -34,6 +36,14 @@ const routes = [
   {
     route: '/',
     page: 'page-home'
+  },
+  {
+    route: '/forms',
+    page: 'page-form'
+  },
+  {
+    route: '/narrative-editing',
+    page: 'page-narrative-editing'
   },
   {
     route: 'no-page',
