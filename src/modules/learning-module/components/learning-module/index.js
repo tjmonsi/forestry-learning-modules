@@ -177,7 +177,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _form (event) {
     event.preventDefault();
     const { target: form } = event;
+  }
 
+  _drag (event) {
+    event.preventDefault();
+    console.log("hello");
+  }
+
+  _correctAnswer ({target: el}) {
+    console.log("");
+    // var selected = document.getElementById("Color").options.value;
+    // var selected = el.options.selected.text;
+    // var val = el.options.value.text;
+    // var answer = el.option[0]/.answer;
+    // console.log(selected);
+    // console.log(val);
+    // console.log(answer);
   }
 }
 

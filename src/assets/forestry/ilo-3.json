@@ -294,26 +294,37 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-104",
+              "objectId": "object-125",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-20",
+              "objectId": "object-126",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-20",
+              "id": "object-05",
               "type": "dialogue"
             }
           ]
@@ -354,26 +365,37 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-105",
+              "objectId": "object-127",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-24",
+              "objectId": "object-128",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-24",
+              "id": "object-05",
               "type": "dialogue"
             }
           ]
@@ -414,26 +436,37 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-106",
+              "objectId": "object-129",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-27",
+              "objectId": "object-130",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-27",
+              "id": "object-05",
               "type": "dialogue"
             }
           ]
@@ -474,26 +507,37 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-107",
+              "objectId": "object-131",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-30",
+              "objectId": "object-132",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-30",
+              "id": "object-05",
               "type": "dialogue"
             }
           ]
@@ -534,26 +578,37 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-108",
+              "objectId": "object-133",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-33",
+              "objectId": "object-134",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-33",
+              "id": "object-05",
               "type": "dialogue"
             }
           ]
@@ -772,37 +827,48 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-one"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-109",
+              "objectId": "object-122",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-left image-physical"
+                "classList": "cross-two"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-140",
+              "objectId": "object-135",
               "id": "object-04",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 3"
               ]
             },
             {
-              "objectId": "object-41",
+              "objectId": "object-136",
               "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-41",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -843,37 +909,48 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-one"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-110",
+              "objectId": "object-123",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-left image-physical"
+                "classList": "cross-two"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-141",
+              "objectId": "object-137",
               "id": "object-04",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 3"
               ]
             },
             {
-              "objectId": "object-44",
+              "objectId": "object-138",
               "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-44",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -914,37 +991,48 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-one"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-111",
+              "objectId": "object-124",
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-left image-physical"
+                "classList": "cross-two"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-142",
+              "objectId": "object-139",
               "id": "object-04",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "table-physical"
               },
               "style": [
                 "z-index: 3"
               ]
             },
             {
-              "objectId": "object-47",
+              "objectId": "object-140",
               "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-47",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -1258,26 +1346,37 @@
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "cross-inspect"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-112",
-              "id": "object-03",
+              "objectId": "object-141",
+              "id": "object-04",
               "meta": {
                 "cover": false,
-                "classList": "image-center"
+                "classList": "table-physical-two"
               },
               "style": [
-                "z-index: 2"
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-142",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural-two"
+              },
+              "style": [
+                "z-index: 4"
               ]
             },
             {
               "objectId": "object-60",
-              "id": "object-05",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -1329,15 +1428,37 @@
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "cross-inspect"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-63",
+              "objectId": "object-143",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-physical-two"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-144",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural-two"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-63",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -1389,15 +1510,37 @@
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "cross-inspect"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-66",
+              "objectId": "object-145",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-physical-two"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-146",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural-two"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-66",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -1449,15 +1592,37 @@
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "cross-inspect"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-69",
+              "objectId": "object-147",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-physical-two"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-148",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural-two"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-69",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -1509,15 +1674,37 @@
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right"
+                "classList": "cross-inspect"
               },
               "style": [
                 "z-index: 2"
               ]
             },
             {
-              "objectId": "object-72",
+              "objectId": "object-149",
               "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "table-physical-two"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-150",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "table-structural-two"
+              },
+              "style": [
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-72",
+              "id": "object-06",
               "type": "dialogue"
             }
           ]
@@ -1768,7 +1955,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-assessment"
               },
               "style": [
                 "z-index: 1"
@@ -1870,7 +2057,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-assessment"
               },
               "style": [
                 "z-index: 1"
@@ -1972,7 +2159,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-assessment"
               },
               "style": [
                 "z-index: 1"
@@ -2074,7 +2261,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left"
+                "classList": "cross-assessment"
               },
               "style": [
                 "z-index: 1"
@@ -2172,7 +2359,7 @@
               ]
             },
             {
-              "objectId": "object-122",
+              "objectId": "object-104",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2183,7 +2370,7 @@
               ]
             },
             {
-              "objectId": "object-123",
+              "objectId": "object-105",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2194,8 +2381,19 @@
               ]
             },
             {
-              "objectId": "object-98",
+              "objectId": "object-151",
               "id": "object-04",
+              "meta": {
+                "cover": true,
+                "classList": "lens-left"
+              },
+              "style": [
+                "z-index: 3"
+              ]
+            },
+            {
+              "objectId": "object-98",
+              "id": "object-05",
               "type": "dialogue"
             }
           ]
@@ -2228,7 +2426,7 @@
               ]
             },
             {
-              "objectId": "object-124",
+              "objectId": "object-106",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2239,7 +2437,7 @@
               ]
             },
             {
-              "objectId": "object-125",
+              "objectId": "object-107",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2250,7 +2448,7 @@
               ]
             },
             {
-              "objectId": "object-126",
+              "objectId": "object-108",
               "id": "object-04",
               "meta": {
                 "cover": false,
@@ -2261,7 +2459,7 @@
               ]
             },
             {
-              "objectId": "object-127",
+              "objectId": "object-109",
               "id": "object-05",
               "meta": {
                 "cover": false,
@@ -2306,7 +2504,7 @@
               ]
             },
             {
-              "objectId": "object-128",
+              "objectId": "object-110",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2317,7 +2515,7 @@
               ]
             },
             {
-              "objectId": "object-129",
+              "objectId": "object-111",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2362,7 +2560,7 @@
               ]
             },
             {
-              "objectId": "object-130",
+              "objectId": "object-112",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2373,7 +2571,7 @@
               ]
             },
             {
-              "objectId": "object-131",
+              "objectId": "object-113",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2384,7 +2582,7 @@
               ]
             },
             {
-              "objectId": "object-132",
+              "objectId": "object-114",
               "id": "object-04",
               "meta": {
                 "cover": false,
@@ -2429,7 +2627,7 @@
               ]
             },
             {
-              "objectId": "object-133",
+              "objectId": "object-115",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2440,7 +2638,7 @@
               ]
             },
             {
-              "objectId": "object-134",
+              "objectId": "object-116",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2485,7 +2683,7 @@
               ]
             },
             {
-              "objectId": "object-135",
+              "objectId": "object-117",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2496,7 +2694,7 @@
               ]
             },
             {
-              "objectId": "object-136",
+              "objectId": "object-118",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2541,7 +2739,7 @@
               ]
             },
             {
-              "objectId": "object-137",
+              "objectId": "object-119",
               "id": "object-02",
               "meta": {
                 "cover": false,
@@ -2552,7 +2750,7 @@
               ]
             },
             {
-              "objectId": "object-138",
+              "objectId": "object-120",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -2563,7 +2761,7 @@
               ]
             },
             {
-              "objectId": "object-139",
+              "objectId": "object-121",
               "id": "object-04",
               "meta": {
                 "cover": false,
@@ -3280,7 +3478,23 @@
               "name": "Color",
               "type": "select",
               "options": {
-                "brownish-black": "Brownish Black"
+                "brownish-black": "Brownish Black",
+                "db": "Dark Brown",
+                "gb": "Grayish Brown",
+                "rb-br": "Reddish Brown to Brick Red",
+                "rb-db": "Reddish Brown to Dark Brown",
+                "lgb": "Light Golden Brown",
+                "lr-cr": "Light Red to Cacao Red",
+                "lr-wr": "Light Reddish to Wine Red",
+                "l-db-b": "Light to Dark Brown to Black",
+                "ob-db": "Orange Brown to Dark Brown",
+                "py-drb": "Pale Yellow to Dark Reddish Brown",
+                "r-rb": "Reddish to Reddish Brown",
+                "w-pp-lrb": "White, Pale Pink to Light Reddish Brown",
+                "wb-lb": "Whitish Brown to Light Brown",
+                "w-lb": "Whitish or Light Brown",
+                "w-b": "Whitish to Brownish",
+                "yr-cb": "Yellowish Red to Chestnut Brown (w/ Black Streaks)"
               }
             },
             "grain": {
@@ -3482,159 +3696,1574 @@
     },
     "object-104": {
       "type": "image",
-      "src": "/images/ayangile-physical.jpg"
+      "src": "/images/supa-2.jpg"
     },
     "object-105": {
       "type": "image",
-      "src": "/images/batete-physical.jpg"
+      "src": "/images/batete-2.jpg"
     },
     "object-106": {
       "type": "image",
-      "src": "/images/goldenshower-physical.jpg"
+      "src": "/images/manggis-2.jpg"
     },
     "object-107": {
       "type": "image",
-      "src": "/images/kakaute-physical.jpg"
+      "src": "/images/narra-2.jpg"
     },
     "object-108": {
       "type": "image",
-      "src": "/images/logwood-physical.jpg"
+      "src": "/images/siar-2.jpg"
     },
     "object-109": {
       "type": "image",
-      "src": "/images/narra-physical.jpg"
-    },  
-    "object-110": {
-      "type": "image",
-      "src": "/images/siar-physical.jpg"
-    },
-    "object-111": {
-      "type": "image",
-      "src": "/images/rain-tree-physical.jpg"
-    },
-    "object-112": {
-      "type": "image",
-      "src": "/images/supa-physical.jpg"
-    },
-    "object-113": {
-      "type": "image",
-      "src": "/images/mollucan-sau-physical.jpg"
-    },
-    "object-114": {
-      "type": "image",
-      "src": "/images/akle-physical.jpg"
-    },
-    "object-115": {
-      "type": "image",
-      "src": "/images/manggis-physical.jpg"
-    },
-    "object-116": {
-      "type": "image",
-      "src": "/images/banuyo-physical.jpg"
-    },
-    "object-117": {
-      "type": "image",
-      "src": "/images/ipil-physical.jpg"
-    },
-    "object-118": {
-      "type": "image",
-      "src": "/images/tindalo-physical.jpg"
-    },
-    "object-119": {
-      "type": "image",
-      "src": "/images/kamatog-physical.jpg"
-    },
-    "object-120": {
-      "type": "image",
-      "src": "/images/mangium-physical.jpg"
-    },
-    "object-121": {
-      "type": "image",
-      "src": "/images/ayangile-structural.jpg"
-    },
-    "object-122": {
-      "type": "image",
-      "src": "/images/supa-2.jpg"
-    },
-    "object-123": {
-      "type": "image",
-      "src": "/images/batete-2.jpg"
-    },
-    "object-124": {
-      "type": "image",
-      "src": "/images/manggis-2.jpg"
-    },
-    "object-125": {
-      "type": "image",
-      "src": "/images/narra-2.jpg"
-    },
-    "object-126": {
-      "type": "image",
-      "src": "/images/siar-2.jpg"
-    },
-    "object-127": {
-      "type": "image",
       "src": "/images/molluccan-sau-2.jpg"
     },
-    "object-128": {
+    "object-110": {
       "type": "image",
       "src": "/images/goldenshower-2.jpg"
     },
-    "object-129": {
+    "object-111": {
       "type": "image",
       "src": "/images/kakaute-2.jpg"
     },
-    "object-130": {
+    "object-112": {
       "type": "image",
       "src": "/images/tindalo-2.jpg"
     },
-    "object-131": {
+    "object-113": {
       "type": "image",
       "src": "/images/ipil-2.jpg"
     },
-    "object-132": {
+    "object-114": {
       "type": "image",
       "src": "/images/kamatog-2.jpg"
     },
-    "object-133": {
+    "object-115": {
       "type": "image",
       "src": "/images/rain-tree-2.jpg"
     },
-    "object-134": {
+    "object-116": {
       "type": "image",
       "src": "/images/akle-2.jpg"
     },
-    "object-135": {
+    "object-117": {
       "type": "image",
       "src": "/images/ayangile-2.jpg"
     },
-    "object-136": {
+    "object-118": {
       "type": "image",
       "src": "/images/logwood-2.jpg"
     },
-    "object-137": {
+    "object-119": {
       "type": "image",
       "src": "/images/mangium-2.jpg"
     },
-    "object-138": {
+    "object-120": {
       "type": "image",
       "src": "/images/banuyo-2.jpg"
     },
-    "object-139": {
+    "object-121": {
       "type": "image",
       "src": "/images/ipil-ipil-2.jpg"
     },
-    "object-140": {
+    "object-122": {
       "type": "image",
       "src": "/images/narra-ripple.jpg"
     },
-    "object-141": {
+    "object-123": {
       "type": "image",
       "src": "/images/siar-ripple.jpg"
     },
-    "object-142": {
+    "object-124": {
       "type": "image",
       "src": "/images/manggis-ripple.jpg"
+    },
+    "object-125": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Brownish Black"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-126": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Numerous",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary\nRadial multiples of 2-3",
+            "keyword": true,
+            "color": "red"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": true,
+            "color": "blue"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "White deposits",
+            "keyword": true,
+            "color": "brown"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Apotracheal diffuse,\nParatracheal Vasicentric",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": true,
+            "color": "maroon"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-127": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Reddish Brown to Dark Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Quite Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine to Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-128": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Numerous",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary\nRadial multiples of 2-3",
+            "keyword": false,
+            "color": "black"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "White, Yellow and Orange Deposits",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Boundary Paratracheal Aliform,\nAliform Confluent,\nVasicentric",
+            "keyword": true,
+            "color": "blue"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Diffuse Oil Ducts",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-129": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Reddish Brown to Brick Red"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-130": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Numerous",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary\nRadial multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": true,
+            "color": "orange"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Red deposits",
+            "keyword": true,
+            "color": "red"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nAliform Confluent,\nBanded Confluent",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-131": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Grayish Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-132": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Numerous",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present, Profuse",
+            "keyword": true,
+            "color": "red"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nAliform Confluent,\nBanded Confluent",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-133": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Light to Dark Brown to Black"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Straight"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-134": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Small",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Numerous",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary,\nRadial Multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": true,
+            "color": "lightblue"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "White",
+            "keyword": true,
+            "color": "lightgreen"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nAliform Confluent,\nVasicentric",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-135": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Pale Yellow to Dark Reddish Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Quite Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine to Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-136": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Small and Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Ring Porous",
+            "keyword": true,
+            "color": "lightblue"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-4 or more",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nLong Aliform Confluent,\nBoundary",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Present",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-137": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Whitish Brown to Light Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Quite Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-138": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Small",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "White",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Vasicentric,\nAliform,\nAliform Confluent,\nBoundary",
+            "keyword": true,
+            "color": "maroon"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Present",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-139": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Whitish or Brownish"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Dull"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine to Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-140": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Small to Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Red",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nVasicentric",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-141": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Yellowish Red to Chestnut Brown, with Black Streaks"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Fine to Moderately Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard to Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-142": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Small to Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Yellow, Red",
+            "keyword": true,
+            "color": "blue"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nVasicentric",
+            "keyword": true,
+            "color": "maroon"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Present,\nConcentric Oil Ducts",
+            "keyword": true,
+            "color": "lightgreen"
+          }
+        }
+      }
+    },
+    "object-143": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "White, Pale Pink to Light Reddish Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Dull"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Straight"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Soft"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Light"
+          }
+        }
+      }
+    },
+    "object-144": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Apotracheal Diffuse,\nParatracheal Vasicentric",
+            "keyword": true,
+            "color": "red"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": true,
+            "color": "blue"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-145": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Dark Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "Irritating/Peppery"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine to Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-146": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Small to Moderately Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-3",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": true,
+            "color": "blue"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Yellow, Red, Black",
+            "keyword": true,
+            "color": "lightblue"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Aliform,\nVasicentric,\nAliform Confluent",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Black, Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-147": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Light Red to Cacao Red"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Coarse to Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-148": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Large to Large",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Few",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-4 or more",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": true,
+            "color": "lightblue"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Paratracheal Vasicentric,\nConcentric",
+            "keyword": true,
+            "color": "maroon"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Present",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-149": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Light Golden Brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-150": {
+      "type": "table",
+      "table": {
+        "name": "Structural Features",
+        "rows": {
+          "shape": {
+            "left": "Pore Shape",
+            "right": "Round",
+            "keyword": false,
+            "color": "black"
+          },
+          "size": {
+            "left": "Pore Size",
+            "right": "Moderately Small",
+            "keyword": false,
+            "color": "black"
+          },
+          "number": {
+            "left": "Pore Number",
+            "right": "Moderately Numerous",
+            "keyword": false,
+            "color": "black"
+          },
+          "topography": {
+            "left": "Topography",
+            "right": "Diffuse Porous",
+            "keyword": false,
+            "color": "black"
+          },
+          "types": {
+            "left": "Types and Arrangement",
+            "right": "Solitary and Radial multiples of 2-3, Echelon",
+            "keyword": true,
+            "color": "yellow"
+          },
+          "tyloses": {
+            "left": "Tyloses",
+            "right": "Present",
+            "keyword": false,
+            "color": "black"
+          },
+          "deposits": {
+            "left": "Deposits",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "parenchyma": {
+            "left": "Parenchyma",
+            "right": "Apotracheal Diffuse,\nParatracheal Aliform,\nVasicentric,\nAliform Confluent",
+            "keyword": true,
+            "color": "purple"
+          },
+          "rays": {
+            "left": "Wood Rays",
+            "right": "Narrow",
+            "keyword": false,
+            "color": "black"
+          },
+          "ripple": {
+            "left": "Ripple Marks",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          },
+          "ducts": {
+            "left": "Ducts",
+            "right": "Absent",
+            "keyword": false,
+            "color": "black"
+          }
+        }
+      }
+    },
+    "object-151": {
+      "type": "lens",
+      "src": "/images/lens.png",
+      "target": "object-104"
     },
     "object-xx": {
       "type": "table"
