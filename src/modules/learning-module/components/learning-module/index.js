@@ -98,6 +98,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _doTrigger (trigger) {
     const { type } = trigger;
     const { objects } = this.moduleObj;
+    console.log(trigger, type)
     if (type === 'load') {
       this.sceneObjects = [];
       for (let item of trigger[type]) {
@@ -164,7 +165,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             elstyle.style = item.style ? item.style.join(';') : '';
             el.style.width = changeUnit(elstyle.style.width, box.width - (elstyle.style.padding.replace('px', '') * 2));
             el.style.height = changeUnit(elstyle.style.height || '0px', box.height - (elstyle.style.padding.replace('px', '') * 2));
-            console.log(el.style.height, box.height)
             for (const pos of positions) {
               el.style[pos] = changeUnit(elstyle.style[pos] ? elstyle.style[pos] : '0px', box[pos]);
             }
@@ -177,7 +177,28 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _form (event) {
     event.preventDefault();
     const { target: form } = event;
-
+    const { answer: answerId, correct, wrong } = form;
+    if (this.moduleObj && this.moduleObj.objects) {
+      const object = this.moduleObj.objects[answerId.value];
+      const { answer } = object;
+      let flag = true;
+      for (let i in answer) {
+        const input = form[i];
+        if (form[i]) {
+          if (input.value !== answer[i] || (answer[i].indexOf && answer[i].indexOf(input.value) < 0)) {
+            flag = false;
+          }
+        }
+        // console.log(input, input.value)
+      }
+      const event = this.moduleObj.events[this.currentEvent];
+      const { triggers } = event;
+      if (flag) {
+        this._doTrigger(triggers[correct.value]);
+      } else {
+        this._doTrigger(triggers[wrong.value]);
+      }
+    }
   }
 }
 

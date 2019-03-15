@@ -300,7 +300,8 @@
               },
               "style": [
                 "z-index: 1",
-                "top: 15%"
+                "top: 10%",
+                "width; 40vw"
               ]
             },
             {
@@ -313,7 +314,7 @@
                 "z-index: 1",
                 "top: 10%",
                 "right: 15%",
-                "height: 300px",
+                "height: 50vh",
                 "background: #ddd",
                 "padding: 24px"
               ],
@@ -330,7 +331,7 @@
                 "size": "moderately-small",
                 "number": "moderately-numerous",
                 "topography": "diffuse-porous",
-                "type": ["solitary","radial-2-3"],
+                "types": ["solitary","radial-2-3"],
                 "tyloses": "present",
                 "deposits": "white",
                 "parenchyma": ["apotracheal-diffuse", "paratracheal-vasicentric"],
@@ -338,27 +339,9 @@
                 "ripple": "absent",
                 "ducts": "absent"
               },
-              "answer": {
-                "color": "brownish-black",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round",
-                "size": "moderately-small",
-                "number": "moderately-numerous",
-                "topography": "diffuse-porous",
-                "type": ["solitary","radial-2-3"],
-                "tyloses": "present",
-                "deposits": "white",
-                "parenchyma": ["apotracheal-diffuse", "paratracheal-vasicentric"],
-                "wood-rays": "narrow",
-                "ripple": "absent",
-                "ducts": "absent"
-              }
+              "answer": "object-23",
+              "correct": "trigger-02",
+              "wrong": "trigger-03"
             },
             {
               "objectId": "object-20",
@@ -366,6 +349,14 @@
               "type": "dialogue"
             }
           ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-24"
+        },
+        "trigger-03": {
+          "type": "dialogue",
+          "objectId": "object-25"
         }
       }
     }
@@ -610,8 +601,7 @@
             },
             "type": {
               "name": "Pore Types and Arrangement",
-              "type": "select",
-              "multiple": true,
+              "type": "checkbox",
               "options": {
                 "solitary": "Solitary",
                 "radial-2-3": "Radial multiple 2-3",
@@ -649,7 +639,7 @@
             },
             "parenchyma": {
               "name": "Parenchyma",
-              "type": "select",
+              "types": "select",
               "multiple": true,
               "options": {
                 "apotracheal-concentric": "Apotracheal Concentric",
@@ -696,6 +686,40 @@
           }
         }
       }
+    },
+    "object-23": {
+      "type": "form-answer",
+      "answer": {
+        "color": "brownish-black",
+        "grain": "cross",
+        "odor": "none",
+        "taste": "none",
+        "texture": "moderately-fine",
+        "hardness": "hard",
+        "weight": "heavy",
+        "luster": "lustrous",
+        "shape": "round",
+        "size": "moderately-small",
+        "number": "moderately-numerous",
+        "topography": "diffuse-porous",
+        "types": ["solitary","radial-2-3"],
+        "tyloses": "present",
+        "deposits": "white",
+        "parenchyma": ["apotracheal-diffuse", "paratracheal-vasicentric"],
+        "wood-rays": "narrow",
+        "ripple": "absent",
+        "ducts": "absent"
+      }
+    },
+    "object-24": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "You are correct!"
+    },
+    "object-25": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "There are some things that are wrong. Try again"
     }
   },
   "eventStart": "event-01"

@@ -40,9 +40,11 @@ const template = (html, self) => function () {
             ` : ''}
           </div>
         ` : ''}
-        ${item.type} ${item.objectId}
         ${item.type === 'form' ? html`
           <form class="absolute form overflow ${item.meta && item.meta.classList}" id="${item.objectId}" style="${styleString}" @submit="${_form.bind(this)}">
+            <input type="hidden" name="answer" value="${item.answer}">
+            <input type="hidden" name="correct" value="${item.correct}">
+            <input type="hidden" name="wrong" value="${item.wrong}">
             ${Object.entries(item.form).map(([, formGroup]) => html`
               <div class="form-group">
                 <h4>${formGroup.name}</h4>
@@ -52,11 +54,16 @@ const template = (html, self) => function () {
                       ${input.name}
                     </label>
                     ${input.type === 'select' ? html`
-                      <select slot="input" name="${key}" .multiple="${input.multiple}">
+                      <select slot="input" name="${key}">
                         ${Object.entries(input.options).map(([value, label]) => html`
                           <option value="${value}" .selected="${item.default && item.default[key] && ((typeof item.default[key] === 'string' && item.default[key] === value) || (typeof item.default[key] === 'object' && item.default[key].indexOf(value) >= 0))}">${label}</option>
                         `)}
                       </select>
+                    ` : ''}
+                    ${input.type === 'checkbox' ? html`
+                      ${Object.entries(input.options).map(([value, label]) => html`
+                        <label slot="input"><input type="checkbox" .checked="${item.default && item.default[key] && ((typeof item.default[key] === 'string' && item.default[key] === value) || (typeof item.default[key] === 'object' && item.default[key].indexOf(value) >= 0))}">${label}</label>
+                      `)}
                     ` : ''}
                   </input-container>
                 `)}
