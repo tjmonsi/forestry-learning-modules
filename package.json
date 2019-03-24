@@ -47,6 +47,8 @@
     "marked": "^0.5.2",
     "object-fit-images": "^3.2.4",
     "raven-js": "^3.27.0",
+    "url-loader": "^1.1.2",
+    "vis": "^4.21.0",
     "weakmap-polyfill": "^2.0.0",
     "whatwg-fetch": "^3.0.0"
   },

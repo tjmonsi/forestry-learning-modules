@@ -14,7 +14,7 @@ const template = (html, self) => function () {
             <div class="subtopics-group">
               ${topic.subtopics && topic.subtopics.length ? topic.subtopics.map((subtopic, index3) => html`
                 <input class="subtopic-name" type="text" placeholder="Subtopic ${index + 1} - ${index2 + 1} - ${index3 + 1}" name="Subtopic ${index + 1} - ${index2 + 1} - ${index3 + 1}" value=${subtopic} @change=${_inputValueChanged.bind(this)}>
-              `) : ``}
+              `) : html``}
             <button class="subtopic-button" @click="${_addSubtopic.bind(this)}" value="${index} ${index2}"> Add Subtopic </button>
             </div>
           `) : html``}

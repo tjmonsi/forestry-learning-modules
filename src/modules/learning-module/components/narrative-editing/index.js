@@ -8,20 +8,9 @@ import style from './style.styl';
 import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
+// import 'vis/dist/vis-network.min.css';
 
 const { HTMLElement, customElements, fetch } = window;
-
-// const changeUnit = (value, newVal) => {
-//   let unit = '';
-//   if (value.indexOf('%') >= 0) {
-//     unit = '%';
-//   } else if (value.indexOf('px') >= 0) {
-//     unit = 'px';
-//   }
-
-//   return (parseInt(value.replace(unit, ''), 10) + parseInt(newVal, 10)) + unit;
-// };
-
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   static get is () { return 'narrative-editing'; }
 
@@ -31,7 +20,56 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     return {
       lessons: {
         type: Array,
-        value: []
+        value: [
+          {
+            name: 'Lesson',
+            from: '',
+            topics: [
+              {
+                name: 'Topic',
+                from: '',
+                subtopics: [
+                  {
+                    name: 'Subtopic',
+                    from: ''
+                  }
+                ]
+              },
+              {
+                name: 'Topic',
+                from: '',
+                subtopics: [
+                  {
+                    name: 'Subtopic',
+                    from: ''
+                  }
+                ]
+              },
+              {
+                name: 'Topic',
+                from: '',
+                subtopics: [
+                  {
+                    name: 'Subtopic',
+                    from: ''
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      dragged: {
+        type: Object,
+        value: ''
+      },
+      canvas: {
+        type: Object,
+        value: ''
+      },
+      pointData: {
+        type: String,
+        value: ''
       }
     };
   }
@@ -58,12 +96,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     unsubscribe('lessons', this._boundGetLessons);
   }
 
-  // _getQueryState ({ currentEvent }) {
-  //   if (this.currentEvent !== currentEvent) {
-  //     this.currentEvent = currentEvent;
-  //   }
-  // }
-
   _getLessons (lessons) {
     if (this.lessons !== lessons) {
       this.lessons = lessons;
@@ -71,110 +103,96 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     console.log(lessons);
   }
 
-  // async _loadModule (src) {
-  //   if (!src) return;
-  //   const response = await fetch(src);
-  //   this.moduleObj = await response.json();
-  //   if (!this.currentEvent) {
-  //     this.currentEvent = this.moduleObj.eventStart;
-  //   } else {
-  //     this._loadEvent(this.currentEvent);
-  //   }
-  //   // this.currentEvent = this.currentEvent || this.moduleObj.eventStart;
-  // }
+  onDragStart (event) {
+    let target = event.target;
+    if (target) {
+      this.dragged = target;
+      event.dropEffect = 'move';
+      event.dataTransfer.setData('text/urilist', target.id);
+      event.dataTransfer.setData('text/plain', target.id);
+      // Make it half transparent
+      event.target.style.opacity = 0.5;
+    }
+  }
+  onDragEnd (event) {
+    event.target.style.opacity = '';
+  }
 
-  // _loadEvent (currentEvent) {
-  //   if (this.moduleObj && this.moduleObj.events && currentEvent) {
-  //     const event = this.moduleObj.events[currentEvent];
-  //     const { triggers, default: deafaultTrigger } = event;
-  //     this._doTrigger(triggers[deafaultTrigger]);
-  //   }
-  // }
+  onDragOver (event) {
+    // Prevent default to allow drop
+    event.preventDefault();
+  }
 
-  // _doTrigger (trigger) {
-  //   const { type } = trigger;
-  //   const { objects } = this.moduleObj;
-  //   if (type === 'load') {
-  //     this.sceneObjects = [];
-  //     for (let item of trigger[type]) {
-  //       const { objectId, id } = item;
-  //       if (this.sceneObjects.findIndex(item => item.id === id) < 0) {
-  //         this.sceneObjects.push({ ...objects[objectId], ...item });
-  //       }
-  //     }
-  //     this.requestUpdate();
-  //   }
+  _contains (list, value) {
+    for (let i = 0; i < list.length; ++i) {
+      if (list[i] === value) return true;
+    }
+    return false;
+  }
 
-  //   if (type === 'next') {
-  //     this.sceneObjects = [];
-  //     this.currentEvent = trigger.event;
-  //     changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
-  //   }
+  onDragEnter (event) {
+    const { target } = event.target;
+    const { dragged } = this.dragged;
+    if (target.id === 'canvas' && dragged) {
+      const { isLink } = this._contains(event.dataTransfer.types, 'text/uri-list');
+      if (isLink) {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = 'move';
+        target.style.background = '#1f904e';
+      } else {
+        target.style.background = '#d51c00';
+      }
+    }
+  }
 
-  //   if (type === 'dialogue') {
-  //     const index = this.sceneObjects.findIndex(item => item.type === 'dialogue');
-  //     const { objectId } = trigger;
-  //     if (index < 0) {
-  //       this.sceneObjects.push({
-  //         id: 'dialogue-id',
-  //         ...objects[objectId]
-  //       });
-  //     } else {
-  //       console.log(this.sceneObjects[index])
-  //       this.sceneObjects[index] = { ...this.sceneObjects[index], ...objects[objectId] };
-  //     }
-  //     this.requestUpdate();
-  //   }
-  // }
+  onDrop (event) {
+    this.canvas = event.target;
+    const target = this.canvas;
+    const dragged = this.dragged;
+    if (dragged && target) {
+      // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
+      target.style.backgroundColor = '';
+      event.preventDefault();
+      // Get the id of the target and add the moved element to the target's DOM
+      dragged.parentNode.removeChild(dragged);
+      dragged.style.opacity = '';
+      dragged.style.marginBottom = '50px';
+      dragged.style.width = '25%';
+      dragged.style.marginLeft = '35%';
+      target.appendChild(dragged);
+    }
+    this.requestUpdate();
+  }
 
-  // _click () {
-  //   if (this.moduleObj && this.moduleObj.events) {
-  //     const event = this.moduleObj.events[this.currentEvent];
-  //     if (!event.click) return;
-  //     const { triggers } = event;
-  //     this._doTrigger(triggers[event.click]);
-  //   }
-  // }
+  _pointFrom ({ target: el }) {
+    this.pointData = el.value;
+  }
 
-  // _dialogue (event) {
-  //   event.stopPropagation();
-  //   const { target } = event;
-  //   const { value } = target;
-  //   if (this.moduleObj && this.moduleObj.events) {
-  //     const event = this.moduleObj.events[this.currentEvent];
-  //     const { triggers } = event;
-  //     this._doTrigger(triggers[value]);
-  //   }
-  // }
+  _pointTo ({ target: el }) {
+    let temp = el.value.split('.');
+    console.log(temp.length);
+    if (temp.length === 1) {
+      this.lessons[temp[0]].from = this.pointData;
+    } else if (temp.length === 2) {
+      this.lessons[temp[0]].topics[temp[1]].from = this.pointData;
+    } else if (temp.length === 3) {
+      this.lessons[temp[0]].topics[temp[1]].subtopics[temp[2]].from = this.pointData;
+    } else {
+      console.warn('Invalid pointer! Please make sure to point to a valid lesson');
+    }
+  }
 
-  // updated () {
-  //   setTimeout(() => {
-  //     for (let item of this.sceneObjects) {
-  //       if (item.relative) {
-  //         const parent = this.shadowRoot.querySelector('#' + item.relative);
-  //         const el = this.shadowRoot.querySelector('#' + item.objectId);
-  //         if (parent && el) {
-  //           const box = parent.getBoundingClientRect();
-  //           const positions = ['top', 'left'];
-  //           const elstyle = document.createElement('div');
-  //           elstyle.style = item.style ? item.style.join(';') : '';
-  //           el.style.width = changeUnit(elstyle.style.width, box.width - (elstyle.style.padding.replace('px', '') * 2));
-  //           el.style.height = changeUnit(elstyle.style.height || '0px', box.height - (elstyle.style.padding.replace('px', '') * 2));
-  //           console.log(el.style.height, box.height)
-  //           for (const pos of positions) {
-  //             el.style[pos] = changeUnit(elstyle.style[pos] ? elstyle.style[pos] : '0px', box[pos]);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }, 500);
-  // }
+  _getOffset ({ target: el }) {
+    console.log(el.offsetLeft);
+    console.log(el.offsetTop);
+    // const canvas = this.canvas;
+    // const svg = document.createElement('svg');
+    // canvas.appendChild();
+  }
 
-  // _form (event) {
-  //   event.preventDefault();
-  //   const { target: form } = event;
-
-  // }
+  _finish () {
+    changeLocation('/event-editing', false);
+  }
 }
 
 if (!customElements.get(Component.is)) {

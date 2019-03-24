@@ -203,13 +203,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
   _addSubtopic ({ target: el }) {
     const { value } = el;
-    var temp = value.split(' ');
+    let temp = value.split(' ');
     this.lessons[temp[0]].topics[temp[1]].subtopics.push('');
     this.requestUpdate();
   }
   _inputValueChanged ({ target: el }) {
     // const { name, value } = el;
-    var temp = el.name.split(' ');
+    let temp = el.name.split(' ');
     if (temp[0] === 'Lesson') {
       this.lessons[temp[1] - 1].name = el.value;
     }
@@ -223,10 +223,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   _downloadObjectAsJson () {
-    var exportObj = this.lessons;
-    var exportName = 'toolkit';
-    var dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj).split(',').join(',\r\n'));
-    var downloadAnchorNode = document.createElement('a');
+    let exportObj = this.lessons;
+    let exportName = 'toolkit';
+    let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj).split(',').join(',\r\n'));
+    let downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);
     downloadAnchorNode.setAttribute('download', exportName + '.json');
     document.body.appendChild(downloadAnchorNode);
