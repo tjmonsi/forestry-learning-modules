@@ -3,6 +3,7 @@
   width 100vw
   height 100vh
   overflow hidden
+  min-width 1024px
 
 .fullscreen
   width 100vw
@@ -18,10 +19,19 @@
   right 0
   background rgba(255, 255, 255, 0.75);
   color black
-  font-size 1rem
+  font-size 0.9rem
   padding 24px
   box-sizing border-box
   z-index 10000
+
+.titlescreen
+  display flex
+  align-items center
+  text-align center
+  font-weight bold
+  font-size 1.5rem
+  top 20%
+  padding-left 17.5%
 
 .table
   border 1px solid
@@ -74,34 +84,48 @@
 
 
 .tablet-right
-  right 0
+  right 1%
   top 15%
 
   @media screen and (max-width: 1280px)
     top 10%
 
 .image-left
-  left 10%
+  left 7.5%
+  width 37.5%
 
 .image-right
-  right 10%
+  right 7.5%
+  width 37.5%
 
 .lens-left
   top 50%
   left 10%
 
-.image-top
-  top 1%
+.image-left-top
+  left 22.5%
+  top 5%
+  width 25%
 
-.image-bottom
-  top 50%
+.image-right-top
+  right 22.5%
+  top 5%
+  width 25%
 
-.image-physical
-  top 53%
+.image-left-bottom
+  left 22.5%
+  top 41%
+  width 25%
+
+.image-right-bottom
+  right 22.5%
+  top 41%
+  width 25%
 
 .image-center
-  width 50%
   left 25%
+  width 50%
+  bottom 0%
 
 .image-center-2
   left 30%
@@ -119,7 +143,8 @@
   width 30%
 
 .cross-solo
-  left 7%
+  top 10%
+  left 35%
   width 30%
 
 .cross-inspect
@@ -128,12 +153,13 @@
   width 28%
 
 .cross-one
-  left 8%
-  width 28%
+  top 9.5%
+  left 37.5%
+  width 25%
 
 .cross-two
-  left 10%
-  top 45%
+  left 38.5%
+  top 45.5%
   width 23%
 
 .cross-assessment
@@ -150,26 +176,43 @@ th, td
   border 1px solid white
   padding 5px
 
-td
-  white-space pre
-
 td a
   text-decoration none
   color blue
 
 .table-physical
+  top 10%
   right 7%
+  table-layout fixed
+  border-collapse collapse
+  width 25%
+
+.table-physical td, .table-structural td
+  width 12.5%
 
 .table-structural
-  left 38%
+  top 10%
+  left 7%
+  table-layout fixed
+  border-collapse collapse
+  width 25%
 
 .table-physical-two
   top 0.5%
-  right 33%
+  right 34%
+  table-layout fixed
+  border-collapse collapse
+  width 35%
+
+.table-physical-two td
+  width 17.5%
 
 .table-structural-two
   top 0.5%
   right 1%
+  table-layout fixed
+  border-collapse collapse
+  width 30%
 
 .overflow
   overflow auto

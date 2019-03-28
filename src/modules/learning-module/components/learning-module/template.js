@@ -32,13 +32,13 @@ const template = (html, self) => function () {
         ` : ''}
 
         ${item.type === 'text' ? html`
-          <div class="absolute text" id="${item.objectId}" style="${styleString}">
+          <div class="absolute text ${item.meta && item.meta.classList}" id="${item.objectId}" style="${styleString}">
             <mark-lite .text="${item.text}"></mark-lite>
           </div>
         ` : ''}
 
         ${item.type === 'dialogue' ? html`
-          <div class="absolute dialogue" id="${item.objectId}" style="${styleString}">
+          <div class="absolute dialogue" id="${item.objectId}" style="${styleString} height=5%">
             <mark-lite .text="### ${item.character}\n\n${item.text}"></mark-lite>
 
             ${item.prev ? html`
@@ -70,7 +70,7 @@ const template = (html, self) => function () {
               <tbody>
                 ${Object.entries(item.table.rows).map(([key, input]) => html`
                   <tr>
-                    <td>${input.left}</td>
+                    <td height="20.5">${input.left}</td>
                     ${input.keyword === true ? html`
                       <td><a href="" style="color:${input.color}">${input.right}</a></td>
                     ` : html`

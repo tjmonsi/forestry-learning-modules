@@ -218,17 +218,12 @@
               "objectId": "object-15",
               "id": "object-05",
               "meta": {
-                "cover": false
+                "cover": false,
+                "classList": "titlescreen"
               },
               "relative": "object-14",
               "style": [
-                "z-index: 3",
-                "display: flex",
-                "align-items: center",
-                "text-align: center",
-                "font-weight: bold",
-                "font-size: 1.5rem",
-                "padding: 300px"
+                "z-index: 3"
               ]
             },
             {
@@ -775,17 +770,12 @@
               "objectId": "object-15",
               "id": "object-04",
               "meta": {
-                "cover": false
+                "cover": false,
+                "classList": "titlescreen"
               },
               "relative": "object-14",
               "style": [
-                "z-index: 3",
-                "display: flex",
-                "align-items: center",
-                "text-align: center",
-                "font-weight: bold",
-                "font-size: 1.5rem",
-                "padding: 300px"
+                "z-index: 3"
               ]
             },
             {
@@ -2430,7 +2420,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "image-left image-top"
+                "classList": "image-left-top"
               },
               "style": [
                 "z-index: 1"
@@ -2441,7 +2431,7 @@
               "id": "object-03",
               "meta": {
                 "cover": false,
-                "classList": "image-right image-top"
+                "classList": "image-right-top"
               },
               "style": [
                 "z-index: 2"
@@ -2452,7 +2442,7 @@
               "id": "object-04",
               "meta": {
                 "cover": false,
-                "classList": "image-left image-bottom"
+                "classList": "image-left-bottom"
               },
               "style": [
                 "z-index: 3"
