@@ -32,6 +32,10 @@
         {
           "source": "/narrative-editing",
           "destination": "/index.html"
+        },
+        {
+          "source": "/event-editing",
+          "destination": "/index.html"
         }
       ]
     }

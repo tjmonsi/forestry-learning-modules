@@ -18,24 +18,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   static get properties () {
     return {
-      // source: {
-      //   type: String,
-      //   value: '',
-      //   observer: '_loadModule'
-      // },
-      // moduleObj: {
-      //   type: Object,
-      //   value: {}
-      // },
-      // currentEvent: {
-      //   type: String,
-      //   value: '',
-      //   observer: '_loadEvent'
-      // },
-      // sceneObjects: {
-      //   type: Array,
-      //   value: []
-      // }
       lessons: {
         type: Array,
         value: [
@@ -44,7 +26,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             topics: [
               {
                 name: '',
-                subtopics: ['']
+                subtopics: [
+                  {
+                    name: ''
+                  }
+                ]
               }
             ]
           }
@@ -57,131 +43,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     return html`<style>${style.toString()}</style>${template(html, this)}`;
   }
 
-  // constructor () {
-  //   super();
-  //   this._boundGetQueryState = this._getQueryState.bind(this);
-  // }
-
-  // connectedCallback () {
-  //   if (super.connectedCallback) super.connectedCallback();
-  //   subscribe('query', this._boundGetQueryState);
-  // }
-
-  // disconnectedCallback () {
-  //   if (super.disconnectedCallback) super.disconnectedCallback();
-  //   unsubscribe('query', this._boundGetQueryState);
-  // }
-
-  // _getQueryState ({ currentEvent }) {
-  //   if (this.currentEvent !== currentEvent) {
-  //     this.currentEvent = currentEvent;
-  //   }
-  // }
-
-  // async _loadModule (src) {
-  //   if (!src) return;
-  //   const response = await fetch(src);
-  //   this.moduleObj = await response.json();
-  //   if (!this.currentEvent) {
-  //     this.currentEvent = this.moduleObj.eventStart;
-  //   } else {
-  //     this._loadEvent(this.currentEvent);
-  //   }
-  //   // this.currentEvent = this.currentEvent || this.moduleObj.eventStart;
-  // }
-
-  // _loadEvent (currentEvent) {
-  //   if (this.moduleObj && this.moduleObj.events && currentEvent) {
-  //     const event = this.moduleObj.events[currentEvent];
-  //     const { triggers, default: deafaultTrigger } = event;
-  //     this._doTrigger(triggers[deafaultTrigger]);
-  //   }
-  // }
-
-  // _doTrigger (trigger) {
-  //   const { type } = trigger;
-  //   const { objects } = this.moduleObj;
-  //   if (type === 'load') {
-  //     this.sceneObjects = [];
-  //     for (let item of trigger[type]) {
-  //       const { objectId, id } = item;
-  //       if (this.sceneObjects.findIndex(item => item.id === id) < 0) {
-  //         this.sceneObjects.push({ ...objects[objectId], ...item });
-  //       }
-  //     }
-  //     this.requestUpdate();
-  //   }
-
-  //   if (type === 'next') {
-  //     this.sceneObjects = [];
-  //     this.currentEvent = trigger.event;
-  //     changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
-  //   }
-
-  //   if (type === 'dialogue') {
-  //     const index = this.sceneObjects.findIndex(item => item.type === 'dialogue');
-  //     const { objectId } = trigger;
-  //     if (index < 0) {
-  //       this.sceneObjects.push({
-  //         id: 'dialogue-id',
-  //         ...objects[objectId]
-  //       });
-  //     } else {
-  //       console.log(this.sceneObjects[index])
-  //       this.sceneObjects[index] = { ...this.sceneObjects[index], ...objects[objectId] };
-  //     }
-  //     this.requestUpdate();
-  //   }
-  // }
-
-  // _click () {
-  //   if (this.moduleObj && this.moduleObj.events) {
-  //     const event = this.moduleObj.events[this.currentEvent];
-  //     if (!event.click) return;
-  //     const { triggers } = event;
-  //     this._doTrigger(triggers[event.click]);
-  //   }
-  // }
-
-  // _dialogue (event) {
-  //   event.stopPropagation();
-  //   const { target } = event;
-  //   const { value } = target;
-  //   if (this.moduleObj && this.moduleObj.events) {
-  //     const event = this.moduleObj.events[this.currentEvent];
-  //     const { triggers } = event;
-  //     this._doTrigger(triggers[value]);
-  //   }
-  // }
-
-  // updated () {
-  //   setTimeout(() => {
-  //     for (let item of this.sceneObjects) {
-  //       if (item.relative) {
-  //         const parent = this.shadowRoot.querySelector('#' + item.relative);
-  //         const el = this.shadowRoot.querySelector('#' + item.objectId);
-  //         if (parent && el) {
-  //           const box = parent.getBoundingClientRect();
-  //           const positions = ['top', 'left'];
-  //           const elstyle = document.createElement('div');
-  //           elstyle.style = item.style ? item.style.join(';') : '';
-  //           el.style.width = changeUnit(elstyle.style.width, box.width - (elstyle.style.padding.replace('px', '') * 2));
-  //           el.style.height = changeUnit(elstyle.style.height || '0px', box.height - (elstyle.style.padding.replace('px', '') * 2));
-  //           console.log(el.style.height, box.height)
-  //           for (const pos of positions) {
-  //             el.style[pos] = changeUnit(elstyle.style[pos] ? elstyle.style[pos] : '0px', box[pos]);
-  //           }
-  //         }
-  //       }
-  //     }
-  //   }, 500);
-  // }
-
-  // _form (event) {
-  //   event.preventDefault();
-  //   const { target: form } = event;
-
-  // }
   _addLesson () {
     this.lessons.push(
       {
@@ -204,7 +65,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _addSubtopic ({ target: el }) {
     const { value } = el;
     let temp = value.split(' ');
-    this.lessons[temp[0]].topics[temp[1]].subtopics.push('');
+    this.lessons[temp[0]].topics[temp[1]].subtopics.push(
+      {
+        name: ''
+      }
+    );
     this.requestUpdate();
   }
   _inputValueChanged ({ target: el }) {
@@ -217,7 +82,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       this.lessons[temp[1] - 1].topics[temp[3] - 1].name = el.value;
     }
     if (temp[0] === 'Subtopic') {
-      this.lessons[temp[1] - 1].topics[temp[3] - 1].subtopics = el.value;
+      this.lessons[temp[1] - 1].topics[temp[3] - 1].subtopics[temp[5] - 1].name = el.value;
     }
     console.log(this.lessons);
   }
@@ -233,6 +98,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
   }
+
+  _changeLoc ({ target: el }) {
+    console.log(el.value);
+    if (el.value === 'Event Editing') {
+      console.log('go to event');
+      changeLocation('/event-editing', false);
+    } else if (el.value === 'Narrative Editing') {
+      console.log('go to narrative editing');
+      changeLocation('/narrative-editing', false);
+    }
+  }
+
   _save () {
     updateState('lessons', this.lessons);
     changeLocation('/narrative-editing', false);

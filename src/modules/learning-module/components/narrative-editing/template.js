@@ -1,11 +1,17 @@
 const template = (html, self) => function () {
-  const { lessons, onDragStart, onDragEnd, onDragOver, onDragEnter, onDrop, _pointFrom, _pointTo, _getOffset, _finish } = this;
+  const { lessons, onDragStart, onDragEnd, onDragOver, onDragEnter, onDrop, _pointFrom, _pointTo, _getOffset, _finish, _downloadObjectAsJson, _changeLoc } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // // console.log(scenehttp://localalhost/Objects)
   // if (!events) return html`Loading...`;
   return html`
-    <div class = "navbar"></div>
+    <div class = "navbar">
+      <select id="location" @change="${_changeLoc.bind(this)}">
+        <option value="Narrative Editing" id="curr-loc"> Narrative Editing</option>
+        <option value="Forms"> Forms</option>
+        <option value="Event Editing"> Event Editing</option>
+      </select>
+    </div>
     <div class = "container">
       <div id="control">
         <form>
