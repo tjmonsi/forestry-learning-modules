@@ -46,6 +46,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       sceneObjects: {
         type: Array,
         value: []
+      },
+      dragged: {
+        type: Object,
+        value: ''
+      },
+      canvas: {
+        type: Object,
+        value: ''
       }
     };
   }
@@ -179,13 +187,85 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     const { target: form } = event;
   }
 
-  _drag (event) {
-    event.preventDefault();
-    console.log("hello");
+  onDragStart (event) {
+    let target = event.target;
+    if (target) {
+      this.dragged = target;
+      event.dropEffect = 'move';
+      event.dataTransfer.setData('text/urilist', target.id);
+      event.dataTransfer.setData('text/plain', target.id);
+      // Make it half transparent
+      event.target.style.opacity = 0.5;
+    }
   }
 
+  onDragEnd (event) {
+    event.target.style.opacity = '';
+  }
+
+  onDragOver (event) {
+    // Prevent default to allow drop
+    event.preventDefault();
+  }
+
+  // _contains (list, value) {
+  //   for (let i = 0; i < list.length; ++i) {
+  //     if (list[i] === value) return true;
+  //   }
+  //   return false;
+  // }
+
+  onDragEnter (event) {
+    const target = event.target;
+    const { dragged } = this.dragged;
+    if (target.id === 'canvas' && dragged) {
+      const { isLink } = this._contains(event.dataTransfer.types, 'text/uri-list');
+      if (isLink) {
+        event.preventDefault();
+        event.dataTransfer.dropEffect = 'move';
+        target.style.background = '#1f904e';
+      } else {
+        target.style.background = '#d51c00';
+      }
+    }
+  }
+
+  onDrop (event) {
+    this.canvas = event.target;
+    const target = this.canvas;
+    const dragged = this.dragged;
+    if (dragged && target) {
+      // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
+      event.preventDefault();
+      console.log(target.id);
+      console.log(dragged.id);
+      if (dragged.id === target.id) {
+        dragged.remove();
+      }
+    }
+    this.requestUpdate();
+  }
+
+  // _pointFrom ({ target: el }) {
+  //   this.pointData = el.value;
+  // }
+
+  // _pointTo ({ target: el }) {
+  //   let temp = el.value.split('.');
+  //   console.log(temp.length);
+  //   if (temp.length === 1) {
+  //     this.lessons[temp[0]].from = this.pointData;
+  //   } else if (temp.length === 2) {
+  //     this.lessons[temp[0]].topics[temp[1]].from = this.pointData;
+  //   } else if (temp.length === 3) {
+  //     this.lessons[temp[0]].topics[temp[1]].subtopics[temp[2]].from = this.pointData;
+  //   } else {
+  //     console.warn('Invalid pointer! Please make sure to point to a valid lesson');
+  //   }
+  // }
+
   _correctAnswer ({target: el}) {
-    console.log("");
+    // console.log("");
     // var selected = document.getElementById("Color").options.value;
     // var selected = el.options.selected.text;
     // var val = el.options.value.text;

@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, _correctAnswer, _drag } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, _correctAnswer, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -10,23 +10,30 @@ const template = (html, self) => function () {
     const styleString = item.style ? item.style.join(';') : '';
     return html`
         ${item.type === 'image' ? html`
-          <lazy-picture
-            id="${item.objectId}"
+        <div
+          id="${item.objectId}"
+          @drop="${onDrop.bind(this)}"
+          @dragover="${onDragOver.bind(this)}"
+          @dragenter="${onDragEnter.bind(this)}"
+        >
+        <lazy-picture
+            id="${item.answer}"
             .cover="${item.meta && item.meta.cover}"
             class="absolute image ${item.meta && item.meta.fullscreen ? 'fullscreen' : ''} ${item.meta && item.meta.classList}"
             style="${styleString}"
-            src="${item.src ? baseURL + item.src : ''}"></lazy-picture>
+            draggable="true"
+            src="${item.src ? baseURL + item.src : ''}"></lazy-picture></div>
         ` : ''}
 
         ${item.type === 'lens' ? html`
-          <div>
+          <div id="${item.objectId}">
             <img
-              id="${item.objectId}"
+              id="${item.answer}"
               .cover="${item.meta && item.meta.cover}"
               class="absolute image ${item.meta && item.meta.fullscreen ? 'fullscreen' : ''} ${item.meta && item.meta.classList}"
               style="${styleString}"
-              draggable="true"
-              ondragstart="${_drag.bind(this)}"
+              @dragstart="${onDragStart.bind(this)}"
+              @dragend="${onDragEnd.bind(this)}"
               src="${item.src ? baseURL + item.src : ''}">
           </div>
         ` : ''}
