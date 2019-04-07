@@ -187,7 +187,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
   }
-}Loading
+}
 
 if (!customElements.get(Component.is)) {
   customElements.define(Component.is, Component);

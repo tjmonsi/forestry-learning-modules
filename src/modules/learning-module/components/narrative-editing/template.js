@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { lessons, onDragStart, onDragEnd, onDragOver, onDragEnter, onDrop, _pointFrom, _pointTo, _getOffset, _finish, _downloadObjectAsJson, _changeLoc } = this;
+  const { lessons, onDragStart, onDragEnd, onDragOver, onDragEnter, onDrop, _pointFrom, _pointTo, _getOffset, _finish, _changeLoc } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // // console.log(scenehttp://localalhost/Objects)
@@ -31,11 +31,11 @@ const template = (html, self) => function () {
       </div>
       <div id="scene-repo">
         ${lessons && lessons.length ? lessons.map((lesson, index) => html`
-          <button id="lessons" name="${index}" draggable="true" @click="${_getOffset.bind(this)}" @dragstart="${onDragStart.bind(this)}" @dragend="${onDragEnd.bind(this)}"> ${index} ${lesson.name} </button>
+          <button id="lessons" name="${index}" draggable="true"  @dragstart="${onDragStart.bind(this)}" @dragend="${onDragEnd.bind(this)}"> ${index} ${lesson.name} </button>
           ${lesson.topics && lesson.topics.length ? lesson.topics.map((topic, index2) => html`
-            <button id="topics" name="${index}.${index2}" draggable="true" @click="${_getOffset.bind(this)}" @dragstart="${onDragStart.bind(this)}"  @dragend="${onDragEnd.bind(this)}"> ${index}.${index2} ${topic.name} </button>
+            <button id="topics" name="${index}.${index2}" draggable="true"  @dragstart="${onDragStart.bind(this)}"  @dragend="${onDragEnd.bind(this)}"> ${index}.${index2} ${topic.name} </button>
             ${topic.subtopics && topic.subtopics.length ? topic.subtopics.map((subtopic, index3) => html`
-              <button id="subtopics" name="${index}.${index2}.${index3}" draggable="true" @click="${_getOffset.bind(this)}" @dragstart="${onDragStart.bind(this)}"  @dragend="${onDragEnd.bind(this)}"> ${index}.${index2}.${index3} ${subtopic.name} </button>
+              <button id="subtopics" name="${index}.${index2}.${index3}" draggable="true"  @dragstart="${onDragStart.bind(this)}"  @dragend="${onDragEnd.bind(this)}"> ${index}.${index2}.${index3} ${subtopic.name} </button>
             `) : html``}
           `) : html``}
         `) : html``}

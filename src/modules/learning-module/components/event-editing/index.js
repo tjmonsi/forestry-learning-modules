@@ -8,6 +8,7 @@ import style from './style.styl';
 import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
+import '../../../general/components/snackbar-lite';
 
 const { HTMLElement, customElements, fetch } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
@@ -126,6 +127,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             }
           ]
         }
+      },
+      objectClicked: {
+        type: Object,
+        value: {}
+      },
+      scene: {
+        type: Object,
+        value: {}
       }
     };
   }
@@ -244,6 +253,33 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
   }
 
+  _selectorClick ({ target: el }) {
+    const workspace = this.shadowRoot.querySelector('#workspace');
+    if (workspace.children.length < 2 && this.scene.id !== null) {
+      this.scene.id = el.id;
+      const canvas = document.createElement('div');
+      canvas.id = 'canvas' + this.scene.id;
+      canvas.style.border = '1px solid #000000';
+      canvas.style.margin = '12px 24px';
+      canvas.style.height = '75vh';
+      canvas.style.width = '75%';
+      canvas.style.overflow = 'hidden';
+      canvas.style.display = 'relative';
+      workspace.appendChild(canvas);
+    } else {
+      workspace.removeChild(workspace.children[1]);
+      this.scene.id = el.id;
+      const canvas = document.createElement('div');
+      canvas.id = 'canvas' + this.scene.id;
+      canvas.style.border = '1px solid #000000';
+      canvas.style.margin = '12px 24px';
+      canvas.style.height = '75vh';
+      canvas.style.width = '75%';
+      canvas.style.overflow = 'hidden';
+      workspace.appendChild(canvas);
+    }
+  }
+
   _backgroundClick () {
     // while (assets.hasChildNodes()) {
     //   assets.removeChild(assets.firstChild);
@@ -262,21 +298,40 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     for (let item of this.backgrounds) {
       const image = document.createElement('img');
       image.src = '/assets/forestry/images/background/' + item.fname;
-      // image.style.height = '5%';relative
+      // image.style.height = '5%';
       image.style.width = '10%';
       image.style.margin = '10px';
       assets.appendChild(image);
       image.addEventListener('click', event => {
-        const canvas = this.shadowRoot.querySelector('#scene-canvas');
-        while (canvas.firstChild) {
+        const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+        const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
+        if (!canvas) {
+          console.warn('Can\'t add background, no canvas yet');
+          const snacker = document.querySelector('.snackbar-lite');
+          snacker.textContent = 'Can\'t add background, no canvas yet';
+          snacker.show();
+        }
+
+        if (canvas && canvas.firstChild) {
           canvas.removeChild(canvas.firstChild);
         }
-        let copy = image.cloneNode();
-        copy.style.width = '100%';
-        copy.style.height = '100%';
-        copy.style.margin = '0px';
-        copy.style.zIndex = '0';
-        canvas.appendChild(copy);
+
+        if (canvas && thumbnail.firstChild) {
+          thumbnail.removeChild(thumbnail.firstChild);
+        }
+
+        if (canvas) {
+          const copy = document.importNode(image);
+          copy.style.width = '100%';
+          copy.style.height = '100%';
+          copy.style.margin = '0px';
+          copy.style.zIndex = '0';
+          copy.style.position = 'relative';
+          copy.id = 'background';
+          const copy2 = document.importNode(copy);
+          canvas.appendChild(copy);
+          thumbnail.appendChild(copy2);
+        }
       });
     }
   }
@@ -299,14 +354,61 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
     for (let item of this.characters) {
       const image = document.createElement('img');
+      const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+      const bg = canvas.querySelector('#background');
       image.src = '/assets/forestry/images/characters/' + item.fname;
-      // image.style.height = '4%';
       image.style.width = '4%';
       image.style.marginLeft = '15px';
       image.style.marginRight = '15px';
       image.style.marginTop = '5px';
       image.style.marginBottom = '5px';
       assets.appendChild(image);
+      image.addEventListener('click', event => {
+        if (bg === null) {
+          console.warn('Can\'t add character, no background yet');
+          const snacker = document.querySelector('.snackbar-lite');
+          snacker.textContent = 'Can\'t add character, no background yet';
+          snacker.show();
+        } else {
+          const copy = document.importNode(image);
+          copy.style.width = '25%';
+          copy.style.height = '40%';
+          copy.style.margin = '0px';
+          // copy.style.top = '-75%';
+          copy.style.zIndex = '1';
+          copy.style.position = 'absolute';
+          this.objectClicked = copy;
+          const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
+          // console.log(thumbnail);
+          canvas.addEventListener('click', event => {
+            const width = canvas.clientWidth;
+            // const height = canvas.clientHeight;
+            const left = width / 3;
+            const center = left + left;
+            // const right = center + left;
+            const char = this.objectClicked;
+            char.style.top = '40%';
+            const fname = char.src.split('/');
+            if (fname[7] === 'forester-1.png') {
+              char.style.top = '45%';
+            } else if (fname[7] === 'forester-2.png') {
+              char.style.top = '42%';
+            }
+            if (event.offsetX < left) {
+              char.style.left = '20%';
+            } else if (event.offsetX > left && event.offsetX < center) {
+              char.style.left = '45%';
+              // char.style.textAlign = 'center';
+            } else if (event.offsetX > center) {
+              char.style.right = '5%';
+              // char.style.textAlign = 'center';
+            }
+            canvas.appendChild(char);
+            const char2 = char.cloneNode();
+            thumbnail.appendChild(char2);
+          });
+        }
+      });
     }
   }
 
@@ -324,6 +426,82 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       image.style.marginTop = '5px';
       image.style.marginBottom = '5px';
       assets.appendChild(image);
+      image.addEventListener('click', event => {
+        const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+        const copy = document.importNode(image);
+        copy.style.width = '10%';
+        copy.style.height = '25%';
+        copy.style.margin = '0px';
+        // copy.style.top = '-75%';
+        copy.style.zIndex = '1';
+        copy.style.position = 'absolute';
+        this.objectClicked = copy;
+        canvas.addEventListener('click', event => {
+          const width = canvas.clientWidth;
+          // const height = canvas.clientHeight;
+          const left = width / 3;
+          const center = left + left;
+          // const right = center + left;
+          const obj = this.objectClicked;
+          if (event.offsetX < left) {
+            canvas.appendChild(obj);
+          } else if (event.offsetX > left && event.offsetX < center) {
+            canvas.appendChild(obj);
+            obj.style.left = '35%';
+          } else if (event.offsetX > center) {
+            canvas.appendChild(obj);
+            obj.style.right = '20%';
+          }
+        });
+      });
+    }
+  }
+
+  _addDialogue () {
+    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    const db = canvas.querySelector('#dialogueBox');
+    const bg = canvas.querySelector('#background');
+    if (bg != null && db === null) {
+      const dialogueBox = document.createElement('div');
+      dialogueBox.id = 'dialogueBox';
+      const dialogueInput = document.createElement('textarea');
+      const characterInput = document.createElement('input');
+      dialogueInput.id = 'dialogue';
+      characterInput.id = 'characterName';
+      canvas.appendChild(dialogueBox);
+      dialogueBox.style.zIndex = '10000';
+      dialogueBox.style.top = '-25%';
+      dialogueBox.style.background = 'rgba(255, 255, 255, 0.75)';
+      dialogueBox.style.color = 'black';
+      dialogueBox.style.fontSize = '1rem';
+      dialogueBox.style.boxSizing = 'border-box';
+      dialogueBox.style.position = 'relative';
+      dialogueBox.style.height = '25%';
+      dialogueBox.appendChild(characterInput);
+      characterInput.style.height = '10%';
+      characterInput.style.textDecoration = 'none';
+      characterInput.style.border = 'none';
+      characterInput.style.background = 'transparent';
+      characterInput.placeholder = 'Enter Character Name Here';
+      dialogueBox.appendChild(dialogueInput);
+      dialogueInput.style.height = '90%';
+      dialogueInput.style.width = '100%';
+      dialogueInput.style.background = 'transparent';
+      dialogueInput.style.fontSize = '20px';
+      dialogueInput.style.resize = 'none';
+      dialogueInput.style.outline = 'none';
+      dialogueInput.style.border = 'none';
+      dialogueInput.placeholder = 'Enter Dialogue Here';
+    } else if (bg === null) {
+      console.warn('Can\'t add dialogue, no background yet');
+      const snacker = document.querySelector('.snackbar-lite');
+      snacker.textContent = 'Can\'t add dialogue, no background yet';
+      snacker.show();
+    } else if (db !== null) {
+      console.warn('Dialogue already exists!');
+      const snacker = document.querySelector('.snackbar-lite');
+      snacker.textContent = 'Dialogue already exists!';
+      snacker.show();
     }
   }
 
