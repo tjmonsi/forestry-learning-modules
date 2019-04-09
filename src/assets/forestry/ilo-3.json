@@ -159,7 +159,7 @@
         },
         "trigger-08": {
           "type": "dialogue",
-          "objectId": "object-07"
+          "objectId": "object-10"
         },
         "trigger-09": {
           "type": "next",
@@ -167,7 +167,7 @@
         },
         "trigger-10": {
           "type": "dialogue",
-          "objectId": "object-10"
+          "objectId": "object-11"
         }
       }
     },
@@ -1941,58 +1941,47 @@
               ]
             },
             {
-              "objectId": "object-82",
+              "objectId": "object-172",
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-assessment"
+                "classList": "table-physical-assessment"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-103",
+              "objectId": "object-82",
               "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "cross-assessment"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-103",
+              "id": "object-04",
               "meta": {
                 "classList": "image-right form"
               },
               "default": {
-                "color": "Select Color",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round",
-                "size": "moderately-small",
-                "number": "moderately-numerous",
-                "topography": "diffuse-porous",
-                "type": [
-                  "solitary",
-                  "radial-2-3"
-                ],
-                "tyloses": "present",
-                "deposits": "white",
-                "parenchyma": [
-                  "apotracheal-diffuse",
-                  "paratracheal-vasicentric"
-                ],
-                "wood-rays": "narrow",
-                "ripple": "absent",
-                "ducts": "absent"
+                "shape": "angular",
+                "size": "moderately-large",
+                "number": "moderately-few",
+                "topography": "ring-porous",
+                "type": [],
+                "tyloses": "absent",
+                "deposits": "absent",
+                "parenchyma": [],
+                "wood-rays": "broad",
+                "ripple": "present",
+                "ducts": "concentric-resin"
               },
               "answer": {
-                "color": "brownish-black",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
                 "shape": "round",
                 "size": "moderately-small",
                 "number": "moderately-numerous",
@@ -2014,8 +2003,21 @@
             },
             {
               "objectId": "object-83",
-              "id": "object-04",
+              "id": "object-05",
               "type": "dialogue"
+            },
+            {
+              "objectId": "object-189",
+              "id": "object-06",
+              "style": [
+                "z-index: 3",
+                "font-size: 5rem",
+                "left: 32.5%",
+                "top: 42.5%",
+                "color: white",
+                "font-weight: bold",
+                "visibility: hidden"
+              ]
             }
           ]
         },
@@ -2055,59 +2057,48 @@
               ]
             },
             {
-              "objectId": "object-86",
+              "objectId": "object-173",
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-assessment"
+                "classList": "table-physical-assessment"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-103",
+              "objectId": "object-86",
               "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "cross-assessment"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-169",
+              "id": "object-04",
               "meta": {
                 "classList": "image-right form"
               },
               "default": {
-                "color": "Select Color",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round",
-                "size": "moderately-small",
-                "number": "moderately-numerous",
-                "topography": "diffuse-porous",
-                "type": [
-                  "solitary",
-                  "radial-2-3"
-                ],
-                "tyloses": "present",
-                "deposits": "white",
-                "parenchyma": [
-                  "apotracheal-diffuse",
-                  "paratracheal-vasicentric"
-                ],
-                "wood-rays": "narrow",
-                "ripple": "absent",
-                "ducts": "absent"
+                "shape": "angular",
+                "size": "moderately-large",
+                "number": "moderately-few",
+                "topography": "ring-porous",
+                "type": [],
+                "tyloses": "absent",
+                "deposits": "absent",
+                "parenchyma": [],
+                "wood-rays": "broad",
+                "ripple": "present",
+                "ducts": "concentric-resin"
               },
               "answer": {
-                "color": "",
-                "grain": "cross",
-                "odor": "odor",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round ",
+                "shape": "round",
                 "size": "moderately-small",
                 "number": "moderately-numerous",
                 "topography": "diffuse-porous",
@@ -2129,8 +2120,21 @@
             },
             {
               "objectId": "object-87",
-              "id": "object-04",
+              "id": "object-05",
               "type": "dialogue"
+            },
+            {
+              "objectId": "object-190",
+              "id": "object-06",
+              "style": [
+                "z-index: 3",
+                "font-size: 5rem",
+                "left: 32.5%",
+                "top: 42.5%",
+                "color: white",
+                "font-weight: bold",
+                "visibility: hidden"
+              ]
             }
           ]
         },
@@ -2170,59 +2174,48 @@
               ]
             },
             {
-              "objectId": "object-90",
+              "objectId": "object-174",
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-assessment"
+                "classList": "table-physical-assessment"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-103",
+              "objectId": "object-90",
               "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "cross-assessment"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-170",
+              "id": "object-04",
               "meta": {
                 "classList": "image-right form"
               },
               "default": {
-                "color": "Select Color",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round",
+                "shape": "angular",
                 "size": "moderately-small",
-                "number": "moderately-numerous",
-                "topography": "diffuse-porous",
-                "type": [
-                  "solitary",
-                  "radial-2-3"
-                ],
-                "tyloses": "present",
-                "deposits": "white",
-                "parenchyma": [
-                  "apotracheal-diffuse",
-                  "paratracheal-vasicentric"
-                ],
-                "wood-rays": "narrow",
-                "ripple": "absent",
-                "ducts": "absent"
+                "number": "moderately-few",
+                "topography": "ring-porous",
+                "type": [],
+                "tyloses": "absent",
+                "deposits": "absent",
+                "parenchyma": [],
+                "wood-rays": "broad",
+                "ripple": "present",
+                "ducts": "concentric-resin"
               },
               "answer": {
-                "color": "",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-coarse",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round ",
+                "shape": "round",
                 "size": "moderately-large",
                 "number": "moderately-numerous",
                 "topography": "diffuse-porous",
@@ -2249,8 +2242,21 @@
             },
             {
               "objectId": "object-91",
-              "id": "object-04",
+              "id": "object-05",
               "type": "dialogue"
+            },
+            {
+              "objectId": "object-191",
+              "id": "object-06",
+              "style": [
+                "z-index: 3",
+                "font-size: 5rem",
+                "left: 32.5%",
+                "top: 42.5%",
+                "color: white",
+                "font-weight: bold",
+                "visibility: hidden"
+              ]
             }
           ]
         },
@@ -2290,58 +2296,47 @@
               ]
             },
             {
-              "objectId": "object-94",
+              "objectId": "object-175",
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-assessment"
+                "classList": "table-physical-assessment"
               },
               "style": [
                 "z-index: 1"
               ]
             },
             {
-              "objectId": "object-103",
+              "objectId": "object-94",
               "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "cross-assessment"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-171",
+              "id": "object-04",
               "meta": {
                 "classList": "image-right form"
               },
               "default": {
-                "color": "Select Color",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
-                "shape": "round",
-                "size": "moderately-small",
-                "number": "moderately-numerous",
-                "topography": "diffuse-porous",
-                "type": [
-                  "solitary",
-                  "radial-2-3"
-                ],
-                "tyloses": "present",
-                "deposits": "white",
-                "parenchyma": [
-                  "apotracheal-diffuse",
-                  "paratracheal-vasicentric"
-                ],
-                "wood-rays": "narrow",
-                "ripple": "absent",
-                "ducts": "absent"
+                "shape": "angular",
+                "size": "moderately-large",
+                "number": "moderately-few",
+                "topography": "ring-porous",
+                "type": [],
+                "tyloses": "absent",
+                "deposits": "absent",
+                "parenchyma": [],
+                "wood-rays": "broad",
+                "ripple": "present",
+                "ducts": "concentric-resin"
               },
               "answer": {
-                "color": "",
-                "grain": "cross",
-                "odor": "none",
-                "taste": "none",
-                "texture": "moderately-fine",
-                "hardness": "hard",
-                "weight": "heavy",
-                "luster": "lustrous",
                 "shape": "round",
                 "size": "small",
                 "number": "moderately-numerous",
@@ -2368,8 +2363,21 @@
             },
             {
               "objectId": "object-95",
-              "id": "object-04",
+              "id": "object-05",
               "type": "dialogue"
+            },
+            {
+              "objectId": "object-192",
+              "id": "object-06",
+              "style": [
+                "z-index: 3",
+                "font-size: 5rem",
+                "left: 32.5%",
+                "top: 42.5%",
+                "color: white",
+                "font-weight: bold",
+                "visibility: hidden"
+              ]
             }
           ]
         },
@@ -3609,7 +3617,8 @@
       "character": "Narrator",
       "text": "This is log one.",
       "next": "trigger-02",
-      "prev": "trigger-00"
+      "prev": "trigger-00",
+      "form": true
     },
     "object-84": {
       "type": "dialogue",
@@ -3634,7 +3643,8 @@
       "character": "Narrator",
       "text": "This is log two.",
       "next": "trigger-02",
-      "prev": "trigger-00"
+      "prev": "trigger-00",
+      "form": true
     },
     "object-88": {
       "type": "dialogue",
@@ -3659,7 +3669,8 @@
       "character": "Narrator",
       "text": "This is log three.",
       "next": "trigger-02",
-      "prev": "trigger-00"
+      "prev": "trigger-00",
+      "form": true
     },
     "object-92": {
       "type": "dialogue",
@@ -3684,7 +3695,8 @@
       "character": "Narrator",
       "text": "This is log four.",
       "next": "trigger-02",
-      "prev": "trigger-00"
+      "prev": "trigger-00",
+      "form": true
     },
     "object-96": {
       "type": "dialogue",
@@ -3726,98 +3738,6 @@
     "object-103": {
       "type": "form",
       "form": {
-        "physical": {
-          "name": "Physical Features",
-          "items": {
-            "color": {
-              "name": "Color",
-              "type": "select",
-              "options": {
-                "brownish-black": "Brownish Black",
-                "db": "Dark Brown",
-                "gb": "Grayish Brown",
-                "rb-br": "Reddish Brown to Brick Red",
-                "rb-db": "Reddish Brown to Dark Brown",
-                "lgb": "Light Golden Brown",
-                "lr-cr": "Light Red to Cacao Red",
-                "lr-wr": "Light Reddish to Wine Red",
-                "l-db-b": "Light to Dark Brown to Black",
-                "ob-db": "Orange Brown to Dark Brown",
-                "py-drb": "Pale Yellow to Dark Reddish Brown",
-                "r-rb": "Reddish to Reddish Brown",
-                "w-pp-lrb": "White, Pale Pink to Light Reddish Brown",
-                "wb-lb": "Whitish Brown to Light Brown",
-                "w-lb": "Whitish or Light Brown",
-                "w-b": "Whitish to Brownish",
-                "yr-cb": "Yellowish Red to Chestnut Brown (w/ Black Streaks)"
-              }
-            },
-            "grain": {
-              "name": "Grain",
-              "type": "select",
-              "options": {
-                "cross": "Cross",
-                "straight": "Straight"
-              }
-            },
-            "odor": {
-              "name": "Odor",
-              "type": "select",
-              "options": {
-                "none": "Without distinct odor",
-                "odor": "With distinct odor"
-              }
-            },
-            "taste": {
-              "name": "Taste",
-              "type": "select",
-              "options": {
-                "none": "Without distinct taste",
-                "taste": "With distinct taste"
-              }
-            },
-            "texture": {
-              "name": "Texture",
-              "type": "select",
-              "options": {
-                "very-fine": "Very Fine",
-                "fine": "Fine",
-                "moderately-fine": "Moderately Fine",
-                "moderately-coarse": "Moderately Coarse",
-                "coarse": "Coarse"
-              }
-            },
-            "hardness": {
-              "name": "Hardness",
-              "type": "select",
-              "options": {
-                "soft": "Soft",
-                "moderately-soft": "Moderately Soft",
-                "moderately-hard": "Moderately Hard",
-                "hard": "Hard"
-              }
-            },
-            "weight": {
-              "name": "Weight",
-              "type": "select",
-              "options": {
-                "light": "Light",
-                "moderately-light": "Moderately Light",
-                "moderately-heavy": "Moderately Heavy",
-                "heavy": "Heavy"
-              }
-            },
-            "luster": {
-              "name": "Luster",
-              "type": "select",
-              "options": {
-                "dull": "Dull",
-                "quite-lustrous": "Quite Lustrous",
-                "lustrous": "Lustrous"
-              }
-            }
-          }
-        },
         "structural": {
           "name": "Structural Features",
           "items": {
@@ -5375,9 +5295,24 @@
             "color": "black"
           },
           "parenchyma": {
-            "left": "Parenchyma",
-            "right": "Paratracheal Vasicentric,\nConcentric",
-            "keyword": true,
+       
+          "object-160": {
+            "type": "lens",
+            "src": "/images/lens.png",
+            "target": "object-104"
+          },     "left": "Parenchyma",
+       
+          "object-160": {
+            "type": "lens",
+            "src": "/images/lens.png",
+            "target": "object-104"
+          },     "right": "Paratracheal Vasicentric,\nConcentric",
+       
+          "object-160": {
+            "type": "lens",
+            "src": "/images/lens.png",
+            "target": "object-104"
+          },     "keyword": true,
             "color": "maroon"
           },
           "rays": {
@@ -5416,11 +5351,6 @@
           },
           "taste": {
             "left": "Taste",
-            "object-160": {
-              "type": "lens",
-              "src": "/images/lens.png",
-              "target": "object-104"
-            },
             "right": "None"
           },
           "luster": {
@@ -5434,11 +5364,6 @@
           "texture": {
             "left": "Texture",
             "right": "Moderately Fine"
-          },
-          "object-160": {
-            "type": "lens",
-            "src": "/images/lens.png",
-            "target": "object-104"
           },
           "hardness": {
             "left": "Hardness",
@@ -5633,8 +5558,583 @@
       "target": "object-104",
       "answer": "ipil-ipil"
     },
-    "object-xx": {
-      "type": "table"
+    "object-169": {
+      "type": "form",
+      "form": {
+        "structural": {
+          "name": "Structural Features",
+          "items": {
+            "shape": {
+              "name": "Pore Shape",
+              "type": "select",
+              "options": {
+                "round": "Round",
+                "oval": "Oval",
+                "angular": "Angular"
+              }
+            },
+            "size": {
+              "name": "Pore Size",
+              "type": "select",
+              "options": {
+                "minute": "Minute",
+                "small": "Small",
+                "moderately-small": "Moderately Small",
+                "moderately-large": "Moderately Large",
+                "large": "Large"
+              }
+            },
+            "number": {
+              "name": "Pore Number",
+              "type": "select",
+              "options": {
+                "few": "Few",
+                "moderately-few": "Moderately Small",
+                "moderately-numerous": "Moderately Numerous",
+                "numerous": "Numerous"
+              }
+            },
+            "topography": {
+              "name": "Pore Topography",
+              "type": "select",
+              "options": {
+                "diffuse-porous": "Diffuse Porous",
+                "ring-porous": "Ring Porous",
+                "semi-ring-porous": "Semi-ring Porous"
+              }
+            },
+            "type": {
+              "name": "Pore Types and Arrangement",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "solitary": "Solitary",
+                "radial-2-3": "Radial multiple 2-3",
+                "radial-2-4": "Radial multiple 2-4",
+                "tangential-2-3": "Tangential multiple 2-3",
+                "tangential-2-4": "Tangential multiple 2-4",
+                "pore-cluster": "Pore Cluster",
+                "radial-chain": "Radial chain",
+                "radial-line": "Radial line",
+                "echelon": "Echelon",
+                "flame": "Flame-like/Dendritic",
+                "tangential-festoons": "Tangential festoons",
+                "ulmiform": "Ulmiform"
+              }
+            },
+            "tyloses": {
+              "name": "Pore Tyloses",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "deposits": {
+              "name": "Pore Deposits",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "white": "White deposit",
+                "yellow": "Yellow deposit",
+                "red": "Red deposit",
+                "orange": "Orange deposit",
+                "black": "Black deposit"
+              }
+            },
+            "parenchyma": {
+              "name": "Parenchyma",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "apotracheal-concentric": "Apotracheal Concentric",
+                "apotracheal-diffuse": "Apotracheal Diffuse",
+                "apotracheal-diffuse-in-aggregates": "Apotracheal Diffuse in aggregates",
+                "paratracheal-scanty": "Paratracheal Scanty",
+                "unilaterally-paratracheal": "Unilaterally paratracheal",
+                "paratracheal-vasicentric": "Paratracheal Vasicentric",
+                "paratracheal-aliform": "Paratracheal Aliform",
+                "paratracheal-aliform-confluent": "Paratreacheal Aliform confluent",
+                "paratracheal-banded-confluent": "Paratracheal Banded confluent",
+                "boundary": "Boundary"
+              }
+            },
+            "wood-rays": {
+              "name": "Wood Rays",
+              "type": "select",
+              "options": {
+                "narrow": "Narrow",
+                "moderately-broad": "Moderately broad",
+                "broad": "Broad",
+                "combination": "Combination of moderately broad and narrow"
+              }
+            },
+            "ripple": {
+              "name": "Ripple-Marks",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "ducts": {
+              "name": "Ducts",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "diffuse-oil": "Diffuse Oil Ducts",
+                "diffuse-resin": "Diffuse Resin Ducts",
+                "concentric-oil": "Concentric Oil Ducts",
+                "concentric-resin": "Concentric Resin Ducts"
+              }
+            }
+          }
+        }
+      }
+    },
+    "object-170": {
+      "type": "form",
+      "form": {
+        "structural": {
+          "name": "Structural Features",
+          "items": {
+            "shape": {
+              "name": "Pore Shape",
+              "type": "select",
+              "options": {
+                "round": "Round",
+                "oval": "Oval",
+                "angular": "Angular"
+              }
+            },
+            "size": {
+              "name": "Pore Size",
+              "type": "select",
+              "options": {
+                "minute": "Minute",
+                "small": "Small",
+                "moderately-small": "Moderately Small",
+                "moderately-large": "Moderately Large",
+                "large": "Large"
+              }
+            },
+            "number": {
+              "name": "Pore Number",
+              "type": "select",
+              "options": {
+                "few": "Few",
+                "moderately-few": "Moderately Small",
+                "moderately-numerous": "Moderately Numerous",
+                "numerous": "Numerous"
+              }
+            },
+            "topography": {
+              "name": "Pore Topography",
+              "type": "select",
+              "options": {
+                "diffuse-porous": "Diffuse Porous",
+                "ring-porous": "Ring Porous",
+                "semi-ring-porous": "Semi-ring Porous"
+              }
+            },
+            "type": {
+              "name": "Pore Types and Arrangement",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "solitary": "Solitary",
+                "radial-2-3": "Radial multiple 2-3",
+                "radial-2-4": "Radial multiple 2-4",
+                "tangential-2-3": "Tangential multiple 2-3",
+                "tangential-2-4": "Tangential multiple 2-4",
+                "pore-cluster": "Pore Cluster",
+                "radial-chain": "Radial chain",
+                "radial-line": "Radial line",
+                "echelon": "Echelon",
+                "flame": "Flame-like/Dendritic",
+                "tangential-festoons": "Tangential festoons",
+                "ulmiform": "Ulmiform"
+              }
+            },
+            "tyloses": {
+              "name": "Pore Tyloses",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "deposits": {
+              "name": "Pore Deposits",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "white": "White deposit",
+                "yellow": "Yellow deposit",
+                "red": "Red deposit",
+                "orange": "Orange deposit",
+                "black": "Black deposit"
+              }
+            },
+            "parenchyma": {
+              "name": "Parenchyma",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "apotracheal-concentric": "Apotracheal Concentric",
+                "apotracheal-diffuse": "Apotracheal Diffuse",
+                "apotracheal-diffuse-in-aggregates": "Apotracheal Diffuse in aggregates",
+                "paratracheal-scanty": "Paratracheal Scanty",
+                "unilaterally-paratracheal": "Unilaterally paratracheal",
+                "paratracheal-vasicentric": "Paratracheal Vasicentric",
+                "paratracheal-aliform": "Paratracheal Aliform",
+                "paratracheal-aliform-confluent": "Paratreacheal Aliform confluent",
+                "paratracheal-banded-confluent": "Paratracheal Banded confluent",
+                "boundary": "Boundary"
+              }
+            },
+            "wood-rays": {
+              "name": "Wood Rays",
+              "type": "select",
+              "options": {
+                "narrow": "Narrow",
+                "moderately-broad": "Moderately broad",
+                "broad": "Broad",
+                "combination": "Combination of moderately broad and narrow"
+              }
+            },
+            "ripple": {
+              "name": "Ripple-Marks",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "ducts": {
+              "name": "Ducts",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "diffuse-oil": "Diffuse Oil Ducts",
+                "diffuse-resin": "Diffuse Resin Ducts",
+                "concentric-oil": "Concentric Oil Ducts",
+                "concentric-resin": "Concentric Resin Ducts"
+              }
+            }
+          }
+        }
+      }
+    },
+    "object-171": {
+      "type": "form",
+      "form": {
+        "structural": {
+          "name": "Structural Features",
+          "items": {
+            "shape": {
+              "name": "Pore Shape",
+              "type": "select",
+              "options": {
+                "round": "Round",
+                "oval": "Oval",
+                "angular": "Angular"
+              }
+            },
+            "size": {
+              "name": "Pore Size",
+              "type": "select",
+              "options": {
+                "minute": "Minute",
+                "small": "Small",
+                "moderately-small": "Moderately Small",
+                "moderately-large": "Moderately Large",
+                "large": "Large"
+              }
+            },
+            "number": {
+              "name": "Pore Number",
+              "type": "select",
+              "options": {
+                "few": "Few",
+                "moderately-few": "Moderately Small",
+                "moderately-numerous": "Moderately Numerous",
+                "numerous": "Numerous"
+              }
+            },
+            "topography": {
+              "name": "Pore Topography",
+              "type": "select",
+              "options": {
+                "diffuse-porous": "Diffuse Porous",
+                "ring-porous": "Ring Porous",
+                "semi-ring-porous": "Semi-ring Porous"
+              }
+            },
+            "type": {
+              "name": "Pore Types and Arrangement",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "solitary": "Solitary",
+                "radial-2-3": "Radial multiple 2-3",
+                "radial-2-4": "Radial multiple 2-4",
+                "tangential-2-3": "Tangential multiple 2-3",
+                "tangential-2-4": "Tangential multiple 2-4",
+                "pore-cluster": "Pore Cluster",
+                "radial-chain": "Radial chain",
+                "radial-line": "Radial line",
+                "echelon": "Echelon",
+                "flame": "Flame-like/Dendritic",
+                "tangential-festoons": "Tangential festoons",
+                "ulmiform": "Ulmiform"
+              }
+            },
+            "tyloses": {
+              "name": "Pore Tyloses",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "deposits": {
+              "name": "Pore Deposits",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "white": "White deposit",
+                "yellow": "Yellow deposit",
+                "red": "Red deposit",
+                "orange": "Orange deposit",
+                "black": "Black deposit"
+              }
+            },
+            "parenchyma": {
+              "name": "Parenchyma",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "apotracheal-concentric": "Apotracheal Concentric",
+                "apotracheal-diffuse": "Apotracheal Diffuse",
+                "apotracheal-diffuse-in-aggregates": "Apotracheal Diffuse in aggregates",
+                "paratracheal-scanty": "Paratracheal Scanty",
+                "unilaterally-paratracheal": "Unilaterally paratracheal",
+                "paratracheal-vasicentric": "Paratracheal Vasicentric",
+                "paratracheal-aliform": "Paratracheal Aliform",
+                "paratracheal-aliform-confluent": "Paratreacheal Aliform confluent",
+                "paratracheal-banded-confluent": "Paratracheal Banded confluent",
+                "boundary": "Boundary"
+              }
+            },
+            "wood-rays": {
+              "name": "Wood Rays",
+              "type": "select",
+              "options": {
+                "narrow": "Narrow",
+                "moderately-broad": "Moderately broad",
+                "broad": "Broad",
+                "combination": "Combination of moderately broad and narrow"
+              }
+            },
+            "ripple": {
+              "name": "Ripple-Marks",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "ducts": {
+              "name": "Ducts",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "diffuse-oil": "Diffuse Oil Ducts",
+                "diffuse-resin": "Diffuse Resin Ducts",
+                "concentric-oil": "Concentric Oil Ducts",
+                "concentric-resin": "Concentric Resin Ducts"
+              }
+            }
+          }
+        }
+      }
+    },
+    "object-172": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Orange brown to dark brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Quite Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-173": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Light reddish to wine red"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "Raw Beans"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-174": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Reddish to reddish brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Coarse"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-175": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Whitish or light brown"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Straight"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Moderately Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Moderately Heavy"
+          }
+        }
+      }
+    },
+    "object-189": {
+      "type": "label",
+      "text": "IPIL"
+    },
+    "object-190": {
+      "type": "label",
+      "text": "TINDALO"
+    },
+    "object-191": {
+      "type": "label",
+      "text": "KAMATOG"
+    },
+    "object-192": {
+      "type": "label",
+      "text": "MANGIUM"
     }
   },
   "eventStart": "event-01"

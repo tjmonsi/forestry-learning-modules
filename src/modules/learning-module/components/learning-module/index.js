@@ -8,6 +8,8 @@ import style from './style.styl';
 import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
+import '../../../general/components/snackbar-lite';
+
 
 const { HTMLElement, customElements, fetch } = window;
 
@@ -54,6 +56,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       canvas: {
         type: Object,
         value: ''
+      },
+      types: {
+        type: Array,
+        value: []
+      },
+      parenchyma: {
+        type: Array,
+        value: []
+      },
+      correctCount: {
+        type: Number,
+        value: 0
       }
     };
   }
@@ -120,7 +134,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (type === 'next') {
       this.sceneObjects = [];
       this.currentEvent = trigger.event;
-      changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
+      console.log(trigger);
+      if (this.currentEvent === 'event-31' || this.currentEvent === 'event-32' || this.currentEvent === 'event-33'){
+        changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, false);
+      } else {
+        changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
+      }
     }
 
     if (type === 'dialogue') {
@@ -185,6 +204,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _form (event) {
     event.preventDefault();
     const { target: form } = event;
+    form.setAttribute("finished", true);
+    var finished = form.getAttribute("finished");
+    const next = this.shadowRoot.querySelector('#next');
+    next.disabled = false;
+    
+    const label = this.shadowRoot.querySelector('#label');
+    label.style.visibility = "visible";
+
+    this.types = [];
+    this.parenchyma = [];
+    this.correctCount = 0;
   }
 
   onDragStart (event) {
@@ -207,13 +237,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     // Prevent default to allow drop
     event.preventDefault();
   }
-
-  // _contains (list, value) {
-  //   for (let i = 0; i < list.length; ++i) {
-  //     if (list[i] === value) return true;
-  //   }
-  //   return false;
-  // }
 
   onDragEnter (event) {
     const target = event.target;
@@ -246,33 +269,78 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     this.requestUpdate();
   }
 
-  // _pointFrom ({ target: el }) {
-  //   this.pointData = el.value;
-  // }
+  onChange (event) {
+    const target = event.target;
+    var answer = target.getAttribute("answer");
+    if (target.name === "Pore Types and Arrangement"){
+      if(this.types.indexOf(target.value) === -1){
+        this.types.push(target.value);
+      } else {
+        this.types.splice(this.types.indexOf(target.value),1);
+      }
 
-  // _pointTo ({ target: el }) {
-  //   let temp = el.value.split('.');
-  //   console.log(temp.length);
-  //   if (temp.length === 1) {
-  //     this.lessons[temp[0]].from = this.pointData;
-  //   } else if (temp.length === 2) {
-  //     this.lessons[temp[0]].topics[temp[1]].from = this.pointData;
-  //   } else if (temp.length === 3) {
-  //     this.lessons[temp[0]].topics[temp[1]].subtopics[temp[2]].from = this.pointData;
-  //   } else {
-  //     console.warn('Invalid pointer! Please make sure to point to a valid lesson');
-  //   }
-  // }
+      var sb = document.querySelector('.snackbar-lite');
+      var ans = "Selected: ";
+      for (let item of this.types) {
+        ans = ans + '\n\n' + item;
+      }
+      sb.showText(ans, 1000);
+      
+      var correct = true;
+      for (let item of this.types) {
+        if (answer.includes(item)) {
+          answer = answer.replace(item, '');
+        } else {
+          correct = false;
+        }
+      }
 
-  _correctAnswer ({target: el}) {
-    // console.log("");
-    // var selected = document.getElementById("Color").options.value;
-    // var selected = el.options.selected.text;
-    // var val = el.options.value.text;
-    // var answer = el.option[0]/.answer;
-    // console.log(selected);
-    // console.log(val);
-    // console.log(answer);
+      if (answer === '' && correct) {
+        target.disabled = true;
+        this.correctCount += 1;
+      }
+    } else if (target.name === "Parenchyma") {
+      if(this.parenchyma.indexOf(target.value) === -1){
+        this.parenchyma.push(target.value);
+      } else {
+        this.parenchyma.splice(this.parenchyma.indexOf(target.value),1);
+      }
+
+      var sb = document.querySelector('.snackbar-lite');
+      var ans = "Selected: ";
+      for (let item of this.parenchyma) {
+        ans = ans + '\n\n' + item;
+      }
+      sb.showText(ans, 1000);
+      
+      var correct = true;
+      for (let item of this.parenchyma) {
+        if (answer.includes(item)) {
+          answer = answer.replace(item, '');
+        } else {
+          correct = false;
+        }
+      }
+
+      if (answer === '' && correct) {
+        target.disabled = true;
+        this.correctCount += 1;
+      }
+    } else {
+      if (target.value === answer) {
+        target.disabled = true;
+        this.correctCount += 1;
+      } else {
+        var sb = document.querySelector('.snackbar-lite');
+        sb.showText("Wrong option! Try again.", 5000);
+      }
+    }
+
+    if (this.correctCount === 11) {
+      this.complete = true;
+      var sb = this.shadowRoot.querySelector('#submit');
+      sb.disabled = false;
+    }
   }
 }
 
