@@ -9,6 +9,9 @@ import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 import '../../../general/components/snackbar-lite';
+import puppeteer from 'puppeteer';
+// import mime from '../../../../../node_modules/mime';
+// const puppeteer = require('puppeteer');
 
 const { HTMLElement, customElements, fetch } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
@@ -280,6 +283,63 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
   }
 
+  async _capture () {
+    const browser = await puppeteer.launch();
+    const page = await browser.newPage();
+    // Adjustments particular to this page to ensure we hit desktop breakpoint.
+    page.setViewport({ width: 1000, height: 600, deviceScaleFactor: 1 });
+
+    await page.goto('localhost:8080/event-editing', { waitUntil: 'networkidle' });
+
+    /**
+     * Takes a screenshot of a DOM element on the page, with optional padding.
+     *
+     * @param {!{path:string, selector:string, padding:(number|undefined)}=} opts
+     * @return {!Promise<!Buffer>}
+     */
+    async function screenshotDOMElement (opts = {}) {
+      const padding = 'padding' in opts ? opts.padding : 0;
+      const path = 'path' in opts ? opts.path : null;
+      const selector = opts.selector;
+
+      if (!selector) {
+        throw Error('Please provide a selector.');
+      }
+
+      const rect = await page.evaluate(selector => {
+        const element = document.querySelector(selector);
+        if (!element) {
+          return null;
+        }
+        const { x, y, width, height } = element.getBoundingClientRect();
+        return { left: x, top: y, width, height, id: element.id };
+      }, selector);
+
+      if (!rect) {
+        throw Error(`Could not find element that matches selector: ${selector}.`);
+      }
+
+      const temp = await page.screenshot({
+        path,
+        clip: {
+          x: rect.left - padding,
+          y: rect.top - padding,
+          width: rect.width + padding * 2,
+          height: rect.height + padding * 2
+        }
+      });
+      return temp;
+    }
+
+    await screenshotDOMElement({
+      path: 'element.png',
+      selector: '#canvas' + this.scene.id,
+      padding: 16
+    });
+
+    browser.close();
+  }
+
   _backgroundClick () {
     // while (assets.hasChildNodes()) {
     //   assets.removeChild(assets.firstChild);
@@ -291,216 +351,235 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     //   });
     // }
     // this.backgroundItems = backgroundItems;
-    const assets = this.shadowRoot.querySelector('#assets');
-    while (assets.firstChild) {
-      assets.removeChild(assets.firstChild);
-    }
-    for (let item of this.backgrounds) {
-      const image = document.createElement('img');
-      image.src = '/assets/forestry/images/background/' + item.fname;
-      // image.style.height = '5%';
-      image.style.width = '10%';
-      image.style.margin = '10px';
-      assets.appendChild(image);
-      image.addEventListener('click', event => {
-        const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
-        const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
-        if (!canvas) {
-          console.warn('Can\'t add background, no canvas yet');
-          const snacker = document.querySelector('.snackbar-lite');
-          snacker.textContent = 'Can\'t add background, no canvas yet';
-          snacker.show();
-        }
+    const cv = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    if (cv) {
+      const assets = this.shadowRoot.querySelector('#assets');
+      while (assets.firstChild) {
+        assets.removeChild(assets.firstChild);
+      }
+      for (let item of this.backgrounds) {
+        const image = document.createElement('img');
+        image.src = '/assets/forestry/images/background/' + item.fname;
+        // image.style.height = '5%';
+        image.style.width = '10%';
+        image.style.margin = '10px';
+        assets.appendChild(image);
+        image.addEventListener('click', event => {
+          const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
 
-        if (canvas && canvas.firstChild) {
-          canvas.removeChild(canvas.firstChild);
-        }
+          if (cv && cv.firstChild) {
+            cv.removeChild(cv.firstChild);
+          }
 
-        if (canvas && thumbnail.firstChild) {
-          thumbnail.removeChild(thumbnail.firstChild);
-        }
+          if (cv && thumbnail.firstChild) {
+            thumbnail.removeChild(thumbnail.firstChild);
+          }
 
-        if (canvas) {
-          const copy = document.importNode(image);
-          copy.style.width = '100%';
-          copy.style.height = '100%';
-          copy.style.margin = '0px';
-          copy.style.zIndex = '0';
-          copy.style.position = 'relative';
-          copy.id = 'background';
-          const copy2 = document.importNode(copy);
-          canvas.appendChild(copy);
-          thumbnail.appendChild(copy2);
-        }
-      });
+          if (cv) {
+            const copy = image.cloneNode(true);
+            copy.style.width = '100%';
+            copy.style.height = '100%';
+            copy.style.margin = '0px';
+            copy.style.zIndex = '0';
+            copy.style.position = 'relative';
+            copy.id = 'background';
+            // const copy2 = copy.cloneNode();
+            cv.appendChild(copy);
+            // thumbnail.appendChild(copy2);
+          }
+        });
+      }
+    } else {
+      console.warn('Can\'t add background, no canvas yet');
+      const snacker = document.querySelector('.snackbar-lite');
+      snacker.textContent = 'Can\'t add background, no canvas yet';
+      snacker.show();
     }
   }
 
   _characterClick () {
-    // const assets = this.shadowRoot.querySelector('#assets');
-    // while (assets.hasChildNodes()) {
-    //   assets.removeChild(assets.firstChild);
-    // }
-    // const characterItems = [];
-    // for (let item of this.characters) {
-    //   characterItems.push({
-    //     src: '/assets/forestry/images/characters/' + item.fname
-    //   });
-    // }
-    // this.characterItems = characterItems;
-    const assets = this.shadowRoot.querySelector('#assets');
-    while (assets.firstChild) {
-      assets.removeChild(assets.firstChild);
-    }
-    for (let item of this.characters) {
-      const image = document.createElement('img');
-      const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
-      const bg = canvas.querySelector('#background');
-      image.src = '/assets/forestry/images/characters/' + item.fname;
-      image.style.width = '4%';
-      image.style.marginLeft = '15px';
-      image.style.marginRight = '15px';
-      image.style.marginTop = '5px';
-      image.style.marginBottom = '5px';
-      assets.appendChild(image);
-      image.addEventListener('click', event => {
-        if (bg === null) {
-          console.warn('Can\'t add character, no background yet');
-          const snacker = document.querySelector('.snackbar-lite');
-          snacker.textContent = 'Can\'t add character, no background yet';
-          snacker.show();
-        } else {
-          const copy = document.importNode(image);
-          copy.style.width = '25%';
-          copy.style.height = '40%';
-          copy.style.margin = '0px';
-          // copy.style.top = '-75%';
-          copy.style.zIndex = '1';
-          copy.style.position = 'absolute';
-          this.objectClicked = copy;
-          const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
-          // console.log(thumbnail);
-          canvas.addEventListener('click', event => {
-            const width = canvas.clientWidth;
-            // const height = canvas.clientHeight;
-            const left = width / 3;
-            const center = left + left;
-            // const right = center + left;
-            const char = this.objectClicked;
-            char.style.top = '40%';
-            const fname = char.src.split('/');
-            if (fname[7] === 'forester-1.png') {
-              char.style.top = '45%';
-            } else if (fname[7] === 'forester-2.png') {
-              char.style.top = '42%';
-            }
-            if (event.offsetX < left) {
-              char.style.left = '20%';
-            } else if (event.offsetX > left && event.offsetX < center) {
-              char.style.left = '45%';
-              // char.style.textAlign = 'center';
-            } else if (event.offsetX > center) {
-              char.style.right = '5%';
-              // char.style.textAlign = 'center';
-            }
-            canvas.appendChild(char);
-            const char2 = char.cloneNode();
-            thumbnail.appendChild(char2);
-          });
-        }
-      });
+    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    if (canvas) {
+      const assets = this.shadowRoot.querySelector('#assets');
+      while (assets.firstChild) {
+        assets.removeChild(assets.firstChild);
+      }
+      for (let item of this.characters) {
+        const image = document.createElement('img');
+        const bg = canvas.querySelector('#background');
+        image.src = '/assets/forestry/images/characters/' + item.fname;
+        image.style.width = '4%';
+        image.style.marginLeft = '15px';
+        image.style.marginRight = '15px';
+        image.style.marginTop = '5px';
+        image.style.marginBottom = '5px';
+        assets.appendChild(image);
+        image.addEventListener('click', event => {
+          if (bg === null) {
+            console.warn('Can\'t add character, no background yet');
+            const snacker = document.querySelector('.snackbar-lite');
+            snacker.textContent = 'Can\'t add character, no background yet';
+            snacker.show();
+          } else {
+            const copy = document.importNode(image);
+            copy.style.width = '25%';
+            copy.style.height = '40%';
+            copy.style.margin = '0px';
+            // copy.style.top = '-75%';
+            copy.style.zIndex = '1';
+            copy.style.position = 'absolute';
+            this.objectClicked = copy;
+            const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
+            // console.log(thumbnail);
+            canvas.addEventListener('click', event => {
+              const width = canvas.clientWidth;
+              // const height = canvas.clientHeight;
+              const left = width / 3;
+              const center = left + left;
+              // const right = center + left;
+              const char = this.objectClicked;
+              char.style.top = '40%';
+              const fname = char.src.split('/');
+              if (fname[7] === 'forester-1.png') {
+                char.style.top = '45%';
+              } else if (fname[7] === 'forester-2.png') {
+                char.style.top = '42%';
+              }
+              if (event.offsetX < left) {
+                char.style.left = '20%';
+              } else if (event.offsetX > left && event.offsetX < center) {
+                char.style.left = '45%';
+                // char.style.textAlign = 'center';
+              } else if (event.offsetX > center) {
+                char.style.right = '5%';
+                // char.style.textAlign = 'center';
+              }
+              canvas.appendChild(char);
+              const char2 = char.cloneNode();
+              thumbnail.appendChild(char2);
+            });
+          }
+        });
+      }
+    } else {
+      console.warn('Can\'t add character, no canvas yet');
+      const snacker = document.querySelector('.snackbar-lite');
+      snacker.textContent = 'Can\'t add character, no canvas yet';
+      snacker.show();
     }
   }
 
   _objectClick () {
-    const assets = this.shadowRoot.querySelector('#assets');
-    while (assets.firstChild) {
-      assets.removeChild(assets.firstChild);
-    }
-    for (let item of this.objects) {
-      const image = document.createElement('img');
-      image.src = '/assets/forestry/images/objects/' + item.fname;
-      image.style.width = '10%';
-      image.style.marginLeft = '15px';
-      image.style.marginRight = '15px';
-      image.style.marginTop = '5px';
-      image.style.marginBottom = '5px';
-      assets.appendChild(image);
-      image.addEventListener('click', event => {
-        const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
-        const copy = document.importNode(image);
-        copy.style.width = '10%';
-        copy.style.height = '25%';
-        copy.style.margin = '0px';
-        // copy.style.top = '-75%';
-        copy.style.zIndex = '1';
-        copy.style.position = 'absolute';
-        this.objectClicked = copy;
-        canvas.addEventListener('click', event => {
-          const width = canvas.clientWidth;
-          // const height = canvas.clientHeight;
-          const left = width / 3;
-          const center = left + left;
-          // const right = center + left;
-          const obj = this.objectClicked;
-          if (event.offsetX < left) {
-            canvas.appendChild(obj);
-          } else if (event.offsetX > left && event.offsetX < center) {
-            canvas.appendChild(obj);
-            obj.style.left = '35%';
-          } else if (event.offsetX > center) {
-            canvas.appendChild(obj);
-            obj.style.right = '20%';
+    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    if (canvas) {
+      const assets = this.shadowRoot.querySelector('#assets');
+      while (assets.firstChild) {
+        assets.removeChild(assets.firstChild);
+      }
+      for (let item of this.objects) {
+        const image = document.createElement('img');
+        const bg = canvas.querySelector('#background');
+        image.src = '/assets/forestry/images/objects/' + item.fname;
+        image.style.width = '10%';
+        image.style.marginLeft = '15px';
+        image.style.marginRight = '15px';
+        image.style.marginTop = '5px';
+        image.style.marginBottom = '5px';
+        assets.appendChild(image);
+        image.addEventListener('click', event => {
+          if (bg === null) {
+            console.warn('Can\'t add object, no background yet');
+            const snacker = document.querySelector('.snackbar-lite');
+            snacker.textContent = 'Can\'t add object, no background yet';
+            snacker.show();
+          } else {
+            const copy = document.importNode(image);
+            copy.style.width = '10%';
+            copy.style.height = '25%';
+            copy.style.margin = '0px';
+            // copy.style.top = '-75%';
+            copy.style.zIndex = '1';
+            copy.style.position = 'absolute';
+            this.objectClicked = copy;
+            canvas.addEventListener('click', event => {
+              const width = canvas.clientWidth;
+              // const height = canvas.clientHeight;
+              const left = width / 3;
+              const center = left + left;
+              // const right = center + left;
+              const obj = this.objectClicked;
+              if (event.offsetX < left) {
+                canvas.appendChild(obj);
+              } else if (event.offsetX > left && event.offsetX < center) {
+                canvas.appendChild(obj);
+                obj.style.left = '35%';
+              } else if (event.offsetX > center) {
+                canvas.appendChild(obj);
+                obj.style.right = '20%';
+              }
+            });
           }
         });
-      });
+      }
+    } else {
+      console.warn('Can\'t add object, no canvas yet');
+      const snacker = document.querySelector('.snackbar-lite');
+      snacker.textContent = 'Can\'t add object, no canvas yet';
+      snacker.show();
     }
   }
 
   _addDialogue () {
     const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
-    const db = canvas.querySelector('#dialogueBox');
-    const bg = canvas.querySelector('#background');
-    if (bg != null && db === null) {
-      const dialogueBox = document.createElement('div');
-      dialogueBox.id = 'dialogueBox';
-      const dialogueInput = document.createElement('textarea');
-      const characterInput = document.createElement('input');
-      dialogueInput.id = 'dialogue';
-      characterInput.id = 'characterName';
-      canvas.appendChild(dialogueBox);
-      dialogueBox.style.zIndex = '10000';
-      dialogueBox.style.top = '-25%';
-      dialogueBox.style.background = 'rgba(255, 255, 255, 0.75)';
-      dialogueBox.style.color = 'black';
-      dialogueBox.style.fontSize = '1rem';
-      dialogueBox.style.boxSizing = 'border-box';
-      dialogueBox.style.position = 'relative';
-      dialogueBox.style.height = '25%';
-      dialogueBox.appendChild(characterInput);
-      characterInput.style.height = '10%';
-      characterInput.style.textDecoration = 'none';
-      characterInput.style.border = 'none';
-      characterInput.style.background = 'transparent';
-      characterInput.placeholder = 'Enter Character Name Here';
-      dialogueBox.appendChild(dialogueInput);
-      dialogueInput.style.height = '90%';
-      dialogueInput.style.width = '100%';
-      dialogueInput.style.background = 'transparent';
-      dialogueInput.style.fontSize = '20px';
-      dialogueInput.style.resize = 'none';
-      dialogueInput.style.outline = 'none';
-      dialogueInput.style.border = 'none';
-      dialogueInput.placeholder = 'Enter Dialogue Here';
-    } else if (bg === null) {
-      console.warn('Can\'t add dialogue, no background yet');
+    if (canvas) {
+      const db = canvas.querySelector('#dialogueBox');
+      const bg = canvas.querySelector('#background');
+      if (bg != null && db === null) {
+        const dialogueBox = document.createElement('div');
+        dialogueBox.id = 'dialogueBox';
+        const dialogueInput = document.createElement('textarea');
+        const characterInput = document.createElement('input');
+        dialogueInput.id = 'dialogue';
+        characterInput.id = 'characterName';
+        canvas.appendChild(dialogueBox);
+        dialogueBox.style.zIndex = '10000';
+        dialogueBox.style.top = '-25%';
+        dialogueBox.style.background = 'rgba(255, 255, 255, 0.75)';
+        dialogueBox.style.color = 'black';
+        dialogueBox.style.fontSize = '1rem';
+        dialogueBox.style.boxSizing = 'border-box';
+        dialogueBox.style.position = 'relative';
+        dialogueBox.style.height = '25%';
+        dialogueBox.appendChild(characterInput);
+        characterInput.style.height = '10%';
+        characterInput.style.textDecoration = 'none';
+        characterInput.style.border = 'none';
+        characterInput.style.background = 'transparent';
+        characterInput.placeholder = 'Enter Character Name Here';
+        dialogueBox.appendChild(dialogueInput);
+        dialogueInput.style.height = '90%';
+        dialogueInput.style.width = '100%';
+        dialogueInput.style.background = 'transparent';
+        dialogueInput.style.fontSize = '20px';
+        dialogueInput.style.resize = 'none';
+        dialogueInput.style.outline = 'none';
+        dialogueInput.style.border = 'none';
+        dialogueInput.placeholder = 'Enter Dialogue Here';
+      } else if (bg === null) {
+        console.warn('Can\'t add dialogue, no background yet');
+        const snacker = document.querySelector('.snackbar-lite');
+        snacker.textContent = 'Can\'t add dialogue, no background yet';
+        snacker.show();
+      } else if (db !== null) {
+        console.warn('Dialogue already exists!');
+        const snacker = document.querySelector('.snackbar-lite');
+        snacker.textContent = 'Dialogue already exists!';
+        snacker.show();
+      }
+    } else {
+      console.warn('Can\'t add dialogue, no canvas yet');
       const snacker = document.querySelector('.snackbar-lite');
-      snacker.textContent = 'Can\'t add dialogue, no background yet';
-      snacker.show();
-    } else if (db !== null) {
-      console.warn('Dialogue already exists!');
-      const snacker = document.querySelector('.snackbar-lite');
-      snacker.textContent = 'Dialogue already exists!';
+      snacker.textContent = 'Can\'t add dialogue, no canvas yet';
       snacker.show();
     }
   }
