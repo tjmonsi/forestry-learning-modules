@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick } = this;
+  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _load } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // // console.log(scenehttp://localalhost/Objects)
@@ -12,12 +12,13 @@ const template = (html, self) => function () {
       <button id = "save">Save</button>
         <option value="Narrative Editing"> Narrative Editing</option>
       </select>
-      <button id = "save">Save</button>
-      <button id = "load">Load</button>    
-      <button id = "backgrounds" @click=${_backgroundClick.bind(this)}>Backgrounds</button>
-      <button id = "characters" @click=${_characterClick.bind(this)}>Characters</button>
-      <button id = "objects" @click=${_objectClick.bind(this)}>Objects</button>
-      <button id = "dialogue" @click=${_addDialogue.bind(this)}>Add Dialogue</button>
+      <button id = "save" @click="${_save.bind(this)}">Save</button>
+      <button id="load" @click="${_load.bind(this)}">Load</button>
+      <input type="file" name="load" id="input" accept=".json"/>
+      <button id = "backgrounds" @click="${_backgroundClick.bind(this)}">Backgrounds</button>
+      <button id = "characters" @click="${_characterClick.bind(this)}">Characters</button>
+      <button id = "objects" @click="${_objectClick.bind(this)}">Objects</button>
+      <button id = "dialogue" @click="${_addDialogue.bind(this)}">Add Dialogue</button>
     </div>
     <div id = "assets">
     </div>
@@ -39,7 +40,6 @@ const template = (html, self) => function () {
           `) : html``}
         `) : html``}
       </div>
-      <!-- <div id = "scene-canvas"></div> -->
     </div>
     
   `;

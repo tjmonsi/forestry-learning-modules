@@ -19,33 +19,44 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   static get properties () {
     return {
+      source: {
+        type: String,
+        value: ''
+      },
+      moduleObj: {
+        type: Object,
+        value: {}
+      },
       lessons: {
         type: Array,
         value: [
-          {
-            name: 'L1',
-            topics: [
-              {
-                name: 'T1.1',
-                subtopics: [
-                  {
-                    name: 'S1.1.1',
-                    to: '',
-                    from: '0.0'
-                  }
-                ],
-                to: '0.0.0',
-                from: '0'
-              }
-            ],
-            to: '0.0',
-            from: ''
-          }
+          // {
+          //   name: 'L1',
+          //   topics: [
+          //     {
+          //       name: 'T1.1',
+          //       subtopics: [
+          //         {
+          //           name: 'S1.1.1',
+          //           to: '',
+          //           from: '0.0'
+          //         }
+          //       ],
+          //       to: '0.0.0',
+          //       from: '0'
+          //     }
+          //   ],
+          //   to: '0.0',
+          //   from: ''
+          // }
         ]
       },
       backgrounds: {
         type: Array,
         value: [
+          {
+            fname: 'start.jpg'
+          },
           {
             fname: 'xylarium.jpg'
           },
@@ -118,15 +129,157 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           ],
           objects: [
             {
-              objectId: '',
-              type: '',
-              src: '',
-              character: '',
-              text: '',
-              next: '',
-              prev: ''
+              'start': {
+                'type': 'image',
+                'src': '/images/start.jpg'
+              },
+              'xylarium': {
+                'type': 'image',
+                'src': '/images/xylarium.jpg'
+              },
+              'truck-fron': {
+                'type': 'image',
+                'src': '/images/truck-front.png'
+              },
+              'truck-back': {
+                'type': 'image',
+                'src': '/images/truck-back.png'
+              },
+              'truck-back2': {
+                'type': 'image',
+                'src': '/images/truck-back2.png'
+              },
+              'supervisor': {
+                'type': 'image',
+                'src': '/images/supervisor.png'
+              },
+              'forester-1': {
+                'type': 'image',
+                'src': '/images/forester-1.png'
+              },
+              'forester-2': {
+                'type': 'image',
+                'src': '/images/forester-2.png'
+              },
+              'pahinante': {
+                'type': 'image',
+                'src': '/images/pahinante.png'
+              },
+              'tablet': {
+                'type': 'image',
+                'src': '/images/tablet.png'
+              },
+              'nextDialogue': {
+                'type': 'image',
+                'src': '/images/nextDialogue.png'
+              },
+              'nextScene': {
+                'type': 'image',
+                'src': '/images/nextScene.png'
+              }
+
             }
           ]
+        }
+      },
+      toolkit: {
+        type: Object,
+        value: {
+          lessons: [
+            {
+              name: 'L1',
+              topics: [
+                {
+                  name: 'T1.1',
+                  subtopics: [
+                    {
+                      name: 'S1.1.1',
+                      to: '',
+                      from: '0.0'
+                    }
+                  ],
+                  to: '0.0.0',
+                  from: '0'
+                }
+              ],
+              to: '0.0',
+              from: ''
+            }
+          ],
+          events: {
+            // scene0: {
+            //   default: 'trigger01'
+            // }
+            // {
+            //   default: '',
+            //   click: '',
+            //   triggers: [
+            //     {
+            //       name: '',
+            //       type: '',
+            //       load: [
+            //         {
+            //           objectId: '',
+            //           id: '',
+            //           style: []
+            //         }
+            //       ],
+            //       event: '',
+            //       objectId: ''
+            //     }
+            //   ]
+            // }
+          },
+          objects: {
+            'start': {
+              'type': 'image',
+              'src': '/images/start.jpg'
+            },
+            'xylarium': {
+              'type': 'image',
+              'src': '/images/xylarium.jpg'
+            },
+            'truck-front': {
+              'type': 'image',
+              'src': '/images/truck-front.png'
+            },
+            'truck-back': {
+              'type': 'image',
+              'src': '/images/truck-back.png'
+            },
+            'truck-back2': {
+              'type': 'image',
+              'src': '/images/truck-back2.png'
+            },
+            'supervisor': {
+              'type': 'image',
+              'src': '/images/supervisor.png'
+            },
+            'forester-1': {
+              'type': 'image',
+              'src': '/images/forester-1.png'
+            },
+            'forester-2': {
+              'type': 'image',
+              'src': '/images/forester-2.png'
+            },
+            'pahinante': {
+              'type': 'image',
+              'src': '/images/pahinante.png'
+            },
+            'tablet': {
+              'type': 'image',
+              'src': '/images/tablet.png'
+            },
+            'nextDialogue': {
+              'type': 'image',
+              'src': '/images/nextDialogue.png'
+            },
+            'nextScene': {
+              'type': 'image',
+              'src': '/images/nextScene.png'
+            }
+          }
         }
       },
       objectClicked: {
@@ -267,6 +420,16 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       canvas.style.overflow = 'hidden';
       canvas.style.display = 'relative';
       workspace.appendChild(canvas);
+      const name = this.scene.id;
+      console.log(name);
+      if (this.toolkit.events[name] !== name) {
+        this.toolkit.events[name] = {};
+      }
+      // if (this.toolkit.events.findIndex(item => item.name === name) < 0) {
+      //   const object = { name: name };
+      //   this.toolkit.events.push(object);
+      // }
+      console.log(this.toolkit);
     } else {
       workspace.removeChild(workspace.children[1]);
       this.scene.id = el.id;
@@ -278,6 +441,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       canvas.style.width = '75%';
       canvas.style.overflow = 'hidden';
       workspace.appendChild(canvas);
+      const name = this.scene.id;
+      if (this.toolkit.events[name] !== name) {
+        this.toolkit.events[name] = {};
+      }
+      console.log(this.toolkit);
     }
   }
 
@@ -327,6 +495,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             // const copy2 = copy.cloneNode();
             cv.appendChild(copy);
             // thumbnail.appendChild(copy2);
+            const name = this.scene.id;
+            const objId = item.fname.split('.')[0];
+            this.toolkit.events[name].default = 'trigger01';
+            this.toolkit.events[name].triggers = {};
+            this.toolkit.events[name].triggers['trigger01'] = {};
+            this.toolkit.events[name].triggers['trigger01'].type = 'load';
+            this.toolkit.events[name].triggers['trigger01'].load = [];
+            this.toolkit.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', style: ['z-index: 0', 'width: 100%', 'height: 100%', 'position: relative', 'id: background'] });
+            console.log(this.toolkit);
           }
         });
       }
@@ -522,6 +699,46 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       const snacker = document.querySelector('.snackbar-lite');
       snacker.textContent = 'Can\'t add dialogue, no canvas yet';
       snacker.show();
+    }
+  }
+
+  _save () {
+    let exportObj = this.toolkit;
+    let exportName = 'toolkit';
+    let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
+    let downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+
+  _load () {
+    const input = this.shadowRoot.querySelector('#input');
+    input.click();
+    input.addEventListener('change', this._fileChanged);
+  }
+
+  _fileChanged (event) {
+    const file = event.target.files[0];
+    console.log(file);
+    for (var i = 0, f; f = file[i]; i++) {
+      const reader = new FileReader();
+      reader.onload = (function (file) {
+        return function (e) {
+          console.log('e readAsText = ', e);
+          console.log('e readAsText target = ', e.target);
+          try {
+            console.log('hahaha');
+            const json = JSON.parse(e.target.result);
+            console.log('json global var has been set to parsed json of this file here it is unevaled = \n' + JSON.stringify(json));
+          } catch (ex) {
+            console.log('ex when trying to parse json = ' + ex);
+          }
+        };
+      })(f);
+      reader.readAsText(f);
     }
   }
 
