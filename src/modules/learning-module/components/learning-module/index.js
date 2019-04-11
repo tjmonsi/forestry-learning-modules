@@ -135,7 +135,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       this.sceneObjects = [];
       this.currentEvent = trigger.event;
       console.log(trigger);
-      if (this.currentEvent === 'event-31' || this.currentEvent === 'event-32' || this.currentEvent === 'event-33'){
+      if (this.currentEvent === 'event-31' || this.currentEvent === 'event-32' || this.currentEvent === 'event-33' || this.currentEvent === 'event-34' || this.currentEvent === 'event-35' || this.currentEvent === 'event-36' || this.currentEvent === 'event-37' || this.currentEvent === 'event-38' || this.currentEvent === 'event-39' || this.currentEvent === 'event-40'){
         changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, false);
       } else {
         changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
@@ -340,6 +340,23 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       this.complete = true;
       var sb = this.shadowRoot.querySelector('#submit');
       sb.disabled = false;
+    }
+  }
+
+  blink (event) {
+    var target = event.target;
+    var sb = this.shadowRoot.querySelectorAll('#circle');
+    for (let item in sb){
+      var circle = sb[item].children[0].children[0];
+      if (target.style.color === circle.getAttribute("color")) {
+        circle.animate([
+          { opacity: 1 },
+          { opacity: 0 }
+        ], {
+            duration: 1000,
+            iterations: 5
+        });
+      }
     }
   }
 }

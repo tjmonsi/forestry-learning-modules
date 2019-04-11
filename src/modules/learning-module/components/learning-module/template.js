@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -21,8 +21,36 @@ const template = (html, self) => function () {
             .cover="${item.meta && item.meta.cover}"
             class="absolute image ${item.meta && item.meta.fullscreen ? 'fullscreen' : ''} ${item.meta && item.meta.classList}"
             style="${styleString}"
-            draggable="true"
-            src="${item.src ? baseURL + item.src : ''}"></lazy-picture></div>
+            src="${item.src ? baseURL + item.src : ''}">    
+        </lazy-picture>
+        </div>
+        ` : ''}
+
+        ${item.type === 'block' ? html`
+          <a href='${item.link}'>
+            <div class="container">
+              <img src="${item.src ? baseURL + item.src : ''}" style="${styleString}">
+              <div class="centered">${item.label}</div>
+            </div>
+          </a>
+        ` : ''}
+
+        ${item.type === 'circle' ? html`
+          <div class="absolute" id="circle" style="${styleString}">
+            <svg
+              height="${item.h}"
+              width="${item.w}">
+                <circle
+                  cx="${item.cx}"
+                  cy="${item.cy}"
+                  r="${item.r}"
+                  color="${item.color}"
+                  stroke="${item.color}"
+                  stroke-width="3"
+                  fill="none">
+                </circle>
+              </svg>
+          </div>
         ` : ''}
 
         ${item.type === 'lens' ? html`
@@ -39,7 +67,7 @@ const template = (html, self) => function () {
         ` : ''}
 
         ${item.type === 'text' ? html`
-          <div class="absolute text ${item.meta && item.meta.classList}" id="${item.objectId}" style="${styleString}">
+          <div class="absolute ${item.meta && item.meta.classList}" id="${item.objectId}" style="${styleString}">
             <mark-lite .text="${item.text}"></mark-lite>
           </div>
         ` : ''}
@@ -95,7 +123,7 @@ const template = (html, self) => function () {
                   <tr>
                     <td height="20.5">${input.left}</td>
                     ${input.keyword === true ? html`
-                      <td><a href="" style="color:${input.color}">${input.right}</a></td>
+                      <td><a @click="${blink.bind(this)}" style="color:${input.color}">${input.right}</a></td>
                     ` : html`
                       <td>${input.right}</td>
                     `}
@@ -103,6 +131,16 @@ const template = (html, self) => function () {
                 `)}
               </tbody>
             </table>
+          </div>
+        ` : ''}
+
+        ${item.type === 'references' ? html`
+          <div class="absolute" id="references" style="${styleString}">
+            <ul>
+            ${Object.entries(item.references).map(([key, input]) => html`
+              <li>${input}</li>
+            `)}
+            </ul>
           </div>
         ` : ''}
 
