@@ -13,8 +13,10 @@ const template = (html, self) => function () {
         <option value="Narrative Editing"> Narrative Editing</option>
       </select>
       <button id = "save" @click="${_save.bind(this)}">Save</button>
-      <button id="load" @click="${_load.bind(this)}">Load</button>
-      <input type="file" name="load" id="input" accept=".json"/>
+      <form action="http://localhost:8080/event-editing" enctype="multipart/form-data" method="post" id = "form">
+        <button id="load" @click="${_load.bind(this)}">Load</button>
+        <input type="file" name="load" id="input" accept=".json"/>
+      </form>
       <button id = "backgrounds" @click="${_backgroundClick.bind(this)}">Backgrounds</button>
       <button id = "characters" @click="${_characterClick.bind(this)}">Characters</button>
       <button id = "objects" @click="${_objectClick.bind(this)}">Objects</button>

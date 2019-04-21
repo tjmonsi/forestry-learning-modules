@@ -9,7 +9,6 @@ import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 import '../../../general/components/snackbar-lite';
-// const puppeteer = require('puppeteer');
 
 const { HTMLElement, customElements, fetch } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
@@ -30,25 +29,25 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       lessons: {
         type: Array,
         value: [
-          // {
-          //   name: 'L1',
-          //   topics: [
-          //     {
-          //       name: 'T1.1',
-          //       subtopics: [
-          //         {
-          //           name: 'S1.1.1',
-          //           to: '',
-          //           from: '0.0'
-          //         }
-          //       ],
-          //       to: '0.0.0',
-          //       from: '0'
-          //     }
-          //   ],
-          //   to: '0.0',
-          //   from: ''
-          // }
+          {
+            name: 'L1',
+            topics: [
+              {
+                name: 'T1.1',
+                subtopics: [
+                  {
+                    name: 'S1.1.1',
+                    to: '',
+                    from: '0.0'
+                  }
+                ],
+                to: '0.0.0',
+                from: '0'
+              }
+            ],
+            to: '0.0',
+            from: ''
+          }
         ]
       },
       backgrounds: {
@@ -378,7 +377,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     const { target } = this.canvas;
     const { dragged } = this.dragged;
     if (dragged && target) {
-      // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
       target.style.backgroundColor = '';
       event.preventDefault();
       // Get the id of the target and add the moved element to the target's DOM
@@ -413,33 +411,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       this.scene.id = el.id;
       const canvas = document.createElement('div');
       canvas.id = 'canvas' + this.scene.id;
-      canvas.style.border = '1px solid #000000';
-      canvas.style.margin = '12px 24px';
-      canvas.style.height = '75vh';
-      canvas.style.width = '75%';
-      canvas.style.overflow = 'hidden';
-      canvas.style.display = 'relative';
+      canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
       workspace.appendChild(canvas);
       const name = this.scene.id;
       console.log(name);
       if (this.toolkit.events[name] !== name) {
         this.toolkit.events[name] = {};
       }
-      // if (this.toolkit.events.findIndex(item => item.name === name) < 0) {
-      //   const object = { name: name };
-      //   this.toolkit.events.push(object);
-      // }
       console.log(this.toolkit);
     } else {
       workspace.removeChild(workspace.children[1]);
       this.scene.id = el.id;
       const canvas = document.createElement('div');
       canvas.id = 'canvas' + this.scene.id;
-      canvas.style.border = '1px solid #000000';
-      canvas.style.margin = '12px 24px';
-      canvas.style.height = '75vh';
-      canvas.style.width = '75%';
-      canvas.style.overflow = 'hidden';
+      canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden;';
       workspace.appendChild(canvas);
       const name = this.scene.id;
       if (this.toolkit.events[name] !== name) {
@@ -450,16 +435,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   _backgroundClick () {
-    // while (assets.hasChildNodes()) {
-    //   assets.removeChild(assets.firstChild);
-    // }
-    // const backgroundItems = [];
-    // for (let item of this.backgrounds) {
-    //   backgroundItems.push({
-    //     src: '/assets/forestry/images/background/' + item.fname
-    //   });
-    // }
-    // this.backgroundItems = backgroundItems;
     const cv = this.shadowRoot.querySelector('#canvas' + this.scene.id);
     if (cv) {
       const assets = this.shadowRoot.querySelector('#assets');
@@ -469,32 +444,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       for (let item of this.backgrounds) {
         const image = document.createElement('img');
         image.src = '/assets/forestry/images/background/' + item.fname;
-        // image.style.height = '5%';
         image.style.width = '10%';
         image.style.margin = '10px';
         assets.appendChild(image);
         image.addEventListener('click', event => {
-          const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
-
           if (cv && cv.firstChild) {
             cv.removeChild(cv.firstChild);
           }
-
-          if (cv && thumbnail.firstChild) {
-            thumbnail.removeChild(thumbnail.firstChild);
-          }
-
           if (cv) {
             const copy = image.cloneNode(true);
-            copy.style.width = '100%';
-            copy.style.height = '100%';
-            copy.style.margin = '0px';
-            copy.style.zIndex = '0';
-            copy.style.position = 'relative';
+            copy.style.cssText = 'width: 100%; height: 100%; margin: 0px; z-index: 0; position: relative;';
             copy.id = 'background';
-            // const copy2 = copy.cloneNode();
             cv.appendChild(copy);
-            // thumbnail.appendChild(copy2);
             const name = this.scene.id;
             const objId = item.fname.split('.')[0];
             this.toolkit.events[name].default = 'trigger01';
@@ -526,11 +487,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         const image = document.createElement('img');
         const bg = canvas.querySelector('#background');
         image.src = '/assets/forestry/images/characters/' + item.fname;
-        image.style.width = '4%';
-        image.style.marginLeft = '15px';
-        image.style.marginRight = '15px';
-        image.style.marginTop = '5px';
-        image.style.marginBottom = '5px';
+        image.style.cssText = 'width: 4%; margin: 5px 15px;';
         assets.appendChild(image);
         image.addEventListener('click', event => {
           if (bg === null) {
@@ -540,41 +497,53 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             snacker.show();
           } else {
             const copy = document.importNode(image);
-            copy.style.width = '25%';
-            copy.style.height = '40%';
-            copy.style.margin = '0px';
-            // copy.style.top = '-75%';
-            copy.style.zIndex = '1';
-            copy.style.position = 'absolute';
+            copy.style.cssText = 'width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
-            const thumbnail = this.shadowRoot.querySelector('#' + this.scene.id);
-            // console.log(thumbnail);
+            let confirm = document.createElement('button');
+            confirm.innerHTML = 'confirm';
+            confirm.id = 'confirm';
+            confirm.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
             canvas.addEventListener('click', event => {
+              let check = confirm;
               const width = canvas.clientWidth;
-              // const height = canvas.clientHeight;
               const left = width / 3;
               const center = left + left;
-              // const right = center + left;
-              const char = this.objectClicked;
-              char.style.top = '40%';
-              const fname = char.src.split('/');
-              if (fname[7] === 'forester-1.png') {
-                char.style.top = '45%';
-              } else if (fname[7] === 'forester-2.png') {
-                char.style.top = '42%';
-              }
-              if (event.offsetX < left) {
-                char.style.left = '20%';
-              } else if (event.offsetX > left && event.offsetX < center) {
-                char.style.left = '45%';
-                // char.style.textAlign = 'center';
-              } else if (event.offsetX > center) {
-                char.style.right = '5%';
-                // char.style.textAlign = 'center';
-              }
-              canvas.appendChild(char);
-              const char2 = char.cloneNode();
-              thumbnail.appendChild(char2);
+              let char = this.objectClicked;
+              if (char !== '') {
+                char.style.top = '40%';
+                const fname = char.src.split('/');
+                if (fname[7] === 'forester-1.png') {
+                  char.style.top = '45%';
+                } else if (fname[7] === 'forester-2.png') {
+                  char.style.top = '42%';
+                } else if (fname[7] === 'pahinante.png') {
+                  check.style.top = '35%';
+                } else {}
+                if (event.offsetX < left) {
+                  char.style.left = '25%';
+                  check.style.left = '30%';
+                } else if (event.offsetX > left && event.offsetX < center) {
+                  char.style.left = '50%';
+                  check.style.left = '55%';
+                } else {
+                  char.style.left = '72%';
+                  check.style.left = '77%';
+                }
+                canvas.appendChild(char);
+                canvas.appendChild(check);
+                check.addEventListener('click', event => {
+                  this.objectClicked = '';
+                  confirm = '';
+                  check = '';
+                  check = this.shadowRoot.querySelector('#confirm');
+                  check.remove();
+                });
+                const upper = char.offsetTop;
+                const upperLeft = char.offsetLeft;
+                console.log(upperLeft, upper);
+                char = '';
+                check = '';
+              } else {}
             });
           }
         });
@@ -598,11 +567,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         const image = document.createElement('img');
         const bg = canvas.querySelector('#background');
         image.src = '/assets/forestry/images/objects/' + item.fname;
-        image.style.width = '10%';
-        image.style.marginLeft = '15px';
-        image.style.marginRight = '15px';
-        image.style.marginTop = '5px';
-        image.style.marginBottom = '5px';
+        image.style.cssText = 'width: 10%; margin: 5px 15px;';
         assets.appendChild(image);
         image.addEventListener('click', event => {
           if (bg === null) {
@@ -612,37 +577,54 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             snacker.show();
           } else {
             const copy = document.importNode(image);
-            copy.style.width = '10%';
-            copy.style.height = '25%';
-            copy.style.margin = '0px';
-            // copy.style.top = '-75%';
-            copy.style.zIndex = '1';
-            copy.style.position = 'absolute';
+            copy.style.cssText = 'width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
+            let confirmObj = document.createElement('button');
+            confirmObj.innerHTML = 'confirm';
+            confirmObj.id = 'confirmObj';
+            confirmObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+
             canvas.addEventListener('click', event => {
+              let checkObj = confirmObj;
               const width = canvas.clientWidth;
-              // const height = canvas.clientHeight;
               const left = width / 3;
               const center = left + left;
-              // const right = center + left;
-              const obj = this.objectClicked;
-              if (event.offsetX < left) {
+              let obj = this.objectClicked;
+              if (obj !== '') {
+                obj.style.top = '40%';
+                if (event.offsetX < left) {
+                  obj.style.left = '25%';
+                  checkObj.style.left = '25%';
+                } else if (event.offsetX > left && event.offsetX < center) {
+                  obj.style.left = '50%';
+                  checkObj.style.left = '50%';
+                } else {
+                  obj.style.left = '72%';
+                  checkObj.style.left = '72%';
+                }
                 canvas.appendChild(obj);
-              } else if (event.offsetX > left && event.offsetX < center) {
-                canvas.appendChild(obj);
-                obj.style.left = '35%';
-              } else if (event.offsetX > center) {
-                canvas.appendChild(obj);
-                obj.style.right = '20%';
-              }
+                canvas.appendChild(checkObj);
+                checkObj.addEventListener('click', event => {
+                  this.objectClicked = '';
+                  confirmObj = '';
+                  checkObj = '';
+                  checkObj = this.shadowRoot.querySelector('#confirmObj');
+                  checkObj.remove();
+                });
+                const upper = obj.offsetTop;
+                const upperLeft = obj.offsetLeft;
+                console.log(upperLeft, upper);
+                obj = '';
+                checkObj = '';
+              } else {}
             });
           }
         });
       }
     } else {
-      console.warn('Can\'t add object, no canvas yet');
+      console.warn('Can\'t add character, no canvas yet');
       const snacker = document.querySelector('.snackbar-lite');
-      snacker.textContent = 'Can\'t add object, no canvas yet';
+      snacker.textContent = 'Can\'t add character, no canvas yet';
       snacker.show();
     }
   }
@@ -660,28 +642,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         dialogueInput.id = 'dialogue';
         characterInput.id = 'characterName';
         canvas.appendChild(dialogueBox);
-        dialogueBox.style.zIndex = '10000';
-        dialogueBox.style.top = '-25%';
-        dialogueBox.style.background = 'rgba(255, 255, 255, 0.75)';
-        dialogueBox.style.color = 'black';
-        dialogueBox.style.fontSize = '1rem';
-        dialogueBox.style.boxSizing = 'border-box';
-        dialogueBox.style.position = 'relative';
-        dialogueBox.style.height = '25%';
+        dialogueBox.style.cssText = 'z-index: 1000; top: -25%; background: rgba(255, 255, 255, 0.75); color: black; font-size: 1rem;box-sizing: border-box; position: relative; height: 25%;';
         dialogueBox.appendChild(characterInput);
-        characterInput.style.height = '10%';
-        characterInput.style.textDecoration = 'none';
-        characterInput.style.border = 'none';
-        characterInput.style.background = 'transparent';
+        characterInput.style.cssText = 'height: 10%; width: 100%; text-decoration: none; border: none; background: transparent;';
         characterInput.placeholder = 'Enter Character Name Here';
         dialogueBox.appendChild(dialogueInput);
-        dialogueInput.style.height = '90%';
-        dialogueInput.style.width = '100%';
-        dialogueInput.style.background = 'transparent';
-        dialogueInput.style.fontSize = '20px';
-        dialogueInput.style.resize = 'none';
-        dialogueInput.style.outline = 'none';
-        dialogueInput.style.border = 'none';
+        dialogueInput.style.cssText = 'height: 90%; widht: 100%; background: transparent; font-size: 20px; resize: none; outline: none; border: none;';
         dialogueInput.placeholder = 'Enter Dialogue Here';
       } else if (bg === null) {
         console.warn('Can\'t add dialogue, no background yet');
@@ -708,38 +674,27 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     let downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);
-    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    downloadAnchorNode.setAttribute('download', exportName + '.js');
     document.body.appendChild(downloadAnchorNode);
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
   }
 
   _load () {
+    const form = this.shadowRoot.querySelector('#form');
     const input = this.shadowRoot.querySelector('#input');
     input.click();
-    input.addEventListener('change', this._fileChanged);
+    const submit = document.createElement('input');
+    submit.type = 'submit';
+    submit.value = 'upload';
+    form.appendChild(submit);
+    submit.click();
+    input.addEventListener('change', this._fileChanged, false);
   }
 
   _fileChanged (event) {
     const file = event.target.files[0];
     console.log(file);
-    for (var i = 0, f; f = file[i]; i++) {
-      const reader = new FileReader();
-      reader.onload = (function (file) {
-        return function (e) {
-          console.log('e readAsText = ', e);
-          console.log('e readAsText target = ', e.target);
-          try {
-            console.log('hahaha');
-            const json = JSON.parse(e.target.result);
-            console.log('json global var has been set to parsed json of this file here it is unevaled = \n' + JSON.stringify(json));
-          } catch (ex) {
-            console.log('ex when trying to parse json = ' + ex);
-          }
-        };
-      })(f);
-      reader.readAsText(f);
-    }
   }
 
   _downloadObjectAsJson () {
