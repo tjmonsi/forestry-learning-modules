@@ -67,6 +67,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           },
           {
             fname: 'truck-back2.png'
+          },
+          {
+            fname: 'checkpoint.jpg'
           }
         ]
       },
@@ -98,34 +101,194 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           },
           {
             fname: 'nextScene.png'
+          },
+          {
+            fname: 'akle-2.jpg'
+          },
+          {
+            fname: 'akle-cross.jpg'
+          },
+          {
+            fname: 'akle-physical.jpg'
+          },
+          {
+            fname: 'ayangile-2.jpg'
+          },
+          {
+            fname: 'ayangile-cross.jpg'
+          },
+          {
+            fname: 'ayangile-physical.jpg'
+          },
+          {
+            fname: 'ayangile-structural.jpg'
+          },
+          {
+            fname: 'banuyo-2.jpg'
+          },
+          {
+            fname: 'banuyo-cross.jpg'
+          },
+          {
+            fname: 'banuyo-physical.jpg'
+          },
+          {
+            fname: 'batete-2.jpg'
+          },
+          {
+            fname: 'batete-cross.jpg'
+          },
+          {
+            fname: 'batete-physical.jpg'
+          },
+          {
+            fname: 'golden-shower.jpg'
+          },
+          {
+            fname: 'goldenshower-2.jpg'
+          },
+          {
+            fname: 'golden-shower-cross.jpg'
+          },
+          {
+            fname: 'goldenshower-physical.jpg'
+          },
+          {
+            fname: 'ipil-2.jpg'
+          },
+          {
+            fname: 'ipil-cross.jpg'
+          },
+          {
+            fname: 'ipil-ipil-2.jpg'
+          },
+          {
+            fname: 'ipil-ipil-cross.jpg'
+          },
+          {
+            fname: 'ipil-physical.jpg'
+          },
+          {
+            fname: 'kakaute-2.jpg'
+          },
+          {
+            fname: 'kakaute-cross.jpg'
+          },
+          {
+            fname: 'kakaute-physical.jpg'
+          },
+          {
+            fname: 'kamatog-2.jpg'
+          },
+          {
+            fname: 'kamatog-cross.jpg'
+          },
+          {
+            fname: 'kamatog-physical.jpg'
+          },
+          {
+            fname: 'logwood-2.jpg'
+          },
+          {
+            fname: 'logwood-cross.jpg'
+          },
+          {
+            fname: 'logwood-physical.jpg'
+          },
+          {
+            fname: 'manggis-2.jpg'
+          },
+          {
+            fname: 'manggis-cross.jpg'
+          },
+          {
+            fname: 'manggis-physical.jpg'
+          },
+          {
+            fname: 'manggis-ripple.jpg'
+          },
+          {
+            fname: 'mangium-2.jpg'
+          },
+          {
+            fname: 'mangium-cross.jpg'
+          },
+          {
+            fname: 'mangium-physical.jpg'
+          },
+          {
+            fname: 'mollucan-sau-physical.jpg'
+          },
+          {
+            fname: 'molluccan-sau-2.jpg'
+          },
+          {
+            fname: 'narra-2.jpg'
+          },
+          {
+            fname: 'narra-cross.jpg'
+          },
+          {
+            fname: 'narra-physical.jpg'
+          },
+          {
+            fname: 'narra-ripple.jpg'
+          },
+          {
+            fname: 'permit-1.png'
+          },
+          {
+            fname: 'permit-2.png'
+          },
+          {
+            fname: 'rain-tree-2.jpg'
+          },
+          {
+            fname: 'raintree-cross.jpg'
+          },
+          {
+            fname: 'rain-tree-physical.jpg'
+          },
+          {
+            fname: 'siar-2.jpg'
+          },
+          {
+            fname: 'siar-cross.jpg'
+          },
+          {
+            fname: 'siar-physical.jpg'
+          },
+          {
+            fname: 'siar-ripple.jpg'
+          },
+          {
+            fname: 'supa-2.jpg'
+          },
+          {
+            fname: 'supa-cross.jpg'
+          },
+          {
+            fname: 'supa-physical.jpg'
+          },
+          {
+            fname: 'tindalo.jpg'
+          },
+          {
+            fname: 'tindalo-2.jpg'
+          },
+          {
+            fname: 'tindalo-cross.jpg'
+          },
+          {
+            fname: 'tindalo-physical.jpg'
           }
         ]
       },
       module: {
         type: Object,
         value: {
-          events: [
-            {
-              name: '',
-              default: '',
-              click: '',
-              triggers: [
-                {
-                  name: '',
-                  type: '',
-                  load: [
-                    {
-                      objectId: '',
-                      id: '',
-                      style: []
-                    }
-                  ],
-                  event: '',
-                  objectId: ''
-                }
-              ]
-            }
-          ],
+          events: {
+          },
           objects: [
             {
               'start': {
@@ -175,8 +338,247 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               'nextScene': {
                 'type': 'image',
                 'src': '/images/nextScene.png'
+              },
+              'akle-2': {
+                'type': 'image',
+                'src': '/images/akle-2.jpg'
+              },
+              'akle-cross': {
+                'type': 'image',
+                'src': '/images/akle-cross.jpg'
+              },
+              'akle-physical.jpg': {
+                'type': 'image',
+                'src': '/images/akle-physical.jpg'
+              },
+              'ayangile-2': {
+                'type': 'image',
+                'src': '/images/ayangile-2.jpg'
+              },
+              'ayangile-cross.jpg': {
+                'type': 'image',
+                'src': '/images/ayangile-cross.jpg'
+              },
+              'ayangile-physical': {
+                'type': 'image',
+                'src': '/images/ayangile-physical.jpg'
+              },
+              'ayangile-structural': {
+                'type': 'image',
+                'src': '/images/ayangile-structural.jpg'
+              },
+              'banuyo-2': {
+                'type': 'image',
+                'src': '/images/banuyo-2.jpg'
+              },
+              'banuyo-cross': {
+                'type': 'image',
+                'src': '/images/banuyo-cross.jpg'
+              },
+              'banuyo-physical': {
+                'type': 'image',
+                'src': '/images/banuyo-physical.jpg'
+              },
+              'batete-2': {
+                'type': 'image',
+                'src': '/images/batete-2.jpg'
+              },
+              'batete-cross': {
+                'type': 'image',
+                'src': '/images/batete-cross.jpg'
+              },
+              'batete-physical': {
+                'type': 'image',
+                'src': '/images/batete-physical.jpg'
+              },
+              'golden-shower': {
+                'type': 'image',
+                'src': '/images/golden-shower.jpg'
+              },
+              'goldenshower-2': {
+                'type': 'image',
+                'src': '/images/goldenshower-2.jpg'
+              },
+              'golden-shower-cross': {
+                'type': 'image',
+                'src': '/images/golden-shower-cross.jpg'
+              },
+              'goldenshower-physical': {
+                'type': 'image',
+                'src': '/images/goldenshower-physical.jpg'
+              },
+              'ipil-2': {
+                'type': 'image',
+                'src': '/images/ipil-2.jpg'
+              },
+              'ipil-cross': {
+                'type': 'image',
+                'src': '/images/ipil-cross.jpg'
+              },
+              'ipil-ipil-2': {
+                'type': 'image',
+                'src': '/images/ipil-ipil-2.jpg'
+              },
+              'ipil-ipil-cross': {
+                'type': 'image',
+                'src': '/images/ipil-ipil-cross.jpg'
+              },
+              'ipil-physical': {
+                'type': 'image',
+                'src': '/images/ipil-physical.jpg'
+              },
+              'kakaute-2': {
+                'type': 'image',
+                'src': '/images/kakaute-2.jpg'
+              },
+              'kakaute-cross': {
+                'type': 'image',
+                'src': '/images/kakaute-cross.jpg'
+              },
+              'kakaute-physical': {
+                'type': 'image',
+                'src': '/images/kakaute-physical.jpg'
+              },
+              'kamatog-2': {
+                'type': 'image',
+                'src': '/images/kamatog-2.jpg'
+              },
+              'kamatog-cross': {
+                'type': 'image',
+                'src': '/images/kamatog-cross.jpg'
+              },
+              'kamatog-physical': {
+                'type': 'image',
+                'src': '/images/kamatog-physical.jpg'
+              },
+              'logwood-2': {
+                'type': 'image',
+                'src': '/images/logwood-2.jpg'
+              },
+              'logwood-cross': {
+                'type': 'image',
+                'src': '/images/logwood-cross.jpg'
+              },
+              'logwood-physical': {
+                'type': 'image',
+                'src': '/images/logwood-physical.jpg'
+              },
+              'manggis-2': {
+                'type': 'image',
+                'src': '/images/manggis-2.jpg'
+              },
+              'manggis-cross': {
+                'type': 'image',
+                'src': '/images/manggis-cross.jpg'
+              },
+              'manggis-physical': {
+                'type': 'image',
+                'src': '/images/manggis-physical.jpg'
+              },
+              'manggis-ripple': {
+                'type': 'image',
+                'src': '/images/manggis-ripple.jpg'
+              },
+              'mangium-2': {
+                'type': 'image',
+                'src': '/images/mangium-2.jpg'
+              },
+              'mangium-cross': {
+                'type': 'image',
+                'src': '/images/mangium-cross.jpg'
+              },
+              'mangium-physical': {
+                'type': 'image',
+                'src': '/images/mangium-physical.jpg'
+              },
+              'mollucan-sau-physical': {
+                'type': 'image',
+                'src': '/images/mollucan-sau-physical.jpg'
+              },
+              'molluccan-sau-2': {
+                'type': 'image',
+                'src': '/images/mollucan-sau-2.jpg'
+              },
+              'narra-2': {
+                'type': 'image',
+                'src': '/images/narra-2.jpg'
+              },
+              'narra-cross': {
+                'type': 'image',
+                'src': '/images/narra-cross.jpg'
+              },
+              'narra-physical': {
+                'type': 'image',
+                'src': '/images/narra-physical.jpg'
+              },
+              'narra-ripple': {
+                'type': 'image',
+                'src': '/images/narra-ripple.jpg'
+              },
+              'permit-1': {
+                'type': 'image',
+                'src': '/images/permit-1.png'
+              },
+              'permit-2': {
+                'type': 'image',
+                'src': '/images/permit-2.jpg'
+              },
+              'rain-tree-2': {
+                'type': 'image',
+                'src': '/images/rain-tree-2.jpg'
+              },
+              'raintree-cross': {
+                'type': 'image',
+                'src': '/images/raintree-cross.jpg'
+              },
+              'rain-tree-physical': {
+                'type': 'image',
+                'src': '/images/rain-tree-physical.jpg'
+              },
+              'siar-2': {
+                'type': 'image',
+                'src': '/images/siar-2.jpg'
+              },
+              'siar-cross': {
+                'type': 'image',
+                'src': '/images/siar-cross.jpg'
+              },
+              'siar-physical': {
+                'type': 'image',
+                'src': '/images/siar-physical.jpg'
+              },
+              'siar-ripple': {
+                'type': 'image',
+                'src': '/images/siar-ripple.jpg'
+              },
+              'supa-2': {
+                'type': 'image',
+                'src': '/images/supa-2.jpg'
+              },
+              'supa-cross': {
+                'type': 'image',
+                'src': '/images/supa-cross.jpg'
+              },
+              'supa-physical': {
+                'type': 'image',
+                'src': '/images/supa-physical.jpg'
+              },
+              'tindalo': {
+                'type': 'image',
+                'src': '/images/tindalo.jpg'
+              },
+              'tindalo-2': {
+                'type': 'image',
+                'src': '/images/tindalo-2.jpg'
+              },
+              'tindalo-cross': {
+                'type': 'image',
+                'src': '/images/tindalo-cross.jpg'
+              },
+              'tindalo-physical': {
+                'type': 'image',
+                'src': '/images/tindalo-physical.jpg'
               }
-
             }
           ]
         }
@@ -206,28 +608,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             }
           ],
           events: {
-            // scene0: {
-            //   default: 'trigger01'
-            // }
-            // {
-            //   default: '',
-            //   click: '',
-            //   triggers: [
-            //     {
-            //       name: '',
-            //       type: '',
-            //       load: [
-            //         {
-            //           objectId: '',
-            //           id: '',
-            //           style: []
-            //         }
-            //       ],
-            //       event: '',
-            //       objectId: ''
-            //     }
-            //   ]
-            // }
           },
           objects: {
             'start': {
@@ -249,6 +629,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'truck-back2': {
               'type': 'image',
               'src': '/images/truck-back2.png'
+            },
+            'checkpoint': {
+              'type': 'image',
+              'src': '/images/checkpoint.jpg'
             },
             'supervisor': {
               'type': 'image',
@@ -277,6 +661,246 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'nextScene': {
               'type': 'image',
               'src': '/images/nextScene.png'
+            },
+            'akle-2': {
+              'type': 'image',
+              'src': '/images/akle-2.jpg'
+            },
+            'akle-cross': {
+              'type': 'image',
+              'src': '/images/akle-cross.jpg'
+            },
+            'akle-physical.jpg': {
+              'type': 'image',
+              'src': '/images/akle-physical.jpg'
+            },
+            'ayangile-2': {
+              'type': 'image',
+              'src': '/images/ayangile-2.jpg'
+            },
+            'ayangile-cross.jpg': {
+              'type': 'image',
+              'src': '/images/ayangile-cross.jpg'
+            },
+            'ayangile-physical': {
+              'type': 'image',
+              'src': '/images/ayangile-physical.jpg'
+            },
+            'ayangile-structural': {
+              'type': 'image',
+              'src': '/images/ayangile-structural.jpg'
+            },
+            'banuyo-2': {
+              'type': 'image',
+              'src': '/images/banuyo-2.jpg'
+            },
+            'banuyo-cross': {
+              'type': 'image',
+              'src': '/images/banuyo-cross.jpg'
+            },
+            'banuyo-physical': {
+              'type': 'image',
+              'src': '/images/banuyo-physical.jpg'
+            },
+            'batete-2': {
+              'type': 'image',
+              'src': '/images/batete-2.jpg'
+            },
+            'batete-cross': {
+              'type': 'image',
+              'src': '/images/batete-cross.jpg'
+            },
+            'batete-physical': {
+              'type': 'image',
+              'src': '/images/batete-physical.jpg'
+            },
+            'golden-shower': {
+              'type': 'image',
+              'src': '/images/golden-shower.jpg'
+            },
+            'goldenshower-2': {
+              'type': 'image',
+              'src': '/images/goldenshower-2.jpg'
+            },
+            'golden-shower-cross': {
+              'type': 'image',
+              'src': '/images/golden-shower-cross.jpg'
+            },
+            'goldenshower-physical': {
+              'type': 'image',
+              'src': '/images/goldenshower-physical.jpg'
+            },
+            'ipil-2': {
+              'type': 'image',
+              'src': '/images/ipil-2.jpg'
+            },
+            'ipil-cross': {
+              'type': 'image',
+              'src': '/images/ipil-cross.jpg'
+            },
+            'ipil-ipil-2': {
+              'type': 'image',
+              'src': '/images/ipil-ipil-2.jpg'
+            },
+            'ipil-ipil-cross': {
+              'type': 'image',
+              'src': '/images/ipil-ipil-cross.jpg'
+            },
+            'ipil-physical': {
+              'type': 'image',
+              'src': '/images/ipil-physical.jpg'
+            },
+            'kakaute-2': {
+              'type': 'image',
+              'src': '/images/kakaute-2.jpg'
+            },
+            'kakaute-cross': {
+              'type': 'image',
+              'src': '/images/kakaute-cross.jpg'
+            },
+            'kakaute-physical': {
+              'type': 'image',
+              'src': '/images/kakaute-physical.jpg'
+            },
+            'kamatog-2': {
+              'type': 'image',
+              'src': '/images/kamatog-2.jpg'
+            },
+            'kamatog-cross': {
+              'type': 'image',
+              'src': '/images/kamatog-cross.jpg'
+            },
+            'kamatog-physical': {
+              'type': 'image',
+              'src': '/images/kamatog-physical.jpg'
+            },
+            'logwood-2': {
+              'type': 'image',
+              'src': '/images/logwood-2.jpg'
+            },
+            'logwood-cross': {
+              'type': 'image',
+              'src': '/images/logwood-cross.jpg'
+            },
+            'logwood-physical': {
+              'type': 'image',
+              'src': '/images/logwood-physical.jpg'
+            },
+            'manggis-2': {
+              'type': 'image',
+              'src': '/images/manggis-2.jpg'
+            },
+            'manggis-cross': {
+              'type': 'image',
+              'src': '/images/manggis-cross.jpg'
+            },
+            'manggis-physical': {
+              'type': 'image',
+              'src': '/images/manggis-physical.jpg'
+            },
+            'manggis-ripple': {
+              'type': 'image',
+              'src': '/images/manggis-ripple.jpg'
+            },
+            'mangium-2': {
+              'type': 'image',
+              'src': '/images/mangium-2.jpg'
+            },
+            'mangium-cross': {
+              'type': 'image',
+              'src': '/images/mangium-cross.jpg'
+            },
+            'mangium-physical': {
+              'type': 'image',
+              'src': '/images/mangium-physical.jpg'
+            },
+            'mollucan-sau-physical': {
+              'type': 'image',
+              'src': '/images/mollucan-sau-physical.jpg'
+            },
+            'molluccan-sau-2': {
+              'type': 'image',
+              'src': '/images/mollucan-sau-2.jpg'
+            },
+            'narra-2': {
+              'type': 'image',
+              'src': '/images/narra-2.jpg'
+            },
+            'narra-cross': {
+              'type': 'image',
+              'src': '/images/narra-cross.jpg'
+            },
+            'narra-physical': {
+              'type': 'image',
+              'src': '/images/narra-physical.jpg'
+            },
+            'narra-ripple': {
+              'type': 'image',
+              'src': '/images/narra-ripple.jpg'
+            },
+            'permit-1': {
+              'type': 'image',
+              'src': '/images/permit-1.png'
+            },
+            'permit-2': {
+              'type': 'image',
+              'src': '/images/permit-2.jpg'
+            },
+            'rain-tree-2': {
+              'type': 'image',
+              'src': '/images/rain-tree-2.jpg'
+            },
+            'raintree-cross': {
+              'type': 'image',
+              'src': '/images/raintree-cross.jpg'
+            },
+            'rain-tree-physical': {
+              'type': 'image',
+              'src': '/images/rain-tree-physical.jpg'
+            },
+            'siar-2': {
+              'type': 'image',
+              'src': '/images/siar-2.jpg'
+            },
+            'siar-cross': {
+              'type': 'image',
+              'src': '/images/siar-cross.jpg'
+            },
+            'siar-physical': {
+              'type': 'image',
+              'src': '/images/siar-physical.jpg'
+            },
+            'siar-ripple': {
+              'type': 'image',
+              'src': '/images/siar-ripple.jpg'
+            },
+            'supa-2': {
+              'type': 'image',
+              'src': '/images/supa-2.jpg'
+            },
+            'supa-cross': {
+              'type': 'image',
+              'src': '/images/supa-cross.jpg'
+            },
+            'supa-physical': {
+              'type': 'image',
+              'src': '/images/supa-physical.jpg'
+            },
+            'tindalo': {
+              'type': 'image',
+              'src': '/images/tindalo.jpg'
+            },
+            'tindalo-2': {
+              'type': 'image',
+              'src': '/images/tindalo-2.jpg'
+            },
+            'tindalo-cross': {
+              'type': 'image',
+              'src': '/images/tindalo-cross.jpg'
+            },
+            'tindalo-physical': {
+              'type': 'image',
+              'src': '/images/tindalo-physical.jpg'
             }
           }
         }
@@ -601,7 +1225,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         const image = document.createElement('img');
         const bg = canvas.querySelector('#background');
         image.src = '/assets/forestry/images/objects/' + item.fname;
-        image.style.cssText = 'width: 10%; margin: 5px 15px;';
+        image.style.cssText = 'width: 150px; height: 100px; margin: 5px 15px;';
         assets.appendChild(image);
 
         image.addEventListener('click', event => {
