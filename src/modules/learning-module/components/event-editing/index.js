@@ -489,6 +489,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         image.src = '/assets/forestry/images/characters/' + item.fname;
         image.style.cssText = 'width: 4%; margin: 5px 15px;';
         assets.appendChild(image);
+
         image.addEventListener('click', event => {
           if (bg === null) {
             console.warn('Can\'t add character, no background yet');
@@ -497,18 +498,27 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             snacker.show();
           } else {
             const copy = document.importNode(image);
+            const id = item.fname.split('.');
+            copy.id = id[0];
             copy.style.cssText = 'width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
             let confirm = document.createElement('button');
             confirm.innerHTML = 'confirm';
             confirm.id = 'confirm';
+            let cancel = document.createElement('button');
+            cancel.innerHTML = 'cancel';
+            cancel.id = 'cancel';
             confirm.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            cancel.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+
             canvas.addEventListener('click', event => {
               let check = confirm;
+              let ex = cancel;
               const width = canvas.clientWidth;
               const left = width / 3;
               const center = left + left;
               let char = this.objectClicked;
+
               if (char !== '') {
                 char.style.top = '40%';
                 const fname = char.src.split('/');
@@ -522,21 +532,45 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 if (event.offsetX < left) {
                   char.style.left = '25%';
                   check.style.left = '30%';
+                  ex.style.left = '35%';
                 } else if (event.offsetX > left && event.offsetX < center) {
                   char.style.left = '50%';
                   check.style.left = '55%';
+                  ex.style.left = '60%';
                 } else {
                   char.style.left = '72%';
                   check.style.left = '77%';
+                  ex.style.left = '82%';
                 }
+
                 canvas.appendChild(char);
                 canvas.appendChild(check);
+                canvas.appendChild(ex);
+
                 check.addEventListener('click', event => {
                   this.objectClicked = '';
                   confirm = '';
                   check = '';
                   check = this.shadowRoot.querySelector('#confirm');
                   check.remove();
+                  cancel = '';
+                  ex = '';
+                  ex = this.shadowRoot.querySelector('#cancel');
+                  ex.remove();
+                });
+
+                ex.addEventListener('click', event => {
+                  this.objectClicked = '';
+                  confirm = '';
+                  check = '';
+                  check = this.shadowRoot.querySelector('#confirm');
+                  check.remove();
+                  cancel = '';
+                  ex = '';
+                  ex = this.shadowRoot.querySelector('#cancel');
+                  ex.remove();
+                  let toRemove = this.shadowRoot.querySelector('#' + id[0]);
+                  toRemove.remove();
                 });
                 const upper = char.offsetTop;
                 const upperLeft = char.offsetLeft;
@@ -569,6 +603,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         image.src = '/assets/forestry/images/objects/' + item.fname;
         image.style.cssText = 'width: 10%; margin: 5px 15px;';
         assets.appendChild(image);
+
         image.addEventListener('click', event => {
           if (bg === null) {
             console.warn('Can\'t add object, no background yet');
@@ -577,40 +612,74 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             snacker.show();
           } else {
             const copy = document.importNode(image);
+            const id = item.fname.split('.');
+            copy.id = id[0];
             copy.style.cssText = 'width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
             let confirmObj = document.createElement('button');
             confirmObj.innerHTML = 'confirm';
             confirmObj.id = 'confirmObj';
+            let cancelObj = document.createElement('button');
+            cancelObj.innerHTML = 'cancel';
+            cancelObj.id = 'cancelObj';
             confirmObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            cancelObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
 
             canvas.addEventListener('click', event => {
               let checkObj = confirmObj;
+              let exObj = cancelObj;
               const width = canvas.clientWidth;
               const left = width / 3;
               const center = left + left;
               let obj = this.objectClicked;
+
               if (obj !== '') {
                 obj.style.top = '40%';
                 if (event.offsetX < left) {
                   obj.style.left = '25%';
                   checkObj.style.left = '25%';
+                  exObj.style.left = '30%';
                 } else if (event.offsetX > left && event.offsetX < center) {
                   obj.style.left = '50%';
                   checkObj.style.left = '50%';
+                  exObj.style.left = '55%';
                 } else {
                   obj.style.left = '72%';
                   checkObj.style.left = '72%';
+                  exObj.style.left = '77%';
                 }
+
                 canvas.appendChild(obj);
                 canvas.appendChild(checkObj);
+                canvas.appendChild(exObj);
+
                 checkObj.addEventListener('click', event => {
+                  this.objectClicked = '';
                   this.objectClicked = '';
                   confirmObj = '';
                   checkObj = '';
                   checkObj = this.shadowRoot.querySelector('#confirmObj');
                   checkObj.remove();
+                  cancelObj = '';
+                  exObj = '';
+                  exObj = this.shadowRoot.querySelector('#cancelObj');
+                  exObj.remove();
                 });
+
+                exObj.addEventListener('click', event => {
+                  this.objectClicked = '';
+                  confirmObj = '';
+                  checkObj = '';
+                  checkObj = this.shadowRoot.querySelector('#confirmObj');
+                  checkObj.remove();
+                  cancelObj = '';
+                  exObj = '';
+                  exObj = this.shadowRoot.querySelector('#cancelObj');
+                  exObj.remove();
+                  let toRemove = this.shadowRoot.querySelector('#' + id[0]);
+                  toRemove.remove();
+                });
+
                 const upper = obj.offsetTop;
                 const upperLeft = obj.offsetLeft;
                 console.log(upperLeft, upper);
