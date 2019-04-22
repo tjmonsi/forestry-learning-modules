@@ -1124,7 +1124,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const copy = document.importNode(image);
             const id = item.fname.split('.');
             copy.id = id[0];
-            copy.style.cssText = 'width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+            copy.dataset.size = 'normal';
+            copy.style.cssText = 'top: 40%; width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+            console.log(copy);
             this.objectClicked = copy;
             let confirm = document.createElement('button');
             confirm.innerHTML = 'confirm';
@@ -1134,17 +1136,26 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             cancel.id = 'cancel';
             confirm.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
             cancel.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            let sizeUp = document.createElement('button');
+            sizeUp.innerHTML = '+';
+            sizeUp.id = 'sizeUp';
+            let sizeDown = document.createElement('button');
+            sizeDown.innerHTML = '-';
+            sizeDown.id = 'sizeDown';
+            sizeUp.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            sizeDown.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
 
             canvas.addEventListener('click', event => {
               let check = confirm;
               let ex = cancel;
+              let up = sizeUp;
+              let down = sizeDown;
               const width = canvas.clientWidth;
               const left = width / 3;
               const center = left + left;
               let char = this.objectClicked;
 
               if (char !== '') {
-                char.style.top = '40%';
                 const fname = char.src.split('/');
                 if (fname[7] === 'forester-1.png') {
                   char.style.top = '45%';
@@ -1153,23 +1164,35 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 } else if (fname[7] === 'pahinante.png') {
                   check.style.top = '35%';
                 } else {}
+
                 if (event.offsetX < left) {
                   char.style.left = '25%';
-                  check.style.left = '30%';
-                  ex.style.left = '35%';
+                  check.style.left = '27%';
+                  ex.style.left = '32%';
+                  down.style.left = '37%';
+                  up.style.left = '42%';
+                  char.dataset.alignment = 'left';
                 } else if (event.offsetX > left && event.offsetX < center) {
                   char.style.left = '50%';
-                  check.style.left = '55%';
-                  ex.style.left = '60%';
+                  check.style.left = '52%';
+                  ex.style.left = '57%';
+                  down.style.left = '62%';
+                  up.style.left = '67%';
+                  char.dataset.alignment = 'center';
                 } else {
                   char.style.left = '72%';
-                  check.style.left = '77%';
-                  ex.style.left = '82%';
+                  check.style.left = '74%';
+                  ex.style.left = '79%';
+                  down.style.left = '84%';
+                  up.style.left = '89%';
+                  char.dataset.alignment = 'right';
                 }
 
                 canvas.appendChild(char);
                 canvas.appendChild(check);
                 canvas.appendChild(ex);
+                canvas.appendChild(down);
+                canvas.appendChild(up);
 
                 check.addEventListener('click', event => {
                   this.objectClicked = '';
@@ -1181,6 +1204,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   ex = '';
                   ex = this.shadowRoot.querySelector('#cancel');
                   ex.remove();
+                  sizeUp = '';
+                  up = '';
+                  up = this.shadowRoot.querySelector('#sizeUp');
+                  up.remove();
+                  sizeDown = '';
+                  down = '';
+                  down = this.shadowRoot.querySelector('#sizeDown');
+                  down.remove();
                 });
 
                 ex.addEventListener('click', event => {
@@ -1193,9 +1224,96 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   ex = '';
                   ex = this.shadowRoot.querySelector('#cancel');
                   ex.remove();
+                  sizeUp = '';
+                  up = '';
+                  up = this.shadowRoot.querySelector('#sizeUp');
+                  up.remove();
+                  sizeDown = '';
+                  down = '';
+                  down = this.shadowRoot.querySelector('#sizeDown');
+                  down.remove();
                   let toRemove = this.shadowRoot.querySelector('#' + id[0]);
                   toRemove.remove();
                 });
+
+                let toResize = this.shadowRoot.querySelector('#' + id[0]);
+                down.addEventListener('click', event => {
+                  let checkd = this.shadowRoot.querySelector('#confirm');
+                  let exd = this.shadowRoot.querySelector('#cancel');
+                  let upd = this.shadowRoot.querySelector('#sizeUp');
+                  let downd = this.shadowRoot.querySelector('#sizeDown');
+                  if (toResize.dataset.size === 'bigger') {
+                    // console.log('im bigger! going down!');
+                    toResize.dataset.size = 'normal';
+                    if (toResize.dataset.alignment === 'center') {
+                      toResize.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResize.dataset.alignment === 'right') {
+                      toResize.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      toResize.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '35%';
+                    exd.style.top = '35%';
+                    upd.style.top = '35%';
+                    downd.style.top = '35%';
+                    toResize = '';
+                  } else if (toResize.dataset.size === 'normal') {
+                    // console.log('im normal! going down!');
+                    toResize.dataset.size = 'smaller';
+                    if (toResize.dataset.alignment === 'center') {
+                      // console.log('center!!');
+                      toResize.style.left = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResize.dataset.alignment === 'right') {
+                      // console.log('right!!');
+                      toResize.style.cssText = 'top: 50%; width: 20%; left: 72%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      // console.log('left!!');
+                      toResize.style.cssText = 'top: 50%; width: 20%; left: 25%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '45%';
+                    exd.style.top = '45%';
+                    upd.style.top = '45%';
+                    downd.style.top = '45%';
+                    toResize = '';
+                  } else {}
+                });
+
+                up.addEventListener('click', event => {
+                  let checkd = this.shadowRoot.querySelector('#confirm');
+                  let exd = this.shadowRoot.querySelector('#cancel');
+                  let upd = this.shadowRoot.querySelector('#sizeUp');
+                  let downd = this.shadowRoot.querySelector('#sizeDown');
+                  if (toResize.dataset.size === 'smaller') {
+                    toResize.dataset.size = 'normal';
+                    if (toResize.dataset.alignment === 'center') {
+                      toResize.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResize.dataset.alignment === 'right') {
+                      toResize.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      toResize.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '35%';
+                    exd.style.top = '35%';
+                    upd.style.top = '35%';
+                    downd.style.top = '35%';
+                    toResize = '';
+                  } else if (toResize.dataset.size === 'normal') {
+                    toResize.dataset.size = 'bigger';
+                    if (toResize.dataset.alignment === 'center') {
+                      toResize.style.cssText = 'top: 30%; width: 25%; left: 50%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResize.dataset.alignment === 'right') {
+                      toResize.style.cssText = 'top: 30%; width: 25%; left: 72%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      toResize.style.cssText = 'top: 30%; width: 25%; left: 25%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '25%';
+                    exd.style.top = '25%';
+                    upd.style.top = '25%';
+                    downd.style.top = '25%';
+                    toResize = '';
+                  } else {}
+                });
+
                 const upper = char.offsetTop;
                 const upperLeft = char.offsetLeft;
                 console.log(upperLeft, upper);
