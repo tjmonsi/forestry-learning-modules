@@ -70,6 +70,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           },
           {
             fname: 'checkpoint.jpg'
+          },
+          {
+            fname: 'tablet.png'
           }
         ]
       },
@@ -1356,7 +1359,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const copy = document.importNode(image);
             const id = item.fname.split('.');
             copy.id = id[0];
-            copy.style.cssText = 'width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+            copy.dataset.size = 'normal';
+            copy.style.cssText = 'top: 40%; width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
             let confirmObj = document.createElement('button');
             confirmObj.innerHTML = 'confirm';
@@ -1366,34 +1370,54 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             cancelObj.id = 'cancelObj';
             confirmObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
             cancelObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            let sizeUpObj = document.createElement('button');
+            sizeUpObj.innerHTML = '+';
+            sizeUpObj.id = 'sizeUpObj';
+            let sizeDownObj = document.createElement('button');
+            sizeDownObj.innerHTML = '-';
+            sizeDownObj.id = 'sizeDownObj';
+            sizeUpObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            sizeDownObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
 
             canvas.addEventListener('click', event => {
               let checkObj = confirmObj;
               let exObj = cancelObj;
+              let upObj = sizeUpObj;
+              let downObj = sizeDownObj;
               const width = canvas.clientWidth;
               const left = width / 3;
               const center = left + left;
               let obj = this.objectClicked;
 
               if (obj !== '') {
-                obj.style.top = '40%';
                 if (event.offsetX < left) {
                   obj.style.left = '25%';
                   checkObj.style.left = '25%';
                   exObj.style.left = '30%';
+                  downObj.style.left = '35%';
+                  upObj.style.left = '40%';
+                  obj.dataset.alignment = 'left';
                 } else if (event.offsetX > left && event.offsetX < center) {
                   obj.style.left = '50%';
                   checkObj.style.left = '50%';
                   exObj.style.left = '55%';
+                  downObj.style.left = '60%';
+                  upObj.style.left = '65%';
+                  obj.dataset.alignment = 'center';
                 } else {
                   obj.style.left = '72%';
                   checkObj.style.left = '72%';
                   exObj.style.left = '77%';
+                  downObj.style.left = '82%';
+                  upObj.style.left = '87%';
+                  obj.dataset.alignment = 'right';
                 }
 
                 canvas.appendChild(obj);
                 canvas.appendChild(checkObj);
                 canvas.appendChild(exObj);
+                canvas.appendChild(downObj);
+                canvas.appendChild(upObj);
 
                 checkObj.addEventListener('click', event => {
                   this.objectClicked = '';
@@ -1406,6 +1430,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   exObj = '';
                   exObj = this.shadowRoot.querySelector('#cancelObj');
                   exObj.remove();
+                  sizeUpObj = '';
+                  upObj = '';
+                  upObj = this.shadowRoot.querySelector('#sizeUpObj');
+                  upObj.remove();
+                  sizeDownObj = '';
+                  downObj = '';
+                  downObj = this.shadowRoot.querySelector('#sizeDownObj');
+                  downObj.remove();
                 });
 
                 exObj.addEventListener('click', event => {
@@ -1418,8 +1450,93 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   exObj = '';
                   exObj = this.shadowRoot.querySelector('#cancelObj');
                   exObj.remove();
+                  upObj = '';
+                  upObj = this.shadowRoot.querySelector('#sizeUpObj');
+                  upObj.remove();
+                  sizeDownObj = '';
+                  downObj = '';
+                  downObj = this.shadowRoot.querySelector('#sizeDownObj');
+                  downObj.remove();
                   let toRemove = this.shadowRoot.querySelector('#' + id[0]);
                   toRemove.remove();
+                });
+
+                let toResizeObj = this.shadowRoot.querySelector('#' + id[0]);
+                downObj.addEventListener('click', event => {
+                  let checkd = this.shadowRoot.querySelector('#confirmObj');
+                  let exd = this.shadowRoot.querySelector('#cancelObj');
+                  let upd = this.shadowRoot.querySelector('#sizeUpObj');
+                  let downd = this.shadowRoot.querySelector('#sizeDownObj');
+                  if (toResizeObj.dataset.size === 'bigger') {
+                    // console.log('im bigger! going down!');
+                    toResizeObj.dataset.size = 'normal';
+                    if (toResizeObj.dataset.alignment === 'center') {
+                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResizeObj.dataset.alignment === 'right') {
+                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '35%';
+                    exd.style.top = '35%';
+                    upd.style.top = '35%';
+                    downd.style.top = '35%';
+                    toResizeObj = '';
+                  } else if (toResizeObj.dataset.size === 'normal') {
+                    // console.log('im normal! going down!');
+                    toResizeObj.dataset.size = 'smaller';
+                    if (toResizeObj.dataset.alignment === 'center') {
+                      // console.log('center!!');
+                      toResizeObj.style.left = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResizeObj.dataset.alignment === 'right') {
+                      // console.log('right!!');
+                      toResizeObj.style.cssText = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      // console.log('left!!');
+                      toResizeObj.style.cssText = 'top: 50%; width: 20%; left: 25%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '45%';
+                    exd.style.top = '45%';
+                    upd.style.top = '45%';
+                    downd.style.top = '45%';
+                    toResizeObj = '';
+                  } else {}
+                });
+
+                upObj.addEventListener('click', event => {
+                  let checkd = this.shadowRoot.querySelector('#confirmObj');
+                  let exd = this.shadowRoot.querySelector('#cancelObj');
+                  let upd = this.shadowRoot.querySelector('#sizeUpObj');
+                  let downd = this.shadowRoot.querySelector('#sizeDownObj');
+                  if (toResizeObj.dataset.size === 'smaller') {
+                    toResizeObj.dataset.size = 'normal';
+                    if (toResizeObj.dataset.alignment === 'center') {
+                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResizeObj.dataset.alignment === 'right') {
+                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '35%';
+                    exd.style.top = '35%';
+                    upd.style.top = '35%';
+                    downd.style.top = '35%';
+                    toResizeObj = '';
+                  } else if (toResizeObj.dataset.size === 'normal') {
+                    toResizeObj.dataset.size = 'bigger';
+                    if (toResizeObj.dataset.alignment === 'center') {
+                      toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 50%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else if (toResizeObj.dataset.alignment === 'right') {
+                      toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 72%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                    } else {
+                      toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 25%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                    }
+                    checkd.style.top = '25%';
+                    exd.style.top = '25%';
+                    upd.style.top = '25%';
+                    downd.style.top = '25%';
+                    toResizeObj = '';
+                  } else {}
                 });
 
                 const upper = obj.offsetTop;
