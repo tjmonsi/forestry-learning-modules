@@ -1040,11 +1040,23 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       canvas.id = 'canvas' + this.scene.id;
       canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
       workspace.appendChild(canvas);
-      const name = this.scene.id;
-      console.log(name);
-      if (this.toolkit.events[name] !== name || this.toolkit.events[name] !== name) {
-        this.toolkit.events[name] = {};
-        this.module.events[name] = {};
+      const loadedEvents = Object.keys(this.module.events).length;
+      // console.log(loadedEvents);
+      const name1 = 'event-0';
+      const name = 'event-';
+      const num = loadedEvents + 1;
+      if (loadedEvents < 9) {
+        if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
+          this.toolkit.events[name1 + num] = {};
+          this.module.events[name1 + num] = {};
+          this.scene.name = name1 + num;
+        }
+      } else {
+        if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
+          this.toolkit.events[name + num] = {};
+          this.module.events[name + num] = {};
+          this.scene.name = name + num;
+        }
       }
     } else {
       workspace.removeChild(workspace.children[1]);
@@ -1053,10 +1065,21 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       canvas.id = 'canvas' + this.scene.id;
       canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden;';
       workspace.appendChild(canvas);
-      const name = this.scene.id;
-      if (this.toolkit.events[name] !== name) {
-        this.toolkit.events[name] = {};
-        this.module.events[name] = {};
+      const loadedEvents = Object.keys(this.module.events).length;
+      // console.log(loadedEvents);
+      const name1 = 'event-0';
+      const name = 'event-';
+      const num = loadedEvents + 1;
+      if (loadedEvents < 9) {
+        if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
+          this.toolkit.events[name1 + num] = {};
+          this.module.events[name1 + num] = {};
+        }
+      } else {
+        if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
+          this.toolkit.events[name + num] = {};
+          this.module.events[name + num] = {};
+        }
       }
     }
   }
@@ -1083,22 +1106,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             copy.style.cssText = 'width: 100%; height: 100%; margin: 0px; z-index: 0; position: relative;';
             copy.id = 'background';
             cv.appendChild(copy);
-            const name = this.scene.id;
+            const name = this.scene.name;
             const objId = item.fname.split('.')[0];
-            this.toolkit.events[name].default = 'trigger01';
+            this.toolkit.events[name].default = 'trigger-01';
             this.toolkit.events[name].triggers = {};
-            this.toolkit.events[name].triggers['trigger01'] = {};
-            this.toolkit.events[name].triggers['trigger01'].type = 'load';
-            this.toolkit.events[name].triggers['trigger01'].load = [];
-            this.toolkit.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', style: ['z-index: 0', 'width: 100%', 'height: 100%', 'position: relative', 'id: background'] });
+            this.toolkit.events[name].triggers['trigger-01'] = {};
+            this.toolkit.events[name].triggers['trigger-01'].type = 'load';
+            this.toolkit.events[name].triggers['trigger-01'].load = [];
+            this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', style: ['z-index: 0', 'width: 100%', 'height: 100%', 'position: relative', 'id: background'] });
             // console.log(this.toolkit);
 
-            this.module.events[name].default = 'trigger01';
+            this.module.events[name].default = 'trigger-01';
             this.module.events[name].triggers = {};
-            this.module.events[name].triggers['trigger01'] = {};
-            this.module.events[name].triggers['trigger01'].type = 'load';
-            this.module.events[name].triggers['trigger01'].load = [];
-            this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
+            this.module.events[name].triggers['trigger-01'] = {};
+            this.module.events[name].triggers['trigger-01'].type = 'load';
+            this.module.events[name].triggers['trigger-01'].load = [];
+            this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
             // console.log(this.module);
           }
         });
@@ -1207,17 +1230,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
                 check.addEventListener('click', event => {
                   const objId = item.fname.split('.')[0];
-                  const name = this.scene.id;
+                  const name = this.scene.name;
                   const char = this.shadowRoot.querySelector('#' + id[0]);
                   // const objId = item.fname.split('.')[0];
                   // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
                   // console.log(this.module.events[name].triggers['trigger01'].load.length);
-                  const loadedObjs = this.module.events[name].triggers['trigger01'].load.length;
+                  const loadedObjs = this.module.events[name].triggers['trigger-01'].load.length;
                   let add = loadedObjs + 1;
                   if (loadedObjs < 9) {
-                    this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                    this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
                   } else {
-                    this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                    this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
                   }
                   console.log(this.module);
                   // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: });
@@ -1383,7 +1406,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const id = item.fname.split('.');
             copy.id = id[0];
             copy.dataset.size = 'normal';
-            copy.style.cssText = 'top: 40%; width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+            copy.style.cssText = 'top: 40%; width: 35%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
             let confirmObj = document.createElement('button');
             confirmObj.innerHTML = 'confirm';
@@ -1421,18 +1444,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   upObj.style.left = '40%';
                   obj.dataset.alignment = 'left';
                 } else if (event.offsetX > left && event.offsetX < center) {
-                  obj.style.left = '50%';
-                  checkObj.style.left = '50%';
-                  exObj.style.left = '55%';
-                  downObj.style.left = '60%';
-                  upObj.style.left = '65%';
+                  obj.style.left = '45%';
+                  checkObj.style.left = '45%';
+                  exObj.style.left = '50%';
+                  downObj.style.left = '55%';
+                  upObj.style.left = '60%';
                   obj.dataset.alignment = 'center';
                 } else {
-                  obj.style.left = '72%';
-                  checkObj.style.left = '72%';
-                  exObj.style.left = '77%';
-                  downObj.style.left = '82%';
-                  upObj.style.left = '87%';
+                  obj.style.left = '62%';
+                  checkObj.style.left = '62%';
+                  exObj.style.left = '67%';
+                  downObj.style.left = '72%';
+                  upObj.style.left = '77%';
                   obj.dataset.alignment = 'right';
                 }
 
@@ -1443,7 +1466,24 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 canvas.appendChild(upObj);
 
                 checkObj.addEventListener('click', event => {
-                  this.objectClicked = '';
+                  const objId = item.fname.split('.')[0];
+                  const name = this.scene.name;
+                  const obj = this.shadowRoot.querySelector('#' + id[0]);
+                  // const objId = item.fname.split('.')[0];
+                  // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
+                  // console.log(this.module.events[name].triggers['trigger01'].load.length);
+                  const loadedObjs = this.module.events[name].triggers['trigger-01'].load.length;
+                  let add = loadedObjs + 1;
+                  if (loadedObjs < 9) {
+                    if (objId === 'tablet') {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: ['z-index: 1'] });
+                    }
+                  } else {
+                    if (objId === 'tablet') {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: ['z-index: 1'] });
+                    }
+                  }
+                  console.log(this.module);
                   this.objectClicked = '';
                   confirmObj = '';
                   checkObj = '';
@@ -1620,12 +1660,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   _save () {
-    let exportObj = this.toolkit;
-    let exportName = 'toolkit';
+    let exportObj = this.module;
+    let exportName = 'ilo-4';
     let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     let downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);
-    downloadAnchorNode.setAttribute('download', exportName + '.js');
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
     document.body.appendChild(downloadAnchorNode);
     downloadAnchorNode.click();
     downloadAnchorNode.remove();
