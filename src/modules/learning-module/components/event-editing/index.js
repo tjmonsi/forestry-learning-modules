@@ -290,300 +290,300 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       module: {
         type: Object,
         value: {
+          baseURL: '/assets/forestry',
           events: {
           },
-          objects: [
-            {
-              'start': {
-                'type': 'image',
-                'src': '/images/start.jpg'
-              },
-              'xylarium': {
-                'type': 'image',
-                'src': '/images/xylarium.jpg'
-              },
-              'truck-fron': {
-                'type': 'image',
-                'src': '/images/truck-front.png'
-              },
-              'truck-back': {
-                'type': 'image',
-                'src': '/images/truck-back.png'
-              },
-              'truck-back2': {
-                'type': 'image',
-                'src': '/images/truck-back2.png'
-              },
-              'supervisor': {
-                'type': 'image',
-                'src': '/images/supervisor.png'
-              },
-              'forester-1': {
-                'type': 'image',
-                'src': '/images/forester-1.png'
-              },
-              'forester-2': {
-                'type': 'image',
-                'src': '/images/forester-2.png'
-              },
-              'pahinante': {
-                'type': 'image',
-                'src': '/images/pahinante.png'
-              },
-              'tablet': {
-                'type': 'image',
-                'src': '/images/tablet.png'
-              },
-              'nextDialogue': {
-                'type': 'image',
-                'src': '/images/nextDialogue.png'
-              },
-              'nextScene': {
-                'type': 'image',
-                'src': '/images/nextScene.png'
-              },
-              'akle-2': {
-                'type': 'image',
-                'src': '/images/akle-2.jpg'
-              },
-              'akle-cross': {
-                'type': 'image',
-                'src': '/images/akle-cross.jpg'
-              },
-              'akle-physical.jpg': {
-                'type': 'image',
-                'src': '/images/akle-physical.jpg'
-              },
-              'ayangile-2': {
-                'type': 'image',
-                'src': '/images/ayangile-2.jpg'
-              },
-              'ayangile-cross.jpg': {
-                'type': 'image',
-                'src': '/images/ayangile-cross.jpg'
-              },
-              'ayangile-physical': {
-                'type': 'image',
-                'src': '/images/ayangile-physical.jpg'
-              },
-              'ayangile-structural': {
-                'type': 'image',
-                'src': '/images/ayangile-structural.jpg'
-              },
-              'banuyo-2': {
-                'type': 'image',
-                'src': '/images/banuyo-2.jpg'
-              },
-              'banuyo-cross': {
-                'type': 'image',
-                'src': '/images/banuyo-cross.jpg'
-              },
-              'banuyo-physical': {
-                'type': 'image',
-                'src': '/images/banuyo-physical.jpg'
-              },
-              'batete-2': {
-                'type': 'image',
-                'src': '/images/batete-2.jpg'
-              },
-              'batete-cross': {
-                'type': 'image',
-                'src': '/images/batete-cross.jpg'
-              },
-              'batete-physical': {
-                'type': 'image',
-                'src': '/images/batete-physical.jpg'
-              },
-              'golden-shower': {
-                'type': 'image',
-                'src': '/images/golden-shower.jpg'
-              },
-              'goldenshower-2': {
-                'type': 'image',
-                'src': '/images/goldenshower-2.jpg'
-              },
-              'golden-shower-cross': {
-                'type': 'image',
-                'src': '/images/golden-shower-cross.jpg'
-              },
-              'goldenshower-physical': {
-                'type': 'image',
-                'src': '/images/goldenshower-physical.jpg'
-              },
-              'ipil-2': {
-                'type': 'image',
-                'src': '/images/ipil-2.jpg'
-              },
-              'ipil-cross': {
-                'type': 'image',
-                'src': '/images/ipil-cross.jpg'
-              },
-              'ipil-ipil-2': {
-                'type': 'image',
-                'src': '/images/ipil-ipil-2.jpg'
-              },
-              'ipil-ipil-cross': {
-                'type': 'image',
-                'src': '/images/ipil-ipil-cross.jpg'
-              },
-              'ipil-physical': {
-                'type': 'image',
-                'src': '/images/ipil-physical.jpg'
-              },
-              'kakaute-2': {
-                'type': 'image',
-                'src': '/images/kakaute-2.jpg'
-              },
-              'kakaute-cross': {
-                'type': 'image',
-                'src': '/images/kakaute-cross.jpg'
-              },
-              'kakaute-physical': {
-                'type': 'image',
-                'src': '/images/kakaute-physical.jpg'
-              },
-              'kamatog-2': {
-                'type': 'image',
-                'src': '/images/kamatog-2.jpg'
-              },
-              'kamatog-cross': {
-                'type': 'image',
-                'src': '/images/kamatog-cross.jpg'
-              },
-              'kamatog-physical': {
-                'type': 'image',
-                'src': '/images/kamatog-physical.jpg'
-              },
-              'logwood-2': {
-                'type': 'image',
-                'src': '/images/logwood-2.jpg'
-              },
-              'logwood-cross': {
-                'type': 'image',
-                'src': '/images/logwood-cross.jpg'
-              },
-              'logwood-physical': {
-                'type': 'image',
-                'src': '/images/logwood-physical.jpg'
-              },
-              'manggis-2': {
-                'type': 'image',
-                'src': '/images/manggis-2.jpg'
-              },
-              'manggis-cross': {
-                'type': 'image',
-                'src': '/images/manggis-cross.jpg'
-              },
-              'manggis-physical': {
-                'type': 'image',
-                'src': '/images/manggis-physical.jpg'
-              },
-              'manggis-ripple': {
-                'type': 'image',
-                'src': '/images/manggis-ripple.jpg'
-              },
-              'mangium-2': {
-                'type': 'image',
-                'src': '/images/mangium-2.jpg'
-              },
-              'mangium-cross': {
-                'type': 'image',
-                'src': '/images/mangium-cross.jpg'
-              },
-              'mangium-physical': {
-                'type': 'image',
-                'src': '/images/mangium-physical.jpg'
-              },
-              'mollucan-sau-physical': {
-                'type': 'image',
-                'src': '/images/mollucan-sau-physical.jpg'
-              },
-              'molluccan-sau-2': {
-                'type': 'image',
-                'src': '/images/mollucan-sau-2.jpg'
-              },
-              'narra-2': {
-                'type': 'image',
-                'src': '/images/narra-2.jpg'
-              },
-              'narra-cross': {
-                'type': 'image',
-                'src': '/images/narra-cross.jpg'
-              },
-              'narra-physical': {
-                'type': 'image',
-                'src': '/images/narra-physical.jpg'
-              },
-              'narra-ripple': {
-                'type': 'image',
-                'src': '/images/narra-ripple.jpg'
-              },
-              'permit-1': {
-                'type': 'image',
-                'src': '/images/permit-1.png'
-              },
-              'permit-2': {
-                'type': 'image',
-                'src': '/images/permit-2.jpg'
-              },
-              'rain-tree-2': {
-                'type': 'image',
-                'src': '/images/rain-tree-2.jpg'
-              },
-              'raintree-cross': {
-                'type': 'image',
-                'src': '/images/raintree-cross.jpg'
-              },
-              'rain-tree-physical': {
-                'type': 'image',
-                'src': '/images/rain-tree-physical.jpg'
-              },
-              'siar-2': {
-                'type': 'image',
-                'src': '/images/siar-2.jpg'
-              },
-              'siar-cross': {
-                'type': 'image',
-                'src': '/images/siar-cross.jpg'
-              },
-              'siar-physical': {
-                'type': 'image',
-                'src': '/images/siar-physical.jpg'
-              },
-              'siar-ripple': {
-                'type': 'image',
-                'src': '/images/siar-ripple.jpg'
-              },
-              'supa-2': {
-                'type': 'image',
-                'src': '/images/supa-2.jpg'
-              },
-              'supa-cross': {
-                'type': 'image',
-                'src': '/images/supa-cross.jpg'
-              },
-              'supa-physical': {
-                'type': 'image',
-                'src': '/images/supa-physical.jpg'
-              },
-              'tindalo': {
-                'type': 'image',
-                'src': '/images/tindalo.jpg'
-              },
-              'tindalo-2': {
-                'type': 'image',
-                'src': '/images/tindalo-2.jpg'
-              },
-              'tindalo-cross': {
-                'type': 'image',
-                'src': '/images/tindalo-cross.jpg'
-              },
-              'tindalo-physical': {
-                'type': 'image',
-                'src': '/images/tindalo-physical.jpg'
-              }
+          objects: {
+            'start': {
+              'type': 'image',
+              'src': '/images/start.jpg'
+            },
+            'xylarium': {
+              'type': 'image',
+              'src': '/images/xylarium.jpg'
+            },
+            'truck-fron': {
+              'type': 'image',
+              'src': '/images/truck-front.png'
+            },
+            'truck-back': {
+              'type': 'image',
+              'src': '/images/truck-back.png'
+            },
+            'truck-back2': {
+              'type': 'image',
+              'src': '/images/truck-back2.png'
+            },
+            'supervisor': {
+              'type': 'image',
+              'src': '/images/supervisor.png'
+            },
+            'forester-1': {
+              'type': 'image',
+              'src': '/images/forester-1.png'
+            },
+            'forester-2': {
+              'type': 'image',
+              'src': '/images/forester-2.png'
+            },
+            'pahinante': {
+              'type': 'image',
+              'src': '/images/pahinante.png'
+            },
+            'tablet': {
+              'type': 'image',
+              'src': '/images/tablet.png'
+            },
+            'nextDialogue': {
+              'type': 'image',
+              'src': '/images/nextDialogue.png'
+            },
+            'nextScene': {
+              'type': 'image',
+              'src': '/images/nextScene.png'
+            },
+            'akle-2': {
+              'type': 'image',
+              'src': '/images/akle-2.jpg'
+            },
+            'akle-cross': {
+              'type': 'image',
+              'src': '/images/akle-cross.jpg'
+            },
+            'akle-physical.jpg': {
+              'type': 'image',
+              'src': '/images/akle-physical.jpg'
+            },
+            'ayangile-2': {
+              'type': 'image',
+              'src': '/images/ayangile-2.jpg'
+            },
+            'ayangile-cross.jpg': {
+              'type': 'image',
+              'src': '/images/ayangile-cross.jpg'
+            },
+            'ayangile-physical': {
+              'type': 'image',
+              'src': '/images/ayangile-physical.jpg'
+            },
+            'ayangile-structural': {
+              'type': 'image',
+              'src': '/images/ayangile-structural.jpg'
+            },
+            'banuyo-2': {
+              'type': 'image',
+              'src': '/images/banuyo-2.jpg'
+            },
+            'banuyo-cross': {
+              'type': 'image',
+              'src': '/images/banuyo-cross.jpg'
+            },
+            'banuyo-physical': {
+              'type': 'image',
+              'src': '/images/banuyo-physical.jpg'
+            },
+            'batete-2': {
+              'type': 'image',
+              'src': '/images/batete-2.jpg'
+            },
+            'batete-cross': {
+              'type': 'image',
+              'src': '/images/batete-cross.jpg'
+            },
+            'batete-physical': {
+              'type': 'image',
+              'src': '/images/batete-physical.jpg'
+            },
+            'golden-shower': {
+              'type': 'image',
+              'src': '/images/golden-shower.jpg'
+            },
+            'goldenshower-2': {
+              'type': 'image',
+              'src': '/images/goldenshower-2.jpg'
+            },
+            'golden-shower-cross': {
+              'type': 'image',
+              'src': '/images/golden-shower-cross.jpg'
+            },
+            'goldenshower-physical': {
+              'type': 'image',
+              'src': '/images/goldenshower-physical.jpg'
+            },
+            'ipil-2': {
+              'type': 'image',
+              'src': '/images/ipil-2.jpg'
+            },
+            'ipil-cross': {
+              'type': 'image',
+              'src': '/images/ipil-cross.jpg'
+            },
+            'ipil-ipil-2': {
+              'type': 'image',
+              'src': '/images/ipil-ipil-2.jpg'
+            },
+            'ipil-ipil-cross': {
+              'type': 'image',
+              'src': '/images/ipil-ipil-cross.jpg'
+            },
+            'ipil-physical': {
+              'type': 'image',
+              'src': '/images/ipil-physical.jpg'
+            },
+            'kakaute-2': {
+              'type': 'image',
+              'src': '/images/kakaute-2.jpg'
+            },
+            'kakaute-cross': {
+              'type': 'image',
+              'src': '/images/kakaute-cross.jpg'
+            },
+            'kakaute-physical': {
+              'type': 'image',
+              'src': '/images/kakaute-physical.jpg'
+            },
+            'kamatog-2': {
+              'type': 'image',
+              'src': '/images/kamatog-2.jpg'
+            },
+            'kamatog-cross': {
+              'type': 'image',
+              'src': '/images/kamatog-cross.jpg'
+            },
+            'kamatog-physical': {
+              'type': 'image',
+              'src': '/images/kamatog-physical.jpg'
+            },
+            'logwood-2': {
+              'type': 'image',
+              'src': '/images/logwood-2.jpg'
+            },
+            'logwood-cross': {
+              'type': 'image',
+              'src': '/images/logwood-cross.jpg'
+            },
+            'logwood-physical': {
+              'type': 'image',
+              'src': '/images/logwood-physical.jpg'
+            },
+            'manggis-2': {
+              'type': 'image',
+              'src': '/images/manggis-2.jpg'
+            },
+            'manggis-cross': {
+              'type': 'image',
+              'src': '/images/manggis-cross.jpg'
+            },
+            'manggis-physical': {
+              'type': 'image',
+              'src': '/images/manggis-physical.jpg'
+            },
+            'manggis-ripple': {
+              'type': 'image',
+              'src': '/images/manggis-ripple.jpg'
+            },
+            'mangium-2': {
+              'type': 'image',
+              'src': '/images/mangium-2.jpg'
+            },
+            'mangium-cross': {
+              'type': 'image',
+              'src': '/images/mangium-cross.jpg'
+            },
+            'mangium-physical': {
+              'type': 'image',
+              'src': '/images/mangium-physical.jpg'
+            },
+            'mollucan-sau-physical': {
+              'type': 'image',
+              'src': '/images/mollucan-sau-physical.jpg'
+            },
+            'molluccan-sau-2': {
+              'type': 'image',
+              'src': '/images/mollucan-sau-2.jpg'
+            },
+            'narra-2': {
+              'type': 'image',
+              'src': '/images/narra-2.jpg'
+            },
+            'narra-cross': {
+              'type': 'image',
+              'src': '/images/narra-cross.jpg'
+            },
+            'narra-physical': {
+              'type': 'image',
+              'src': '/images/narra-physical.jpg'
+            },
+            'narra-ripple': {
+              'type': 'image',
+              'src': '/images/narra-ripple.jpg'
+            },
+            'permit-1': {
+              'type': 'image',
+              'src': '/images/permit-1.png'
+            },
+            'permit-2': {
+              'type': 'image',
+              'src': '/images/permit-2.jpg'
+            },
+            'rain-tree-2': {
+              'type': 'image',
+              'src': '/images/rain-tree-2.jpg'
+            },
+            'raintree-cross': {
+              'type': 'image',
+              'src': '/images/raintree-cross.jpg'
+            },
+            'rain-tree-physical': {
+              'type': 'image',
+              'src': '/images/rain-tree-physical.jpg'
+            },
+            'siar-2': {
+              'type': 'image',
+              'src': '/images/siar-2.jpg'
+            },
+            'siar-cross': {
+              'type': 'image',
+              'src': '/images/siar-cross.jpg'
+            },
+            'siar-physical': {
+              'type': 'image',
+              'src': '/images/siar-physical.jpg'
+            },
+            'siar-ripple': {
+              'type': 'image',
+              'src': '/images/siar-ripple.jpg'
+            },
+            'supa-2': {
+              'type': 'image',
+              'src': '/images/supa-2.jpg'
+            },
+            'supa-cross': {
+              'type': 'image',
+              'src': '/images/supa-cross.jpg'
+            },
+            'supa-physical': {
+              'type': 'image',
+              'src': '/images/supa-physical.jpg'
+            },
+            'tindalo': {
+              'type': 'image',
+              'src': '/images/tindalo.jpg'
+            },
+            'tindalo-2': {
+              'type': 'image',
+              'src': '/images/tindalo-2.jpg'
+            },
+            'tindalo-cross': {
+              'type': 'image',
+              'src': '/images/tindalo-cross.jpg'
+            },
+            'tindalo-physical': {
+              'type': 'image',
+              'src': '/images/tindalo-physical.jpg'
             }
-          ]
+          },
+          eventStart: 'event-01'
         }
       },
       toolkit: {
@@ -1042,10 +1042,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       workspace.appendChild(canvas);
       const name = this.scene.id;
       console.log(name);
-      if (this.toolkit.events[name] !== name) {
+      if (this.toolkit.events[name] !== name || this.toolkit.events[name] !== name) {
         this.toolkit.events[name] = {};
+        this.module.events[name] = {};
       }
-      console.log(this.toolkit);
     } else {
       workspace.removeChild(workspace.children[1]);
       this.scene.id = el.id;
@@ -1056,8 +1056,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       const name = this.scene.id;
       if (this.toolkit.events[name] !== name) {
         this.toolkit.events[name] = {};
+        this.module.events[name] = {};
       }
-      console.log(this.toolkit);
     }
   }
 
@@ -1091,7 +1091,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.toolkit.events[name].triggers['trigger01'].type = 'load';
             this.toolkit.events[name].triggers['trigger01'].load = [];
             this.toolkit.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', style: ['z-index: 0', 'width: 100%', 'height: 100%', 'position: relative', 'id: background'] });
-            console.log(this.toolkit);
+            // console.log(this.toolkit);
+
+            this.module.events[name].default = 'trigger01';
+            this.module.events[name].triggers = {};
+            this.module.events[name].triggers['trigger01'] = {};
+            this.module.events[name].triggers['trigger01'].type = 'load';
+            this.module.events[name].triggers['trigger01'].load = [];
+            this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
+            // console.log(this.module);
           }
         });
       }
@@ -1198,6 +1206,21 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 canvas.appendChild(up);
 
                 check.addEventListener('click', event => {
+                  const objId = item.fname.split('.')[0];
+                  const name = this.scene.id;
+                  const char = this.shadowRoot.querySelector('#' + id[0]);
+                  // const objId = item.fname.split('.')[0];
+                  // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
+                  // console.log(this.module.events[name].triggers['trigger01'].load.length);
+                  const loadedObjs = this.module.events[name].triggers['trigger01'].load.length;
+                  let add = loadedObjs + 1;
+                  if (loadedObjs < 9) {
+                    this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                  } else {
+                    this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                  }
+                  console.log(this.module);
+                  // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: });
                   this.objectClicked = '';
                   confirm = '';
                   check = '';
