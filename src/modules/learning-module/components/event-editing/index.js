@@ -915,6 +915,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       scene: {
         type: Object,
         value: {}
+      },
+      dialogues: {
+        type: Number,
+        value: 1
       }
     };
   }
@@ -1632,14 +1636,116 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         const characterInput = document.createElement('input');
         dialogueInput.id = 'dialogue';
         characterInput.id = 'characterName';
+        const controls = document.createElement('div');
+        controls.id = 'controls';
+
         canvas.appendChild(dialogueBox);
         dialogueBox.style.cssText = 'z-index: 1000; top: -25%; background: rgba(255, 255, 255, 0.75); color: black; font-size: 1rem;box-sizing: border-box; position: relative; height: 25%;';
+
         dialogueBox.appendChild(characterInput);
         characterInput.style.cssText = 'height: 10%; width: 100%; text-decoration: none; border: none; background: transparent;';
         characterInput.placeholder = 'Enter Character Name Here';
+
+        let char = '';
+        characterInput.addEventListener('change', event => {
+          char = event.target.value;
+        });
+
         dialogueBox.appendChild(dialogueInput);
-        dialogueInput.style.cssText = 'height: 90%; widht: 100%; background: transparent; font-size: 20px; resize: none; outline: none; border: none;';
+        dialogueInput.style.cssText = 'height: 40%; width: 100%; background: transparent; font-size: 14px; resize: none; outline: none; border: none;';
         dialogueInput.placeholder = 'Enter Dialogue Here';
+        dialogueInput.addEventListener('change', event => {
+          let content = event.target.value;
+          let name1 = 'dialogue-0';
+          let name2 = 'dialogue-';
+
+          if (this.dialogues < 9) {
+            let name = name1 + this.dialogues;
+            this.module.objects[name] = {};
+            this.module.objects[name].type = 'dialogue';
+            this.module.objects[name].character = char;
+            this.module.objects[name].text = content;
+            console.log(this.module);
+          } else {
+            let name3 = name2 + this.dialogues;
+            this.module.objects[name3] = {};
+            this.module.objects[name3].type = 'dialogue';
+            this.module.objects[name3].character = char;
+            this.module.objects[name3].text = content;
+          }
+        });
+
+        dialogueBox.appendChild(controls);
+        controls.style.cssText = 'height: 30%; width: 100%; background: transparent; font-size: 20px; outline: none; border: none;';
+        const prev = document.createElement('button');
+        controls.appendChild(prev);
+        prev.innerHTML = 'Previous';
+        prev.style.cssText = 'font-size: 1rem; background: #008080; color: #fff; padding: 12px 18px;';
+        prev.id = 'prev';
+        let dialogueCount = 1;
+        const next = document.createElement('button');
+        next.innerHTML = 'Continue';
+        controls.appendChild(next);
+        next.style.cssText = 'font-size: 1rem; background: #008080; color: #fff; padding: 12px 18px;';
+        next.id = 'next';
+
+        // if (dialogueCount === 1) {
+        //   this.shadowRoot.querySelector('#next').remove();
+        //   const next = document.createElement('button');
+        //   next.innerHTML = 'Continue';
+        //   controls.appendChild(next);
+        //   next.style.cssText = 'font-size: 1rem; background: #008080; color: #fff; padding: 12px 18px;';
+        //   next.id = 'next';
+        // }
+        next.addEventListener('click', event => {
+          dialogueCount = dialogueCount + 1;
+          if (dialogueInput.value === '') {
+
+          }
+          if (dialogueInput.value !== '') {
+            let name1 = 'trigger-0';
+            let name2 = 'trigger-';
+            let triggerCount = Object.keys(this.module.events[this.scene.name].triggers).length;
+            let add = triggerCount + 1;
+            let name3 = 'dialogue-0';
+            let name4 = 'dialogue-';
+            if (this.dialogues < 9) {
+              const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
+              let add2 = loadedObjs + 1;
+              let name = name3 + this.dialogues;
+              this.module.objects[name].next = name1 + add;
+              if (this.dialogues === 1) {
+                this.module.events[this.scene.name].triggers[name1 + add] = {};
+                this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+                this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
+                this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: name3 + this.dialogues, id: 'object-0' + add2, type: 'dialogue' });
+                characterInput.value = '';
+                dialogueInput.value = '';
+              } else {
+                this.module.events[this.scene.name].triggers[name1 + add] = {};
+                this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+                this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
+                characterInput.value = '';
+                dialogueInput.value = '';
+              }
+            } else {
+              const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
+              let add2 = loadedObjs + 1;
+              let name = name4 + this.dialogues;
+              this.module.objects[name].next = name2 + add;
+              this.module.events[this.scene.name].triggers[name1 + add] = {};
+              this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+              this.module.events[this.scene.name].triggers[name1 + add].objectId = name4 + (this.dialogues + 1);
+              this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: name3 + this.dialogues, id: 'object-0' + add2, type: 'dialogue' });
+              characterInput.value = '';
+              dialogueInput.value = '';
+            }
+
+            this.dialogues = this.dialogues + 1;
+          }
+
+          console.log(this.module);
+        });
       } else if (bg === null) {
         console.warn('Can\'t add dialogue, no background yet');
         const snacker = document.querySelector('.snackbar-lite');
