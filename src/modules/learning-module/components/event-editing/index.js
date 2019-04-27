@@ -1699,10 +1699,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         // }
         next.addEventListener('click', event => {
           dialogueCount = dialogueCount + 1;
-          if (dialogueInput.value === '') {
-
+          if (dialogueInput.value === '' && characterInput.value === '') {
+            let name5 = 'event-0';
+            let name6 = 'event-';
+            let index = Object.keys(this.module.events[this.scene.name].triggers).length - 2;
+            let prevName = Object.keys(this.module.events[this.scene.name].triggers)[index];
+            console.log(prevName);
+            this.module.events[this.scene.name].triggers[prevName].type = 'next';
+            let loadedEvents = Object.keys(this.module.events).length;
+            if (loadedEvents < 9) {
+              this.module.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
+            } else {
+              this.module.events[this.scene.name].triggers[prevName].event = name6 + (loadedEvents + 1);
+            }
+            delete this.module.events[this.scene.name].triggers[prevName].objectId;
           }
-          if (dialogueInput.value !== '') {
+          if (dialogueInput.value !== '' && characterInput.value !== '') {
             let name1 = 'trigger-0';
             let name2 = 'trigger-';
             let triggerCount = Object.keys(this.module.events[this.scene.name].triggers).length;
@@ -1725,24 +1737,58 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 this.module.events[this.scene.name].triggers[name1 + add] = {};
                 this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
                 this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
+                add++;
+                this.module.objects[name].prev = name1 + add;
+                this.module.events[this.scene.name].triggers[name1 + add] = {};
+                this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+                this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues - 1);
                 characterInput.value = '';
                 dialogueInput.value = '';
               }
             } else {
-              const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
-              let add2 = loadedObjs + 1;
               let name = name4 + this.dialogues;
               this.module.objects[name].next = name2 + add;
-              this.module.events[this.scene.name].triggers[name1 + add] = {};
-              this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
-              this.module.events[this.scene.name].triggers[name1 + add].objectId = name4 + (this.dialogues + 1);
-              this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: name3 + this.dialogues, id: 'object-0' + add2, type: 'dialogue' });
+              this.module.events[this.scene.name].triggers[name2 + add] = {};
+              this.module.events[this.scene.name].triggers[name2 + add].type = 'dialogue';
+              this.module.events[this.scene.name].triggers[name2 + add].objectId = name4 + (this.dialogues + 1);
+              add++;
+              this.module.objects[name].prev = name2 + add;
+              this.module.events[this.scene.name].triggers[name2 + add] = {};
+              this.module.events[this.scene.name].triggers[name2 + add].type = 'dialogue';
+              this.module.events[this.scene.name].triggers[name2 + add].objectId = name3 + (this.dialogues - 1);
               characterInput.value = '';
               dialogueInput.value = '';
             }
 
             this.dialogues = this.dialogues + 1;
+          } else if (dialogueInput.value !== '' && characterInput.value === '') {
+            console.warn('Can\'t proceed, please add dialogue');
+            const snacker = document.querySelector('.snackbar-lite');
+            snacker.textContent = 'Can\'t proceed, please add dialogue';
+            snacker.show();
+          } else if (dialogueInput.value === '' && characterInput.value !== '') {
+            console.warn('Can\'t proceed, please add name of character');
+            const snacker = document.querySelector('.snackbar-lite');
+            snacker.textContent = 'Can\'t proceed, please add name of character';
+            snacker.show();
           }
+
+          prev.addEventListener('click', event => {
+            // let name1 = 'trigger-0';
+            // let name2 = 'trigger-';
+            // let triggerCount = Object.keys(this.module.events[this.scene.name].triggers).length;
+            // let add = triggerCount + 1;
+            // let name3 = 'dialogue-0';
+            // let name4 = 'dialogue-';
+            // if (this.dialogues < 9) {
+            //   const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
+            //   let add2 = loadedObjs + 1;
+            //   let name = name3 + this.dialogues;
+            //   this.module.objects[name].next = name1 + add;
+            //   if (this.dialogues !== 1) {
+
+            //   }
+          });
 
           console.log(this.module);
         });
