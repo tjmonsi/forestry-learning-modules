@@ -919,6 +919,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       dialogues: {
         type: Number,
         value: 1
+      },
+      structuralNum: {
+        type: Number,
+        value: 1
       }
     };
   }
@@ -1809,6 +1813,150 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       snacker.textContent = 'Can\'t add dialogue, no canvas yet';
       snacker.show();
     }
+  }
+
+  _addAssessment ({ target: el }) {
+    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    if (canvas) {
+      const bg = canvas.querySelector('#background');
+      if (bg) {
+        if (el.value === 'Assessment Forms') {
+          console.log('Forms!');
+          // creation of dialog box
+          let dialog = document.createElement('dialog');
+          dialog.style.cssText = 'width: 75%; height: 75vh; overflow: auto; background-color: #efefef;';
+          // form creation to be put in dialog box
+          let form = document.createElement('form');
+          form.style.cssText = 'display: flex; flex-direction: column';
+          form.method = 'dialog';
+          // creation of name input for the form
+          let name = document.createElement('input');
+          name.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-bottom: 36px; margin-top: 2px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+          name.placeholder = 'Assessment Name';
+          form.appendChild(name);
+          let formName = '';
+          name.addEventListener('change', event => {
+            const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
+            let add2 = loadedObjs + 1;
+            formName = event.target.value + '-' + this.structuralNum;
+            formName = formName.replace(' ', '-').toLowerCase();
+            // create formName object
+            this.module.objects[formName] = {};
+            this.module.objects[formName].type = 'form';
+            this.module.objects[formName].form = {};
+            this.module.objects[formName].form.structural = {};
+            this.module.objects[formName].form.structural.name = formName;
+            this.module.objects[formName].form.structural.items = {};
+            // add to module events
+            this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: {}, default: {}, answer: {} });
+          });
+          console.log(this.module);
+          // creation of div for inputs
+          let inputs = document.createElement('div');
+          form.appendChild(inputs);
+          // creation of add single choice button
+          let singleButton = document.createElement('button');
+          singleButton.innerHTML = 'Add Question';
+          singleButton.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 15%; margin-left: 30%; margin-bottom: 24px;';
+          singleButton.type = 'button';
+          singleButton.addEventListener('click', event => {
+            // create input for feature name
+            let feature = document.createElement('input');
+            feature.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-top: 12px; margin-bottom: 12px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+            feature.placeholder = 'Feature Name';
+            let featureName = '';
+            feature.addEventListener('change', event => {
+              featureName = event.target.value;
+              featureName = featureName.replace(' ', '-').toLowerCase();
+              // add to module objects
+              this.module.objects[formName].form.structural.items[featureName] = {};
+              this.module.objects[formName].form.structural.items[featureName].type = 'select';
+              this.module.objects[formName].form.structural.items[featureName].options = {};
+            });
+            // create input for choices
+            let choices = document.createElement('input');
+            choices.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-bottom: 12px; margin-top: 2px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+            choices.placeholder = 'Option 1, Option 2, Option 3';
+            let list = '';
+            choices.addEventListener('change', event => {
+              list = event.target.value.split(', ');
+              for (let i = 0; i < list.length; i++) {
+                let lower = list[i].replace(' ', '-').toLowerCase();
+                this.module.objects[formName].form.structural.items[featureName].options[lower] = list[i];
+              }
+            });
+            // create input for answers
+            let answers = document.createElement('input');
+            answers.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-bottom: 12px; margin-top: 2px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+            answers.placeholder = 'Answer 1 or Answer 1, Answer 2, Answer 3';
+            let answersList = '';
+            answers.addEventListener('change', event => {
+              answersList = event.target.value.split(', ');
+              let index = this.module.events[this.scene.name].triggers['trigger-01'].load.filter(objectId => objectId.objectId === formName);
+              if (answersList.length > 1) {
+                this.module.objects[formName].form.structural.items[featureName].multiple = true;
+                index[0].default[featureName] = [];
+
+                index[0].answer[featureName] = [];
+                for (let i = 0; i < answersList.length; i++) {
+                  index[0].answer[featureName].push(answersList[i]);
+                }
+              } else {
+                index[0].default[featureName] = list[0];
+                index[0].answer[featureName] = answersList[0];
+              }
+            });
+            // append them to div inputs
+            inputs.appendChild(feature);
+            inputs.appendChild(choices);
+            inputs.appendChild(answers);
+            // put the data to the form object at the module
+          });
+          // creation of close button
+          let controls = document.createElement('div');
+          let close = document.createElement('button');
+          close.innerHTML = 'Cancel';
+          close.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 16%; margin-left: 30%;';
+
+          close.addEventListener('click', event => {
+            dialog.close();
+            let load = this.module.events[this.scene.name].triggers['trigger-01'].load;
+            let i = load.findIndex(element => element.objectId === formName);
+            delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
+            let obj = this.module.objects;
+            delete obj[formName];
+            console.log(this.module);
+          });
+          let submit = document.createElement('button');
+          // TODO: create submit function
+          // put this.structuralNum++; inside the submit function
+          submit.innerHTML = 'Finish';
+          submit.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 16%; margin-left: 2%;';
+          form.appendChild(singleButton);
+          form.appendChild(controls);
+          controls.appendChild(close);
+          controls.appendChild(submit);
+          dialog.appendChild(form);
+          canvas.appendChild(dialog);
+          dialog.showModal();
+        } else if (el.value === 'Assessment Tables') {
+          console.log('Tables!');
+        } else if (el.value === 'Assessment Matching') {
+          console.log('Matching!');
+        } else {}
+      } else {
+        console.warn('Can\'t add Assessment, no background yet');
+        const snacker = document.querySelector('.snackbar-lite');
+        snacker.textContent = 'Can\'t add Assessment, no background yet';
+        snacker.show();
+      }
+    } else {
+      console.warn('Can\'t add Assessment, no canvas yet');
+      const snacker = document.querySelector('.snackbar-lite');
+      snacker.textContent = 'Can\'t add Assessment, no canvas yet';
+      snacker.show();
+    }
+    el.value = 'Add Assessment';
   }
 
   _save () {

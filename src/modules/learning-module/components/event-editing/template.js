@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _load } = this;
+  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _load, _addAssessment } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // // console.log(scenehttp://localalhost/Objects)
@@ -9,7 +9,6 @@ const template = (html, self) => function () {
       <select id="location" @change="${_changeLoc.bind(this)}">
         <option value="Event Editing" id="curr-loc"> Event Editing</option>
         <option value="Forms"> Forms</option>
-      <button id = "save">Save</button>
         <option value="Narrative Editing"> Narrative Editing</option>
       </select>
       <button id = "save" @click="${_save.bind(this)}">Save</button>
@@ -21,6 +20,12 @@ const template = (html, self) => function () {
       <button id = "characters" @click="${_characterClick.bind(this)}">Characters</button>
       <button id = "objects" @click="${_objectClick.bind(this)}">Objects</button>
       <button id = "dialogue" @click="${_addDialogue.bind(this)}">Add Dialogue</button>
+      <select id="assessment" @change="${_addAssessment.bind(this)}">
+        <option value="Add Assessment" id="assessment-default"> Add Assessment </option>
+        <option value="Assessment Forms"> Assessment Forms </option>
+        <option value="Assessment Tables"> Assessment Tables </option>
+        <option value="Assessment Matching"> Assessment Matching </option>
+      </select>
     </div>
     <div id = "assets">
     </div>
