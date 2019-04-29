@@ -9,9 +9,10 @@ import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 import '../../../general/components/snackbar-lite';
-import { cpus } from 'os';
+import * as localforage from 'localforage';
+// import { cpus } from 'os';
 
-const { HTMLElement, customElements, fetch } = window;
+const { HTMLElement, customElements } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   static get is () { return 'event-editing'; }
 
@@ -285,6 +286,60 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           },
           {
             fname: 'tindalo-physical.jpg'
+          },
+          {
+            fname: 'lens1.png'
+          },
+          {
+            fname: 'lens2.png'
+          },
+          {
+            fname: 'lens3.png'
+          },
+          {
+            fname: 'lens4.png'
+          },
+          {
+            fname: 'lens5.png'
+          },
+          {
+            fname: 'lens6.png'
+          },
+          {
+            fname: 'lens7.png'
+          },
+          {
+            fname: 'lens8.png'
+          },
+          {
+            fname: 'lens9.png'
+          },
+          {
+            fname: 'lens10.png'
+          },
+          {
+            fname: 'lens11.png'
+          },
+          {
+            fname: 'lens12.png'
+          },
+          {
+            fname: 'lens13.png'
+          },
+          {
+            fname: 'lens14.png'
+          },
+          {
+            fname: 'lens15.png'
+          },
+          {
+            fname: 'lens16.png'
+          },
+          {
+            fname: 'lens17.png'
+          },
+          {
+            fname: 'lens18.png'
           }
         ]
       },
@@ -582,6 +637,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'tindalo-physical': {
               'type': 'image',
               'src': '/images/tindalo-physical.jpg'
+            },
+            'lens1': {
+              'type': 'image',
+              'src': '/images/lens1.jpg'
             }
           },
           eventStart: 'event-01'
@@ -942,12 +1001,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (super.connectedCallback) super.connectedCallback();
     // subscribe('query', this._boundGetQueryState);
     subscribe('lessons', this._boundGetLessons);
+    this._loadSavedState();
   }
 
   disconnectedCallback () {
     if (super.disconnectedCallback) super.disconnectedCallback();
     // unsubscribe('query', this._boundGetQueryState);
     unsubscribe('lessons', this._boundGetLessons);
+  }
+
+  async _loadSavedState () {
+    const obj = await localforage.getItem('lesson-state');
+    console.log(obj);
+    if (obj) {
+      this.module = obj;
+    }
+    console.log(this.module);
   }
 
   _getLessons (lessons) {
@@ -1041,16 +1110,113 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
   }
 
+  _assignId () {
+    const sceneSelector = this.shadowRoot.querySelector('#scene-selector');
+    for (let i = 0; i < sceneSelector.children.length; i++) {
+      if (sceneSelector.children.length < 9) {
+        let selectorId = 'event-0' + (i + 1);
+        sceneSelector.children[i].id = selectorId;
+      } else {
+        let selectorId = 'event-' + i;
+        sceneSelector.children[i].id = selectorId;
+      }
+    }
+  }
+
   _selectorClick ({ target: el }) {
+    // const workspace = this.shadowRoot.querySelector('#workspace');
+    // console.log(workspace.children.length);
+    // const sceneSelector = this.shadowRoot.querySelector('#scene-selector');
+    // for (let i = 0; i < sceneSelector.children.length; i++) {
+    //   if (sceneSelector.children.length < 9) {
+    //     let selectorId = 'event-0' + (i + 1);
+    //     sceneSelector.children[i].id = selectorId;
+    //   } else {
+    //     let selectorId = 'event-' + i;
+    //     sceneSelector.children[i].id = selectorId;
+    //   }
+    // }
+
+    // if (workspace.children.length < 2 && this.scene.id !== null) {
+    //   this.scene.id = el.id;
+    //   const canvas = document.createElement('div');
+    //   canvas.id = 'canvas' + this.scene.id;
+    //   canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
+    //   workspace.appendChild(canvas);
+    //   // canvas.addEventListener('click', event => {
+    //   //   console.log(event.target);
+    //   // });
+    //   if (this.module.events[el.id]) {
+    //     console.log('meron na!');
+    //   } else {
+    //     console.log('wala pa!');
+    //   }
+    //   if (!this.module) return;
+    //   const loadedEvents = Object.keys(this.module.events).length;
+    //   console.log(loadedEvents);
+    //   // console.log(loadedEvents);
+    //   if (loadedEvents === 0) {
+    //     const name1 = 'event-0';
+    //     const name = 'event-';
+    //     const num = loadedEvents + 1;
+    //     if (loadedEvents < 9) {
+    //       if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
+    //         this.toolkit.events[name1 + num] = {};
+    //         this.module.events[name1 + num] = {};
+    //         this.scene.name = name1 + num;
+    //       }
+    //     } else {
+    //       if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
+    //         this.toolkit.events[name + num] = {};
+    //         this.module.events[name + num] = {};
+    //         this.scene.name = name + num;
+    //       }
+    //     }
+    //   } else {
+    //     workspace.removeChild(workspace.children[1]);
+    //     this.scene.id = el.id;
+    //     const canvas = document.createElement('div');
+    //     canvas.id = 'canvas' + this.scene.id;
+    //     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden;';
+    //     workspace.appendChild(canvas);
+    //     canvas.addEventListener('click', event => {
+    //       console.log(event.target);
+    //     });
+    //     const loadedEvents = Object.keys(this.module.events).length;
+    //     // console.log(loadedEvents);
+    //     const name1 = 'event-0';
+    //     const name = 'event-';
+    //     const num = loadedEvents + 1;
+    //     if (loadedEvents < 9) {
+    //       if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
+    //         this.toolkit.events[name1 + num] = {};
+    //         this.module.events[name1 + num] = {};
+    //       }
+    //     } else {
+    //       if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
+    //         this.toolkit.events[name + num] = {};
+    //         this.module.events[name + num] = {};
+    //       }
+    //     }
+    //   }
+    // }
     const workspace = this.shadowRoot.querySelector('#workspace');
-    if (workspace.children.length < 2 && this.scene.id !== null) {
-      this.scene.id = el.id;
-      const canvas = document.createElement('div');
-      canvas.id = 'canvas' + this.scene.id;
-      canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
-      workspace.appendChild(canvas);
+    // set the ids of the scenes to event-something
+    this._assignId();
+    // create canvas, if there is an existing, remove it, else create new canvas
+    if (workspace.children.length > 1) {
+      workspace.removeChild(workspace.children[1]);
+    }
+
+    this.scene.id = el.id;
+    const canvas = document.createElement('div');
+    canvas.id = 'canvas' + this.scene.id;
+    canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
+    workspace.appendChild(canvas);
+    console.log(el.id);
+    if (!this.toolkit.events[el.id]) {
       const loadedEvents = Object.keys(this.module.events).length;
-      // console.log(loadedEvents);
+      console.log('bago to bes');
       const name1 = 'event-0';
       const name = 'event-';
       const num = loadedEvents + 1;
@@ -1068,27 +1234,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         }
       }
     } else {
-      workspace.removeChild(workspace.children[1]);
-      this.scene.id = el.id;
-      const canvas = document.createElement('div');
-      canvas.id = 'canvas' + this.scene.id;
-      canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden;';
-      workspace.appendChild(canvas);
-      const loadedEvents = Object.keys(this.module.events).length;
-      // console.log(loadedEvents);
-      const name1 = 'event-0';
-      const name = 'event-';
-      const num = loadedEvents + 1;
-      if (loadedEvents < 9) {
-        if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
-          this.toolkit.events[name1 + num] = {};
-          this.module.events[name1 + num] = {};
-        }
-      } else {
-        if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
-          this.toolkit.events[name + num] = {};
-          this.module.events[name + num] = {};
-        }
+      console.log('dati na this!');
+      let toBeLoaded = this.toolkit.events[el.id].triggers['trigger-01'].load;
+      let length = toBeLoaded.length;
+      for (let i = 0; i < length; i++) {
+        let img = document.createElement('img');
+        let src = '/assets/forestry/' + this.toolkit.objects[toBeLoaded[i].objectId].src;
+        img.src = src;
+        canvas.appendChild(img);
+        img.style.cssText = toBeLoaded[i].style;
       }
     }
   }
@@ -1122,7 +1276,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.toolkit.events[name].triggers['trigger-01'] = {};
             this.toolkit.events[name].triggers['trigger-01'].type = 'load';
             this.toolkit.events[name].triggers['trigger-01'].load = [];
-            this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', style: ['z-index: 0', 'width: 100%', 'height: 100%', 'position: relative', 'id: background'] });
+            this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', style: 'z-index: 0; width: 100%; height: 100%; position: relative; id: background;' });
             // console.log(this.toolkit);
 
             this.module.events[name].default = 'trigger-01';
@@ -1230,8 +1384,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   up.style.left = '89%';
                   char.dataset.alignment = 'right';
                 }
-
+                let styleArr = '';
                 canvas.appendChild(char);
+                console.log(char.style.length);
+                for (let i = 0; i < char.style.length; i++) {
+                  let style = window.getComputedStyle(char);
+                  styleArr += char.style[i] + ': ' + style.getPropertyValue(char.style[i]) + '; ';
+                }
+                console.log(styleArr);
                 canvas.appendChild(check);
                 canvas.appendChild(ex);
                 canvas.appendChild(down);
@@ -1248,8 +1408,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   let add = loadedObjs + 1;
                   if (loadedObjs < 9) {
                     this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, style: styleArr });
                   } else {
                     this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, style: styleArr });
                   }
                   console.log(this.module);
                   // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: });
@@ -1468,7 +1630,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   obj.dataset.alignment = 'right';
                 }
 
+                let styleArr = '';
                 canvas.appendChild(obj);
+                console.log(obj.style.length);
+                for (let i = 0; i < obj.style.length; i++) {
+                  let style = window.getComputedStyle(obj);
+                  styleArr += obj.style[i] + ': ' + style.getPropertyValue(obj.style[i]) + '; ';
+                }
+                console.log(styleArr);
                 canvas.appendChild(checkObj);
                 canvas.appendChild(exObj);
                 canvas.appendChild(downObj);
@@ -1486,11 +1655,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   if (loadedObjs < 9) {
                     if (objId === 'tablet') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: ['z-index: 1'] });
+                    } else {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'cross-solo' }, style: ['z-index: 1'] });
                     }
+                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, style: styleArr });
                   } else {
                     if (objId === 'tablet') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: ['z-index: 1'] });
+                    } else {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'cross-solo' }, style: ['z-index: 1'] });
                     }
+                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, style: styleArr });
                   }
                   console.log(this.module);
                   this.objectClicked = '';
@@ -1629,6 +1804,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
   }
 
+  _canvasClick () {
+    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    canvas.addEventListener('click', event => {
+      console.log(event.target);
+    });
+  }
+
   _addDialogue () {
     const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
     if (canvas) {
@@ -1670,7 +1852,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.module.objects[name].type = 'dialogue';
             this.module.objects[name].character = char;
             this.module.objects[name].text = content;
-            console.log(this.module);
           } else {
             let name3 = name2 + this.dialogues;
             this.module.objects[name3] = {};
@@ -1709,7 +1890,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             let name6 = 'event-';
             let index = Object.keys(this.module.events[this.scene.name].triggers).length - 2;
             let prevName = Object.keys(this.module.events[this.scene.name].triggers)[index];
-            console.log(prevName);
             this.module.events[this.scene.name].triggers[prevName].type = 'next';
             let loadedEvents = Object.keys(this.module.events).length;
             if (loadedEvents < 9) {
@@ -1927,7 +2107,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
             let obj = this.module.objects;
             delete obj[formName];
-            console.log(this.module);
           });
           let submit = document.createElement('button');
           // TODO: create submit function
@@ -2004,9 +2183,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     el.value = 'Add Assessment';
   }
 
-  _save () {
-    let exportObj = this.module;
-    let exportName = 'ilo-4';
+  async _save () {
+    const exportObj = this.toolkit;
+    const exportName = 'ilo-4';
+    await localforage.setItem('lesson-state', exportObj);
+
     let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     let downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);

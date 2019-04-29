@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _load, _addAssessment } = this;
+  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _load, _addAssessment, _assignId } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // // console.log(scenehttp://localalhost/Objects)
@@ -30,25 +30,24 @@ const template = (html, self) => function () {
     <div id = "assets">
     </div>
     <div class = "workspace" id="workspace">
-      <div class = "scene-selector">
+      <div class = "scene-selector" id = "scene-selector">
         ${lessons && lessons.length ? lessons.map((lesson, index) => html`
-          <div class="lessons" id="scene${index}" @click="${_selectorClick.bind(this)}">
+          <div class="lessons" @click="${_selectorClick.bind(this)}">
+            <p>${index}</p> 
           </div>
-          <p>${index}</p> 
           ${lesson.topics && lesson.topics.length ? lesson.topics.map((topic, index2) => html`
-            <div class="topics" id="scene${index}${index2}" @click="${_selectorClick.bind(this)}">
+            <div class="topics" @click="${_selectorClick.bind(this)}">
+              <p>${index}.${index2}</p>
             </div>
-            <p>${index}.${index2}</p>
             ${topic.subtopics && topic.subtopics.length ? topic.subtopics.map((subtopic, index3) => html`
-              <div class="subtopics" id="scene${index}${index2}${index3}" @click="${_selectorClick.bind(this)}">
+              <div class="subtopics" @click="${_selectorClick.bind(this)}">
+                <p>${index}.${index2}.${index3}</p>
               </div>
-              <p>${index}.${index2}.${index3}</p>
             `) : html``}
           `) : html``}
         `) : html``}
       </div>
     </div>
-    
   `;
 }.bind(self)();
 
