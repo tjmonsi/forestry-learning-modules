@@ -9,6 +9,7 @@ import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 import '../../../general/components/snackbar-lite';
+import { cpus } from 'os';
 
 const { HTMLElement, customElements, fetch } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
@@ -1839,16 +1840,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
             let add2 = loadedObjs + 1;
             formName = event.target.value + '-' + this.structuralNum;
+            let fn = event.target.value;
             formName = formName.replace(' ', '-').toLowerCase();
             // create formName object
             this.module.objects[formName] = {};
             this.module.objects[formName].type = 'form';
             this.module.objects[formName].form = {};
             this.module.objects[formName].form.structural = {};
-            this.module.objects[formName].form.structural.name = formName;
+            this.module.objects[formName].form.structural.name = fn;
             this.module.objects[formName].form.structural.items = {};
             // add to module events
-            this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: {}, default: {}, answer: {} });
+            this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classlist: 'image-right form' }, default: {}, answer: {} });
           });
           console.log(this.module);
           // creation of div for inputs
@@ -1932,6 +1934,49 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           // put this.structuralNum++; inside the submit function
           submit.innerHTML = 'Finish';
           submit.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 16%; margin-left: 2%;';
+          submit.addEventListener('click', event => {
+            let load = this.module.events[this.scene.name].triggers['trigger-01'].load;
+            let i = load.findIndex(element => element.objectId === formName);
+            // select canvas from the shadowRoot
+            let canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+            // create form to be added in the canvas
+            let form = document.createElement('form');
+            form.class = 'absolute form overflow' + load[i].meta.classList;
+            form.id = load[i].objectId;
+            form.style.cssText = 'top: 25%; right: 5%; height: 60%; width: 30%; background: #ddd; padding: 24px; border: solid #000; overflow: auto; position: absolute;';
+            // create div form-group
+            let formGroup = document.createElement('div');
+            form.appendChild(formGroup);
+            let title = document.createElement('h4');
+            let obj = this.module.objects[formName];
+            title.innerHTML = obj.form.structural.name;
+            title.style.textAlign = 'center';
+            formGroup.appendChild(title);
+            let contents = Object.entries(obj.form.structural.items);
+            contents.forEach(element => {
+              let inputContainer = document.createElement('div');
+              inputContainer.style.cssText = 'display: flex; flex-direction: column;';
+              let label = document.createElement('label');
+              label.slot = 'label';
+              label.innerHTML = element[0];
+              label.style.margin = '12px 0px';
+              let select = document.createElement('select');
+              select.slot = 'input';
+              select.multiple = element[1].multiple;
+              select.style.padding = '12px';
+              let options = Object.entries(element[1].options);
+              options.forEach(e => {
+                let option = document.createElement('option');
+                option.value = e[1];
+                option.innerHTML = e[1];
+                select.appendChild(option);
+              });
+              inputContainer.appendChild(label);
+              inputContainer.appendChild(select);
+              formGroup.appendChild(inputContainer);
+            });
+            canvas.appendChild(form);
+          });
           form.appendChild(singleButton);
           form.appendChild(controls);
           controls.appendChild(close);
