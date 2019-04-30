@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select, menu } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -26,15 +26,6 @@ const template = (html, self) => function () {
         </div>
         ` : ''}
 
-        ${item.type === 'block' ? html`
-          <a href='${item.link}'>
-            <div class="container">
-              <img src="${item.src ? baseURL + item.src : ''}" style="${styleString}">
-              <div class="centered">${item.label}</div>
-            </div>
-          </a>
-        ` : ''}
-
         ${item.type === 'circle' ? html`
           <div class="absolute" id="circle" style="${styleString}">
             <svg
@@ -50,6 +41,33 @@ const template = (html, self) => function () {
                   fill="none">
                 </circle>
               </svg>
+          </div>
+        ` : ''}
+
+        ${item.type === 'ellipse' ? html`
+          <div class="absolute" id="circle" style="${styleString}">
+            <svg
+              height="${item.h}"
+              width="${item.w}">
+                <ellipse
+                  cx="${item.cx}"
+                  cy="${item.cy}"
+                  rx="${item.rx}"
+                  ry="${item.ry}"
+                  color="${item.color}"
+                  stroke="${item.color}"
+                  stroke-width="3"
+                  fill="none"/>
+              </svg>
+          </div>
+        ` : ''}
+
+        ${item.type === 'block' ? html`
+          <div class="block">
+            <a href='${item.link}'>
+              <img src="${item.src ? baseURL + item.src : ''}" style="${styleString}">
+              <div class="centered">${item.label}</div>
+            </a>
           </div>
         ` : ''}
 
@@ -73,8 +91,16 @@ const template = (html, self) => function () {
         ` : ''}
 
         ${item.type === 'label' ? html`
-          <div class="absolute text ${item.meta && item.meta.classList}" id="label" style="${styleString}">
+          <div class="absolute text ${item.meta && item.meta.classList}" id="label" style="${styleString}" value="${item.text}">
             <mark-lite .text="${item.text}"></mark-lite>
+          </div>
+        ` : ''}
+
+        ${item.type === 'menu' ? html `
+          <div class="absolute menu" style="${styleString}">
+            <a id="menu" type="button" class="button" href="?currentEvent=event-${item.event}">
+              Main Menu
+            </a>
           </div>
         ` : ''}
 
@@ -177,6 +203,83 @@ const template = (html, self) => function () {
             `)}
             <button id="submit" class="button" disabled>Submit</button>
           </form>
+        ` : ''}
+
+        ${item.type === 'discussion' ? html`
+          <div class="carousel" id = "container">
+            <div class="carousel-inner">
+              ${Object.entries(item.items).map(([key,input]) => html`
+                <input class="carousel-open" type="radio" id="carousel-${key}" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                <div class="carousel-item">
+                  <img src="${input.src ? baseURL + input.src : ''}">
+                  <div class="carousel-caption">
+                    <h3>${input.name}</h3>
+                    <p>${input.desc}</p>
+                  </div>
+                </div>
+              `)}
+
+              ${Object.entries(item.items).map(([key, input]) => html`
+                <label for="carousel-${input.prev}" class="carousel-control prev control-${key}">‹</label>              
+                <label for="carousel-${input.next}" class="carousel-control next control-${key}">›</label>
+              `)}
+              
+              <ol class="carousel-indicators">
+              ${Object.entries(item.items).map(([key, input]) => html`
+                <li>
+                  <label for="carousel-${key}" class="carousel-bullet">•</label>
+                </li>
+              `)}
+              </ol>
+            </div>
+          </div>
+        ` : ''}
+
+        ${item.type === 'choice' ? html`
+          <div class="container">
+            <div class="identify">
+              <img id="identify" src="${item.src ? baseURL + item.src : ''}" data-answer="${item.answer}">
+            </div>
+
+            <div class="space"></div>
+
+            <div class="choices">
+              <h4>Multiple options:</h4>
+              <ol type="a">
+                ${Object.entries(item.options).map(([key, input]) => html`
+                  <li id="choice" data-answer=${input} data-choice="${key}" @click=${select.bind(this)}>${input}</li>
+                `)}
+              </ol>
+            </div>
+          </div>
+        ` : ''}
+
+        ${item.type === 'choice2' ? html`
+          <div class="container2">
+
+            <div class="question">
+              <h3>${item.question}</h3>
+              <p>${item.species}</p>
+            </div>
+
+            <div class="container3">
+              <div class="identify">
+                <img id="identify" src="${item.src ? baseURL + item.src : ''}" data-answer="${item.answer}">
+              </div>
+
+              <div class="space"></div>
+
+              <div class="choices">
+                <h3>Multiple options:</h3>
+                <ol type="a">
+                  ${Object.entries(item.options).map(([key, input]) => html`
+                    <li data-answer=${input} data-choice="${key}" @click=${select.bind(this)}>${input}</li>
+                  `)}
+                </ol>
+              </div>
+            </div>
+
+          </div>
         ` : ''}
       `;
   })}

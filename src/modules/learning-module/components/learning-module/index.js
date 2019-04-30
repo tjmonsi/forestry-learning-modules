@@ -135,11 +135,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       this.sceneObjects = [];
       this.currentEvent = trigger.event;
       console.log(trigger);
-      if (this.currentEvent === 'event-31' || this.currentEvent === 'event-32' || this.currentEvent === 'event-33' || this.currentEvent === 'event-34' || this.currentEvent === 'event-35' || this.currentEvent === 'event-36' || this.currentEvent === 'event-37' || this.currentEvent === 'event-38' || this.currentEvent === 'event-39' || this.currentEvent === 'event-40'){
-        changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, false);
-      } else {
-        changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
-      }
+      // if (this.currentEvent === 'event-27' || this.currentEvent === 'event-31' || this.currentEvent === 'event-32' || this.currentEvent === 'event-33' || this.currentEvent === 'event-34' || this.currentEvent === 'event-35' || this.currentEvent === 'event-36' || this.currentEvent === 'event-37' || this.currentEvent === 'event-38' || this.currentEvent === 'event-39' || this.currentEvent === 'event-40'){
+      changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, false);
+      // } else {
+        // changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
+      // }
     }
 
     if (type === 'dialogue') {
@@ -156,6 +156,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
       this.requestUpdate();
     }
+    this.types = [];
+    this.parenchyma = [];
   }
 
   _click () {
@@ -176,6 +178,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       const { triggers } = event;
       this._doTrigger(triggers[value]);
     }
+    this.types = [];
+    this.parenchyma = [];
   }
 
   updated () {
@@ -211,10 +215,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     
     const label = this.shadowRoot.querySelector('#label');
     label.style.visibility = "visible";
+    label.style.zIndex = 100;
 
     this.types = [];
     this.parenchyma = [];
     this.correctCount = 0;
+
+    var sb = document.querySelector('.snackbar-lite');
+    sb.showText("You correctly identified its Structural Features! You may now continue.",2500);
   }
 
   onDragStart (event) {
@@ -260,10 +268,21 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (dragged && target) {
       // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
       event.preventDefault();
-      console.log(target.id);
-      console.log(dragged.id);
+      var sb = document.querySelector('.snackbar-lite');
+
       if (dragged.id === target.id) {
+        console.log(dragged.id);
         dragged.remove();
+        sb.showText("Correct!", 1000);
+        const label = this.shadowRoot.querySelectorAll('#label');
+        for (let item in label) {
+          if (label[item].getAttribute("value").toLowerCase() === dragged.id) {
+            label[item].style.zIndex = 100;
+          }
+        }
+        // label.style.zIndex = 100;
+      } else {
+        sb.showText("Wrong option! Try again.", 1000);
       }
     }
     this.requestUpdate();
@@ -280,9 +299,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
 
       var sb = document.querySelector('.snackbar-lite');
-      var ans = "Selected: ";
+      var ans = "Selected:\n";
       for (let item of this.types) {
-        ans = ans + '\n\n' + item;
+        item = item.charAt(0).toUpperCase() + item.slice(1);
+        if (ans === "Selected:\n") {
+          ans = ans + " " + item;
+        } else {
+          ans = ans + ", " + item;
+        }
       }
       sb.showText(ans, 1000);
       
@@ -307,9 +331,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
 
       var sb = document.querySelector('.snackbar-lite');
-      var ans = "Selected: ";
+      var ans = "Selected:\n";
       for (let item of this.parenchyma) {
-        ans = ans + '\n\n' + item;
+        item = item.charAt(0).toUpperCase() + item.slice(1);
+        if (ans === "Selected:\n") {
+          ans = ans + " " + item;
+        } else {
+          ans = ans + ", " + item;
+        }
       }
       sb.showText(ans, 1000);
       
@@ -327,12 +356,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         this.correctCount += 1;
       }
     } else {
+      var sb = document.querySelector('.snackbar-lite');
       if (target.value === answer) {
         target.disabled = true;
         this.correctCount += 1;
+        sb.showText("Correct!", 1000);
       } else {
-        var sb = document.querySelector('.snackbar-lite');
-        sb.showText("Wrong option! Try again.", 5000);
+        sb.showText("Wrong option! Try again.", 1000);
       }
     }
 
@@ -359,7 +389,69 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
     }
   }
+
+  select (event) {
+    var target = event.target;
+    var identify = this.shadowRoot.querySelector('#identify');
+    var sb = document.querySelector('.snackbar-lite');
+
+    if (target.getAttribute("data-answer") === identify.getAttribute("data-answer")) {
+      sb.showText("Correct! Congratulations! You are one step forward to becoming a wood wizard.");
+      const next = this.shadowRoot.querySelector('#next');
+      next.disabled = false;
+
+      const choices = this.shadowRoot.querySelectorAll('#choice');
+      for (let item in choices) {
+        choices[item].removeEventListener('click', this.select, true);
+      }
+    } else {
+      sb.showText("Wrong answer! Try again.", 1000);
+    }
+    this._select();
+  }
+
+  // _select () {
+  //   var identify = this.shadowRoot.querySelector('#identify');
+  //   var sb = document.querySelector('.snackbar-lite');
+  //   const choices = this.shadowRoot.querySelectorAll('#choice');
+  //   let temp = false;
+  //   for (let i = 0; i < choices.length; i++) {
+  //     // console.log(choices[i]);
+  //     choices[i].addEventListener("click", event => {
+  //       if (choices[i].getAttribute("data-answer") === identify.getAttribute("data-answer")) {
+  //         sb.showText("Correct! Congratulations! You can now move on to the next one.");
+  //         const next = this.shadowRoot.querySelector('#next');
+  //         next.disabled = false; 
+  //         temp = true;
+  //         for ( let j = 0; j < choices.length; j++) {
+  //           choices[j].removeEventListener('click', event, true);
+  //         }
+  //       } else {
+  //         sb.showText("Wrong option! Try again.", 5000);
+  //       }
+  //     });
+  //   }
+  // }
+
+  // _compare (target) {
+  //   console.log(target);
+  //   var sb = document.querySelector('.snackbar-lite');
+  //   var identify = this.shadowRoot.querySelector('#identify');
+  //   if (target.getAttribute("data-answer") === identify.getAttribute("data-answer")) {
+  //     sb.showText("Correct! Congratulations! You can now move on to the next one.");
+  //     const next = this.shadowRoot.querySelector('#next');
+  //     next.disabled = false;
+  //     target.removeEventListener('click', this._compare(), true); 
+  //   } else {
+  //     sb.showText("Wrong option! Try again.", 5000);
+  //   }
+  // }
+
+  menu (event) {
+    console.log('test');
+  }
 }
+
 
 if (!customElements.get(Component.is)) {
   customElements.define(Component.is, Component);

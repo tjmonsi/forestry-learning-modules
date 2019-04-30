@@ -19,18 +19,20 @@
   right 0
   background rgba(255, 255, 255, 0.75);
   color black
-  font-size 0.9rem
+  font-size 1.5 rem
   padding 24px
   box-sizing border-box
-  z-index 10000
+  z-index 1000000
 
 .titlescreen
-  align-items center
+  height 20%
   text-align center
   font-weight bold
   font-size 1.5rem
-  top 30%
-  right 5%
+  left 1000px
+  z-index 1000
+  padding 24px
+  margin 0
 
 .table
   border 1px solid
@@ -40,6 +42,15 @@
   background teal
   color white
   padding 12px 24px
+  border 3px solid white
+
+.menu
+  right 2%
+  bottom 5%
+
+.menu a
+  border 2px solid white
+  text-decoration none
 
 .character
   width: 50%
@@ -106,6 +117,11 @@
 .lens-right
   top 50%
   right 17.5%
+
+.label
+  font-size 5rem
+  color white
+  font-weight bold
 
 .image-left-top
   left 22.5%
@@ -313,6 +329,7 @@ a:hover
   width 80%
   left 0
   top 0
+  z-index 1
 
 .character-tablet-left
   left 0
@@ -329,9 +346,12 @@ a:hover
   top 0
   width 80%
 
-.container
+.block
   position relative
   text-align center
+
+.block img
+  border solid 5px white
 
 .centered
   position absolute
@@ -341,3 +361,231 @@ a:hover
   font-size 25px
   font-weight bold
   color white
+
+#references ul li
+  line-height 1.75
+  font-size 2rem
+
+
+
+
+.carousel {
+    left 20%
+    top 8%
+    width 37.5%
+    position: relative;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+}
+
+.carousel-inner {
+    position: relative;
+    overflow: hidden;
+    width 100%
+    z-index 9
+}
+
+.carousel-open:checked + .carousel-item {
+    position: static;
+    opacity: 100;
+}
+
+.carousel-item {
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: opacity 0.6s ease-out;
+    transition: opacity 0.6s ease-out;
+    height: auto;
+}
+
+.carousel-item img {
+    display: block
+    height: auto;
+    width 100%
+    z-index 10
+}
+
+.carousel-control {
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 50%;
+    color: #fff;
+    cursor: pointer;
+    display: none;
+    font-size: 40px;
+    height: 40px;
+    line-height: 35px;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    cursor: pointer;
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    text-align: center;
+    width: 40px;
+    z-index: 10;
+}
+
+.carousel-control.prev {
+    left: 2%;
+}
+
+.carousel-control.next {
+    right: 2%;
+}
+
+.carousel-control:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1,
+#carousel-2:checked ~ .control-2,
+#carousel-3:checked ~ .control-3,
+#carousel-4:checked ~ .control-4,
+#carousel-5:checked ~ .control-5,
+#carousel-6:checked ~ .control-6,
+#carousel-7:checked ~ .control-7,
+#carousel-8:checked ~ .control-8,
+#carousel-9:checked ~ .control-9,
+#carousel-10:checked ~ .control-10,
+#carousel-11:checked ~ .control-11,
+#carousel-12:checked ~ .control-12,
+#carousel-13:checked ~ .control-13,
+#carousel-14:checked ~ .control-14,
+#carousel-15:checked ~ .control-15,
+#carousel-16:checked ~ .control-16,
+#carousel-17:checked ~ .control-17,
+#carousel-18:checked ~ .control-18,
+#carousel-19:checked ~ .control-19,
+#carousel-20:checked ~ .control-20,
+#carousel-21:checked ~ .control-21,
+#carousel-22:checked ~ .control-22,
+#carousel-23:checked ~ .control-23,
+#carousel-24:checked ~ .control-24,
+#carousel-25:checked ~ .control-25,
+#carousel-26:checked ~ .control-26{
+    display: block;
+}
+
+.carousel-indicators {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 2%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    margin 15% 5px
+}
+
+.carousel-bullet {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 35px;
+}
+
+.carousel-bullet:hover {
+    color: #aaaaaa;
+}
+
+#carousel-1:checked ~ .control-1 ~ .carousel-indicators li:nth-child(1) .carousel-bullet,
+#carousel-2:checked ~ .control-2 ~ .carousel-indicators li:nth-child(2) .carousel-bullet,
+#carousel-3:checked ~ .control-3 ~ .carousel-indicators li:nth-child(3) .carousel-bullet,
+#carousel-4:checked ~ .control-4 ~ .carousel-indicators li:nth-child(4) .carousel-bullet,
+#carousel-5:checked ~ .control-5 ~ .carousel-indicators li:nth-child(5) .carousel-bullet,
+#carousel-6:checked ~ .control-6 ~ .carousel-indicators li:nth-child(6) .carousel-bullet,
+#carousel-7:checked ~ .control-7 ~ .carousel-indicators li:nth-child(7) .carousel-bullet,
+#carousel-8:checked ~ .control-8 ~ .carousel-indicators li:nth-child(8) .carousel-bullet,
+#carousel-9:checked ~ .control-9 ~ .carousel-indicators li:nth-child(9) .carousel-bullet,
+#carousel-10:checked ~ .control-10 ~ .carousel-indicators li:nth-child(10) .carousel-bullet,
+#carousel-11:checked ~ .control-11 ~ .carousel-indicators li:nth-child(11) .carousel-bullet,
+#carousel-12:checked ~ .control-12 ~ .carousel-indicators li:nth-child(12) .carousel-bullet,
+#carousel-13:checked ~ .control-13 ~ .carousel-indicators li:nth-child(13) .carousel-bullet,
+#carousel-14:checked ~ .control-14 ~ .carousel-indicators li:nth-child(14) .carousel-bullet,
+#carousel-15:checked ~ .control-15 ~ .carousel-indicators li:nth-child(15) .carousel-bullet,
+#carousel-16:checked ~ .control-16 ~ .carousel-indicators li:nth-child(16) .carousel-bullet,
+#carousel-17:checked ~ .control-17 ~ .carousel-indicators li:nth-child(17) .carousel-bullet,
+#carousel-18:checked ~ .control-18 ~ .carousel-indicators li:nth-child(18) .carousel-bullet,
+#carousel-19:checked ~ .control-19 ~ .carousel-indicators li:nth-child(19) .carousel-bullet,
+#carousel-20:checked ~ .control-20 ~ .carousel-indicators li:nth-child(20) .carousel-bullet,
+#carousel-21:checked ~ .control-21 ~ .carousel-indicators li:nth-child(21) .carousel-bullet,
+#carousel-22:checked ~ .control-22 ~ .carousel-indicators li:nth-child(22) .carousel-bullet,
+#carousel-23:checked ~ .control-23 ~ .carousel-indicators li:nth-child(23) .carousel-bullet,
+#carousel-24:checked ~ .control-24 ~ .carousel-indicators li:nth-child(24) .carousel-bullet,
+#carousel-25:checked ~ .control-25 ~ .carousel-indicators li:nth-child(25) .carousel-bullet,
+#carousel-26:checked ~ .control-26 ~ .carousel-indicators li:nth-child(26) .carousel-bullet {
+    color: #428bca;
+}
+
+.carousel-caption
+  position relative
+  left auto
+  right auto
+  text-align center
+
+.container2
+  display block
+  position absolute
+  top 20%
+  left 20%
+  width 50%
+  height 50%
+  z-index 3
+
+.question
+  text-align center
+  font-size 1.5rem
+  width 100%
+
+.question p
+  text-align left
+
+.container3
+  display flex
+  position absolute
+  width 100%
+
+.container
+  display flex
+  position absolute
+  top 20%
+  left 20%
+  width 50%
+  z-index 3
+
+.identify
+  width 47.5%
+
+.identify img
+  width 100%
+  border 2px solid black
+
+.space
+  width 5%
+
+.choices
+  width 47.5%
+  border 2px solid black
+  z-index 10
+  text-align center
+
+.choices h4, .choices h3
+  font-size 1.5rem
+
+.choices ol
+  text-align center
+  list-style-position inside
+
+.choices ol li
+  text-align left
+  font-size 1.75rem
+
+.choices ol li:hover
+  text-decoration underline
+  cursor pointer
