@@ -10,7 +10,6 @@ import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 import '../../../general/components/snackbar-lite';
 
-
 const { HTMLElement, customElements, fetch } = window;
 
 const changeUnit = (value, newVal) => {
@@ -138,7 +137,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       // if (this.currentEvent === 'event-27' || this.currentEvent === 'event-31' || this.currentEvent === 'event-32' || this.currentEvent === 'event-33' || this.currentEvent === 'event-34' || this.currentEvent === 'event-35' || this.currentEvent === 'event-36' || this.currentEvent === 'event-37' || this.currentEvent === 'event-38' || this.currentEvent === 'event-39' || this.currentEvent === 'event-40'){
       changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, false);
       // } else {
-        // changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
+      // changeLocation(`${window.location.pathname.split('?')[0]}?currentEvent=${this.currentEvent}`, true);
       // }
     }
 
@@ -151,7 +150,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           ...objects[objectId]
         });
       } else {
-        console.log(this.sceneObjects[index])
+        console.log(this.sceneObjects[index]);
         this.sceneObjects[index] = { ...this.sceneObjects[index], ...objects[objectId] };
       }
       this.requestUpdate();
@@ -195,7 +194,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             elstyle.style = item.style ? item.style.join(';') : '';
             el.style.width = changeUnit(elstyle.style.width, box.width - (elstyle.style.padding.replace('px', '') * 2));
             el.style.height = changeUnit(elstyle.style.height || '0px', box.height - (elstyle.style.padding.replace('px', '') * 2));
-            console.log(el.style.height, box.height)
+            // console.log(el.style.height, box.height)
             for (const pos of positions) {
               el.style[pos] = changeUnit(elstyle.style[pos] ? elstyle.style[pos] : '0px', box[pos]);
             }
@@ -208,13 +207,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _form (event) {
     event.preventDefault();
     const { target: form } = event;
-    form.setAttribute("finished", true);
-    var finished = form.getAttribute("finished");
+    form.setAttribute('finished', true);
+    // var finished = form.getAttribute('finished');
     const next = this.shadowRoot.querySelector('#next');
     next.disabled = false;
-    
+
     const label = this.shadowRoot.querySelector('#label');
-    label.style.visibility = "visible";
+    label.style.visibility = 'visible';
     label.style.zIndex = 100;
 
     this.types = [];
@@ -222,7 +221,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     this.correctCount = 0;
 
     var sb = document.querySelector('.snackbar-lite');
-    sb.showText("You correctly identified its Structural Features! You may now continue.",2500);
+    sb.showText('You correctly identified its Structural Features! You may now continue.', 2500);
   }
 
   onDragStart (event) {
@@ -273,16 +272,16 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       if (dragged.id === target.id) {
         console.log(dragged.id);
         dragged.remove();
-        sb.showText("Correct!", 1000);
+        sb.showText('Correct!', 1000);
         const label = this.shadowRoot.querySelectorAll('#label');
         for (let item in label) {
-          if (label[item].getAttribute("value").toLowerCase() === dragged.id) {
+          if (label[item].getAttribute('value').toLowerCase() === dragged.id) {
             label[item].style.zIndex = 100;
           }
         }
         // label.style.zIndex = 100;
       } else {
-        sb.showText("Wrong option! Try again.", 1000);
+        sb.showText('Wrong option! Try again.', 1000);
       }
     }
     this.requestUpdate();
@@ -290,27 +289,27 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   onChange (event) {
     const target = event.target;
-    var answer = target.getAttribute("answer");
-    if (target.name === "Pore Types and Arrangement"){
-      if(this.types.indexOf(target.value) === -1){
+    var answer = target.getAttribute('answer');
+    const sb = document.querySelector('.snackbar-lite');
+    if (target.name === 'Pore Types and Arrangement') {
+      if (this.types.indexOf(target.value) === -1) {
         this.types.push(target.value);
       } else {
-        this.types.splice(this.types.indexOf(target.value),1);
+        this.types.splice(this.types.indexOf(target.value), 1);
       }
 
-      var sb = document.querySelector('.snackbar-lite');
-      var ans = "Selected:\n";
+      let ans = 'Selected:\n';
       for (let item of this.types) {
         item = item.charAt(0).toUpperCase() + item.slice(1);
-        if (ans === "Selected:\n") {
-          ans = ans + " " + item;
+        if (ans === 'Selected:\n') {
+          ans = ans + ' ' + item;
         } else {
-          ans = ans + ", " + item;
+          ans = ans + ', ' + item;
         }
       }
       sb.showText(ans, 1000);
-      
-      var correct = true;
+
+      let correct = true;
       for (let item of this.types) {
         if (answer.includes(item)) {
           answer = answer.replace(item, '');
@@ -323,26 +322,25 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         target.disabled = true;
         this.correctCount += 1;
       }
-    } else if (target.name === "Parenchyma") {
-      if(this.parenchyma.indexOf(target.value) === -1){
+    } else if (target.name === 'Parenchyma') {
+      if (this.parenchyma.indexOf(target.value) === -1) {
         this.parenchyma.push(target.value);
       } else {
-        this.parenchyma.splice(this.parenchyma.indexOf(target.value),1);
+        this.parenchyma.splice(this.parenchyma.indexOf(target.value), 1);
       }
 
-      var sb = document.querySelector('.snackbar-lite');
-      var ans = "Selected:\n";
+      let ans = 'Selected:\n';
       for (let item of this.parenchyma) {
         item = item.charAt(0).toUpperCase() + item.slice(1);
-        if (ans === "Selected:\n") {
-          ans = ans + " " + item;
+        if (ans === 'Selected:\n') {
+          ans = ans + ' ' + item;
         } else {
-          ans = ans + ", " + item;
+          ans = ans + ', ' + item;
         }
       }
       sb.showText(ans, 1000);
-      
-      var correct = true;
+
+      let correct = true;
       for (let item of this.parenchyma) {
         if (answer.includes(item)) {
           answer = answer.replace(item, '');
@@ -356,35 +354,34 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         this.correctCount += 1;
       }
     } else {
-      var sb = document.querySelector('.snackbar-lite');
       if (target.value === answer) {
         target.disabled = true;
         this.correctCount += 1;
-        sb.showText("Correct!", 1000);
+        sb.showText('Correct!', 1000);
       } else {
-        sb.showText("Wrong option! Try again.", 1000);
+        sb.showText('Wrong option! Try again.', 1000);
       }
     }
 
     if (this.correctCount === 11) {
       this.complete = true;
-      var sb = this.shadowRoot.querySelector('#submit');
-      sb.disabled = false;
+      const submit = this.shadowRoot.querySelector('#submit');
+      submit.disabled = false;
     }
   }
 
   blink (event) {
     var target = event.target;
     var sb = this.shadowRoot.querySelectorAll('#circle');
-    for (let item in sb){
+    for (let item in sb) {
       var circle = sb[item].children[0].children[0];
-      if (target.style.color === circle.getAttribute("color")) {
+      if (target.style.color === circle.getAttribute('color')) {
         circle.animate([
           { opacity: 1 },
           { opacity: 0 }
         ], {
-            duration: 1000,
-            iterations: 5
+          duration: 1000,
+          iterations: 5
         });
       }
     }
@@ -395,8 +392,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     var identify = this.shadowRoot.querySelector('#identify');
     var sb = document.querySelector('.snackbar-lite');
 
-    if (target.getAttribute("data-answer") === identify.getAttribute("data-answer")) {
-      sb.showText("Correct! Congratulations! You are one step forward to becoming a wood wizard.");
+    if (target.getAttribute('data-answer') === identify.getAttribute('data-answer')) {
+      sb.showText('Correct! Congratulations! You are one step forward to becoming a wood wizard.');
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
 
@@ -405,7 +402,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         choices[item].removeEventListener('click', this.select, true);
       }
     } else {
-      sb.showText("Wrong answer! Try again.", 1000);
+      sb.showText('Wrong answer! Try again.', 1000);
     }
     this._select();
   }
@@ -417,17 +414,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   //   let temp = false;
   //   for (let i = 0; i < choices.length; i++) {
   //     // console.log(choices[i]);
-  //     choices[i].addEventListener("click", event => {
-  //       if (choices[i].getAttribute("data-answer") === identify.getAttribute("data-answer")) {
-  //         sb.showText("Correct! Congratulations! You can now move on to the next one.");
+  //     choices[i].addEventListener('click', event => {
+  //       if (choices[i].getAttribute('data-answer') === identify.getAttribute('data-answer')) {
+  //         sb.showText('Correct! Congratulations! You can now move on to the next one.');
   //         const next = this.shadowRoot.querySelector('#next');
-  //         next.disabled = false; 
+  //         next.disabled = false;
   //         temp = true;
   //         for ( let j = 0; j < choices.length; j++) {
   //           choices[j].removeEventListener('click', event, true);
   //         }
   //       } else {
-  //         sb.showText("Wrong option! Try again.", 5000);
+  //         sb.showText('Wrong option! Try again.', 5000);
   //       }
   //     });
   //   }
@@ -437,13 +434,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   //   console.log(target);
   //   var sb = document.querySelector('.snackbar-lite');
   //   var identify = this.shadowRoot.querySelector('#identify');
-  //   if (target.getAttribute("data-answer") === identify.getAttribute("data-answer")) {
-  //     sb.showText("Correct! Congratulations! You can now move on to the next one.");
+  //   if (target.getAttribute('data-answer') === identify.getAttribute('data-answer')) {
+  //     sb.showText('Correct! Congratulations! You can now move on to the next one.');
   //     const next = this.shadowRoot.querySelector('#next');
   //     next.disabled = false;
-  //     target.removeEventListener('click', this._compare(), true); 
+  //     target.removeEventListener('click', this._compare(), true);
   //   } else {
-  //     sb.showText("Wrong option! Try again.", 5000);
+  //     sb.showText('Wrong option! Try again.', 5000);
   //   }
   // }
 
@@ -451,7 +448,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     console.log('test');
   }
 }
-
 
 if (!customElements.get(Component.is)) {
   customElements.define(Component.is, Component);

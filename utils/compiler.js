@@ -27,6 +27,7 @@ const firebaseBuild = () => {
   const firebaseConfig = require('../firebase.json');
   const { hosting } = firebaseConfig;
   const rewrites = [];
+  console.log(routes)
   for (const route of routes) {
     if (route.route !== 'no-page') {
       const routeArray = route.route.split('/');
@@ -49,6 +50,7 @@ const firebaseBuild = () => {
   for (let host in hosting) {
     hosting[host].rewrites = rewrites;
   }
+  console.log(firebaseConfig)
   fs.writeFileSync(resolve(__dirname, '../firebase.json'), JSON.stringify(firebaseConfig, null, 2));
 };
 

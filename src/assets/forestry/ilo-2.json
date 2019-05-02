@@ -48,7 +48,7 @@
           "type": "next",
           "event": "event-02"
         }
-      }  
+      }
     },
     "event-02": {
       "default": "trigger-01",
@@ -185,7 +185,7 @@
           "type": "next",
           "event": "event-05"
         }
-      }  
+      }
     },
     "event-05": {
       "default": "trigger-01",
@@ -245,7 +245,7 @@
           "type": "next",
           "event": "event-06"
         }
-      }  
+      }
     },
     "event-06": {
       "default": "trigger-01",
@@ -305,7 +305,7 @@
           "type": "next",
           "event": "event-07"
         }
-      }  
+      }
     },
     "event-07": {
       "default": "trigger-01",
@@ -7719,28 +7719,28 @@
     "object-62": {
       "type": "discussion",
       "items": {
-        "1": { 
+        "1": {
           "src": "/images/ilo2/Narig_01.jpg",
           "name": "Minute pore size",
           "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
           "next": "2",
           "prev": "23"
         },
-        "2": { 
+        "2": {
           "src": "/images/ilo2/Narig_02.jpg",
           "name": "Minute pore size",
           "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
           "next": "3",
           "prev": "1"
         },
-        "3": { 
+        "3": {
           "src": "/images/ilo2/Tamayuan_01.jpg",
           "name": "Minute pore size",
           "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
           "next": "4",
           "prev": "2"
         },
-        "4": { 
+        "4": {
           "src": "/images/ilo2/Tamayuan_02.jpg",
           "name": "Minute pore size",
           "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
@@ -8077,7 +8077,7 @@
           "next": "4",
           "prev": "2"
         },
-    
+
         "4": {
           "src": "/images/ilo2/Ata-ata_01.jpg",
           "name": "Pore Multiple",
@@ -8148,7 +8148,7 @@
           "next": "14",
           "prev": "12"
         },
-    
+
         "14": {
           "src": "/images/ilo2/Bagras_01.jpg",
           "name": "Pore Chain",
@@ -8163,7 +8163,7 @@
           "next": "16",
           "prev": "14"
         },
-    
+
         "16": {
           "src": "/images/ilo2/Agoho_01.jpg",
           "name": "Wavy Bands",
@@ -9350,25 +9350,25 @@
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "OBJECTIVES",
-      "link": "/?currentEvent=event-04"
+      "link": "?currentEvent=event-04"
     },
     "object-140": {
       "type": "block",
       "src": "/images/tindalo.jpg",
       "label": "STRUCTURAL FEATURES OF WOOD",
-      "link": "/?currentEvent=event-11"
+      "link": "?currentEvent=event-11"
     },
     "object-141": {
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "SELF-ASSESSMENT",
-      "link": "/?currentEvent=event-30"
+      "link": "?currentEvent=event-30"
     },
     "object-142": {
       "type": "block",
       "src": "/images/tindalo.jpg",
       "label": "REFERENCES - CREDITS",
-      "link": "/?currentEvent=event-32"
+      "link": "?currentEvent=event-32"
     },
     "object-143": {
       "type": "menu",

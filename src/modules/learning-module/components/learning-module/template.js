@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select, menu } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -21,7 +21,7 @@ const template = (html, self) => function () {
             .cover="${item.meta && item.meta.cover}"
             class="absolute image ${item.meta && item.meta.fullscreen ? 'fullscreen' : ''} ${item.meta && item.meta.classList}"
             style="${styleString}"
-            src="${item.src ? baseURL + item.src : ''}">    
+            src="${item.src ? baseURL + item.src : ''}">
         </lazy-picture>
         </div>
         ` : ''}
@@ -64,7 +64,7 @@ const template = (html, self) => function () {
 
         ${item.type === 'block' ? html`
           <div class="block">
-            <a href='${item.link}'>
+            <a href='${window.location.pathname.split('?')[0]}${item.link}'>
               <img src="${item.src ? baseURL + item.src : ''}" style="${styleString}">
               <div class="centered">${item.label}</div>
             </a>
@@ -98,7 +98,7 @@ const template = (html, self) => function () {
 
         ${item.type === 'menu' ? html `
           <div class="absolute menu" style="${styleString}">
-            <a id="menu" type="button" class="button" href="?currentEvent=event-${item.event}">
+            <a id="menu" type="button" class="button" href="${window.location.pathname.split('?')[0]}?currentEvent=event-${item.event}">
               Main Menu
             </a>
           </div>
@@ -131,7 +131,7 @@ const template = (html, self) => function () {
             ${item.menu ? html`
               <button type="button" class="button" @click="${_dialogue.bind(this)}" value="">
                 Main Menu
-              </button> 
+              </button>
             ` : ''}
           </div>
         ` : ''}
@@ -182,7 +182,7 @@ const template = (html, self) => function () {
                       ${input.name}
                     </label>
                     ${input.type === 'select' ? html`
-                      <select 
+                      <select
                         slot="input"
                         id="${key}"
                         .multiple="${input.multiple}"
@@ -220,10 +220,10 @@ const template = (html, self) => function () {
               `)}
 
               ${Object.entries(item.items).map(([key, input]) => html`
-                <label for="carousel-${input.prev}" class="carousel-control prev control-${key}">‹</label>              
+                <label for="carousel-${input.prev}" class="carousel-control prev control-${key}">‹</label>
                 <label for="carousel-${input.next}" class="carousel-control next control-${key}">›</label>
               `)}
-              
+
               <ol class="carousel-indicators">
               ${Object.entries(item.items).map(([key, input]) => html`
                 <li>

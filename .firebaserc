@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "forestry-learning-modules"
+  },
+  "targets": {
+    "forestry-learning-modules": {
+      "hosting": {
+        "base": [
+          "forestry-learning-modules-dev"
+        ]
+      }
+    }
+  }
+}
