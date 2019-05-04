@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _load, _addAssessment, _assignId } = this;
+  const { lessons, _changeLoc, _backgroundClick, _characterClick, _objectClick, _addDialogue, _selectorClick, _save, _saveModule, _load, _addAssessment, _assignId } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // // console.log(scenehttp://localalhost/Objects)
@@ -11,7 +11,8 @@ const template = (html, self) => function () {
         <option value="Forms"> Forms</option>
         <option value="Narrative Editing"> Narrative Editing</option>
       </select>
-      <button id = "save" @click="${_save.bind(this)}">Save</button>
+      <button id = "save" @click="${_save.bind(this)}">Save Toolkit</button>
+      <button id = "save" @click="${_saveModule.bind(this)}"> Save Module </button>
       <form action="http://localhost:8080/event-editing" enctype="multipart/form-data" method="post" id = "form">
         <button id="load" @click="${_load.bind(this)}">Load</button>
         <input type="file" name="load" id="input" accept=".json"/>
@@ -30,7 +31,7 @@ const template = (html, self) => function () {
     <div id = "assets">
     </div>
     <div class = "workspace" id="workspace">
-      <div class = "scene-selector" id = "scene-selector">
+      <div class = "scene-selector" id = "scene-selector" @mouseover="${_assignId.bind(this)}">
         ${lessons && lessons.length ? lessons.map((lesson, index) => html`
           <div class="lessons" @click="${_selectorClick.bind(this)}">
             <p>${index}</p> 

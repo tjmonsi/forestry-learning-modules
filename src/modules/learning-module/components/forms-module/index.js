@@ -21,19 +21,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       lessons: {
         type: Array,
         value: [
-          {
-            name: '',
-            topics: [
-              {
-                name: '',
-                subtopics: [
-                  {
-                    name: ''
-                  }
-                ]
-              }
-            ]
-          }
         ]
       }
     };

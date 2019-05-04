@@ -641,6 +641,74 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'lens1': {
               'type': 'image',
               'src': '/images/lens1.jpg'
+            },
+            'lens2': {
+              'type': 'image',
+              'src': '/images/lens2.jpg'
+            },
+            'lens3': {
+              'type': 'image',
+              'src': '/images/lens3.jpg'
+            },
+            'lens4': {
+              'type': 'image',
+              'src': '/images/lens4.jpg'
+            },
+            'lens5': {
+              'type': 'image',
+              'src': '/images/lens5.jpg'
+            },
+            'lens6': {
+              'type': 'image',
+              'src': '/images/lens6.jpg'
+            },
+            'lens7': {
+              'type': 'image',
+              'src': '/images/lens7.jpg'
+            },
+            'lens8': {
+              'type': 'image',
+              'src': '/images/lens8.jpg'
+            },
+            'lens9': {
+              'type': 'image',
+              'src': '/images/lens9.jpg'
+            },
+            'lens10': {
+              'type': 'image',
+              'src': '/images/lens10.jpg'
+            },
+            'lens11': {
+              'type': 'image',
+              'src': '/images/lens11.jpg'
+            },
+            'lens12': {
+              'type': 'image',
+              'src': '/images/lens12.jpg'
+            },
+            'lens13': {
+              'type': 'image',
+              'src': '/images/lens13.jpg'
+            },
+            'lens14': {
+              'type': 'image',
+              'src': '/images/lens14.jpg'
+            },
+            'lens15': {
+              'type': 'image',
+              'src': '/images/lens15.jpg'
+            },
+            'lens16': {
+              'type': 'image',
+              'src': '/images/lens16.jpg'
+            },
+            'lens17': {
+              'type': 'image',
+              'src': '/images/lens17.jpg'
+            },
+            'lens18': {
+              'type': 'image',
+              'src': '/images/lens18.jpg'
             }
           },
           eventStart: 'event-01'
@@ -964,6 +1032,78 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'tindalo-physical': {
               'type': 'image',
               'src': '/images/tindalo-physical.jpg'
+            },
+            'lens1': {
+              'type': 'image',
+              'src': '/images/lens1.jpg'
+            },
+            'lens2': {
+              'type': 'image',
+              'src': '/images/lens2.jpg'
+            },
+            'lens3': {
+              'type': 'image',
+              'src': '/images/lens3.jpg'
+            },
+            'lens4': {
+              'type': 'image',
+              'src': '/images/lens4.jpg'
+            },
+            'lens5': {
+              'type': 'image',
+              'src': '/images/lens5.jpg'
+            },
+            'lens6': {
+              'type': 'image',
+              'src': '/images/lens6.jpg'
+            },
+            'lens7': {
+              'type': 'image',
+              'src': '/images/lens7.jpg'
+            },
+            'lens8': {
+              'type': 'image',
+              'src': '/images/lens8.jpg'
+            },
+            'lens9': {
+              'type': 'image',
+              'src': '/images/lens9.jpg'
+            },
+            'lens10': {
+              'type': 'image',
+              'src': '/images/lens10.jpg'
+            },
+            'lens11': {
+              'type': 'image',
+              'src': '/images/lens11.jpg'
+            },
+            'lens12': {
+              'type': 'image',
+              'src': '/images/lens12.jpg'
+            },
+            'lens13': {
+              'type': 'image',
+              'src': '/images/lens13.jpg'
+            },
+            'lens14': {
+              'type': 'image',
+              'src': '/images/lens14.jpg'
+            },
+            'lens15': {
+              'type': 'image',
+              'src': '/images/lens15.jpg'
+            },
+            'lens16': {
+              'type': 'image',
+              'src': '/images/lens16.jpg'
+            },
+            'lens17': {
+              'type': 'image',
+              'src': '/images/lens17.jpg'
+            },
+            'lens18': {
+              'type': 'image',
+              'src': '/images/lens18.jpg'
             }
           }
         }
@@ -1012,10 +1152,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   async _loadSavedState () {
     const obj = await localforage.getItem('lesson-state');
-    console.log(obj);
     if (obj) {
-      this.module = obj;
+      this.toolkit = obj;
     }
+    console.log('toolkit:');
+    console.log(this.toolkit);
+
+    const mod = await localforage.getItem('module-state');
+    if (mod) {
+      this.module = mod;
+    }
+    console.log('module:');
     console.log(this.module);
   }
 
@@ -1110,105 +1257,27 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
   }
 
-  _assignId () {
-    const sceneSelector = this.shadowRoot.querySelector('#scene-selector');
-    for (let i = 0; i < sceneSelector.children.length; i++) {
-      if (sceneSelector.children.length < 9) {
+  _assignId ({ target: el }) {
+    console.log(el);
+    for (let i = 0; i < el.children.length; i++) {
+      if (el.children.length < 9) {
         let selectorId = 'event-0' + (i + 1);
-        sceneSelector.children[i].id = selectorId;
+        el.children[i].id = selectorId;
       } else {
         let selectorId = 'event-' + i;
-        sceneSelector.children[i].id = selectorId;
+        el.children[i].id = selectorId;
       }
     }
   }
 
   _selectorClick ({ target: el }) {
-    // const workspace = this.shadowRoot.querySelector('#workspace');
-    // console.log(workspace.children.length);
-    // const sceneSelector = this.shadowRoot.querySelector('#scene-selector');
-    // for (let i = 0; i < sceneSelector.children.length; i++) {
-    //   if (sceneSelector.children.length < 9) {
-    //     let selectorId = 'event-0' + (i + 1);
-    //     sceneSelector.children[i].id = selectorId;
-    //   } else {
-    //     let selectorId = 'event-' + i;
-    //     sceneSelector.children[i].id = selectorId;
-    //   }
-    // }
-
-    // if (workspace.children.length < 2 && this.scene.id !== null) {
-    //   this.scene.id = el.id;
-    //   const canvas = document.createElement('div');
-    //   canvas.id = 'canvas' + this.scene.id;
-    //   canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
-    //   workspace.appendChild(canvas);
-    //   // canvas.addEventListener('click', event => {
-    //   //   console.log(event.target);
-    //   // });
-    //   if (this.module.events[el.id]) {
-    //     console.log('meron na!');
-    //   } else {
-    //     console.log('wala pa!');
-    //   }
-    //   if (!this.module) return;
-    //   const loadedEvents = Object.keys(this.module.events).length;
-    //   console.log(loadedEvents);
-    //   // console.log(loadedEvents);
-    //   if (loadedEvents === 0) {
-    //     const name1 = 'event-0';
-    //     const name = 'event-';
-    //     const num = loadedEvents + 1;
-    //     if (loadedEvents < 9) {
-    //       if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
-    //         this.toolkit.events[name1 + num] = {};
-    //         this.module.events[name1 + num] = {};
-    //         this.scene.name = name1 + num;
-    //       }
-    //     } else {
-    //       if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
-    //         this.toolkit.events[name + num] = {};
-    //         this.module.events[name + num] = {};
-    //         this.scene.name = name + num;
-    //       }
-    //     }
-    //   } else {
-    //     workspace.removeChild(workspace.children[1]);
-    //     this.scene.id = el.id;
-    //     const canvas = document.createElement('div');
-    //     canvas.id = 'canvas' + this.scene.id;
-    //     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden;';
-    //     workspace.appendChild(canvas);
-    //     canvas.addEventListener('click', event => {
-    //       console.log(event.target);
-    //     });
-    //     const loadedEvents = Object.keys(this.module.events).length;
-    //     // console.log(loadedEvents);
-    //     const name1 = 'event-0';
-    //     const name = 'event-';
-    //     const num = loadedEvents + 1;
-    //     if (loadedEvents < 9) {
-    //       if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
-    //         this.toolkit.events[name1 + num] = {};
-    //         this.module.events[name1 + num] = {};
-    //       }
-    //     } else {
-    //       if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
-    //         this.toolkit.events[name + num] = {};
-    //         this.module.events[name + num] = {};
-    //       }
-    //     }
-    //   }
-    // }
     const workspace = this.shadowRoot.querySelector('#workspace');
-    // set the ids of the scenes to event-something
-    this._assignId();
-    // create canvas, if there is an existing, remove it, else create new canvas
     if (workspace.children.length > 1) {
       workspace.removeChild(workspace.children[1]);
     }
 
     this.scene.id = el.id;
+    this.scene.name = el.id;
     const canvas = document.createElement('div');
     canvas.id = 'canvas' + this.scene.id;
     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
@@ -1224,13 +1293,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         if (this.toolkit.events[name1 + num] !== name1 + num || this.toolkit.events[name1 + num] !== name1 + num) {
           this.toolkit.events[name1 + num] = {};
           this.module.events[name1 + num] = {};
-          this.scene.name = name1 + num;
         }
       } else {
         if (this.toolkit.events[name + num] !== name + num || this.toolkit.events[name + num] !== name + num) {
           this.toolkit.events[name + num] = {};
           this.module.events[name + num] = {};
-          this.scene.name = name + num;
         }
       }
     } else {
@@ -1241,8 +1308,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         let img = document.createElement('img');
         let src = '/assets/forestry/' + this.toolkit.objects[toBeLoaded[i].objectId].src;
         img.src = src;
+        // load background
+        if (toBeLoaded[i].id === 'object-01') {
+          img.id = 'background';
+        }
+        // load characters and objects
         canvas.appendChild(img);
         img.style.cssText = toBeLoaded[i].style;
+        const temp = src.split('/');
+        const id = temp[5].split('.');
+        img.id = id[0];
+        // load narrations
+        // load assessment forms
       }
     }
   }
@@ -1398,6 +1475,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 canvas.appendChild(up);
 
                 check.addEventListener('click', event => {
+                  console.log(this.module);
                   const objId = item.fname.split('.')[0];
                   const name = this.scene.name;
                   const char = this.shadowRoot.querySelector('#' + id[0]);
@@ -2030,7 +2108,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.module.objects[formName].form.structural.name = fn;
             this.module.objects[formName].form.structural.items = {};
             // add to module events
-            this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classlist: 'image-right form' }, default: {}, answer: {} });
+            this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classList: 'image-right form' }, default: {}, answer: {} });
           });
           console.log(this.module);
           // creation of div for inputs
@@ -2049,10 +2127,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             let featureName = '';
             feature.addEventListener('change', event => {
               featureName = event.target.value;
+              let og = featureName;
               featureName = featureName.replace(' ', '-').toLowerCase();
               // add to module objects
               this.module.objects[formName].form.structural.items[featureName] = {};
               this.module.objects[formName].form.structural.items[featureName].type = 'select';
+              this.module.objects[formName].form.structural.items[featureName].name = og;
               this.module.objects[formName].form.structural.items[featureName].options = {};
             });
             // create input for choices
@@ -2081,11 +2161,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
                 index[0].answer[featureName] = [];
                 for (let i = 0; i < answersList.length; i++) {
-                  index[0].answer[featureName].push(answersList[i]);
+                  index[0].answer[featureName].push(answersList[i].toLowerCase());
                 }
               } else {
-                index[0].default[featureName] = list[0];
-                index[0].answer[featureName] = answersList[0];
+                index[0].default[featureName] = list[0].toLowerCase();
+                index[0].answer[featureName] = answersList[0].toLowerCase();
               }
             });
             // append them to div inputs
@@ -2116,11 +2196,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           submit.addEventListener('click', event => {
             let load = this.module.events[this.scene.name].triggers['trigger-01'].load;
             let i = load.findIndex(element => element.objectId === formName);
+            console.log(i);
             // select canvas from the shadowRoot
             let canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
             // create form to be added in the canvas
             let form = document.createElement('form');
-            form.class = 'absolute form overflow' + load[i].meta.classList;
+            form.className = 'absolute form overflow ' + load[i].meta.classList;
             form.id = load[i].objectId;
             form.style.cssText = 'top: 25%; right: 5%; height: 60%; width: 30%; background: #ddd; padding: 24px; border: solid #000; overflow: auto; position: absolute;';
             // create div form-group
@@ -2137,12 +2218,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               inputContainer.style.cssText = 'display: flex; flex-direction: column;';
               let label = document.createElement('label');
               label.slot = 'label';
-              label.innerHTML = element[0];
+              label.innerHTML = element[1].name;
               label.style.margin = '12px 0px';
               let select = document.createElement('select');
               select.slot = 'input';
               select.multiple = element[1].multiple;
               select.style.padding = '12px';
+              select.id = element[0];
               let options = Object.entries(element[1].options);
               options.forEach(e => {
                 let option = document.createElement('option');
@@ -2163,6 +2245,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           dialog.appendChild(form);
           canvas.appendChild(dialog);
           dialog.showModal();
+          console.log(this.module);
         } else if (el.value === 'Assessment Tables') {
           console.log('Tables!');
         } else if (el.value === 'Assessment Matching') {
@@ -2187,7 +2270,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     const exportObj = this.toolkit;
     const exportName = 'ilo-4';
     await localforage.setItem('lesson-state', exportObj);
+    await localforage.setItem('module-state', this.module);
 
+    let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
+    let downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute('href', dataStr);
+    downloadAnchorNode.setAttribute('download', exportName + '.json');
+    document.body.appendChild(downloadAnchorNode);
+    downloadAnchorNode.click();
+    downloadAnchorNode.remove();
+  }
+
+  _saveModule () {
+    const exportObj = this.module;
+    const exportName = 'ilo-5';
     let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     let downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);
