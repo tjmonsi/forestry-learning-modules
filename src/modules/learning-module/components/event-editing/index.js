@@ -1303,6 +1303,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     } else {
       console.log('dati na this!');
       let toBeLoaded = this.toolkit.events[el.id].triggers['trigger-01'].load;
+      console.log(toBeLoaded);
       let length = toBeLoaded.length;
       for (let i = 0; i < length; i++) {
         let img = document.createElement('img');
@@ -1311,14 +1312,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         // load background
         if (toBeLoaded[i].id === 'object-01') {
           img.id = 'background';
-        }
+          canvas.appendChild(img);
+          img.style.cssText = toBeLoaded[i].style;
+        } else if (toBeLoaded[i].type && toBeLoaded[i].type === 'dialogue') {
+          // load narrations
+          console.log('im in');
+          this._addDialogue();
+        } else {
         // load characters and objects
-        canvas.appendChild(img);
-        img.style.cssText = toBeLoaded[i].style;
-        const temp = src.split('/');
-        const id = temp[5].split('.');
-        img.id = id[0];
-        // load narrations
+          canvas.appendChild(img);
+          img.style.cssText = toBeLoaded[i].style;
+          const temp = src.split('/');
+          const id = temp[5].split('.');
+          img.id = id[0];
+        }
         // load assessment forms
       }
     }
@@ -1930,12 +1937,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.module.objects[name].type = 'dialogue';
             this.module.objects[name].character = char;
             this.module.objects[name].text = content;
+
+            this.toolkit.objects[name] = {};
+            this.toolkit.objects[name].type = 'dialogue';
+            this.toolkit.objects[name].character = char;
+            this.toolkit.objects[name].text = content;
           } else {
             let name3 = name2 + this.dialogues;
             this.module.objects[name3] = {};
             this.module.objects[name3].type = 'dialogue';
             this.module.objects[name3].character = char;
             this.module.objects[name3].text = content;
+
+            this.toolkit.objects[name3] = {};
+            this.toolkit.objects[name3].type = 'dialogue';
+            this.toolkit.objects[name3].character = char;
+            this.toolkit.objects[name3].text = content;
           }
         });
 
@@ -1969,13 +1986,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             let index = Object.keys(this.module.events[this.scene.name].triggers).length - 2;
             let prevName = Object.keys(this.module.events[this.scene.name].triggers)[index];
             this.module.events[this.scene.name].triggers[prevName].type = 'next';
+            this.toolkit.events[this.scene.name].triggers[prevName].type = 'next';
             let loadedEvents = Object.keys(this.module.events).length;
             if (loadedEvents < 9) {
               this.module.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
+              this.toolkit.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
             } else {
               this.module.events[this.scene.name].triggers[prevName].event = name6 + (loadedEvents + 1);
+              this.toolkit.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
             }
             delete this.module.events[this.scene.name].triggers[prevName].objectId;
+            delete this.toolkit.events[this.scene.name].triggers[prevName].objectId;
           }
           if (dialogueInput.value !== '' && characterInput.value !== '') {
             let name1 = 'trigger-0';
@@ -1994,17 +2015,28 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
                 this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
                 this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: name3 + this.dialogues, id: 'object-0' + add2, type: 'dialogue' });
+                this.toolkit.events[this.scene.name].triggers[name1 + add] = {};
+                this.toolkit.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+                this.toolkit.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
+                this.toolkit.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: name3 + this.dialogues, id: 'object-0' + add2, type: 'dialogue' });
                 characterInput.value = '';
                 dialogueInput.value = '';
               } else {
                 this.module.events[this.scene.name].triggers[name1 + add] = {};
                 this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
                 this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
+                this.toolkit.events[this.scene.name].triggers[name1 + add] = {};
+                this.toolkit.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+                this.toolkit.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
                 add++;
                 this.module.objects[name].prev = name1 + add;
                 this.module.events[this.scene.name].triggers[name1 + add] = {};
                 this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
                 this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues - 1);
+                this.toolkit.objects[name].prev = name1 + add;
+                this.toolkit.events[this.scene.name].triggers[name1 + add] = {};
+                this.toolkit.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
+                this.toolkit.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues - 1);
                 characterInput.value = '';
                 dialogueInput.value = '';
               }
@@ -2014,11 +2046,19 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               this.module.events[this.scene.name].triggers[name2 + add] = {};
               this.module.events[this.scene.name].triggers[name2 + add].type = 'dialogue';
               this.module.events[this.scene.name].triggers[name2 + add].objectId = name4 + (this.dialogues + 1);
+              this.toolkit.objects[name].next = name2 + add;
+              this.toolkit.events[this.scene.name].triggers[name2 + add] = {};
+              this.toolkit.events[this.scene.name].triggers[name2 + add].type = 'dialogue';
+              this.toolkit.events[this.scene.name].triggers[name2 + add].objectId = name4 + (this.dialogues + 1);
               add++;
               this.module.objects[name].prev = name2 + add;
               this.module.events[this.scene.name].triggers[name2 + add] = {};
               this.module.events[this.scene.name].triggers[name2 + add].type = 'dialogue';
               this.module.events[this.scene.name].triggers[name2 + add].objectId = name3 + (this.dialogues - 1);
+              this.toolkit.objects[name].prev = name2 + add;
+              this.toolkit.events[this.scene.name].triggers[name2 + add] = {};
+              this.toolkit.events[this.scene.name].triggers[name2 + add].type = 'dialogue';
+              this.toolkit.events[this.scene.name].triggers[name2 + add].objectId = name3 + (this.dialogues - 1);
               characterInput.value = '';
               dialogueInput.value = '';
             }
