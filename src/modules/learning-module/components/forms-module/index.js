@@ -30,6 +30,39 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     return html`<style>${style.toString()}</style>${template(html, this)}`;
   }
 
+  constructor () {
+    super();
+    // this._boundGetQueryState = this._getQueryState.bind(this);
+    this._boundGetLessons = this._getLessons.bind(this);
+  }
+
+  connectedCallback () {
+    if (super.connectedCallback) super.connectedCallback();
+    // subscribe('query', this._boundGetQueryState);
+    subscribe('lessons', this._boundGetLessons);
+  }
+
+  disconnectedCallback () {
+    if (super.disconnectedCallback) super.disconnectedCallback();
+    // unsubscribe('query', this._boundGetQueryState);
+    unsubscribe('lessons', this._boundGetLessons);
+  }
+
+  _getLessons (lessons) {
+    if (this.lessons !== lessons) {
+      // this.lessons = lessons;
+      const { from } = '';
+      const { to } = '';
+      for (let item of lessons) {
+        const { name } = item;
+        if (this.lessons.findIndex(item => item.name === name) < 0) {
+          this.lessons.push({ ...item, ...from, ...to });
+        }
+      }
+    }
+    console.log(lessons);
+  }
+
   _addLesson () {
     this.lessons.push(
       {
@@ -90,9 +123,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     console.log(el.value);
     if (el.value === 'Event Editing') {
       console.log('go to event');
+      updateState('lessons', this.lessons);
       changeLocation('/event-editing', false);
     } else if (el.value === 'Narrative Editing') {
       console.log('go to narrative editing');
+      updateState('lessons', this.lessons);
       changeLocation('/narrative-editing', false);
     }
   }

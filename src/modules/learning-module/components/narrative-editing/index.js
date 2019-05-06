@@ -169,9 +169,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     console.log(el.value);
     if (el.value === 'Event Editing') {
       console.log('go to event');
+      updateState('lessons', this.lessons);
       changeLocation('/event-editing', false);
     } else if (el.value === 'Forms') {
       console.log('go to forms');
+      updateState('lessons', this.lessons);
       changeLocation('/forms', false);
     }
   }

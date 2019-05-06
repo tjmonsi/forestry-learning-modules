@@ -1,7 +1,7 @@
 import { TemplateLite } from '@tjmonsi/element-lite/mixins/template-lite.js';
 import { ObserversLite } from '@tjmonsi/element-lite/mixins/observers-lite.js';
 import { render, html } from 'lit-html';
-import { subscribe, unsubscribe } from '../../../../utils/state';
+import { subscribe, unsubscribe, updateState } from '../../../../utils/state';
 import { changeLocation } from '../../../../utils/change-location';
 import { template } from './template.js';
 import style from './style.styl';
@@ -100,12 +100,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         value: [
           {
             fname: 'tablet.png'
-          },
-          {
-            fname: 'nextDialogue.png'
-          },
-          {
-            fname: 'nextScene.png'
           },
           {
             fname: 'akle-2.jpg'
@@ -389,14 +383,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'tablet': {
               'type': 'image',
               'src': '/images/tablet.png'
-            },
-            'nextDialogue': {
-              'type': 'image',
-              'src': '/images/nextDialogue.png'
-            },
-            'nextScene': {
-              'type': 'image',
-              'src': '/images/nextScene.png'
             },
             'akle-2': {
               'type': 'image',
@@ -718,25 +704,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         type: Object,
         value: {
           lessons: [
-            {
-              name: 'L1',
-              topics: [
-                {
-                  name: 'T1.1',
-                  subtopics: [
-                    {
-                      name: 'S1.1.1',
-                      to: '',
-                      from: '0.0'
-                    }
-                  ],
-                  to: '0.0.0',
-                  from: '0'
-                }
-              ],
-              to: '0.0',
-              from: ''
-            }
           ],
           events: {
           },
@@ -784,14 +751,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             'tablet': {
               'type': 'image',
               'src': '/images/tablet.png'
-            },
-            'nextDialogue': {
-              'type': 'image',
-              'src': '/images/nextDialogue.png'
-            },
-            'nextScene': {
-              'type': 'image',
-              'src': '/images/nextScene.png'
             },
             'akle-2': {
               'type': 'image',
@@ -1146,6 +1105,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     // subscribe('query', this._boundGetQueryState);
     subscribe('lessons', this._boundGetLessons);
     this._loadSavedState();
+    this.toolkit.lessons = this.lessons;
   }
 
   disconnectedCallback () {
@@ -1254,9 +1214,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     console.log(el.value);
     if (el.value === 'Forms') {
       console.log('go to forms');
+      updateState('lessons', this.lessons);
       changeLocation('/forms', false);
     } else if (el.value === 'Narrative Editing') {
       console.log('go to narrative editing');
+      updateState('lessons', this.lessons);
       changeLocation('/narrative-editing', false);
     }
   }
@@ -1334,7 +1296,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           }
         } else if (toBeLoaded[i].default) {
           // load assessment forms
-
           canvas.appendChild(this.forms[this.scene.id].obj);
         } else {
         // load characters and objects
@@ -1344,7 +1305,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           const id = temp[5].split('.');
           img.id = id[0];
         }
-        // load assessment forms
       }
     }
   }
@@ -2320,6 +2280,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           dialog.appendChild(form);
           canvas.appendChild(dialog);
           dialog.showModal();
+
+          // let edit = document.createElement('button');
+          // edit.innerHTML = 'Edit';
+          // edit.style.cssText = 'left: 57%; position: absolute; top: 25%; font-size: 24px; width: 5%; height: 5%;';
+          // canvas.appendChild(edit);
+
+          // edit.addEventListener('click', event => {
+          //   dialog.showModal();
+          // });
           console.log(this.module);
         } else if (el.value === 'Assessment Tables') {
           console.log('Tables!');
