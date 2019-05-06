@@ -1123,6 +1123,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       structuralNum: {
         type: Number,
         value: 1
+      },
+      forms: {
+        type: Object,
+        value: {}
       }
     };
   }
@@ -1282,10 +1286,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     canvas.id = 'canvas' + this.scene.id;
     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
     workspace.appendChild(canvas);
-    console.log(el.id);
     if (!this.toolkit.events[el.id]) {
+      // new canvas
       const loadedEvents = Object.keys(this.module.events).length;
-      console.log('bago to bes');
       const name1 = 'event-0';
       const name = 'event-';
       const num = loadedEvents + 1;
@@ -1301,7 +1304,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         }
       }
     } else {
-      console.log('dati na this!');
+      // visited canvas
+      console.log(this.forms);
       let toBeLoaded = this.toolkit.events[el.id].triggers['trigger-01'].load;
       console.log(toBeLoaded);
       let length = toBeLoaded.length;
@@ -1309,15 +1313,29 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         let img = document.createElement('img');
         let src = '/assets/forestry/' + this.toolkit.objects[toBeLoaded[i].objectId].src;
         img.src = src;
-        // load background
         if (toBeLoaded[i].id === 'object-01') {
+          // load background
           img.id = 'background';
           canvas.appendChild(img);
           img.style.cssText = toBeLoaded[i].style;
         } else if (toBeLoaded[i].type && toBeLoaded[i].type === 'dialogue') {
           // load narrations
-          console.log('im in');
           this._addDialogue();
+          const charName = this.shadowRoot.querySelector('#characterName');
+          const dialogue = this.shadowRoot.querySelector('#dialogueInput');
+          const length = Object.keys(this.toolkit.events[el.id].triggers).length;
+          for (let i = 2; i < (length + 1); i++) {
+            if (this.toolkit.events[el.id].triggers['trigger-0' + i].type === 'dialogue') {
+              if (!this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].next && this.toolkit.events[el.id].triggers['trigger-0' + i].objectId !== 'dialogue-01') {
+                charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].character;
+                dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].text;
+              }
+            }
+          }
+        } else if (toBeLoaded[i].default) {
+          // load assessment forms
+
+          canvas.appendChild(this.forms[this.scene.id].obj);
         } else {
         // load characters and objects
           canvas.appendChild(img);
@@ -1468,14 +1486,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   up.style.left = '89%';
                   char.dataset.alignment = 'right';
                 }
+                // get the style of an element after the window finishes rendering it
                 let styleArr = '';
                 canvas.appendChild(char);
-                console.log(char.style.length);
                 for (let i = 0; i < char.style.length; i++) {
                   let style = window.getComputedStyle(char);
                   styleArr += char.style[i] + ': ' + style.getPropertyValue(char.style[i]) + '; ';
                 }
-                console.log(styleArr);
                 canvas.appendChild(check);
                 canvas.appendChild(ex);
                 canvas.appendChild(down);
@@ -1714,7 +1731,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   upObj.style.left = '77%';
                   obj.dataset.alignment = 'right';
                 }
-
+                // gets the style of an element after the window finishes rendering it
                 let styleArr = '';
                 canvas.appendChild(obj);
                 console.log(obj.style.length);
@@ -1906,7 +1923,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         dialogueBox.id = 'dialogueBox';
         const dialogueInput = document.createElement('textarea');
         const characterInput = document.createElement('input');
-        dialogueInput.id = 'dialogue';
+        dialogueInput.id = 'dialogueInput';
         characterInput.id = 'characterName';
         const controls = document.createElement('div');
         controls.id = 'controls';
@@ -2010,6 +2027,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               let add2 = loadedObjs + 1;
               let name = name3 + this.dialogues;
               this.module.objects[name].next = name1 + add;
+              this.toolkit.objects[name].next = name1 + add;
               if (this.dialogues === 1) {
                 this.module.events[this.scene.name].triggers[name1 + add] = {};
                 this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
@@ -2147,8 +2165,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.module.objects[formName].form.structural = {};
             this.module.objects[formName].form.structural.name = fn;
             this.module.objects[formName].form.structural.items = {};
+            this.toolkit.objects[formName] = {};
+            this.toolkit.objects[formName].type = 'form';
+            this.toolkit.objects[formName].form = {};
+            this.toolkit.objects[formName].form.structural = {};
+            this.toolkit.objects[formName].form.structural.name = fn;
+            this.toolkit.objects[formName].form.structural.items = {};
             // add to module events
             this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classList: 'image-right form' }, default: {}, answer: {} });
+            this.toolkit.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classList: 'image-right form' }, default: {}, answer: {} });
           });
           console.log(this.module);
           // creation of div for inputs
@@ -2174,6 +2199,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               this.module.objects[formName].form.structural.items[featureName].type = 'select';
               this.module.objects[formName].form.structural.items[featureName].name = og;
               this.module.objects[formName].form.structural.items[featureName].options = {};
+              this.toolkit.objects[formName].form.structural.items[featureName] = {};
+              this.toolkit.objects[formName].form.structural.items[featureName].type = 'select';
+              this.toolkit.objects[formName].form.structural.items[featureName].name = og;
+              this.toolkit.objects[formName].form.structural.items[featureName].options = {};
             });
             // create input for choices
             let choices = document.createElement('input');
@@ -2185,6 +2214,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               for (let i = 0; i < list.length; i++) {
                 let lower = list[i].replace(' ', '-').toLowerCase();
                 this.module.objects[formName].form.structural.items[featureName].options[lower] = list[i];
+                this.toolkit.objects[formName].form.structural.items[featureName].options[lower] = list[i];
               }
             });
             // create input for answers
@@ -2197,6 +2227,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               let index = this.module.events[this.scene.name].triggers['trigger-01'].load.filter(objectId => objectId.objectId === formName);
               if (answersList.length > 1) {
                 this.module.objects[formName].form.structural.items[featureName].multiple = true;
+                this.toolkit.objects[formName].form.structural.items[featureName].multiple = true;
                 index[0].default[featureName] = [];
 
                 index[0].answer[featureName] = [];
@@ -2225,6 +2256,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             let load = this.module.events[this.scene.name].triggers['trigger-01'].load;
             let i = load.findIndex(element => element.objectId === formName);
             delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
+            delete this.toolkit.events[this.scene.name].triggers['trigger-01'].load[i];
             let obj = this.module.objects;
             delete obj[formName];
           });
@@ -2277,6 +2309,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               formGroup.appendChild(inputContainer);
             });
             canvas.appendChild(form);
+            this.forms[this.scene.id] = {};
+            this.forms[this.scene.id].obj = form;
+            console.log(this.forms);
           });
           form.appendChild(singleButton);
           form.appendChild(controls);
