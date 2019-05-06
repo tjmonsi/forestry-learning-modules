@@ -10,7 +10,7 @@ import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 // import 'vis/dist/vis-network.min.css';
 
-const { HTMLElement, customElements, fetch } = window;
+const { HTMLElement, customElements } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   static get is () { return 'narrative-editing'; }
 
@@ -30,7 +30,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         type: Object,
         value: ''
       },
-      pointData: {
+      pointTo: {
+        type: String,
+        value: ''
+      },
+      pointFrom: {
         type: String,
         value: ''
       }
@@ -74,74 +78,83 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     console.log(lessons);
   }
 
-  onDragStart (event) {
-    let target = event.target;
-    if (target) {
-      this.dragged = target;
-      event.dropEffect = 'move';
-      event.dataTransfer.setData('text/urilist', target.id);
-      event.dataTransfer.setData('text/plain', target.id);
-      // Make it half transparent
-      event.target.style.opacity = 0.5;
-    }
-  }
-  onDragEnd (event) {
-    event.target.style.opacity = '';
-  }
+  // onDragStart (event) {
+  //   let target = event.target;
+  //   if (target) {
+  //     this.dragged = target;
+  //     event.dropEffect = 'move';
+  //     event.dataTransfer.setData('text/urilist', target.id);
+  //     event.dataTransfer.setData('text/plain', target.id);
+  //     // Make it half transparent
+  //     event.target.style.opacity = 0.5;
+  //   }
+  // }
+  // onDragEnd (event) {
+  //   event.target.style.opacity = '';
+  // }
 
-  onDragOver (event) {
-    // Prevent default to allow drop
-    event.preventDefault();
-  }
+  // onDragOver (event) {
+  //   // Prevent default to allow drop
+  //   event.preventDefault();
+  // }
 
-  _contains (list, value) {
-    for (let i = 0; i < list.length; ++i) {
-      if (list[i] === value) return true;
-    }
-    return false;
-  }
+  // _contains (list, value) {
+  //   for (let i = 0; i < list.length; ++i) {
+  //     if (list[i] === value) return true;
+  //   }
+  //   return false;
+  // }
 
-  onDragEnter (event) {
-    const target = event.target;
-    const dragged = this.dragged;
-    if (target.id === 'canvas' && dragged) {
-      const { isLink } = this._contains(event.dataTransfer.types, 'text/uri-list');
-      if (isLink) {
-        event.preventDefault();
-        event.dataTransfer.dropEffect = 'move';
-        target.style.background = '#1f904e';
-      } else {
-        target.style.background = '#d51c00';
-      }
-    }
-  }
+  // onDragEnter (event) {
+  //   const target = event.target;
+  //   const dragged = this.dragged;
+  //   if (target.id === 'canvas' && dragged) {
+  //     const { isLink } = this._contains(event.dataTransfer.types, 'text/uri-list');
+  //     if (isLink) {
+  //       event.preventDefault();
+  //       event.dataTransfer.dropEffect = 'move';
+  //       target.style.background = '#1f904e';
+  //     } else {
+  //       target.style.background = '#d51c00';
+  //     }
+  //   }
+  // }
 
-  onDrop (event) {
-    this.canvas = event.target;
-    const target = this.canvas;
-    const dragged = this.dragged;
-    if (dragged && target) {
-      // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
-      target.style.backgroundColor = '';
-      event.preventDefault();
-      // Get the id of the target and add the moved element to the target's DOM
-      dragged.parentNode.removeChild(dragged);
-      dragged.style.opacity = '';
-      dragged.style.marginBottom = '50px';
-      dragged.style.width = '25%';
-      dragged.style.marginLeft = '35%';
-      target.appendChild(dragged);
-    }
-    this.requestUpdate();
-  }
+  // onDrop (event) {
+  //   this.canvas = event.target;
+  //   const target = this.canvas;
+  //   const dragged = this.dragged;
+  //   if (dragged && target) {
+  //     // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
+  //     target.style.backgroundColor = '';
+  //     event.preventDefault();
+  //     // Get the id of the target and add the moved element to the target's DOM
+  //     dragged.parentNode.removeChild(dragged);
+  //     dragged.style.opacity = '';
+  //     dragged.style.marginBottom = '50px';
+  //     dragged.style.width = '25%';
+  //     dragged.style.marginLeft = '35%';
+  //     target.appendChild(dragged);
+  //   }
+  //   this.requestUpdate();
+  // }
 
   _pointFrom ({ target: el }) {
-    this.pointData = el.value;
+    this.pointFrom = el.value;
   }
 
   _pointTo ({ target: el }) {
+    this.pointTo = el.value;
     let temp = el.value.split('.');
-    let temp2 = this.pointData.split('.');
+    let temp2 = this.pointFrom.split('.');
+    let sp = '';
+    let sp2 = '';
+    for (let i = 0; i < temp2.length; i++) {
+      sp += temp2[i];
+    }
+    for (let j = 0; j < temp.length; j++) {
+      sp2 += temp[j];
+    }
     if (temp2.length === 1) {
       this.lessons[temp2[0]].to = el.value;
     } else if (temp2.length === 2) {
@@ -150,14 +163,26 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       this.lessons[temp2[0]].topics[temp2[1]].subtopics[temp2[2]].to = el.value;
     }
     if (temp.length === 1) {
-      this.lessons[temp[0]].from = this.pointData;
+      this.lessons[temp[0]].from = this.pointFrom;
     } else if (temp.length === 2) {
-      this.lessons[temp[0]].topics[temp[1]].from = this.pointData;
+      this.lessons[temp[0]].topics[temp[1]].from = this.pointFrom;
     } else if (temp.length === 3) {
-      this.lessons[temp[0]].topics[temp[1]].subtopics[temp[2]].from = this.pointData;
+      this.lessons[temp[0]].topics[temp[1]].subtopics[temp[2]].from = this.pointFrom;
     } else {
       console.warn('Invalid pointer! Please make sure to point to a valid lesson');
     }
+
+    this.pointFrom = sp;
+    this.pointTo = sp2;
+  }
+
+  _addToCanvas () {
+    let canvas = this.shadowRoot.querySelector('#canvas');
+    let f = this.shadowRoot.querySelector('#a' + this.pointFrom);
+    let t = this.shadowRoot.querySelector('#a' + this.pointTo);
+
+    canvas.appendChild(f);
+    canvas.appendChild(t);
   }
 
   _finish () {

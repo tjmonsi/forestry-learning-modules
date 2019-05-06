@@ -9,7 +9,7 @@ import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 
-const { HTMLElement, customElements, fetch } = window;
+const { HTMLElement, customElements } = window;
 
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   static get is () { return 'forms-module'; }
