@@ -1126,6 +1126,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
 
     const form = await localforage.getItem('forms');
+    console.log(form);
     if (form) {
       this.forms = form;
     }
@@ -1255,6 +1256,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     canvas.id = 'canvas' + this.scene.id;
     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
     workspace.appendChild(canvas);
+    this._backgroundClick();
     canvas.addEventListener('click', event => {
       console.log(event.target);
       let selected = event.target;
@@ -1349,8 +1351,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             }
           }
         } else if (toBeLoaded[i].default) {
+          console.log(this.forms);
           // load assessment forms
-          canvas.appendChild(this.forms[this.scene.id].obj);
+          // canvas.appendChild(this.forms[this.scene.id].obj);
+          let form = document.createElement('div');
+          form.innerHTML = this.forms[this.scene.id].obj;
+          canvas.appendChild(form);
         } else {
         // load characters and objects
           canvas.appendChild(img);
@@ -2280,10 +2286,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             // select canvas from the shadowRoot
             let canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
             // create form to be added in the canvas
+            let container = document.createElement('div');
             let form = document.createElement('form');
+            container.appendChild(form);
             form.className = 'absolute form overflow ' + load[i].meta.classList;
             form.id = load[i].objectId;
-            form.style.cssText = 'top: 25%; right: 5%; height: 60%; width: 30%; background: #ddd; padding: 24px; border: solid #000; overflow: auto; position: absolute;';
+            form.style.cssText = 'top: 30%; right: 5%; height: 60%; width: 30%; background: #ddd; padding: 24px; border: solid #000; overflow: auto; position: absolute;';
             // create div form-group
             let formGroup = document.createElement('div');
             form.appendChild(formGroup);
@@ -2316,9 +2324,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               inputContainer.appendChild(select);
               formGroup.appendChild(inputContainer);
             });
-            canvas.appendChild(form);
+            canvas.appendChild(container);
             this.forms[this.scene.id] = {};
-            this.forms[this.scene.id].obj = form;
+            this.forms[this.scene.id].obj = container.innerHTML;
             console.log(this.forms);
           });
           form.appendChild(singleButton);
@@ -2367,18 +2375,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   async _save () {
-    const exportObj = this.toolkit;
-    const exportName = 'ilo-4';
+    // const exportObj = this.toolkit;
+    // const exportName = 'ilo-4';
     await localforage.setItem('lesson-state', exportObj);
     await localforage.setItem('module-state', this.module);
-    await localforage.setItem('forms', JSON.stringify(this.forms, undefined));
-    let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
-    let downloadAnchorNode = document.createElement('a');
-    downloadAnchorNode.setAttribute('href', dataStr);
-    downloadAnchorNode.setAttribute('download', exportName + '.json');
-    document.body.appendChild(downloadAnchorNode);
-    downloadAnchorNode.click();
-    downloadAnchorNode.remove();
+    await localforage.setItem('forms', this.forms);
+    // let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
+    // let downloadAnchorNode = document.createElement('a');
+    // downloadAnchorNode.setAttribute('href', dataStr);
+    // downloadAnchorNode.setAttribute('download', exportName + '.json');
+    // document.body.appendChild(downloadAnchorNode);
+    // downloadAnchorNode.click();
+    // downloadAnchorNode.remove();
   }
 
   _saveModule () {
