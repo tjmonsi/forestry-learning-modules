@@ -1119,15 +1119,16 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (obj) {
       this.toolkit = obj;
     }
-    console.log('toolkit:');
-    console.log(this.toolkit);
 
     const mod = await localforage.getItem('module-state');
     if (mod) {
       this.module = mod;
     }
-    console.log('module:');
-    console.log(this.module);
+
+    const form = await localforage.getItem('forms');
+    if (form) {
+      this.forms = form;
+    }
   }
 
   _getLessons (lessons) {
@@ -1224,7 +1225,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   _assignId ({ target: el }) {
-    console.log(el);
     for (let i = 0; i < el.children.length; i++) {
       if (el.children.length < 9) {
         let selectorId = 'event-0' + (i + 1);
@@ -1234,6 +1234,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         el.children[i].id = selectorId;
       }
     }
+  }
+
+  _canvasClick () {
+    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+    canvas.addEventListener('click', event => {
+      console.log(event.target);
+    });
   }
 
   _selectorClick ({ target: el }) {
@@ -1248,6 +1255,53 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     canvas.id = 'canvas' + this.scene.id;
     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
     workspace.appendChild(canvas);
+    canvas.addEventListener('click', event => {
+      console.log(event.target);
+      let selected = event.target;
+      console.log(selected.id);
+      console.log(this.toolkit);
+      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'confirm' || selected.id === 'cancel' || selected.id === 'delete') {
+      } else {
+        let oldDel = this.shadowRoot.querySelector('#delete');
+        if (oldDel) {
+          oldDel.remove();
+        }
+        let del = document.createElement('button');
+        if (selected.className === 'absolute form overflow image-right') {
+          let top = selected.offsetTop + 40;
+          let left = selected.offsetLeft - 80;
+          del.style.cssText = 'width: 5%; height: 5%; position: absolute;';
+          del.style.top = top + 'px';
+          del.style.left = left + 'px';
+        } else {
+          let top = selected.offsetTop - 40;
+          let left = selected.offsetLeft;
+          del.style.cssText = 'width: 5%; height: 5%; position: absolute;';
+          del.style.top = top + 'px';
+          del.style.left = left + 'px';
+        }
+        del.innerHTML = 'Delete';
+        del.id = 'delete';
+        canvas.appendChild(del);
+        del.addEventListener('click', event => {
+          // this.toolkit.events[this.scene.id].triggers['trigger-01'].load
+          let mload = this.module.events[this.scene.name].triggers['trigger-01'].load;
+          let tload = this.toolkit.events[this.scene.name].triggers['trigger-01'].load;
+          let mobjs = this.toolkit.objects;
+          let tobjs = this.toolkit.objects;
+          let i = mload.findIndex(element => element.objectId === selected.id);
+          // delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
+          // delete this.toolkit.events[this.scene.name].triggers['trigger-01'].load[i];
+          mload.splice(i, 1);
+          tload.splice(i, 1);
+          delete mobjs[selected.id];
+          delete tobjs[selected.id];
+          selected.remove();
+          del.remove();
+          console.log(this.toolkit);
+        });
+      }
+    });
     if (!this.toolkit.events[el.id]) {
       // new canvas
       const loadedEvents = Object.keys(this.module.events).length;
@@ -1323,8 +1377,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         image.style.margin = '10px';
         assets.appendChild(image);
         image.addEventListener('click', event => {
-          if (cv && cv.firstChild) {
-            cv.removeChild(cv.firstChild);
+          console.log(this.toolkit);
+          let backg = this.shadowRoot.querySelector('#background');
+          if (cv && backg) {
+            backg.remove();
           }
           if (cv) {
             const copy = image.cloneNode(true);
@@ -1334,19 +1390,21 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const name = this.scene.name;
             const objId = item.fname.split('.')[0];
             this.toolkit.events[name].default = 'trigger-01';
-            this.toolkit.events[name].triggers = {};
-            this.toolkit.events[name].triggers['trigger-01'] = {};
-            this.toolkit.events[name].triggers['trigger-01'].type = 'load';
-            this.toolkit.events[name].triggers['trigger-01'].load = [];
-            this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', style: 'z-index: 0; width: 100%; height: 100%; position: relative; id: background;' });
-            // console.log(this.toolkit);
+            if (!this.toolkit.events[name].triggers) {
+              this.toolkit.events[name].triggers = {};
+              this.toolkit.events[name].triggers['trigger-01'] = {};
+              this.toolkit.events[name].triggers['trigger-01'].type = 'load';
+              this.toolkit.events[name].triggers['trigger-01'].load = [];
+              this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', style: 'z-index: 0; width: 100%; height: 100%; position: relative; id: background;' });
+              // console.log(this.toolkit);
 
-            this.module.events[name].default = 'trigger-01';
-            this.module.events[name].triggers = {};
-            this.module.events[name].triggers['trigger-01'] = {};
-            this.module.events[name].triggers['trigger-01'].type = 'load';
-            this.module.events[name].triggers['trigger-01'].load = [];
-            this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
+              this.module.events[name].default = 'trigger-01';
+              this.module.events[name].triggers = {};
+              this.module.events[name].triggers['trigger-01'] = {};
+              this.module.events[name].triggers['trigger-01'].type = 'load';
+              this.module.events[name].triggers['trigger-01'].load = [];
+              this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-01', meta: { fullscreen: true, cover: true }, style: ['z-index: 0'] });
+            } else {}
             // console.log(this.module);
           }
         });
@@ -1385,7 +1443,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             copy.id = id[0];
             copy.dataset.size = 'normal';
             copy.style.cssText = 'top: 40%; width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-            console.log(copy);
             this.objectClicked = copy;
             let confirm = document.createElement('button');
             confirm.innerHTML = 'confirm';
@@ -1459,7 +1516,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 canvas.appendChild(up);
 
                 check.addEventListener('click', event => {
-                  console.log(this.module);
                   const objId = item.fname.split('.')[0];
                   const name = this.scene.name;
                   const char = this.shadowRoot.querySelector('#' + id[0]);
@@ -1475,7 +1531,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                     this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
                     this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, style: styleArr });
                   }
-                  console.log(this.module);
                   // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: });
                   this.objectClicked = '';
                   confirm = '';
@@ -1494,6 +1549,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   down = '';
                   down = this.shadowRoot.querySelector('#sizeDown');
                   down.remove();
+                  console.log(this.toolkit);
                 });
 
                 ex.addEventListener('click', event => {
@@ -1729,7 +1785,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                     }
                     this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, style: styleArr });
                   }
-                  console.log(this.module);
                   this.objectClicked = '';
                   confirmObj = '';
                   checkObj = '';
@@ -1864,13 +1919,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       snacker.textContent = 'Can\'t add character, no canvas yet';
       snacker.show();
     }
-  }
-
-  _canvasClick () {
-    const canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
-    canvas.addEventListener('click', event => {
-      console.log(event.target);
-    });
   }
 
   _addDialogue () {
@@ -2070,8 +2118,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
             //   }
           });
-
-          console.log(this.module);
         });
       } else if (bg === null) {
         console.warn('Can\'t add dialogue, no background yet');
@@ -2135,7 +2181,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classList: 'image-right form' }, default: {}, answer: {} });
             this.toolkit.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { classList: 'image-right form' }, default: {}, answer: {} });
           });
-          console.log(this.module);
           // creation of div for inputs
           let inputs = document.createElement('div');
           form.appendChild(inputs);
@@ -2213,10 +2258,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
           close.addEventListener('click', event => {
             dialog.close();
-            let load = this.module.events[this.scene.name].triggers['trigger-01'].load;
-            let i = load.findIndex(element => element.objectId === formName);
-            delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
-            delete this.toolkit.events[this.scene.name].triggers['trigger-01'].load[i];
+            let mload = this.module.events[this.scene.name].triggers['trigger-01'].load;
+            let tload = this.toolkit.events[this.scene.name].triggers['trigger-01'].load;
+            let i = mload.findIndex(element => element.objectId === formName);
+            // delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
+            // delete this.toolkit.events[this.scene.name].triggers['trigger-01'].load[i];
+            mload.splice(i, 1);
+            tload.splice(i, 1);
             let obj = this.module.objects;
             delete obj[formName];
           });
@@ -2277,6 +2325,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           form.appendChild(controls);
           controls.appendChild(close);
           controls.appendChild(submit);
+          // let child = form.children;
+          // for (let i = 0; i < child.length; i++) {
+          //   console.log(form.children[i]);
+          //   if (form.children[i].tagName === 'INPUT') {
+          //     form.children[i].removeEventListener('change', event => {}, false);
+          //   } else {
+          //     form.children[i].removeEventListener('click', event => {}, false);
+          //   }
+          // }
           dialog.appendChild(form);
           canvas.appendChild(dialog);
           dialog.showModal();
@@ -2289,7 +2346,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           // edit.addEventListener('click', event => {
           //   dialog.showModal();
           // });
-          console.log(this.module);
         } else if (el.value === 'Assessment Tables') {
           console.log('Tables!');
         } else if (el.value === 'Assessment Matching') {
@@ -2315,7 +2371,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     const exportName = 'ilo-4';
     await localforage.setItem('lesson-state', exportObj);
     await localforage.setItem('module-state', this.module);
-
+    await localforage.setItem('forms', JSON.stringify(this.forms, undefined));
     let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     let downloadAnchorNode = document.createElement('a');
     downloadAnchorNode.setAttribute('href', dataStr);
