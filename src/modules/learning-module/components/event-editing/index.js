@@ -1126,7 +1126,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
 
     const form = await localforage.getItem('forms');
-    console.log(form);
     if (form) {
       this.forms = form;
     }
@@ -1252,6 +1251,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
     this.scene.id = el.id;
     this.scene.name = el.id;
+    let next = el.id.split('-');
+    next = parseInt(next[1]) + 1;
+    if (next < 9) {
+      this.scene.next = 'event-0' + next;
+    } else {
+      this.scene.next = 'event-' + next;
+    }
     const canvas = document.createElement('div');
     canvas.id = 'canvas' + this.scene.id;
     canvas.style.cssText = 'border: 1px solid #000000; margin: 12px 24px; height: 75vh; width: 75%; overflow: hidden; display: relative;';
@@ -1262,7 +1268,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       let selected = event.target;
       console.log(selected.id);
       console.log(this.toolkit);
-      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'confirm' || selected.id === 'cancel' || selected.id === 'delete') {
+      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'confirm' || selected.id === 'cancel' || selected.id === 'delete' || selected.id === 'next' || selected.id === 'prev' || selected.id === 'characterName' || selected.id === 'controls' || selected.id === 'dialogueInput' || selected.id === 'dialogueBox') {
       } else {
         let oldDel = this.shadowRoot.querySelector('#delete');
         if (oldDel) {
@@ -1328,10 +1334,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       console.log(toBeLoaded);
       let length = toBeLoaded.length;
       for (let i = 0; i < length; i++) {
-        let img = document.createElement('img');
-        let src = '/assets/forestry/' + this.toolkit.objects[toBeLoaded[i].objectId].src;
-        img.src = src;
         if (toBeLoaded[i].id === 'object-01') {
+          let img = document.createElement('img');
+          let src = '/assets/forestry/' + this.toolkit.objects[toBeLoaded[i].objectId].src;
+          img.src = src;
           // load background
           img.id = 'background';
           canvas.appendChild(img);
@@ -1342,23 +1348,42 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           const charName = this.shadowRoot.querySelector('#characterName');
           const dialogue = this.shadowRoot.querySelector('#dialogueInput');
           const length = Object.keys(this.toolkit.events[el.id].triggers).length;
-          for (let i = 2; i < (length + 1); i++) {
-            if (this.toolkit.events[el.id].triggers['trigger-0' + i].type === 'dialogue') {
-              if (!this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].next && this.toolkit.events[el.id].triggers['trigger-0' + i].objectId !== 'dialogue-01') {
-                charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].character;
-                dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].text;
-              }
-            }
+          // for (let i = 2; i < (length + 1); i++) {
+          //   if (this.toolkit.events[el.id].triggers['trigger-0' + i].type === 'dialogue') {
+          //     if (!this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].next && this.toolkit.events[el.id].triggers['trigger-0' + i].objectId !== 'dialogue-01') {
+          //       charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].character;
+          //       dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + i].objectId].text;
+          //     }
+          //   }
+          // }
+          if (length < 3) {
+            charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-01'].objectId].character;
+            dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-01'].objectId].text;
+          } else if (length < 5) {
+            charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + (length - 2)].objectId].character;
+            dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + (length - 2)].objectId].text;
+          } else if (length < 12) {
+            charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + (length - 3)].objectId].character;
+            dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-0' + (length - 3)].objectId].text;
+          } else {
+            charName.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-' + (length - 3)].objectId].character;
+            dialogue.value = this.toolkit.objects[this.toolkit.events[el.id].triggers['trigger-' + (length - 3)].objectId].text;
           }
+          const prev = this.shadowRoot.querySelector('#prev');
+          const next = this.shadowRoot.querySelector('#next');
+          prev.remove();
+          next.remove();
         } else if (toBeLoaded[i].default) {
           console.log(this.forms);
           // load assessment forms
-          // canvas.appendChild(this.forms[this.scene.id].obj);
           let form = document.createElement('div');
           form.innerHTML = this.forms[this.scene.id].obj;
           canvas.appendChild(form);
         } else {
         // load characters and objects
+          let img = document.createElement('img');
+          let src = '/assets/forestry/' + this.toolkit.objects[toBeLoaded[i].objectId].src;
+          img.src = src;
           canvas.appendChild(img);
           img.style.cssText = toBeLoaded[i].style;
           const temp = src.split('/');
@@ -2028,6 +2053,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             }
             delete this.module.events[this.scene.name].triggers[prevName].objectId;
             delete this.toolkit.events[this.scene.name].triggers[prevName].objectId;
+            let nextEv = this.shadowRoot.querySelector('#' + this.scene.next);
+            nextEv.click();
           }
           if (dialogueInput.value !== '' && characterInput.value !== '') {
             let name1 = 'trigger-0';
@@ -2377,7 +2404,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   async _save () {
     // const exportObj = this.toolkit;
     // const exportName = 'ilo-4';
-    await localforage.setItem('lesson-state', exportObj);
+    await localforage.setItem('lesson-state', this.toolkit);
     await localforage.setItem('module-state', this.module);
     await localforage.setItem('forms', this.forms);
     // let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
