@@ -8,6 +8,7 @@ import style from './style.styl';
 import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
+import * as localforage from 'localforage';
 
 const { HTMLElement, customElements } = window;
 
@@ -39,6 +40,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   connectedCallback () {
     if (super.connectedCallback) super.connectedCallback();
     // subscribe('query', this._boundGetQueryState);
+    this._loadSavedState();
     subscribe('lessons', this._boundGetLessons);
   }
 
@@ -46,6 +48,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (super.disconnectedCallback) super.disconnectedCallback();
     // unsubscribe('query', this._boundGetQueryState);
     unsubscribe('lessons', this._boundGetLessons);
+  }
+
+  async _loadSavedState () {
+    const lesson = await localforage.getItem('lessons');
+    if (lesson) {
+      this.lessons = lesson;
+    }
   }
 
   _getLessons (lessons) {
@@ -136,6 +145,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     updateState('lessons', this.lessons);
     changeLocation('/narrative-editing', false);
     console.log(window.location.pathname);
+  }
+
+  async _saveLesson () {
+    await localforage.setItem('lessons', this.lessons);
   }
 }
 if (!customElements.get(Component.is)) {

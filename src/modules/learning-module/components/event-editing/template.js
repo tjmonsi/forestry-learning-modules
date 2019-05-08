@@ -34,15 +34,15 @@ const template = (html, self) => function () {
       <div class = "scene-selector" id = "scene-selector" @mouseover="${_assignId.bind(this)}">
         ${lessons && lessons.length ? lessons.map((lesson, index) => html`
           <div class="lessons" @click="${_selectorClick.bind(this)}">
-            <p>${index}</p> 
+            <p>${lesson.name}</p> 
           </div>
           ${lesson.topics && lesson.topics.length ? lesson.topics.map((topic, index2) => html`
             <div class="topics" @click="${_selectorClick.bind(this)}">
-              <p>${index}.${index2}</p>
+              <p>${topic.name}</p>
             </div>
             ${topic.subtopics && topic.subtopics.length ? topic.subtopics.map((subtopic, index3) => html`
               <div class="subtopics" @click="${_selectorClick.bind(this)}">
-                <p>${index}.${index2}.${index3}</p>
+                <p>${subtopic.name} </p>
               </div>
             `) : html``}
           `) : html``}

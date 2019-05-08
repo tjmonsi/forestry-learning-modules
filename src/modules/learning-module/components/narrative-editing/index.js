@@ -8,7 +8,7 @@ import style from './style.styl';
 import '../../../general/components/lazy-picture';
 import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
-// import 'vis/dist/vis-network.min.css';
+import * as localforage from 'localforage';
 
 const { HTMLElement, customElements } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
@@ -30,6 +30,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         type: Object,
         value: ''
       },
+      selector: {
+        type: Object,
+        value: ''
+      },
       pointTo: {
         type: String,
         value: ''
@@ -37,6 +41,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       pointFrom: {
         type: String,
         value: ''
+      },
+      sequence: {
+        type: Array,
+        value: []
       }
     };
   }
@@ -54,6 +62,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   connectedCallback () {
     if (super.connectedCallback) super.connectedCallback();
     // subscribe('query', this._boundGetQueryState);
+    this._loadSavedState();
     subscribe('lessons', this._boundGetLessons);
   }
 
@@ -61,6 +70,27 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (super.disconnectedCallback) super.disconnectedCallback();
     // unsubscribe('query', this._boundGetQueryState);
     unsubscribe('lessons', this._boundGetLessons);
+  }
+
+  async _loadSavedState () {
+    const lesson = await localforage.getItem('lesson');
+    if (lesson) {
+      this.lessons = lesson;
+    }
+
+    const canvas = await localforage.getItem('canvas-state');
+    if (canvas) {
+      this.canvas = canvas;
+      let canv = this.shadowRoot.querySelector('#canvas');
+      canv.innerHTML = this.canvas;
+    }
+
+    const repo = await localforage.getItem('repo-state');
+    if (repo) {
+      this.selector = repo;
+      let selector = this.shadowRoot.querySelector('#scene-repo');
+      selector.innerHTML = this.selector;
+    }
   }
 
   _getLessons (lessons) {
@@ -141,10 +171,23 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   _pointFrom ({ target: el }) {
     this.pointFrom = el.value;
+    if (this.sequence.indexOf(this.pointFrom) === -1) {
+      this.sequence.push(this.pointFrom);
+    }
   }
 
   _pointTo ({ target: el }) {
     this.pointTo = el.value;
+    if (this.sequence.indexOf(this.pointTo) === -1) {
+      this.sequence.push(this.pointTo);
+    }
+    // } else {
+    //   if (this.sequence.indexOf(this.pointTo) !== -1 && this.sequence.indexOf(this.pointFrom) !== -1) {
+    //     let ind = this.sequence.indexOf(this.pointTo);
+    //     this.sequence.splice(this.sequence.indexOf(this.pointFrom) + 1, 0, this.sequence[this.sequence.indexOf(this.pointTo)]);
+    //     this.sequence.splice(ind, 1);
+    //   }
+    // }
     let temp = el.value.split('.');
     let temp2 = this.pointFrom.split('.');
     let sp = '';
@@ -183,6 +226,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
     canvas.appendChild(f);
     canvas.appendChild(t);
+    console.log(this.sequence);
   }
 
   _finish () {
@@ -201,6 +245,16 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       updateState('lessons', this.lessons);
       changeLocation('/forms', false);
     }
+  }
+
+  async _save () {
+    await localforage.setItem('lesson', this.lessons);
+    let canvas = this.shadowRoot.querySelector('#canvas');
+    this.canvas = canvas.innerHTML;
+    let selector = this.shadowRoot.querySelector('#scene-repo');
+    this.selector = selector.innerHTML;
+    await localforage.setItem('canvas-state', this.canvas);
+    await localforage.setItem('repo-state', this.selector);
   }
 
   _downloadObjectAsJson () {

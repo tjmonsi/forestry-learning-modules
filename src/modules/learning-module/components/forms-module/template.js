@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { lessons, _addLesson, _addTopic, _addSubtopic, _inputValueChanged, _downloadObjectAsJson, _save, _changeLoc } = this;
+  const { lessons, _addLesson, _addTopic, _addSubtopic, _inputValueChanged, _downloadObjectAsJson, _save, _changeLoc, _saveLesson } = this;
   // if (!moduleObj) return html`Loading...`;
   // const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -10,8 +10,8 @@ const template = (html, self) => function () {
         <option value="Forms" id="curr-loc"> Forms </option>
         <option value="Event Editing"> Event Editing </option>
         <option value="Narrative Editing"> Narrative Editing </option>
-        
       </select>
+      <button @click="${_saveLesson.bind(this)}" id = "save"> Save </button>
     </div>
     ${lessons && lessons.length ? lessons.map((lesson, index) => html` <!-- lesson -->
       <div class="lessons-group"> 
@@ -32,7 +32,7 @@ const template = (html, self) => function () {
     `) : html``}
     <button class="lesson-button" @click="${_addLesson.bind(this)}"> Add Lesson </button>
     <div class="button-group">
-      <button class="save" type="submit" @click="${_save.bind(this)}"> <span> Save </span> </button>
+      <button class="save" type="submit" @click="${_save.bind(this)}"> <span> Continue </span> </button>
     </div>
   `;
 }.bind(self)();

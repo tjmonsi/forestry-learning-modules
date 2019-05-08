@@ -10,7 +10,6 @@ import '../../../general/components/mark-lite';
 import '../../../general/components/input-container';
 import '../../../general/components/snackbar-lite';
 import * as localforage from 'localforage';
-// import { cpus } from 'os';
 
 const { HTMLElement, customElements } = window;
 class Component extends TemplateLite(ObserversLite(HTMLElement)) {
@@ -31,25 +30,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       lessons: {
         type: Array,
         value: [
-          {
-            name: 'L1',
-            topics: [
-              {
-                name: 'T1.1',
-                subtopics: [
-                  {
-                    name: 'S1.1.1',
-                    to: '',
-                    from: '0.0'
-                  }
-                ],
-                to: '0.0.0',
-                from: '0'
-              }
-            ],
-            to: '0.0',
-            from: ''
-          }
         ]
       },
       backgrounds: {
@@ -2383,6 +2363,155 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           // });
         } else if (el.value === 'Assessment Tables') {
           console.log('Tables!');
+          let dialog = document.createElement('dialog');
+          dialog.style.cssText = 'width: 75%; height: 75vh; overflow: auto; background-color: #efefef;';
+          // form creation to be put in dialog box
+          let form = document.createElement('form');
+          form.style.cssText = 'display: flex; flex-direction: column';
+          form.method = 'dialog';
+          // table name
+          let name = document.createElement('input');
+          name.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-bottom: 36px; margin-top: 2px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+          name.placeholder = 'Table Name';
+          form.appendChild(name);
+          let formName = '';
+          name.addEventListener('change', event => {
+            const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
+            let add2 = loadedObjs + 1;
+            formName = event.target.value + '-' + this.structuralNum;
+            let fn = event.target.value;
+            formName = formName.replace(' ', '-').toLowerCase();
+            // create formName object
+            this.module.objects[formName] = {};
+            this.module.objects[formName].type = 'table';
+            this.module.objects[formName].table = {};
+            this.module.objects[formName].table.name = fn;
+            this.module.objects[formName].table.rows = {};
+
+            this.toolkit.objects[formName] = {};
+            this.toolkit.objects[formName].type = 'table';
+            this.toolkit.objects[formName].table = {};
+            this.toolkit.objects[formName].table.name = fn;
+            this.toolkit.objects[formName].table.rows = {};
+
+
+            // add to module events
+            this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { cover: false, classList: 'table-physical' } });
+            this.toolkit.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { cover: false, classList: 'table-physical' }, style: ['z-index: 2'] });
+          });
+          let inputs = document.createElement('div');
+          form.appendChild(inputs);
+          // add feature
+          let singleButton = document.createElement('button');
+          singleButton.innerHTML = 'Add Feature';
+          singleButton.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 15%; margin-left: 30%; margin-bottom: 24px;';
+          singleButton.type = 'button';
+          form.appendChild(singleButton);
+          singleButton.addEventListener('click', event => {
+            let feature = document.createElement('input');
+            feature.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-top: 12px; margin-bottom: 12px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+            feature.placeholder = 'Feature Name';
+            let featureName = '';
+            feature.addEventListener('change', event => {
+              featureName = event.target.value;
+              let og = featureName;
+              featureName = featureName.replace(' ', '-').toLowerCase();
+              // add to module objects
+              this.module.objects[formName].table.rows[featureName] = {};
+              this.module.objects[formName].table.rows[featureName].left = og;
+              this.toolkit.objects[formName].table.rows[featureName] = {};
+              this.toolkit.objects[formName].table.rows[featureName].left = og;
+              console.log(this.toolkit);
+            });
+            let choices = document.createElement('input');
+            choices.style.cssText = 'width: 35%; padding: 12px 20px; margin-left: 30%; margin-bottom: 12px; margin-top: 2px; box-sizing: border-box; border: 2px solid #ccc; border-radius: 4px; background-color: #f8f8f8; resize: none';
+            choices.placeholder = 'Option 1, Option 2, Option 3';
+            let list = '';
+            choices.addEventListener('change', event => {
+              list = event.target.value;
+              let og = list;
+              this.module.objects[formName].table.rows[featureName].right = {};
+              this.toolkit.objects[formName].table.rows[featureName].right = {};
+              this.module.objects[formName].table.rows[featureName].right = og;
+              this.toolkit.objects[formName].table.rows[featureName].right = og;
+            });
+
+            inputs.appendChild(feature);
+            inputs.appendChild(choices);
+          // controls
+          });
+          // close
+          let controls = document.createElement('div');
+          let close = document.createElement('button');
+          close.innerHTML = 'Cancel';
+          close.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 16%; margin-left: 30%;';
+          close.addEventListener('click', event => {
+            dialog.close();
+            let mload = this.module.events[this.scene.name].triggers['trigger-01'].load;
+            let tload = this.toolkit.events[this.scene.name].triggers['trigger-01'].load;
+            let i = mload.findIndex(element => element.objectId === formName);
+            // delete this.module.events[this.scene.name].triggers['trigger-01'].load[i];
+            // delete this.toolkit.events[this.scene.name].triggers['trigger-01'].load[i];
+            mload.splice(i, 1);
+            tload.splice(i, 1);
+            let obj = this.module.objects;
+            delete obj[formName];
+          });
+          // submit
+          let submit = document.createElement('button');
+          submit.innerHTML = 'Finish';
+          submit.style.cssText = 'border-radius: 4px; background-color: #c5d5db; border: none; text-decoration: none; font-size: 16px; padding: 10px; margin-right: 12px; color: #444341; width: 16%; margin-left: 2%;';
+          submit.addEventListener('click', event => {
+            let load = this.module.events[this.scene.name].triggers['trigger-01'].load;
+            let i = load.findIndex(element => element.objectId === formName);
+            // select canvas from the shadowRoot
+            let canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
+            let container = document.createElement('div');
+            let table = document.createElement('table');
+            container.className = 'absolute table' + load[i].meta.classList;
+            container.id = load[i].objectId;
+            container.style.cssText = 'top: 30%; right: 5%; height: 60%; width: 30%; background: #000000; padding: 24px; border: solid #000; overflow: auto; position: absolute;';
+            let thead = document.createElement('thead');
+            let headRow = document.createElement('tr');
+            let hrow = document.createElement('th');
+            let obj = this.module.objects[formName];
+            hrow.innerHTML = obj.table.name;
+            thead.style.textAlign = 'center';
+            headRow.appendChild(hrow);
+            thead.appendChild(headRow);
+            let tbody = document.createElement('tbody');
+            let contents = Object.entries(obj.table.rows);
+            let inputContainer = document.createElement('div');
+            contents.forEach(element => {
+              console.log(element);
+              let trow = document.createElement('tr');
+              let dataLeft = document.createElement('td');
+              dataLeft.innerHTML = element[1].left;
+              trow.appendChild(dataLeft);
+              let dataRight = document.createElement('td');
+              dataRight.innerHTML = element[1].right;
+              trow.appendChild(dataRight);
+              inputContainer.appendChild(trow);
+              dataLeft.style.cssText = 'border: 1px solid white; padding: 5px; width: 12.5%';
+              dataRight.style.cssText = 'border: 1px solid white; padding: 5px; width: 12.5%';
+            });
+            tbody.appendChild(inputContainer);
+            table.append(thead);
+            table.append(tbody);
+            table.style.cssText = 'border: 1px solid white; bacground-color: black; color: white; width: 100%; height: 100%';
+            thead.style.cssText = 'border: 1px solid white; padding: 5px;';
+            container.appendChild(table);
+            canvas.appendChild(container);
+            // let title = document.
+          });
+          // add controls
+          form.appendChild(controls);
+          controls.appendChild(close);
+          controls.appendChild(submit);
+          // append
+          dialog.appendChild(form);
+          canvas.appendChild(dialog);
+          dialog.showModal();
         } else if (el.value === 'Assessment Matching') {
           console.log('Matching!');
         } else {}
