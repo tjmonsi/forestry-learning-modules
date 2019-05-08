@@ -30,6 +30,21 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       lessons: {
         type: Array,
         value: [
+          {
+            to: '',
+            from: '',
+            name: 'Introduction'
+          },
+          {
+            to: '',
+            from: '',
+            name: 'Background'
+          },
+          {
+            to: '',
+            from: '',
+            name: 'Conclusion'
+          }
         ]
       },
       backgrounds: {
@@ -1063,7 +1078,15 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         type: Number,
         value: 1
       },
+      physicalNum: {
+        type: Number,
+        value: 1
+      },
       forms: {
+        type: Object,
+        value: {}
+      },
+      tables: {
         type: Object,
         value: {}
       }
@@ -1108,6 +1131,21 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     const form = await localforage.getItem('forms');
     if (form) {
       this.forms = form;
+    }
+
+    const table = await localforage.getItem('tables');
+    if (table) {
+      this.forms = table;
+    }
+
+    const snum = await localforage.getItem('structuralNum');
+    if (snum) {
+      this.structuralNum = snum;
+    }
+
+    const pnum = await localforage.getItem('physicalNum');
+    if (pnum) {
+      this.physicalNum = pnum;
     }
   }
 
@@ -1228,7 +1266,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (workspace.children.length > 1) {
       workspace.removeChild(workspace.children[1]);
     }
-
+    this.dialogues = 1;
     this.scene.id = el.id;
     this.scene.name = el.id;
     let next = el.id.split('-');
@@ -1244,11 +1282,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     workspace.appendChild(canvas);
     this._backgroundClick();
     canvas.addEventListener('click', event => {
-      console.log(event.target);
       let selected = event.target;
-      console.log(selected.id);
-      console.log(this.toolkit);
-      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'confirm' || selected.id === 'cancel' || selected.id === 'delete' || selected.id === 'next' || selected.id === 'prev' || selected.id === 'characterName' || selected.id === 'controls' || selected.id === 'dialogueInput' || selected.id === 'dialogueBox') {
+      let tagname = selected.tagName.toLowerCase();
+      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'characterName' || selected.id === 'controls' || selected.id === 'dialogueInput' || selected.id === 'dialogueBox' || tagname === 'button' || tagname === 'input' || tagname === 'textarea' || tagname === 'div' || tagname === 'dialog' || tagname === 'th' || tagname === 'td' || tagname === 'tbody') {
       } else {
         let oldDel = this.shadowRoot.querySelector('#delete');
         if (oldDel) {
@@ -1286,7 +1322,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           delete tobjs[selected.id];
           selected.remove();
           del.remove();
-          console.log(this.toolkit);
         });
       }
     });
@@ -1309,7 +1344,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
     } else {
       // visited canvas
-      console.log(this.forms);
+      console.log(this.tables);
       let toBeLoaded = this.toolkit.events[el.id].triggers['trigger-01'].load;
       console.log(toBeLoaded);
       let length = toBeLoaded.length;
@@ -1359,6 +1394,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           let form = document.createElement('div');
           form.innerHTML = this.forms[this.scene.id].obj;
           canvas.appendChild(form);
+        } else if (toBeLoaded[i].meta.classList === 'table-physical') {
+          console.log('he he he');
+          let container = document.createElement('div');
+          let table = document.createElement('table');
+          container.appendChild(table);
+          container.innerHTML = this.tables[this.scene.id].obj;
+          canvas.appendChild(container);
         } else {
         // load characters and objects
           let img = document.createElement('img');
@@ -2335,6 +2377,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.forms[this.scene.id] = {};
             this.forms[this.scene.id].obj = container.innerHTML;
             console.log(this.forms);
+            this.structuralNum++;
           });
           form.appendChild(singleButton);
           form.appendChild(controls);
@@ -2378,7 +2421,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           name.addEventListener('change', event => {
             const loadedObjs = this.module.events[this.scene.name].triggers['trigger-01'].load.length;
             let add2 = loadedObjs + 1;
-            formName = event.target.value + '-' + this.structuralNum;
+            formName = event.target.value + '-' + this.physicalNum;
             let fn = event.target.value;
             formName = formName.replace(' ', '-').toLowerCase();
             // create formName object
@@ -2393,7 +2436,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             this.toolkit.objects[formName].table = {};
             this.toolkit.objects[formName].table.name = fn;
             this.toolkit.objects[formName].table.rows = {};
-
 
             // add to module events
             this.module.events[this.scene.name].triggers['trigger-01'].load.push({ objectId: formName, id: 'object-0' + add2, meta: { cover: false, classList: 'table-physical' } });
@@ -2468,9 +2510,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             let canvas = this.shadowRoot.querySelector('#canvas' + this.scene.id);
             let container = document.createElement('div');
             let table = document.createElement('table');
-            container.className = 'absolute table' + load[i].meta.classList;
-            container.id = load[i].objectId;
-            container.style.cssText = 'top: 30%; right: 5%; height: 60%; width: 30%; background: #000000; padding: 24px; border: solid #000; overflow: auto; position: absolute;';
+            container.appendChild(table);
+            table.className = 'absolute table' + load[i].meta.classList;
+            table.id = load[i].objectId;
+            table.style.cssText = 'border: 1px solid white; color: white; top: 30%; right: 5%; width: 30%; background: black; overflow: auto; position: absolute;';
             let thead = document.createElement('thead');
             let headRow = document.createElement('tr');
             let hrow = document.createElement('th');
@@ -2497,11 +2540,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             });
             tbody.appendChild(inputContainer);
             table.append(thead);
-            table.append(tbody);
-            table.style.cssText = 'border: 1px solid white; bacground-color: black; color: white; width: 100%; height: 100%';
             thead.style.cssText = 'border: 1px solid white; padding: 5px;';
-            container.appendChild(table);
+            table.append(tbody);
             canvas.appendChild(container);
+            this.tables[this.scene.id] = {};
+            this.tables[this.scene.id].obj = container.innerHTML;
+            console.log(this.tables);
+            this.physicalNum++;
             // let title = document.
           });
           // add controls
@@ -2536,6 +2581,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     await localforage.setItem('lesson-state', this.toolkit);
     await localforage.setItem('module-state', this.module);
     await localforage.setItem('forms', this.forms);
+    await localforage.setItem('tables', this.tables);
+    await localforage.setItem('structuralNum', this.structuralNum);
+    await localforage.setItem('physicalNum', this.physicalNum);
     // let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     // let downloadAnchorNode = document.createElement('a');
     // downloadAnchorNode.setAttribute('href', dataStr);
