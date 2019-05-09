@@ -15,7 +15,7 @@ const template = (html, self) => function () {
     </div>
     <div class = "container">
       <div id="control">
-        <form>
+        <form autocomplete="off">
           <div> 
             <span> FROM: </span>
             <span> <input id="x-coor" value="" @change=${_pointFrom.bind(this)} placeholder="0"> </span>

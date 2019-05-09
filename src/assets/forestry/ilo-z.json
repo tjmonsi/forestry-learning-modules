@@ -1,0 +1,532 @@
+{
+  "baseURL": "/assets/forestry",
+  "events": {
+    "event-01": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-05",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-06",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left small-character"
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-07",
+              "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smaller-character"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-08",
+              "id": "object-03",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-09"
+        },
+        "trigger-03": {
+          "type": "dialogue",
+          "objectId": "object-10"
+        },
+        "trigger-04": {
+          "type": "dialogue",
+          "objectId": "object-08"
+        },
+        "trigger-05": {
+          "type": "dialogue",
+          "objectId": "object-11"
+        },
+        "trigger-06": {
+          "type": "dialogue",
+          "objectId": "object-09"
+        },
+        "trigger-07": {
+          "type": "dialogue",
+          "objectId": "object-12"
+        },
+        "trigger-08": {
+          "type": "dialogue",
+          "objectId": "object-10"
+        },
+        "trigger-09": {
+          "type": "next",
+          "event": "event-02"
+        },
+        "trigger-10": {
+          "type": "dialogue",
+          "objectId": "object-11"
+        }
+      }
+    },
+    "event-02": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-01"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-14",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-21",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-125",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "table-physical"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-20",
+              "id": "object-09",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-22"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-03"
+        }
+      }
+    },
+    "event-03": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-02"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-79",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-82",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "cross-assessment"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-103",
+              "id": "object-04",
+              "meta": {
+                "classList": "image-right form"
+              },
+              "default": {
+                "shape": "angular",
+                "size": "moderately-large",
+                "number": "moderately-few",
+                "topography": "ring-porous",
+                "type": [],
+                "tyloses": "absent",
+                "deposits": "absent",
+                "parenchyma": [],
+                "wood-rays": "broad",
+                "ripple": "present",
+                "ducts": "concentric-resin"
+              },
+              "answer": {
+                "shape": "round",
+                "size": "moderately-small",
+                "number": "moderately-numerous",
+                "topography": "diffuse-porous",
+                "type": [
+                  "solitary",
+                  "radial-2-3"
+                ],
+                "tyloses": "present",
+                "deposits": "white",
+                "parenchyma": [
+                  "apotracheal-diffuse",
+                  "paratracheal-vasicentric"
+                ],
+                "wood-rays": "narrow",
+                "ripple": "absent",
+                "ducts": "absent"
+              }
+            },
+            {
+              "objectId": "object-83",
+              "id": "object-05",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-178",
+              "id": "object-06",
+              "style": [
+                "z-index: -1",
+                "font-size: 5rem",
+                "left: 32.5%",
+                "top: 42.5%",
+                "color: white",
+                "font-weight: bold"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-84"
+        },
+        "trigger-03": {
+          "type": "dialogue",
+          "objectId": "object-85"
+        },
+        "trigger-04": {
+          "type": "next",
+          "event": "event-01"
+        }
+      }
+    }
+  },
+  "objects": {
+    "object-05": {
+      "type": "image",
+      "src": "/images/xylarium.jpg"
+    },
+    "object-06": {
+      "type": "image",
+      "src": "/images/supervisor.png"
+    },
+    "object-07": {
+      "type": "image",
+      "src": "/images/forester-2.png"
+    },
+    "object-08": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "Supervisor Vic is orienting their newly hired Forester, Sue.",
+      "next": "trigger-02"
+    },
+    "object-09": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "Hi Sue! Welcome to your first day at work.",
+      "next": "trigger-03",
+      "prev": "trigger-04"
+    },
+    "object-10": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": " I will assign you at the checkpoint today where you need to verify the identity of the logs harvested by different logging companies and collect the corresponding forest charges. ",
+      "next": "trigger-05",
+      "prev": "trigger-06"
+    },
+    "object-11": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "We need to look at its gross features, specifically its physical and structural features.",
+      "next": "trigger-07",
+      "prev": "trigger-08"
+    },
+    "object-12": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "But before deployment, let us go to our xylarium to review these features.",
+      "next": "trigger-09",
+      "prev": "trigger-10"
+    },
+    "object-14": {
+      "type": "image",
+      "src": "/images/tablet.png"
+    },
+    "object-20": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "Let us examine selected species under the family Fabaceae. We will start with AYANGILE, Acacia confusa",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-21": {
+      "type": "image",
+      "src": "/images/ayangile-cross.jpg"
+    },
+    "object-22": {
+      "type": "dialogue",
+      "character": "Vic",
+      "text": "Ayangile's distinct features are:\n\nIts brownish black color, moderately numerous pores that are moderately small, presence of white deposits and vasicentric parenchyma.",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-79": {
+      "type": "image",
+      "src": "/images/truck-back2.png"
+    },
+    "object-82": {
+      "type": "image",
+      "src": "/images/ipil-cross.jpg"
+    },
+    "object-83": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "This is log one.",
+      "next": "trigger-02",
+      "prev": "trigger-00",
+      "form": true
+    },
+    "object-84": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "Congratulations! You have correctly identified Ipil, Intsia bijuga.",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-85": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "The distinguishing features of Ipil are:\n\nIts orange to dark brown color; moderately numerous and moderately large pores; presence of yellow, red and black deposits; and boundary and aliform parenchyma.",
+      "next": "trigger-04",
+      "prev": "trigger-02"
+    },
+    "object-103": {
+      "type": "form",
+      "form": {
+        "structural": {
+          "name": "Structural Features",
+          "items": {
+            "shape": {
+              "name": "Pore Shape",
+              "type": "select",
+              "options": {
+                "round": "Round",
+                "oval": "Oval",
+                "angular": "Angular"
+              }
+            },
+            "size": {
+              "name": "Pore Size",
+              "type": "select",
+              "options": {
+                "minute": "Minute",
+                "small": "Small",
+                "moderately-small": "Moderately Small",
+                "moderately-large": "Moderately Large",
+                "large": "Large"
+              }
+            },
+            "number": {
+              "name": "Pore Number",
+              "type": "select",
+              "options": {
+                "few": "Few",
+                "moderately-few": "Moderately Small",
+                "moderately-numerous": "Moderately Numerous",
+                "numerous": "Numerous"
+              }
+            },
+            "topography": {
+              "name": "Pore Topography",
+              "type": "select",
+              "options": {
+                "diffuse-porous": "Diffuse Porous",
+                "ring-porous": "Ring Porous",
+                "semi-ring-porous": "Semi-ring Porous"
+              }
+            },
+            "type": {
+              "name": "Pore Types and Arrangement",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "solitary": "Solitary",
+                "radial-2-3": "Radial multiple 2-3",
+                "radial-2-4": "Radial multiple 2-4",
+                "tangential-2-3": "Tangential multiple 2-3",
+                "tangential-2-4": "Tangential multiple 2-4",
+                "pore-cluster": "Pore Cluster",
+                "radial-chain": "Radial chain",
+                "radial-line": "Radial line",
+                "echelon": "Echelon",
+                "flame": "Flame-like/Dendritic",
+                "tangential-festoons": "Tangential festoons",
+                "ulmiform": "Ulmiform"
+              }
+            },
+            "tyloses": {
+              "name": "Pore Tyloses",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "deposits": {
+              "name": "Pore Deposits",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "white": "White deposit",
+                "yellow": "Yellow deposit",
+                "red": "Red deposit",
+                "orange": "Orange deposit",
+                "black": "Black deposit"
+              }
+            },
+            "parenchyma": {
+              "name": "Parenchyma",
+              "type": "select",
+              "multiple": true,
+              "options": {
+                "apotracheal-concentric": "Apotracheal Concentric",
+                "apotracheal-diffuse": "Apotracheal Diffuse",
+                "apotracheal-diffuse-in-aggregates": "Apotracheal Diffuse in aggregates",
+                "paratracheal-scanty": "Paratracheal Scanty",
+                "unilaterally-paratracheal": "Unilaterally paratracheal",
+                "paratracheal-vasicentric": "Paratracheal Vasicentric",
+                "paratracheal-aliform": "Paratracheal Aliform",
+                "paratracheal-aliform-confluent": "Paratreacheal Aliform confluent",
+                "paratracheal-banded-confluent": "Paratracheal Banded confluent",
+                "boundary": "Boundary"
+              }
+            },
+            "wood-rays": {
+              "name": "Wood Rays",
+              "type": "select",
+              "options": {
+                "narrow": "Narrow",
+                "moderately-broad": "Moderately broad",
+                "broad": "Broad",
+                "combination": "Combination of moderately broad and narrow"
+              }
+            },
+            "ripple": {
+              "name": "Ripple-Marks",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "present": "Present"
+              }
+            },
+            "ducts": {
+              "name": "Ducts",
+              "type": "select",
+              "options": {
+                "absent": "Absent",
+                "diffuse-oil": "Diffuse Oil Ducts",
+                "diffuse-resin": "Diffuse Resin Ducts",
+                "concentric-oil": "Concentric Oil Ducts",
+                "concentric-resin": "Concentric Resin Ducts"
+              }
+            }
+          }
+        }
+      }
+    },
+    "object-125": {
+      "type": "table",
+      "table": {
+        "name": "Physical Features",
+        "rows": {
+          "color": {
+            "left": "Color",
+            "right": "Brownish Black"
+          },
+          "odor": {
+            "left": "Odor",
+            "right": "None"
+          },
+          "taste": {
+            "left": "Taste",
+            "right": "None"
+          },
+          "luster": {
+            "left": "Luster",
+            "right": "Lustrous"
+          },
+          "grain": {
+            "left": "Grain",
+            "right": "Cross"
+          },
+          "texture": {
+            "left": "Texture",
+            "right": "Moderately Fine"
+          },
+          "hardness": {
+            "left": "Hardness",
+            "right": "Hard"
+          },
+          "weight": {
+            "left": "Weight",
+            "right": "Heavy"
+          }
+        }
+      }
+    },
+    "object-178": {
+      "type": "label",
+      "text": "IPIL"
+    }
+  },
+  "eventStart": "event-01"
+}

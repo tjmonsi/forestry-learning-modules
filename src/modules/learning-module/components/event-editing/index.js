@@ -30,21 +30,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       lessons: {
         type: Array,
         value: [
-          {
-            to: '',
-            from: '',
-            name: 'Introduction'
-          },
-          {
-            to: '',
-            from: '',
-            name: 'Background'
-          },
-          {
-            to: '',
-            from: '',
-            name: 'Conclusion'
-          }
         ]
       },
       backgrounds: {
@@ -387,7 +372,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               'type': 'image',
               'src': '/images/akle-cross.jpg'
             },
-            'akle-physical.jpg': {
+            'akle-physical': {
               'type': 'image',
               'src': '/images/akle-physical.jpg'
             },
@@ -395,7 +380,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               'type': 'image',
               'src': '/images/ayangile-2.jpg'
             },
-            'ayangile-cross.jpg': {
+            'ayangile-cross': {
               'type': 'image',
               'src': '/images/ayangile-cross.jpg'
             },
@@ -755,7 +740,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               'type': 'image',
               'src': '/images/akle-cross.jpg'
             },
-            'akle-physical.jpg': {
+            'akle-physical': {
               'type': 'image',
               'src': '/images/akle-physical.jpg'
             },
@@ -763,7 +748,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               'type': 'image',
               'src': '/images/ayangile-2.jpg'
             },
-            'ayangile-cross.jpg': {
+            'ayangile-cross': {
               'type': 'image',
               'src': '/images/ayangile-cross.jpg'
             },
@@ -1250,7 +1235,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   _assignId ({ target: el }) {
     let x = 1;
     for (let i = 0; i < el.children.length; i++) {
-      if (el.children.length < 9) {
+      if (x < 10) {
         let selectorId = 'event-0' + x;
         if (el.children[i].tagName === 'DIV') {
           el.children[i].id = selectorId;
@@ -2048,7 +2033,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           let name1 = 'dialogue-0';
           let name2 = 'dialogue-';
 
-          if (this.dialogues < 9) {
+          if (this.dialogues < 10) {
             let name = name1 + this.dialogues;
             this.module.objects[name] = {};
             this.module.objects[name].type = 'dialogue';
@@ -2556,7 +2541,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             container.appendChild(table);
             table.className = 'absolute table' + load[i].meta.classList;
             table.id = load[i].objectId;
-            table.style.cssText = 'border: 1px solid white; color: white; top: 30%; right: 5%; width: 30%; background: black; overflow: auto; position: absolute;';
+            table.style.cssText = 'border: 1px solid white; color: white; top: 40%; right: 5%; width: 30%; background: black; overflow: auto; position: absolute;';
             let thead = document.createElement('thead');
             let headRow = document.createElement('tr');
             let hrow = document.createElement('th');
