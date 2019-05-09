@@ -1266,7 +1266,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (workspace.children.length > 1) {
       workspace.removeChild(workspace.children[1]);
     }
-    this.dialogues = 1;
     this.scene.id = el.id;
     this.scene.name = el.id;
     let next = el.id.split('-');
@@ -1495,7 +1494,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const id = item.fname.split('.');
             copy.id = id[0];
             copy.dataset.size = 'normal';
-            copy.style.cssText = 'top: 40%; width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+            copy.style.cssText = 'top: 40%; width: 25%; height: 55%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
             let confirm = document.createElement('button');
             confirm.innerHTML = 'confirm';
@@ -1505,20 +1504,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             cancel.id = 'cancel';
             confirm.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
             cancel.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
-            let sizeUp = document.createElement('button');
-            sizeUp.innerHTML = '+';
-            sizeUp.id = 'sizeUp';
-            let sizeDown = document.createElement('button');
-            sizeDown.innerHTML = '-';
-            sizeDown.id = 'sizeDown';
-            sizeUp.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
-            sizeDown.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            // let sizeUp = document.createElement('button');
+            // sizeUp.innerHTML = '+';
+            // sizeUp.id = 'sizeUp';
+            // let sizeDown = document.createElement('button');
+            // sizeDown.innerHTML = '-';
+            // sizeDown.id = 'sizeDown';
+            // sizeUp.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            // sizeDown.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
 
             canvas.addEventListener('click', event => {
               let check = confirm;
               let ex = cancel;
-              let up = sizeUp;
-              let down = sizeDown;
+              // let up = sizeUp;
+              // let down = sizeDown;
               const width = canvas.clientWidth;
               const left = width / 3;
               const center = left + left;
@@ -1538,22 +1537,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   char.style.left = '25%';
                   check.style.left = '27%';
                   ex.style.left = '32%';
-                  down.style.left = '37%';
-                  up.style.left = '42%';
+                  // down.style.left = '37%';
+                  // up.style.left = '42%';
                   char.dataset.alignment = 'left';
                 } else if (event.offsetX > left && event.offsetX < center) {
                   char.style.left = '50%';
                   check.style.left = '52%';
                   ex.style.left = '57%';
-                  down.style.left = '62%';
-                  up.style.left = '67%';
+                  // down.style.left = '62%';
+                  // up.style.left = '67%';
                   char.dataset.alignment = 'center';
                 } else {
                   char.style.left = '72%';
                   check.style.left = '74%';
                   ex.style.left = '79%';
-                  down.style.left = '84%';
-                  up.style.left = '89%';
+                  // down.style.left = '84%';
+                  // up.style.left = '89%';
                   char.dataset.alignment = 'right';
                 }
                 // get the style of an element after the window finishes rendering it
@@ -1565,8 +1564,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 }
                 canvas.appendChild(check);
                 canvas.appendChild(ex);
-                canvas.appendChild(down);
-                canvas.appendChild(up);
+                // canvas.appendChild(down);
+                // canvas.appendChild(up);
 
                 check.addEventListener('click', event => {
                   const objId = item.fname.split('.')[0];
@@ -1578,7 +1577,13 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   const loadedObjs = this.module.events[name].triggers['trigger-01'].load.length;
                   let add = loadedObjs + 1;
                   if (loadedObjs < 9) {
-                    this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                    if (fname[7] === 'supervisor.png') {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                    } else if (fname[7] === 'forester-2.png') {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' smaller-character' }, style: ['z-index: 1'] });
+                    } else if (fname[7] === 'pahinante.png') {
+                      this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' smallest-character' }, style: ['z-index: 1'] });
+                    }
                     this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, style: styleArr });
                   } else {
                     this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
@@ -1594,14 +1599,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   ex = '';
                   ex = this.shadowRoot.querySelector('#cancel');
                   ex.remove();
-                  sizeUp = '';
-                  up = '';
-                  up = this.shadowRoot.querySelector('#sizeUp');
-                  up.remove();
-                  sizeDown = '';
-                  down = '';
-                  down = this.shadowRoot.querySelector('#sizeDown');
-                  down.remove();
+                  // sizeUp = '';
+                  // up = '';
+                  // up = this.shadowRoot.querySelector('#sizeUp');
+                  // up.remove();
+                  // sizeDown = '';
+                  // down = '';
+                  // down = this.shadowRoot.querySelector('#sizeDown');
+                  // down.remove();
                   console.log(this.toolkit);
                 });
 
@@ -1615,95 +1620,95 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   ex = '';
                   ex = this.shadowRoot.querySelector('#cancel');
                   ex.remove();
-                  sizeUp = '';
-                  up = '';
-                  up = this.shadowRoot.querySelector('#sizeUp');
-                  up.remove();
-                  sizeDown = '';
-                  down = '';
-                  down = this.shadowRoot.querySelector('#sizeDown');
-                  down.remove();
+                  // sizeUp = '';
+                  // up = '';
+                  // up = this.shadowRoot.querySelector('#sizeUp');
+                  // up.remove();
+                  // sizeDown = '';
+                  // down = '';
+                  // down = this.shadowRoot.querySelector('#sizeDown');
+                  // down.remove();
                   let toRemove = this.shadowRoot.querySelector('#' + id[0]);
                   toRemove.remove();
                 });
 
-                let toResize = this.shadowRoot.querySelector('#' + id[0]);
-                down.addEventListener('click', event => {
-                  let checkd = this.shadowRoot.querySelector('#confirm');
-                  let exd = this.shadowRoot.querySelector('#cancel');
-                  let upd = this.shadowRoot.querySelector('#sizeUp');
-                  let downd = this.shadowRoot.querySelector('#sizeDown');
-                  if (toResize.dataset.size === 'bigger') {
-                    // console.log('im bigger! going down!');
-                    toResize.dataset.size = 'normal';
-                    if (toResize.dataset.alignment === 'center') {
-                      toResize.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResize.dataset.alignment === 'right') {
-                      toResize.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      toResize.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '35%';
-                    exd.style.top = '35%';
-                    upd.style.top = '35%';
-                    downd.style.top = '35%';
-                    toResize = '';
-                  } else if (toResize.dataset.size === 'normal') {
-                    // console.log('im normal! going down!');
-                    toResize.dataset.size = 'smaller';
-                    if (toResize.dataset.alignment === 'center') {
-                      // console.log('center!!');
-                      toResize.style.left = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResize.dataset.alignment === 'right') {
-                      // console.log('right!!');
-                      toResize.style.cssText = 'top: 50%; width: 20%; left: 72%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      // console.log('left!!');
-                      toResize.style.cssText = 'top: 50%; width: 20%; left: 25%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '45%';
-                    exd.style.top = '45%';
-                    upd.style.top = '45%';
-                    downd.style.top = '45%';
-                    toResize = '';
-                  } else {}
-                });
+                // let toResize = this.shadowRoot.querySelector('#' + id[0]);
+                // down.addEventListener('click', event => {
+                //   let checkd = this.shadowRoot.querySelector('#confirm');
+                //   let exd = this.shadowRoot.querySelector('#cancel');
+                //   let upd = this.shadowRoot.querySelector('#sizeUp');
+                //   let downd = this.shadowRoot.querySelector('#sizeDown');
+                //   if (toResize.dataset.size === 'bigger') {
+                //     // console.log('im bigger! going down!');
+                //     toResize.dataset.size = 'normal';
+                //     if (toResize.dataset.alignment === 'center') {
+                //       toResize.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResize.dataset.alignment === 'right') {
+                //       toResize.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       toResize.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '35%';
+                //     exd.style.top = '35%';
+                //     upd.style.top = '35%';
+                //     downd.style.top = '35%';
+                //     toResize = '';
+                //   } else if (toResize.dataset.size === 'normal') {
+                //     // console.log('im normal! going down!');
+                //     toResize.dataset.size = 'smaller';
+                //     if (toResize.dataset.alignment === 'center') {
+                //       // console.log('center!!');
+                //       toResize.style.left = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResize.dataset.alignment === 'right') {
+                //       // console.log('right!!');
+                //       toResize.style.cssText = 'top: 50%; width: 20%; left: 72%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       // console.log('left!!');
+                //       toResize.style.cssText = 'top: 50%; width: 20%; left: 25%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '45%';
+                //     exd.style.top = '45%';
+                //     upd.style.top = '45%';
+                //     downd.style.top = '45%';
+                //     toResize = '';
+                //   } else {}
+                // });
 
-                up.addEventListener('click', event => {
-                  let checkd = this.shadowRoot.querySelector('#confirm');
-                  let exd = this.shadowRoot.querySelector('#cancel');
-                  let upd = this.shadowRoot.querySelector('#sizeUp');
-                  let downd = this.shadowRoot.querySelector('#sizeDown');
-                  if (toResize.dataset.size === 'smaller') {
-                    toResize.dataset.size = 'normal';
-                    if (toResize.dataset.alignment === 'center') {
-                      toResize.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResize.dataset.alignment === 'right') {
-                      toResize.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      toResize.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '35%';
-                    exd.style.top = '35%';
-                    upd.style.top = '35%';
-                    downd.style.top = '35%';
-                    toResize = '';
-                  } else if (toResize.dataset.size === 'normal') {
-                    toResize.dataset.size = 'bigger';
-                    if (toResize.dataset.alignment === 'center') {
-                      toResize.style.cssText = 'top: 30%; width: 25%; left: 50%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResize.dataset.alignment === 'right') {
-                      toResize.style.cssText = 'top: 30%; width: 25%; left: 72%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      toResize.style.cssText = 'top: 30%; width: 25%; left: 25%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '25%';
-                    exd.style.top = '25%';
-                    upd.style.top = '25%';
-                    downd.style.top = '25%';
-                    toResize = '';
-                  } else {}
-                });
+                // up.addEventListener('click', event => {
+                //   let checkd = this.shadowRoot.querySelector('#confirm');
+                //   let exd = this.shadowRoot.querySelector('#cancel');
+                //   let upd = this.shadowRoot.querySelector('#sizeUp');
+                //   let downd = this.shadowRoot.querySelector('#sizeDown');
+                //   if (toResize.dataset.size === 'smaller') {
+                //     toResize.dataset.size = 'normal';
+                //     if (toResize.dataset.alignment === 'center') {
+                //       toResize.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResize.dataset.alignment === 'right') {
+                //       toResize.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       toResize.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '35%';
+                //     exd.style.top = '35%';
+                //     upd.style.top = '35%';
+                //     downd.style.top = '35%';
+                //     toResize = '';
+                //   } else if (toResize.dataset.size === 'normal') {
+                //     toResize.dataset.size = 'bigger';
+                //     if (toResize.dataset.alignment === 'center') {
+                //       toResize.style.cssText = 'top: 30%; width: 25%; left: 50%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResize.dataset.alignment === 'right') {
+                //       toResize.style.cssText = 'top: 30%; width: 25%; left: 72%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       toResize.style.cssText = 'top: 30%; width: 25%; left: 25%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '25%';
+                //     exd.style.top = '25%';
+                //     upd.style.top = '25%';
+                //     downd.style.top = '25%';
+                //     toResize = '';
+                //   } else {}
+                // });
 
                 const upper = char.offsetTop;
                 const upperLeft = char.offsetLeft;
@@ -1748,7 +1753,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             const id = item.fname.split('.');
             copy.id = id[0];
             copy.dataset.size = 'normal';
-            copy.style.cssText = 'top: 40%; width: 35%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+            copy.style.cssText = 'top: 40%; width: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
             this.objectClicked = copy;
             let confirmObj = document.createElement('button');
             confirmObj.innerHTML = 'confirm';
@@ -1758,20 +1763,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             cancelObj.id = 'cancelObj';
             confirmObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
             cancelObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
-            let sizeUpObj = document.createElement('button');
-            sizeUpObj.innerHTML = '+';
-            sizeUpObj.id = 'sizeUpObj';
-            let sizeDownObj = document.createElement('button');
-            sizeDownObj.innerHTML = '-';
-            sizeDownObj.id = 'sizeDownObj';
-            sizeUpObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
-            sizeDownObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            // let sizeUpObj = document.createElement('button');
+            // sizeUpObj.innerHTML = '+';
+            // sizeUpObj.id = 'sizeUpObj';
+            // let sizeDownObj = document.createElement('button');
+            // sizeDownObj.innerHTML = '-';
+            // sizeDownObj.id = 'sizeDownObj';
+            // sizeUpObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
+            // sizeDownObj.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
 
             canvas.addEventListener('click', event => {
               let checkObj = confirmObj;
               let exObj = cancelObj;
-              let upObj = sizeUpObj;
-              let downObj = sizeDownObj;
+              // let upObj = sizeUpObj;
+              // let downObj = sizeDownObj;
               const width = canvas.clientWidth;
               const left = width / 3;
               const center = left + left;
@@ -1782,22 +1787,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   obj.style.left = '25%';
                   checkObj.style.left = '25%';
                   exObj.style.left = '30%';
-                  downObj.style.left = '35%';
-                  upObj.style.left = '40%';
+                  // downObj.style.left = '35%';
+                  // upObj.style.left = '40%';
                   obj.dataset.alignment = 'left';
                 } else if (event.offsetX > left && event.offsetX < center) {
-                  obj.style.left = '45%';
-                  checkObj.style.left = '45%';
-                  exObj.style.left = '50%';
-                  downObj.style.left = '55%';
-                  upObj.style.left = '60%';
+                  obj.style.left = '50%';
+                  checkObj.style.left = '50%';
+                  exObj.style.left = '55%';
+                  // downObj.style.left = '55%';
+                  // upObj.style.left = '60%';
                   obj.dataset.alignment = 'center';
                 } else {
-                  obj.style.left = '62%';
-                  checkObj.style.left = '62%';
-                  exObj.style.left = '67%';
-                  downObj.style.left = '72%';
-                  upObj.style.left = '77%';
+                  obj.style.left = '72%';
+                  checkObj.style.left = '72%';
+                  exObj.style.left = '77%';
+                  // downObj.style.left = '72%';
+                  // upObj.style.left = '77%';
                   obj.dataset.alignment = 'right';
                 }
                 // gets the style of an element after the window finishes rendering it
@@ -1811,8 +1816,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                 console.log(styleArr);
                 canvas.appendChild(checkObj);
                 canvas.appendChild(exObj);
-                canvas.appendChild(downObj);
-                canvas.appendChild(upObj);
+                // canvas.appendChild(downObj);
+                // canvas.appendChild(upObj);
 
                 checkObj.addEventListener('click', event => {
                   const objId = item.fname.split('.')[0];
@@ -1847,14 +1852,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   exObj = '';
                   exObj = this.shadowRoot.querySelector('#cancelObj');
                   exObj.remove();
-                  sizeUpObj = '';
-                  upObj = '';
-                  upObj = this.shadowRoot.querySelector('#sizeUpObj');
-                  upObj.remove();
-                  sizeDownObj = '';
-                  downObj = '';
-                  downObj = this.shadowRoot.querySelector('#sizeDownObj');
-                  downObj.remove();
+                  // sizeUpObj = '';
+                  // upObj = '';
+                  // upObj = this.shadowRoot.querySelector('#sizeUpObj');
+                  // upObj.remove();
+                  // sizeDownObj = '';
+                  // downObj = '';
+                  // downObj = this.shadowRoot.querySelector('#sizeDownObj');
+                  // downObj.remove();
                 });
 
                 exObj.addEventListener('click', event => {
@@ -1867,94 +1872,94 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   exObj = '';
                   exObj = this.shadowRoot.querySelector('#cancelObj');
                   exObj.remove();
-                  upObj = '';
-                  upObj = this.shadowRoot.querySelector('#sizeUpObj');
-                  upObj.remove();
-                  sizeDownObj = '';
-                  downObj = '';
-                  downObj = this.shadowRoot.querySelector('#sizeDownObj');
-                  downObj.remove();
+                  // upObj = '';
+                  // upObj = this.shadowRoot.querySelector('#sizeUpObj');
+                  // upObj.remove();
+                  // sizeDownObj = '';
+                  // downObj = '';
+                  // downObj = this.shadowRoot.querySelector('#sizeDownObj');
+                  // downObj.remove();
                   let toRemove = this.shadowRoot.querySelector('#' + id[0]);
                   toRemove.remove();
                 });
 
-                let toResizeObj = this.shadowRoot.querySelector('#' + id[0]);
-                downObj.addEventListener('click', event => {
-                  let checkd = this.shadowRoot.querySelector('#confirmObj');
-                  let exd = this.shadowRoot.querySelector('#cancelObj');
-                  let upd = this.shadowRoot.querySelector('#sizeUpObj');
-                  let downd = this.shadowRoot.querySelector('#sizeDownObj');
-                  if (toResizeObj.dataset.size === 'bigger') {
-                    // console.log('im bigger! going down!');
-                    toResizeObj.dataset.size = 'normal';
-                    if (toResizeObj.dataset.alignment === 'center') {
-                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResizeObj.dataset.alignment === 'right') {
-                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '35%';
-                    exd.style.top = '35%';
-                    upd.style.top = '35%';
-                    downd.style.top = '35%';
-                    toResizeObj = '';
-                  } else if (toResizeObj.dataset.size === 'normal') {
-                    // console.log('im normal! going down!');
-                    toResizeObj.dataset.size = 'smaller';
-                    if (toResizeObj.dataset.alignment === 'center') {
-                      // console.log('center!!');
-                      toResizeObj.style.left = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResizeObj.dataset.alignment === 'right') {
-                      // console.log('right!!');
-                      toResizeObj.style.cssText = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      // console.log('left!!');
-                      toResizeObj.style.cssText = 'top: 50%; width: 20%; left: 25%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '45%';
-                    exd.style.top = '45%';
-                    upd.style.top = '45%';
-                    downd.style.top = '45%';
-                    toResizeObj = '';
-                  } else {}
-                });
+                // let toResizeObj = this.shadowRoot.querySelector('#' + id[0]);
+                // downObj.addEventListener('click', event => {
+                //   let checkd = this.shadowRoot.querySelector('#confirmObj');
+                //   let exd = this.shadowRoot.querySelector('#cancelObj');
+                //   let upd = this.shadowRoot.querySelector('#sizeUpObj');
+                //   let downd = this.shadowRoot.querySelector('#sizeDownObj');
+                //   if (toResizeObj.dataset.size === 'bigger') {
+                //     // console.log('im bigger! going down!');
+                //     toResizeObj.dataset.size = 'normal';
+                //     if (toResizeObj.dataset.alignment === 'center') {
+                //       toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResizeObj.dataset.alignment === 'right') {
+                //       toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '35%';
+                //     exd.style.top = '35%';
+                //     upd.style.top = '35%';
+                //     downd.style.top = '35%';
+                //     toResizeObj = '';
+                //   } else if (toResizeObj.dataset.size === 'normal') {
+                //     // console.log('im normal! going down!');
+                //     toResizeObj.dataset.size = 'smaller';
+                //     if (toResizeObj.dataset.alignment === 'center') {
+                //       // console.log('center!!');
+                //       toResizeObj.style.left = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResizeObj.dataset.alignment === 'right') {
+                //       // console.log('right!!');
+                //       toResizeObj.style.cssText = 'top: 50%; width: 20%; left: 50%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       // console.log('left!!');
+                //       toResizeObj.style.cssText = 'top: 50%; width: 20%; left: 25%; height: 30%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '45%';
+                //     exd.style.top = '45%';
+                //     upd.style.top = '45%';
+                //     downd.style.top = '45%';
+                //     toResizeObj = '';
+                //   } else {}
+                // });
 
-                upObj.addEventListener('click', event => {
-                  let checkd = this.shadowRoot.querySelector('#confirmObj');
-                  let exd = this.shadowRoot.querySelector('#cancelObj');
-                  let upd = this.shadowRoot.querySelector('#sizeUpObj');
-                  let downd = this.shadowRoot.querySelector('#sizeDownObj');
-                  if (toResizeObj.dataset.size === 'smaller') {
-                    toResizeObj.dataset.size = 'normal';
-                    if (toResizeObj.dataset.alignment === 'center') {
-                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResizeObj.dataset.alignment === 'right') {
-                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '35%';
-                    exd.style.top = '35%';
-                    upd.style.top = '35%';
-                    downd.style.top = '35%';
-                    toResizeObj = '';
-                  } else if (toResizeObj.dataset.size === 'normal') {
-                    toResizeObj.dataset.size = 'bigger';
-                    if (toResizeObj.dataset.alignment === 'center') {
-                      toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 50%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else if (toResizeObj.dataset.alignment === 'right') {
-                      toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 72%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
-                    } else {
-                      toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 25%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
-                    }
-                    checkd.style.top = '25%';
-                    exd.style.top = '25%';
-                    upd.style.top = '25%';
-                    downd.style.top = '25%';
-                    toResizeObj = '';
-                  } else {}
-                });
+                // upObj.addEventListener('click', event => {
+                //   let checkd = this.shadowRoot.querySelector('#confirmObj');
+                //   let exd = this.shadowRoot.querySelector('#cancelObj');
+                //   let upd = this.shadowRoot.querySelector('#sizeUpObj');
+                //   let downd = this.shadowRoot.querySelector('#sizeDownObj');
+                //   if (toResizeObj.dataset.size === 'smaller') {
+                //     toResizeObj.dataset.size = 'normal';
+                //     if (toResizeObj.dataset.alignment === 'center') {
+                //       toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 50%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResizeObj.dataset.alignment === 'right') {
+                //       toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 72%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       toResizeObj.style.cssText = 'top: 40%; width: 25%; left: 25%; height: 40%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '35%';
+                //     exd.style.top = '35%';
+                //     upd.style.top = '35%';
+                //     downd.style.top = '35%';
+                //     toResizeObj = '';
+                //   } else if (toResizeObj.dataset.size === 'normal') {
+                //     toResizeObj.dataset.size = 'bigger';
+                //     if (toResizeObj.dataset.alignment === 'center') {
+                //       toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 50%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else if (toResizeObj.dataset.alignment === 'right') {
+                //       toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 72%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                //     } else {
+                //       toResizeObj.style.cssText = 'top: 30%; width: 35%; left: 25%; height: 50%; margin: 0px; z-Index: 1; position: absolute;';
+                //     }
+                //     checkd.style.top = '25%';
+                //     exd.style.top = '25%';
+                //     upd.style.top = '25%';
+                //     downd.style.top = '25%';
+                //     toResizeObj = '';
+                //   } else {}
+                // });
 
                 const upper = obj.offsetTop;
                 const upperLeft = obj.offsetLeft;
@@ -2091,7 +2096,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               let name = name3 + this.dialogues;
               this.module.objects[name].next = name1 + add;
               this.toolkit.objects[name].next = name1 + add;
-              if (this.dialogues === 1) {
+              let mload = this.module.events[this.scene.name].triggers['trigger-01'].load;
+              let i = mload.findIndex(element => element.type === 'dialogue');
+              if (i === -1) {
                 this.module.events[this.scene.name].triggers[name1 + add] = {};
                 this.module.events[this.scene.name].triggers[name1 + add].type = 'dialogue';
                 this.module.events[this.scene.name].triggers[name1 + add].objectId = name3 + (this.dialogues + 1);
