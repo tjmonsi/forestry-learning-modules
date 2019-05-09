@@ -1,0 +1,494 @@
+{
+  "baseURL": "/assets/forestry",
+  "events": {
+    "event-01": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "xylarium",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "dialogue-01",
+              "id": "object-02",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "dialogue-02"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-02"
+        },
+        "trigger-04": {
+          "type": "dialogue",
+          "objectId": "dialogue-01"
+        }
+      }
+    },
+    "event-02": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "truck-front",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "dialogue-03",
+              "id": "object-02",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-03"
+        }
+      }
+    },
+    "event-03": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "truck-back",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "supervisor",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left small-character"
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "dialogue-04",
+              "id": "object-03",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-04"
+        }
+      }
+    }
+  },
+  "objects": {
+    "start": {
+      "type": "image",
+      "src": "/images/start.jpg"
+    },
+    "xylarium": {
+      "type": "image",
+      "src": "/images/xylarium.jpg"
+    },
+    "truck-front": {
+      "type": "image",
+      "src": "/images/truck-front.png"
+    },
+    "truck-back": {
+      "type": "image",
+      "src": "/images/truck-back.png"
+    },
+    "truck-back2": {
+      "type": "image",
+      "src": "/images/truck-back2.png"
+    },
+    "supervisor": {
+      "type": "image",
+      "src": "/images/supervisor.png"
+    },
+    "forester-1": {
+      "type": "image",
+      "src": "/images/forester-1.png"
+    },
+    "forester-2": {
+      "type": "image",
+      "src": "/images/forester-2.png"
+    },
+    "pahinante": {
+      "type": "image",
+      "src": "/images/pahinante.png"
+    },
+    "tablet": {
+      "type": "image",
+      "src": "/images/tablet.png"
+    },
+    "akle-2": {
+      "type": "image",
+      "src": "/images/akle-2.jpg"
+    },
+    "akle-cross": {
+      "type": "image",
+      "src": "/images/akle-cross.jpg"
+    },
+    "akle-physical.jpg": {
+      "type": "image",
+      "src": "/images/akle-physical.jpg"
+    },
+    "ayangile-2": {
+      "type": "image",
+      "src": "/images/ayangile-2.jpg"
+    },
+    "ayangile-cross.jpg": {
+      "type": "image",
+      "src": "/images/ayangile-cross.jpg"
+    },
+    "ayangile-physical": {
+      "type": "image",
+      "src": "/images/ayangile-physical.jpg"
+    },
+    "ayangile-structural": {
+      "type": "image",
+      "src": "/images/ayangile-structural.jpg"
+    },
+    "banuyo-2": {
+      "type": "image",
+      "src": "/images/banuyo-2.jpg"
+    },
+    "banuyo-cross": {
+      "type": "image",
+      "src": "/images/banuyo-cross.jpg"
+    },
+    "banuyo-physical": {
+      "type": "image",
+      "src": "/images/banuyo-physical.jpg"
+    },
+    "batete-2": {
+      "type": "image",
+      "src": "/images/batete-2.jpg"
+    },
+    "batete-cross": {
+      "type": "image",
+      "src": "/images/batete-cross.jpg"
+    },
+    "batete-physical": {
+      "type": "image",
+      "src": "/images/batete-physical.jpg"
+    },
+    "golden-shower": {
+      "type": "image",
+      "src": "/images/golden-shower.jpg"
+    },
+    "goldenshower-2": {
+      "type": "image",
+      "src": "/images/goldenshower-2.jpg"
+    },
+    "golden-shower-cross": {
+      "type": "image",
+      "src": "/images/golden-shower-cross.jpg"
+    },
+    "goldenshower-physical": {
+      "type": "image",
+      "src": "/images/goldenshower-physical.jpg"
+    },
+    "ipil-2": {
+      "type": "image",
+      "src": "/images/ipil-2.jpg"
+    },
+    "ipil-cross": {
+      "type": "image",
+      "src": "/images/ipil-cross.jpg"
+    },
+    "ipil-ipil-2": {
+      "type": "image",
+      "src": "/images/ipil-ipil-2.jpg"
+    },
+    "ipil-ipil-cross": {
+      "type": "image",
+      "src": "/images/ipil-ipil-cross.jpg"
+    },
+    "ipil-physical": {
+      "type": "image",
+      "src": "/images/ipil-physical.jpg"
+    },
+    "kakaute-2": {
+      "type": "image",
+      "src": "/images/kakaute-2.jpg"
+    },
+    "kakaute-cross": {
+      "type": "image",
+      "src": "/images/kakaute-cross.jpg"
+    },
+    "kakaute-physical": {
+      "type": "image",
+      "src": "/images/kakaute-physical.jpg"
+    },
+    "kamatog-2": {
+      "type": "image",
+      "src": "/images/kamatog-2.jpg"
+    },
+    "kamatog-cross": {
+      "type": "image",
+      "src": "/images/kamatog-cross.jpg"
+    },
+    "kamatog-physical": {
+      "type": "image",
+      "src": "/images/kamatog-physical.jpg"
+    },
+    "logwood-2": {
+      "type": "image",
+      "src": "/images/logwood-2.jpg"
+    },
+    "logwood-cross": {
+      "type": "image",
+      "src": "/images/logwood-cross.jpg"
+    },
+    "logwood-physical": {
+      "type": "image",
+      "src": "/images/logwood-physical.jpg"
+    },
+    "manggis-2": {
+      "type": "image",
+      "src": "/images/manggis-2.jpg"
+    },
+    "manggis-cross": {
+      "type": "image",
+      "src": "/images/manggis-cross.jpg"
+    },
+    "manggis-physical": {
+      "type": "image",
+      "src": "/images/manggis-physical.jpg"
+    },
+    "manggis-ripple": {
+      "type": "image",
+      "src": "/images/manggis-ripple.jpg"
+    },
+    "mangium-2": {
+      "type": "image",
+      "src": "/images/mangium-2.jpg"
+    },
+    "mangium-cross": {
+      "type": "image",
+      "src": "/images/mangium-cross.jpg"
+    },
+    "mangium-physical": {
+      "type": "image",
+      "src": "/images/mangium-physical.jpg"
+    },
+    "mollucan-sau-physical": {
+      "type": "image",
+      "src": "/images/mollucan-sau-physical.jpg"
+    },
+    "molluccan-sau-2": {
+      "type": "image",
+      "src": "/images/mollucan-sau-2.jpg"
+    },
+    "narra-2": {
+      "type": "image",
+      "src": "/images/narra-2.jpg"
+    },
+    "narra-cross": {
+      "type": "image",
+      "src": "/images/narra-cross.jpg"
+    },
+    "narra-physical": {
+      "type": "image",
+      "src": "/images/narra-physical.jpg"
+    },
+    "narra-ripple": {
+      "type": "image",
+      "src": "/images/narra-ripple.jpg"
+    },
+    "permit-1": {
+      "type": "image",
+      "src": "/images/permit-1.png"
+    },
+    "permit-2": {
+      "type": "image",
+      "src": "/images/permit-2.jpg"
+    },
+    "rain-tree-2": {
+      "type": "image",
+      "src": "/images/rain-tree-2.jpg"
+    },
+    "raintree-cross": {
+      "type": "image",
+      "src": "/images/raintree-cross.jpg"
+    },
+    "rain-tree-physical": {
+      "type": "image",
+      "src": "/images/rain-tree-physical.jpg"
+    },
+    "siar-2": {
+      "type": "image",
+      "src": "/images/siar-2.jpg"
+    },
+    "siar-cross": {
+      "type": "image",
+      "src": "/images/siar-cross.jpg"
+    },
+    "siar-physical": {
+      "type": "image",
+      "src": "/images/siar-physical.jpg"
+    },
+    "siar-ripple": {
+      "type": "image",
+      "src": "/images/siar-ripple.jpg"
+    },
+    "supa-2": {
+      "type": "image",
+      "src": "/images/supa-2.jpg"
+    },
+    "supa-cross": {
+      "type": "image",
+      "src": "/images/supa-cross.jpg"
+    },
+    "supa-physical": {
+      "type": "image",
+      "src": "/images/supa-physical.jpg"
+    },
+    "tindalo": {
+      "type": "image",
+      "src": "/images/tindalo.jpg"
+    },
+    "tindalo-2": {
+      "type": "image",
+      "src": "/images/tindalo-2.jpg"
+    },
+    "tindalo-cross": {
+      "type": "image",
+      "src": "/images/tindalo-cross.jpg"
+    },
+    "tindalo-physical": {
+      "type": "image",
+      "src": "/images/tindalo-physical.jpg"
+    },
+    "lens1": {
+      "type": "image",
+      "src": "/images/lens1.jpg"
+    },
+    "lens2": {
+      "type": "image",
+      "src": "/images/lens2.jpg"
+    },
+    "lens3": {
+      "type": "image",
+      "src": "/images/lens3.jpg"
+    },
+    "lens4": {
+      "type": "image",
+      "src": "/images/lens4.jpg"
+    },
+    "lens5": {
+      "type": "image",
+      "src": "/images/lens5.jpg"
+    },
+    "lens6": {
+      "type": "image",
+      "src": "/images/lens6.jpg"
+    },
+    "lens7": {
+      "type": "image",
+      "src": "/images/lens7.jpg"
+    },
+    "lens8": {
+      "type": "image",
+      "src": "/images/lens8.jpg"
+    },
+    "lens9": {
+      "type": "image",
+      "src": "/images/lens9.jpg"
+    },
+    "lens10": {
+      "type": "image",
+      "src": "/images/lens10.jpg"
+    },
+    "lens11": {
+      "type": "image",
+      "src": "/images/lens11.jpg"
+    },
+    "lens12": {
+      "type": "image",
+      "src": "/images/lens12.jpg"
+    },
+    "lens13": {
+      "type": "image",
+      "src": "/images/lens13.jpg"
+    },
+    "lens14": {
+      "type": "image",
+      "src": "/images/lens14.jpg"
+    },
+    "lens15": {
+      "type": "image",
+      "src": "/images/lens15.jpg"
+    },
+    "lens16": {
+      "type": "image",
+      "src": "/images/lens16.jpg"
+    },
+    "lens17": {
+      "type": "image",
+      "src": "/images/lens17.jpg"
+    },
+    "lens18": {
+      "type": "image",
+      "src": "/images/lens18.jpg"
+    },
+    "dialogue-01": {
+      "type": "dialogue",
+      "character": "Berna",
+      "text": "Hello class...",
+      "next": "trigger-02"
+    },
+    "dialogue-02": {
+      "type": "dialogue",
+      "character": "Berna",
+      "text": "Welcome to CMSC 21!",
+      "next": "trigger-03",
+      "prev": "trigger-04"
+    },
+    "dialogue-03": {
+      "type": "dialogue",
+      "character": "Berna",
+      "text": "Loops!",
+      "next": "trigger-02"
+    },
+    "dialogue-04": {
+      "type": "dialogue",
+      "character": "Arian",
+      "text": "HAHAHAHA!",
+      "next": "trigger-02"
+    }
+  },
+  "eventStart": "event-01"
+}

@@ -13,10 +13,6 @@ const template = (html, self) => function () {
       </select>
       <button id = "save" @click="${_save.bind(this)}">Save Toolkit</button>
       <button id = "save" @click="${_saveModule.bind(this)}"> Save Module </button>
-      <form action="http://localhost:8080/event-editing" enctype="multipart/form-data" method="post" id = "form">
-        <button id="load" @click="${_load.bind(this)}">Load</button>
-        <input type="file" name="load" id="input" accept=".json"/>
-      </form>
       <button id = "backgrounds" @click="${_backgroundClick.bind(this)}">Backgrounds</button>
       <button id = "characters" @click="${_characterClick.bind(this)}">Characters</button>
       <button id = "objects" @click="${_objectClick.bind(this)}">Objects</button>
@@ -25,7 +21,6 @@ const template = (html, self) => function () {
         <option value="Add Assessment" id="assessment-default"> Add Assessment </option>
         <option value="Assessment Forms"> Assessment Forms </option>
         <option value="Assessment Tables"> Assessment Tables </option>
-        <option value="Assessment Matching"> Assessment Matching </option>
       </select>
     </div>
     <div id = "assets">
@@ -34,16 +29,16 @@ const template = (html, self) => function () {
       <div class = "scene-selector" id = "scene-selector" @mouseover="${_assignId.bind(this)}">
         ${lessons && lessons.length ? lessons.map((lesson, index) => html`
           <div class="lessons" @click="${_selectorClick.bind(this)}">
-            <p>${lesson.name}</p> 
           </div>
+          <p>${lesson.name}</p> 
           ${lesson.topics && lesson.topics.length ? lesson.topics.map((topic, index2) => html`
             <div class="topics" @click="${_selectorClick.bind(this)}">
-              <p>${topic.name}</p>
             </div>
+            <p>${topic.name}</p>
             ${topic.subtopics && topic.subtopics.length ? topic.subtopics.map((subtopic, index3) => html`
               <div class="subtopics" @click="${_selectorClick.bind(this)}">
-                <p>${subtopic.name} </p>
               </div>
+              <p>${subtopic.name} </p>
             `) : html``}
           `) : html``}
         `) : html``}

@@ -347,7 +347,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
               'type': 'image',
               'src': '/images/xylarium.jpg'
             },
-            'truck-fron': {
+            'truck-front': {
               'type': 'image',
               'src': '/images/truck-front.png'
             },
@@ -1147,6 +1147,11 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (pnum) {
       this.physicalNum = pnum;
     }
+
+    const lesson = await localforage.getItem('lessons');
+    if (lesson) {
+      this.lessons = lesson;
+    }
   }
 
   _getLessons (lessons) {
@@ -1243,13 +1248,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   _assignId ({ target: el }) {
+    let x = 1;
     for (let i = 0; i < el.children.length; i++) {
       if (el.children.length < 9) {
-        let selectorId = 'event-0' + (i + 1);
-        el.children[i].id = selectorId;
+        let selectorId = 'event-0' + x;
+        if (el.children[i].tagName === 'DIV') {
+          el.children[i].id = selectorId;
+          x++;
+        }
       } else {
-        let selectorId = 'event-' + i;
-        el.children[i].id = selectorId;
+        let selectorId = 'event-' + x;
+        if (el.children[i].tagName === 'DIV') {
+          el.children[i].id = selectorId;
+          x++;
+        }
       }
     }
   }
@@ -1262,6 +1274,14 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   }
 
   _selectorClick ({ target: el }) {
+    const sceneSelector = this.shadowRoot.querySelector('#scene-selector');
+    const a = sceneSelector.children.length;
+    for (let i = 0; i < a; i++) {
+      if (sceneSelector.children[i].tagName === 'DIV') {
+        sceneSelector.children[i].style.backgroundColor = 'white';
+      }
+    }
+    el.style.backgroundColor = '#aadaff';
     const workspace = this.shadowRoot.querySelector('#workspace');
     if (workspace.children.length > 1) {
       workspace.removeChild(workspace.children[1]);
@@ -1283,7 +1303,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     canvas.addEventListener('click', event => {
       let selected = event.target;
       let tagname = selected.tagName.toLowerCase();
-      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'characterName' || selected.id === 'controls' || selected.id === 'dialogueInput' || selected.id === 'dialogueBox' || tagname === 'button' || tagname === 'input' || tagname === 'textarea' || tagname === 'div' || tagname === 'dialog' || tagname === 'th' || tagname === 'td' || tagname === 'tbody') {
+      if (selected.id === 'background' || selected.id === 'canvas' + this.scene.id || selected.id === 'characterName' || selected.id === 'controls' || selected.id === 'dialogueInput' || selected.id === 'dialogueBox' || tagname === 'button' || tagname === 'input' || tagname === 'textarea' || tagname === 'div' || tagname === 'dialog' || tagname === 'th' || tagname === 'td' || tagname === 'tbody' || tagname === 'select') {
       } else {
         let oldDel = this.shadowRoot.querySelector('#delete');
         if (oldDel) {
@@ -1385,16 +1405,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           }
           const prev = this.shadowRoot.querySelector('#prev');
           const next = this.shadowRoot.querySelector('#next');
+          const done = this.shadowRoot.querySelector('#done');
           prev.remove();
           next.remove();
+          done.remove();
         } else if (toBeLoaded[i].default) {
           console.log(this.forms);
           // load assessment forms
           let form = document.createElement('div');
           form.innerHTML = this.forms[this.scene.id].obj;
           canvas.appendChild(form);
-        } else if (toBeLoaded[i].meta.classList === 'table-physical') {
-          console.log('he he he');
+        } else if (toBeLoaded[i].meta.classList && toBeLoaded[i].meta.classList === 'table-physical') {
           let container = document.createElement('div');
           let table = document.createElement('table');
           container.appendChild(table);
@@ -1490,6 +1511,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             snacker.textContent = 'Can\'t add character, no background yet';
             snacker.show();
           } else {
+            for (let i = 0; i < assets.children.length; i++) {
+              assets.children[i].style.backgroundColor = 'transparent';
+            }
+            image.style.backgroundColor = 'cyan';
             const copy = document.importNode(image);
             const id = item.fname.split('.');
             copy.id = id[0];
@@ -1514,6 +1539,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             // sizeDown.style.cssText = 'width: 5%; z-index: 20; top: 35%; height: 5%; position: absolute;';
 
             canvas.addEventListener('click', event => {
+              image.style.backgroundColor = 'transparent';
               let check = confirm;
               let ex = cancel;
               // let up = sizeUp;
@@ -1579,15 +1605,17 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   if (loadedObjs < 9) {
                     if (fname[7] === 'supervisor.png') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: styleArr });
                     } else if (fname[7] === 'forester-2.png') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' smaller-character' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' smaller-character' }, style: styleArr });
                     } else if (fname[7] === 'pahinante.png') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' smallest-character' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' smallest-character' }, style: styleArr });
                     }
-                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, style: styleArr });
                   } else {
                     this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: ['z-index: 1'] });
-                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, style: styleArr });
+                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'character character-' + char.getAttribute('data-alignment') + ' small-character' }, style: styleArr });
                   }
                   // this.module.events[name].triggers['trigger01'].load.push({ objectId: objId, id: });
                   this.objectClicked = '';
@@ -1749,6 +1777,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             snacker.textContent = 'Can\'t add object, no background yet';
             snacker.show();
           } else {
+            for (let i = 0; i < assets.children.length; i++) {
+              assets.children[i].style.backgroundColor = 'transparent';
+            }
+            image.style.backgroundColor = 'cyan';
             const copy = document.importNode(image);
             const id = item.fname.split('.');
             copy.id = id[0];
@@ -1831,17 +1863,19 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
                   if (loadedObjs < 9) {
                     if (objId === 'tablet') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: styleArr });
                     } else {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'cross-solo' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, meta: { cover: false, classList: 'cross-solo' }, style: styleArr });
                     }
-                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-0' + add, style: styleArr });
                   } else {
                     if (objId === 'tablet') {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'tablet tablet-' + obj.getAttribute('data-alignment') + ' tablet-small' }, style: styleArr });
                     } else {
                       this.module.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'cross-solo' }, style: ['z-index: 1'] });
+                      this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, meta: { cover: false, classList: 'cross-solo' }, style: styleArr });
                     }
-                    this.toolkit.events[name].triggers['trigger-01'].load.push({ objectId: objId, id: 'object-' + add, style: styleArr });
                   }
                   this.objectClicked = '';
                   confirmObj = '';
@@ -2052,37 +2086,39 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         controls.appendChild(next);
         next.style.cssText = 'font-size: 1rem; background: #008080; color: #fff; padding: 12px 18px;';
         next.id = 'next';
+        const done = document.createElement('button');
+        done.innerHTML = 'Done';
+        controls.appendChild(done);
+        done.style.cssText = 'font-size: 1rem; background: #008080; color: #fff; padding: 12px 18px;';
+        done.id = 'done';
 
-        // if (dialogueCount === 1) {
-        //   this.shadowRoot.querySelector('#next').remove();
-        //   const next = document.createElement('button');
-        //   next.innerHTML = 'Continue';
-        //   controls.appendChild(next);
-        //   next.style.cssText = 'font-size: 1rem; background: #008080; color: #fff; padding: 12px 18px;';
-        //   next.id = 'next';
-        // }
+        done.addEventListener('click', event => {
+          let name5 = 'event-0';
+          let name6 = 'event-';
+          let len = Object.keys(this.module.events[this.scene.name].triggers).length;
+          let index = 1;
+          if (len > 2) {
+            index = Object.keys(this.module.events[this.scene.name].triggers).length - 2;
+          }
+          let prevName = Object.keys(this.module.events[this.scene.name].triggers)[index];
+          this.module.events[this.scene.name].triggers[prevName].type = 'next';
+          this.toolkit.events[this.scene.name].triggers[prevName].type = 'next';
+          let loadedEvents = Object.keys(this.module.events).length;
+          if (loadedEvents < 9) {
+            this.module.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
+            this.toolkit.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
+          } else {
+            this.module.events[this.scene.name].triggers[prevName].event = name6 + (loadedEvents + 1);
+            this.toolkit.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
+          }
+          delete this.module.events[this.scene.name].triggers[prevName].objectId;
+          delete this.toolkit.events[this.scene.name].triggers[prevName].objectId;
+          let nextEv = this.shadowRoot.querySelector('#' + this.scene.next);
+          nextEv.click();
+        });
+       
         next.addEventListener('click', event => {
           dialogueCount = dialogueCount + 1;
-          if (dialogueInput.value === '' && characterInput.value === '') {
-            let name5 = 'event-0';
-            let name6 = 'event-';
-            let index = Object.keys(this.module.events[this.scene.name].triggers).length - 2;
-            let prevName = Object.keys(this.module.events[this.scene.name].triggers)[index];
-            this.module.events[this.scene.name].triggers[prevName].type = 'next';
-            this.toolkit.events[this.scene.name].triggers[prevName].type = 'next';
-            let loadedEvents = Object.keys(this.module.events).length;
-            if (loadedEvents < 9) {
-              this.module.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
-              this.toolkit.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
-            } else {
-              this.module.events[this.scene.name].triggers[prevName].event = name6 + (loadedEvents + 1);
-              this.toolkit.events[this.scene.name].triggers[prevName].event = name5 + (loadedEvents + 1);
-            }
-            delete this.module.events[this.scene.name].triggers[prevName].objectId;
-            delete this.toolkit.events[this.scene.name].triggers[prevName].objectId;
-            let nextEv = this.shadowRoot.querySelector('#' + this.scene.next);
-            nextEv.click();
-          }
           if (dialogueInput.value !== '' && characterInput.value !== '') {
             let name1 = 'trigger-0';
             let name2 = 'trigger-';
@@ -2591,6 +2627,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     await localforage.setItem('tables', this.tables);
     await localforage.setItem('structuralNum', this.structuralNum);
     await localforage.setItem('physicalNum', this.physicalNum);
+    await localforage.setItem('lessons', this.lessons);
     // let dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify(exportObj, undefined, 2));
     // let downloadAnchorNode = document.createElement('a');
     // downloadAnchorNode.setAttribute('href', dataStr);
