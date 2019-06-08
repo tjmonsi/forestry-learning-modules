@@ -2823,12 +2823,12 @@
               },
               "default": {
                 "shape": "angular",
-                "size": "moderately-large",
+                "size": "moderately-small",
                 "number": "moderately-few",
                 "topography": "ring-porous",
                 "type": [],
                 "tyloses": "absent",
-                "deposits": "absent",
+                "deposits": [],
                 "parenchyma": [],
                 "wood-rays": "broad",
                 "ripple": "present",
@@ -2836,7 +2836,7 @@
               },
               "answer": {
                 "shape": "round",
-                "size": "moderately-small",
+                "size": "moderately-large",
                 "number": "moderately-numerous",
                 "topography": "diffuse-porous",
                 "type": [
@@ -2844,10 +2844,16 @@
                   "radial-2-3"
                 ],
                 "tyloses": "present",
-                "deposits": "white",
+                "deposits": [
+                  "yellow",
+                  "red",
+                  "black"
+                ],
                 "parenchyma": [
-                  "apotracheal-diffuse",
-                  "paratracheal-vasicentric"
+                  "boundary",
+                  "paratracheal-vasicentric",
+                  "paratracheal-aliform",
+                  "paratracheal-aliform-confluent"
                 ],
                 "wood-rays": "narrow",
                 "ripple": "absent",
@@ -3074,7 +3080,7 @@
                 "topography": "ring-porous",
                 "type": [],
                 "tyloses": "absent",
-                "deposits": "absent",
+                "deposits": [],
                 "parenchyma": [],
                 "wood-rays": "broad",
                 "ripple": "present",
@@ -3203,7 +3209,7 @@
                 "topography": "ring-porous",
                 "type": [],
                 "tyloses": "absent",
-                "deposits": "absent",
+                "deposits": [],
                 "parenchyma": [],
                 "wood-rays": "broad",
                 "ripple": "present",
@@ -3220,7 +3226,10 @@
                   "tangential-2-4"
                 ],
                 "tyloses": "present",
-                "deposits": "red",
+                "deposits": [
+                  "red",
+                  "orange"
+                ],
                 "parenchyma": [
                   "paratracheal-aliform",
                   "paratracheal-vasicentric",
@@ -4782,7 +4791,7 @@
     "object-85": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "The distinguishing features of Ipil are:\n\nIts orange to dark brown color; moderately numerous and moderately large pores; presence of yellow, red and black deposits; and boundary and aliform parenchyma.",
+      "text": "The distinguishing features of Ipil are:\n\nIts orange to dark brown color; moderately numerous and moderately large pores; presence of yellow, red and black deposits; and boundary, paratracheal  aliform, vasicentric, aliform confluent parenchyma.",
       "next": "trigger-04",
       "prev": "trigger-02"
     },
@@ -4860,7 +4869,7 @@
     "object-97": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "The distinguishing features of Mangium are:\n\nIts whitish or light brown color; moderately numerous small pores that are mostly solitary; presence of yellow, red and black deposits; and boundary and aliform parenchyma.",
+      "text": "The distinguishing features of Mangium are:\n\nIts whitish or light brown color; moderately numerous small pores that are mostly solitary; presence of red and orange deposits; and boundary and aliform parenchyma.",
       "next": "trigger-04",
       "prev": "trigger-02"
     },
@@ -4962,6 +4971,7 @@
             "deposits": {
               "name": "Pore Deposits",
               "type": "select",
+              "multiple": true,
               "options": {
                 "absent": "Absent",
                 "white": "White deposit",
@@ -6904,6 +6914,7 @@
             "deposits": {
               "name": "Pore Deposits",
               "type": "select",
+              "multiple": true,
               "options": {
                 "absent": "Absent",
                 "white": "White deposit",
@@ -7038,6 +7049,7 @@
             "deposits": {
               "name": "Pore Deposits",
               "type": "select",
+              "multiple": true,
               "options": {
                 "absent": "Absent",
                 "white": "White deposit",
@@ -7280,7 +7292,7 @@
         "1": "Photo credits: For. Arlene DJ. Romano",
         "2": "Illustration: Prof. Vanessa Palma-Torres",
         "3": "Story Concept: Profs. TJ Monserrat and Rosalie C. Mendoza",
-        "4": "Animation and Graphic Design: Prof TJ Monserrat"
+        "4": "Animation and Graphic Design: Prof TJ Monserrat, Mark Jay Nicolas, and Rafiel Timothy Valencia"
       }
     },
     "object-178": {

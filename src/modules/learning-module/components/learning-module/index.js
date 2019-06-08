@@ -64,6 +64,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         type: Array,
         value: []
       },
+      deposits: {
+        type: Array,
+        value: []
+      },
       correctCount: {
         type: Number,
         value: 0
@@ -157,6 +161,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
     this.types = [];
     this.parenchyma = [];
+    this.deposits = [];
   }
 
   _click () {
@@ -179,6 +184,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
     this.types = [];
     this.parenchyma = [];
+    this.deposits = [];
   }
 
   updated () {
@@ -218,6 +224,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
     this.types = [];
     this.parenchyma = [];
+    this.deposits = [];
     this.correctCount = 0;
 
     var sb = document.querySelector('.snackbar-lite');
@@ -272,7 +279,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       if (dragged.id === target.id) {
         console.log(dragged.id);
         dragged.remove();
-        sb.showText('Correct!', 1000);
+        sb.showText('Correct!', 2000);
         const label = this.shadowRoot.querySelectorAll('#label');
         for (let item in label) {
           if (label[item].getAttribute('value').toLowerCase() === dragged.id) {
@@ -281,7 +288,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         }
         // label.style.zIndex = 100;
       } else {
-        sb.showText('Wrong option! Try again.', 1000);
+        sb.showText('Wrong option! Try again.', 2000);
       }
     }
     this.requestUpdate();
@@ -307,7 +314,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           ans = ans + ', ' + item;
         }
       }
-      sb.showText(ans, 1000);
+      sb.showText(ans, 15000);
 
       let correct = true;
       for (let item of this.types) {
@@ -338,7 +345,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           ans = ans + ', ' + item;
         }
       }
-      sb.showText(ans, 1000);
+      sb.showText(ans, 15000);
 
       let correct = true;
       for (let item of this.parenchyma) {
@@ -353,13 +360,45 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         target.disabled = true;
         this.correctCount += 1;
       }
+    } else if (target.name === 'Pore Deposits') {
+        if (this.deposits.indexOf(target.value) === -1) {
+          this.deposits.push(target.value);
+        } else {
+          this.deposits.splice(this.deposits.indexOf(target.value), 1);
+        }
+  
+        let ans = 'Selected:\n';
+        for (let item of this.deposits) {
+          item = item.charAt(0).toUpperCase() + item.slice(1);
+          if (ans === 'Selected:\n') {
+            ans = ans + ' ' + item;
+          } else {
+            ans = ans + ', ' + item;
+          }
+        }
+        sb.showText(ans, 15000);
+  
+        let correct = true;
+        for (let item of this.deposits) {
+          if (answer.includes(item)) {
+            answer = answer.replace(item, '');
+          } else {
+            correct = false;
+          }
+        }
+  
+        if (answer === '' && correct) {
+          target.disabled = true;
+          this.correctCount += 1;
+        }
+
     } else {
       if (target.value === answer) {
         target.disabled = true;
         this.correctCount += 1;
-        sb.showText('Correct!', 1000);
+        sb.showText('Correct!', 2000);
       } else {
-        sb.showText('Wrong option! Try again.', 1000);
+        sb.showText('Wrong option! Try again.', 2000);
       }
     }
 
@@ -402,7 +441,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         choices[item].removeEventListener('click', this.select, true);
       }
     } else {
-      sb.showText('Wrong answer! Try again.', 1000);
+      sb.showText('Wrong answer! Try again.', 2000);
     }
     this._select();
   }
