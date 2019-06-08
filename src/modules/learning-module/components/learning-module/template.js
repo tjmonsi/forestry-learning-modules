@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, _hide, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -96,6 +96,14 @@ const template = (html, self) => function () {
           </div>
         ` : ''}
 
+        ${item.type === 'hide' ? html `
+          <div class="absolute hide" style="${styleString}">
+            <a id="hide" type="button" class="button">
+              Hide
+            </a>
+          </div>
+        ` : ''}
+
         ${item.type === 'menu' ? html `
           <div class="absolute menu" style="${styleString}">
             <a id="menu" type="button" class="button" href="${window.location.pathname.split('?')[0]}?currentEvent=event-${item.event}">
@@ -126,6 +134,13 @@ const template = (html, self) => function () {
                   Continue
                 </button>
               ` : ''}
+            `}
+
+            ${item.hide ? ''
+            : html`
+              <button type="button" class="button" @click="${_hide.bind(this)}" value="">
+                  Hide
+              </button>
             `}
 
             ${item.menu ? html`

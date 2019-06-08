@@ -447,6 +447,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   menu (event) {
     console.log('test');
   }
+
+  _hide (event) {
+    let toHide = event.target.parentElement;
+    // let toHide = this.shadowRoot.querySelector();
+    toHide.style.display = 'none';
+    let sec = this.shadowRoot.querySelector('.scene');
+    let showDialogue = document.createElement('button');
+    showDialogue.className = 'button';
+    showDialogue.innerHTML = 'Show Dialogue'
+    showDialogue.style.cssText = 'position: absolute; z-index: 10000001; font-size: 1rem; background: teal; color: white; padding: 12px 24px; border: 3px solid white; bottom: 3%; left: 2%';
+    sec.appendChild(showDialogue);
+    showDialogue.addEventListener('click', event => {
+      toHide.style.display = 'block';
+      showDialogue.remove();
+    });
+  }
 }
 
 if (!customElements.get(Component.is)) {
