@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, _hide, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, _hide, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select, ilo1select } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -229,7 +229,7 @@ const template = (html, self) => function () {
                   <img src="${input.src ? baseURL + input.src : ''}">
                   <div class="carousel-caption">
                     <h3>${input.name}</h3>
-                    <p>${input.desc}</p>
+                    <i>${input.desc}</i>
                   </div>
                 </div>
               `)}
@@ -259,7 +259,7 @@ const template = (html, self) => function () {
             <div class="space"></div>
 
             <div class="choices">
-              <h4>Multiple options:</h4>
+              <h4>${item.title}</h4>
               <ol type="a">
                 ${Object.entries(item.options).map(([key, input]) => html`
                   <li id="choice" data-answer=${input} data-choice="${key}" @click=${select.bind(this)}>${input}</li>
@@ -294,6 +294,28 @@ const template = (html, self) => function () {
               </div>
             </div>
 
+          </div>
+        ` : ''}
+
+        ${item.type === 'enumerate' ? html`
+          <div class="ilo1-container">
+            <h4>${item.question}</h4>
+            <form class="checkboxes" action="">  
+              ${Object.entries(item.options).map(([key, input]) => html`
+                <input type="checkbox" name="${key}" value="${key}" data-answer=${item.answers.toString()} data-choice=${key}}>${input}</p>
+              `)}
+            </form>
+          </div>
+        ` : ''}
+
+        ${item.type === 'choice3' ? html`
+          <div class="ilo1-container">
+            <div class="ilo1-choices">  
+              <h4>${item.question}</h4>
+              ${Object.entries(item.options).map(([key, input]) => html`
+                <p data-answer=${item.answer} data-choice=${key} @click=${ilo1select.bind(this)}>${key}) ${input}</p>
+              `)}
+            </div>
           </div>
         ` : ''}
       `;

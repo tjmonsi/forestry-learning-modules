@@ -8531,7 +8531,8 @@
     },
     "object-70": {
       "type": "choice",
-      "src": "/images/ilo2/Mangium_03.jpg",
+      "src": "/images/ilo2/Mangium_03.png",
+      "title": "Select Pore Size",
       "answer": "Small",
       "options": {
         "a": "Minute",
@@ -8544,6 +8545,7 @@
     "object-71": {
       "type": "choice",
       "src": "/images/ilo2/03_Tanguile.jpg",
+      "title": "Select Pore Size",
       "answer": "Moderately Large",
       "options": {
         "a": "Minute",
@@ -8556,6 +8558,7 @@
     "object-72": {
       "type": "choice",
       "src": "/images/ilo2/02_Banuyo.jpg",
+      "title": "Select Pore Size",
       "answer": "Moderately Small",
       "options": {
         "a": "Minute",
@@ -8568,6 +8571,7 @@
     "object-73": {
       "type": "choice",
       "src": "/images/ilo2/Narig_03.jpg",
+      "title": "Select Pore Size",
       "answer": "Minute",
       "options": {
         "a": "Minute",
@@ -8580,6 +8584,7 @@
     "object-74": {
       "type": "choice",
       "src": "/images/ilo2/03_Red_Lauan.jpg.jpg",
+      "title": "Select Pore Size",
       "answer": "Large",
       "options": {
         "a": "Minute",
@@ -8592,6 +8597,7 @@
     "object-75": {
       "type": "choice",
       "src": "/images/ilo2/Tamayuan_03.jpg",
+      "title": "Select Pore Size",
       "answer": "Minute",
       "options": {
         "a": "Minute",
@@ -8604,6 +8610,7 @@
     "object-76": {
       "type": "choice",
       "src": "/images/ilo2/03_White_Lauan.jpg.jpg",
+      "title": "Select Pore Shape",
       "answer": "Round",
       "options": {
         "a": "Oval",
@@ -8613,6 +8620,7 @@
     "object-77": {
       "type": "choice",
       "src": "/images/ilo2/03_Almon.jpg",
+      "title": "Select Pore Shape",
       "answer": "Oval",
       "options": {
         "a": "Oval",
@@ -8622,6 +8630,7 @@
     "object-78": {
       "type": "choice",
       "src": "/images/ilo2/Mahogany_03.jpg",
+      "title": "Select Pore Frequency",
       "answer": "Moderately Numerous",
       "options": {
         "a": "Few",
@@ -8633,6 +8642,7 @@
     "object-79": {
       "type": "choice",
       "src": "/images/ilo2/Taluto_03.jpg",
+      "title": "Select Pore Frequency",
       "answer": "Few",
       "options": {
         "a": "Few",
@@ -8644,6 +8654,7 @@
     "object-80": {
       "type": "choice",
       "src": "/images/ilo2/Rain_Tree_03.jpg",
+      "title": "Select Pore Frequency",
       "answer": "Moderately Few",
       "options": {
         "a": "Few",
@@ -8655,6 +8666,7 @@
     "object-81": {
       "type": "choice",
       "src": "/images/ilo2/Saplungan_03.jpg",
+      "title": "Select Pore Frequency",
       "answer": "Numerous",
       "options": {
         "a": "Few",
@@ -8666,6 +8678,7 @@
     "object-82": {
       "type": "choice",
       "src": "/images/ilo2/Kalimutain_02.jpg",
+      "title": "Select Your Answer",
       "answer": "Deposits",
       "options": {
         "a": "Tyloses",
@@ -8676,6 +8689,7 @@
     "object-83": {
       "type": "choice",
       "src": "/images/ilo2/Kakauate_02.jpg",
+      "title": "Select Your Answer",
       "answer": "Tyloses",
       "options": {
         "a": "Tyloses",
@@ -8686,6 +8700,7 @@
     "object-84": {
       "type": "choice",
       "src": "/images/ilo2/Ipil_03.jpg",
+      "title": "Select Your Answer",
       "answer": "Deposits",
       "options": {
         "a": "Tyloses",
@@ -8696,6 +8711,7 @@
     "object-85": {
       "type": "choice",
       "src": "/images/ilo2/03_Moluccan_Sau.jpg.jpg",
+      "title": "Select Your Answer",
       "answer": "Empty",
       "options": {
         "a": "Tyloses",
@@ -8706,6 +8722,7 @@
     "object-86": {
       "type": "choice",
       "src": "/images/ilo2/Dao_03.jpg",
+      "title": "Select Your Answer",
       "answer": "Tyloses",
       "options": {
         "a": "Tyloses",
@@ -8716,6 +8733,7 @@
     "object-87": {
       "type": "choice",
       "src": "/images/ilo2/Antipolo_03.jpg",
+      "title": "Select Your Answer",
       "answer": "Deposits",
       "options": {
         "a": "Tyloses",
@@ -8726,6 +8744,7 @@
     "object-88": {
       "type": "choice",
       "src": "/images/ilo2/Teak_03.jpg",
+      "title": "Select Pore Topography",
       "answer": "Ring",
       "options": {
         "a": "Diffuse",
@@ -8736,6 +8755,7 @@
     "object-89": {
       "type": "choice",
       "src": "/images/ilo2/White_Lauan_03.jpg",
+      "title": "Select Pore Topography",
       "answer": "Diffuse",
       "options": {
         "a": "Diffuse",
@@ -8746,6 +8766,7 @@
     "object-90": {
       "type": "choice",
       "src": "/images/ilo2/Santol_03.jpg",
+      "title": "Select Pore Topography",
       "answer": "Diffuse",
       "options": {
         "a": "Diffuse",
@@ -8756,6 +8777,7 @@
     "object-91": {
       "type": "choice",
       "src": "/images/ilo2/Gmelina_03.jpg",
+      "title": "Select Pore Topography",
       "answer": "Semi-ring",
       "options": {
         "a": "Diffuse",
@@ -8766,6 +8788,7 @@
     "object-92": {
       "type": "choice",
       "src": "/images/ilo2/Narra_03.jpg",
+      "title": "Select Pore Topography",
       "answer": "Ring",
       "options": {
         "a": "Diffuse",
@@ -8776,6 +8799,7 @@
     "object-93": {
       "type": "choice",
       "src": "/images/ilo2/Kalantas_03.jpg",
+      "title": "Select Pore Topography",
       "answer": "Ring",
       "options": {
         "a": "Diffuse",
@@ -8786,6 +8810,7 @@
     "object-94": {
       "type": "choice",
       "src": "/images/ilo2/Pinka-pinkahan_02.jpg",
+      "title": "Select Pore Topography",
       "answer": "Semi-ring",
       "options": {
         "a": "Diffuse",
@@ -8796,6 +8821,7 @@
     "object-95": {
       "type": "choice",
       "src": "/images/ilo2/Manggasinoro_02.jpg",
+      "title": "Select Pore Type",
       "answer": "Solitary",
       "options": {
         "a": "Solitary",
@@ -8806,7 +8832,8 @@
     },
     "object-96": {
       "type": "choice",
-      "src": "/images/ilo2/Rain_Tree_03.jpg",
+      "src": "/images/ilo2/Rain_Tree_03.png",
+      "title": "Select Pore Type",
       "answer": "Solitary",
       "options": {
         "a": "Solitary",
@@ -8818,6 +8845,7 @@
     "object-97": {
       "type": "choice",
       "src": "/images/ilo2/Bagras_03.jpg",
+      "title": "Select Pore Type",
       "answer": "Pore Chain",
       "options": {
         "a": "Solitary",
@@ -8829,6 +8857,7 @@
     "object-98": {
       "type": "choice",
       "src": "/images/ilo2/Mangium_03.jpg",
+      "title": "Select Pore Type",
       "answer": "Pore Multiple",
       "options": {
         "a": "Solitary",
@@ -8840,6 +8869,7 @@
     "object-99": {
       "type": "choice",
       "src": "/images/ilo2/Agoho_03.jpg",
+      "title": "Select Pore Type",
       "answer": "Wavy Bands",
       "options": {
         "a": "Solitary",
@@ -8851,6 +8881,7 @@
     "object-100": {
       "type": "choice",
       "src": "/images/ilo2/Kaatoan-bangkal_06.jpg",
+      "title": "Select Pore Type",
       "answer": "Pore Multiple",
       "options": {
         "a": "Solitary",
@@ -8862,6 +8893,7 @@
     "object-101": {
       "type": "choice",
       "src": "/images/ilo2/Ata-ata_03.jpg",
+      "title": "Select Pore Type",
       "answer": "Pore Multiple",
       "options": {
         "a": "Solitary",
@@ -8874,6 +8906,7 @@
       "type": "choice",
       "src": "/images/ilo2/Kamatog_01.jpg",
       "answer": "Aliform",
+      "title": "Select Parenchyma Type",
       "options": {
         "a": "Concentric",
         "b": "Diffuse",
@@ -8887,6 +8920,7 @@
     "object-103": {
       "type": "choice",
       "src": "/images/ilo2/Yakal_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Diffuse",
       "options": {
         "a": "Concentric",
@@ -8901,6 +8935,7 @@
     "object-104": {
       "type": "choice",
       "src": "/images/ilo2/Malasaging_02.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Concentric",
       "options": {
         "a": "Concentric",
@@ -8915,6 +8950,7 @@
     "object-105": {
       "type": "choice",
       "src": "/images/ilo2/Golden_shower_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Banded Confluent",
       "options": {
         "a": "Concentric",
@@ -8929,6 +8965,7 @@
     "object-106": {
       "type": "choice",
       "src": "/images/ilo2/Tindalo_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Boundary Aliform",
       "options": {
         "a": "Concentric",
@@ -8943,6 +8980,7 @@
     "object-107": {
       "type": "choice",
       "src": "/images/ilo2/Mahogany_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Boundary Aliform",
       "options": {
         "a": "Concentric",
@@ -8957,6 +8995,7 @@
     "object-108": {
       "type": "choice",
       "src": "/images/ilo2/Ilang-ilang_01.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Diffuse-in-aggregates",
       "options": {
         "a": "Concentric",
@@ -8971,6 +9010,7 @@
     "object-109": {
       "type": "choice",
       "src": "/images/ilo2/Dita_01.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Concentric",
       "options": {
         "a": "Concentric",
@@ -8985,6 +9025,7 @@
     "object-110": {
       "type": "choice",
       "src": "/images/ilo2/Rain_Tree_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Vasicentric",
       "options": {
         "a": "Concentric",
@@ -8999,6 +9040,7 @@
     "object-111": {
       "type": "choice",
       "src": "/images/ilo2/Dungon_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Diffuse-in-aggregates",
       "options": {
         "a": "Concentric",
@@ -9013,6 +9055,7 @@
     "object-112": {
       "type": "choice",
       "src": "/images/ilo2/Ipil_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Aliform",
       "options": {
         "a": "Concentric",
@@ -9027,6 +9070,7 @@
     "object-113": {
       "type": "choice",
       "src": "/images/ilo2/Akle_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Aliform",
       "options": {
         "a": "Concentric",
@@ -9041,6 +9085,7 @@
     "object-114": {
       "type": "choice",
       "src": "/images/ilo2/Mangium_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Vasicentric",
       "options": {
         "a": "Concentric",
@@ -9055,6 +9100,7 @@
     "object-115": {
       "type": "choice",
       "src": "/images/ilo2/Betis_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Diffuse-in-aggregates",
       "options": {
         "a": "Concentric",
@@ -9069,6 +9115,7 @@
     "object-116": {
       "type": "choice",
       "src": "/images/ilo2/Almon_03.jpg",
+      "title": "Select Parenchyma Type",
       "answer": "Diffuse",
       "options": {
         "a": "Concentric",
@@ -9083,6 +9130,7 @@
     "object-117": {
       "type": "choice",
       "src": "/images/ilo2/Ayangile_02.jpg",
+      "title": "Select Wood Ray Type",
       "answer": "Narrow",
       "options": {
         "a": "Narrow",
@@ -9094,6 +9142,7 @@
     "object-118": {
       "type": "choice",
       "src": "/images/ilo2/Palosapis_03.jpg",
+      "title": "Select Wood Ray Type",
       "answer": "Moderately Broad",
       "options": {
         "a": "Narrow",
@@ -9105,6 +9154,7 @@
     "object-119": {
       "type": "choice",
       "src": "/images/ilo2/Katmon_03.jpg",
+      "title": "Select Wood Ray Type",
       "answer": "Broad",
       "options": {
         "a": "Narrow",
@@ -9116,6 +9166,7 @@
     "object-120": {
       "type": "choice",
       "src": "/images/ilo2/Taluto_03.jpg",
+      "title": "Select Wood Ray Type",
       "answer": "Combination",
       "options": {
         "a": "Narrow",
@@ -9127,6 +9178,7 @@
     "object-121": {
       "type": "choice",
       "src": "/images/ilo2/Almon_03.jpg",
+      "title": "Select Duct Type",
       "answer": "Concentric Resin Ducts",
       "options": {
         "a": "Diffuse Oil Ducts",
@@ -9138,6 +9190,7 @@
     "object-122": {
       "type": "choice",
       "src": "/images/ilo2/Apitong_03.jpg",
+      "title": "Select Duct Type",
       "answer": "Diffuse Resin Ducts",
       "options": {
         "a": "Diffuse Oil Ducts",
@@ -9149,6 +9202,7 @@
     "object-123": {
       "type": "choice",
       "src": "/images/ilo2/Mayapis_03.jpg",
+      "title": "Select Duct Type",
       "answer": "Concentric Resin Ducts",
       "options": {
         "a": "Diffuse Oil Ducts",
@@ -9160,6 +9214,7 @@
     "object-124": {
       "type": "choice",
       "src": "/images/ilo2/Supa_03.jpg",
+      "title": "Select Duct Type",
       "answer": "Concentric Oil Ducts",
       "options": {
         "a": "Diffuse Oil Ducts",
@@ -9171,6 +9226,7 @@
     "object-125": {
       "type": "choice",
       "src": "/images/ilo2/Almon_03.jpg",
+      "title": "Select Duct Type",
       "answer": "Concentric Resin Ducts",
       "options": {
         "a": "Diffuse Oil Ducts",
@@ -9182,6 +9238,7 @@
     "object-126": {
       "type": "choice",
       "src": "/images/ilo2/Batete_03.jpg",
+      "title": "Select Duct Type",
       "answer": "Diffuse Oil Ducts",
       "options": {
         "a": "Diffuse Oil Ducts",
@@ -9195,6 +9252,7 @@
       "src": "/images/ilo2/Api-api_03.png",
       "species": "Api-api",
       "question": "1. Identify the part of the cross-section being pointed by the arrow",
+      "title": "Select Your Answer",
       "answer": "Included Phloem",
       "options": {
         "a": "Included Phloem",
@@ -9208,6 +9266,7 @@
       "src": "/images/ilo2/Rain_Tree_03.png",
       "species": "Rain Tree",
       "question": "2. Which type of paratracheal parenchyma is shown in the picture?",
+      "title": "Select Paratracheal Parenchyma",
       "answer": "Vasicentric",
       "options": {
         "a": "Aliform",
@@ -9221,6 +9280,7 @@
       "src": "/images/ilo2/Golden_shower_03.png",
       "species": "Golden shower",
       "question": "3. Which type of parenchyma is shown in the picture?",
+      "title": "Select Parenchyma Type",
       "answer": "Banded Confluent",
       "options": {
         "a": "Aliform",
@@ -9234,6 +9294,7 @@
       "src": "/images/ilo2/Mahogany_03.png",
       "species": "Mahogany",
       "question": "4. Which type of parenchyma is shown in the picture?",
+      "title": "Select Parenchyma Type",
       "answer": "Boundary",
       "options": {
         "a": "Aliform",
@@ -9247,6 +9308,7 @@
       "src": "/images/ilo2/Mayapis_01.png",
       "species": "Mayapis",
       "question": "5. Identify the cross-section being pointed by the arrow.",
+      "title": "Select Your Answer",
       "answer": "Resin Ducts",
       "options": {
         "a": "Wood Rays",
@@ -9260,6 +9322,7 @@
       "src": "/images/ilo2/Katmon_03.png",
       "species": "Katmon",
       "question": "6. Identify the cross-section being pointed by the arrow.",
+      "title": "Select Your Answer",
       "answer": "Wood Rays",
       "options": {
         "a": "Wood Rays",
@@ -9273,6 +9336,7 @@
       "src": "/images/ilo2/Apitong_03.png",
       "species": "Apitong",
       "question": "7. Identify the cross-section being pointed by the arrow.",
+      "title": "Select Your Answer",
       "answer": "Resin Ducts",
       "options": {
         "a": "Wood Rays",
@@ -9286,6 +9350,7 @@
       "src": "/images/ilo2/Mangium_03.png",
       "species": "Mangium",
       "question": "8. Which pore type is being shown in the picture?",
+      "title": "Select Pore Type",
       "answer": "Pore Multiple",
       "options": {
         "a": "Solitary",
@@ -9299,6 +9364,7 @@
       "src": "/images/ilo2/Ilang-ilang_01.png",
       "species": "Ilang-ilang",
       "question": "9. Which parenchyma type is being shown in the picture?",
+      "title": "Select Your Answer",
       "answer": "Diffuse in-aggregates",
       "options": {
         "a": "Diffuse",
@@ -9312,6 +9378,7 @@
       "src": "/images/ilo2/.png",
       "species": "Duklitan",
       "question": "10. Which pore type is being shown in the picture?",
+      "title": "Select Pore Type",
       "answer": "Pore Chain",
       "options": {
         "a": "Solitary",

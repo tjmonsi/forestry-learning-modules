@@ -432,7 +432,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     var sb = document.querySelector('.snackbar-lite');
 
     if (target.getAttribute('data-answer') === identify.getAttribute('data-answer')) {
-      sb.showText('Correct! Congratulations! You are one step forward to becoming a wood wizard.');
+      sb.showText('Correct! Congratulations! You are one step forward to becoming a wood wizard.', 2000);
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
 
@@ -501,6 +501,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       toHide.style.display = 'block';
       showDialogue.remove();
     });
+  }
+
+  ilo1select (event) {
+    var target = event.target;
+    var sb = document.querySelector('.snackbar-lite');
+
+    if (target.getAttribute('data-answer') === target.getAttribute('data-choice')) {
+      sb.showText('YOUR ANSWER IS CORRECT! GOOD JOB!', 2000);
+      
+      const next = this.shadowRoot.querySelector('#next');
+      next.disabled = false;
+    } else {
+      sb.showText('Ooopps, you picked the wrong answer. Come on, try again!', 2000);
+    }
   }
 }
 
