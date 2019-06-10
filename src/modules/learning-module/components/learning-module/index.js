@@ -297,13 +297,20 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   onChange (event) {
     const target = event.target;
     var answer = target.getAttribute('answer');
+    // const option = target.querySelector(`[value=${target.value}]`)
     const sb = document.querySelector('.snackbar-lite');
     if (target.name === 'Pore Types and Arrangement') {
       if (this.types.indexOf(target.value) === -1) {
         this.types.push(target.value);
+        // option.selected = true;
       } else {
         this.types.splice(this.types.indexOf(target.value), 1);
+        // option.selected = false;
       }
+      console.log(target)
+      console.log(target.value, this.types);
+
+      
 
       let ans = 'Selected:\n';
       for (let item of this.types) {

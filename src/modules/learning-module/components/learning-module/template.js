@@ -229,7 +229,7 @@ const template = (html, self) => function () {
                   <img src="${input.src ? baseURL + input.src : ''}">
                   <div class="carousel-caption">
                     <h3>${input.name}</h3>
-                    <i>${input.desc}</i>
+                    <mark-lite .text="${input.desc}"></mark-lite>
                   </div>
                 </div>
               `)}
