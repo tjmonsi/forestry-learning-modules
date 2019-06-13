@@ -418,10 +418,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   blink (event) {
     var target = event.target;
-    var sb = this.shadowRoot.querySelectorAll('#circle');
+    var sb = this.shadowRoot.querySelectorAll('lazy-picture');
     for (let item in sb) {
-      var circle = sb[item].children[0].children[0];
-      if (target.style.color === circle.getAttribute('color')) {
+      var circle = sb[item];
+      if (circle.getAttribute("color") && target.style.color === circle.getAttribute("color")) {
         circle.animate([
           { opacity: 1 },
           { opacity: 0 }

@@ -19,47 +19,12 @@ const template = (html, self) => function () {
         <lazy-picture
             id="${item.answer}"
             .cover="${item.meta && item.meta.cover}"
+            color="${item.color}"
             class="absolute image ${item.meta && item.meta.fullscreen ? 'fullscreen' : ''} ${item.meta && item.meta.classList}"
             style="${styleString}"
             src="${item.src ? baseURL + item.src : ''}">
         </lazy-picture>
         </div>
-        ` : ''}
-
-        ${item.type === 'circle' ? html`
-          <div class="absolute" id="circle" style="${styleString}">
-            <svg
-              height="${item.h}"
-              width="${item.w}">
-                <circle
-                  cx="${item.cx}"
-                  cy="${item.cy}"
-                  r="${item.r}"
-                  color="${item.color}"
-                  stroke="${item.color}"
-                  stroke-width="3"
-                  fill="none">
-                </circle>
-              </svg>
-          </div>
-        ` : ''}
-
-        ${item.type === 'ellipse' ? html`
-          <div class="absolute" id="circle" style="${styleString}">
-            <svg
-              height="${item.h}"
-              width="${item.w}">
-                <ellipse
-                  cx="${item.cx}"
-                  cy="${item.cy}"
-                  rx="${item.rx}"
-                  ry="${item.ry}"
-                  color="${item.color}"
-                  stroke="${item.color}"
-                  stroke-width="3"
-                  fill="none"/>
-              </svg>
-          </div>
         ` : ''}
 
         ${item.type === 'block' ? html`

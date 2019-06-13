@@ -454,39 +454,39 @@
               ]
             },
             {
-              "objectId": "object-182",
+              "objectId": "object-260",
               "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 57%",
-                "top: 25.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-222",
+              "objectId": "object-261",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 39.25%",
-                "top: 26.75%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-223",
+              "objectId": "object-262",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 43.75%",
-                "top: 43%"
-              ]
-            },
-            {
-              "objectId": "object-224",
-              "id": "object-08",
-              "style": [
-                "z-index: 4",
-                "left: 42%",
-                "top: 26.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -568,39 +568,27 @@
               ]
             },
             {
-              "objectId": "object-183",
+              "objectId": "object-263",
               "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 40%",
-                "top: 10%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-184",
+              "objectId": "object-264",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 52.25%",
-                "top: 28.5%"
-              ]
-            },
-            {
-              "objectId": "object-185",
-              "id": "object-07",
-              "style": [
-                "z-index: 6",
-                "left: 44%",
-                "top: 29.75%"
-              ]
-            },
-            {
-              "objectId": "object-186",
-              "id": "object-08",
-              "style": [
-                "z-index: 7",
-                "left: 58.65%",
-                "top: 27.3%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -691,39 +679,39 @@
               ]
             },
             {
-              "objectId": "object-187",
+              "objectId": "object-265",
               "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 59.5%",
-                "top: 28.25%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-188",
+              "objectId": "object-266",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-267",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 60.6%",
-                "top: 15.5%"
-              ]
-            },
-            {
-              "objectId": "object-189",
-              "id": "object-08",
-              "style": [
-                "z-index: 6",
-                "left: 37.4%",
-                "top: 38.25%"
-              ]
-            },
-            {
-              "objectId": "object-190",
-              "id": "object-09",
-              "style": [
-                "z-index: 7",
-                "left: 57.1%",
-                "top: 23%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -810,57 +798,39 @@
               "type": "dialogue"
             },
             {
-              "objectId": "object-226",
+              "objectId": "object-268",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 43%",
-                "top: 45%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-227",
+              "objectId": "object-269",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 43%",
-                "top: 15%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-228",
+              "objectId": "object-270",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 49%",
-                "top: 28%"
-              ]
-            },
-            {
-              "objectId": "object-229",
-              "id": "object-09",
-              "style": [
-                "z-index: 4",
-                "left: 49.5%",
-                "top: 33.5%"
-              ]
-            },
-            {
-              "objectId": "object-230",
-              "id": "object-10",
-              "style": [
-                "z-index: 4",
-                "left: 47%",
-                "top: 34.25%"
-              ]
-            },
-            {
-              "objectId": "object-231",
-              "id": "object-11",
-              "style": [
-                "z-index: 4",
-                "left: 54.75%",
-                "top: 34.6%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -942,66 +912,39 @@
               "type": "dialogue"
             },
             {
-              "objectId": "object-232",
+              "objectId": "object-271",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 38.75%",
-                "top: 16.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-233",
+              "objectId": "object-272",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 53.25%",
-                "top: 36%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-234",
+              "objectId": "object-273",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 4",
-                "left: 56.25%",
-                "top: 35.25%"
-              ]
-            },
-            {
-              "objectId": "object-235",
-              "id": "object-09",
-              "style": [
-                "z-index: 4",
-                "left: 43%",
-                "top: 38.5%"
-              ]
-            },
-            {
-              "objectId": "object-236",
-              "id": "object-10",
-              "style": [
-                "z-index: 4",
-                "left: 51%",
-                "top: 17.75%"
-              ]
-            },
-            {
-              "objectId": "object-237",
-              "id": "object-11",
-              "style": [
-                "z-index: 4",
-                "left: 58%",
-                "top: 18%"
-              ]
-            },
-            {
-              "objectId": "object-238",
-              "id": "object-12",
-              "style": [
-                "z-index: 4",
-                "left: 51%",
-                "top: 25.75%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -1245,7 +1188,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-one"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
@@ -1285,26 +1228,32 @@
               ]
             },
             {
-              "objectId": "object-191",
+              "objectId": "object-274",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 55%",
-                "top: 36%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-239",
-              "id": "object-08",
+              "objectId": "object-275",
+              "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 37.75%",
-                "top: 12.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
               "objectId": "object-41",
-              "id": "object-07",
+              "id": "object-08",
               "type": "dialogue"
             },
             {
@@ -1352,7 +1301,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-one"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
@@ -1397,30 +1346,27 @@
               "type": "dialogue"
             },
             {
-              "objectId": "object-240",
+              "objectId": "object-276",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 42.5%",
-                "top: 13.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-241",
+              "objectId": "object-277",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 43.75%",
-                "top: 20%"
-              ]
-            },
-            {
-              "objectId": "object-241",
-              "id": "object-09",
-              "style": [
-                "z-index: 5",
-                "left: 46.75%",
-                "top: 19%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -1468,7 +1414,7 @@
               "id": "object-02",
               "meta": {
                 "cover": false,
-                "classList": "cross-one"
+                "classList": "cross-solo"
               },
               "style": [
                 "z-index: 1"
@@ -1508,30 +1454,27 @@
               ]
             },
             {
-              "objectId": "object-192",
+              "objectId": "object-278",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 5",
-                "left: 56.25%",
-                "top: 35.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-193",
+              "objectId": "object-279",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 6",
-                "left: 47.25%",
-                "top: 23.25%"
-              ]
-            },
-            {
-              "objectId": "object-242",
-              "id": "object-09",
-              "style": [
-                "z-index: 6",
-                "left: 56.5%",
-                "top: 11.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -1921,30 +1864,39 @@
               ]
             },
             {
-              "objectId": "object-194",
+              "objectId": "object-280",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 47.75%",
-                "top: 39.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-195",
+              "objectId": "object-281",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 6",
-                "left: 57.75%",
-                "top: 44.75%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-196",
+              "objectId": "object-282",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 7",
-                "left: 59.75%",
-                "top: 57.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -2046,39 +1998,27 @@
               ]
             },
             {
-              "objectId": "object-197",
+              "objectId": "object-282",
               "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 56.75%",
-                "top: 53.75%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-198",
+              "objectId": "object-283",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 6",
-                "left: 51%",
-                "top: 57%"
-              ]
-            },
-            {
-              "objectId": "object-245",
-              "id": "object-09",
-              "style": [
-                "z-index: 6",
-                "left: 45.75%",
-                "top: 55%"
-              ]
-            },
-            {
-              "objectId": "object-246",
-              "id": "object-10",
-              "style": [
-                "z-index: 6",
-                "left: 50%",
-                "top: 62%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -2176,75 +2116,39 @@
               "type": "dialogue"
             },
             {
-              "objectId": "object-247",
+              "objectId": "object-284",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 43%",
-                "top: 60.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-248",
+              "objectId": "object-285",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 37.75%",
-                "top: 60.5%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-249",
+              "objectId": "object-286",
               "id": "object-09",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 44.5%",
-                "top: 55%"
-              ]
-            },
-            {
-              "objectId": "object-249",
-              "id": "object-10",
-              "style": [
-                "z-index: 5",
-                "left: 56.5%",
-                "top: 55%"
-              ]
-            },
-            {
-              "objectId": "object-248",
-              "id": "object-11",
-              "style": [
-                "z-index: 5",
-                "left: 51.25%",
-                "top: 48.25%"
-              ]
-            },
-            {
-              "objectId": "object-250",
-              "id": "object-12",
-              "style": [
-                "z-index: 5",
-                "left: 42.25%",
-                "top: 52.25%"
-              ]
-            },
-            {
-              "objectId": "object-251",
-              "id": "object-13",
-              "style": [
-                "z-index: 6",
-                "left: 39%",
-                "top: 52.5%"
-              ]
-            },
-            {
-              "objectId": "object-251",
-              "id": "object-14",
-              "style": [
-                "z-index: 6",
-                "left: 51%",
-                "top: 36.75%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -2332,45 +2236,33 @@
               ]
             },
             {
-              "objectId": "object-69",
+              "objectId": "object-287",
               "id": "object-06",
-              "type": "dialogue"
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
             },
             {
-              "objectId": "object-252",
+              "objectId": "object-288",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 49.25%",
-                "top: 50.75%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-253",
+              "objectId": "object-69",
               "id": "object-08",
-              "style": [
-                "z-index: 5",
-                "left: 54.25%",
-                "top: 52.5%"
-              ]
-            },
-            {
-              "objectId": "object-254",
-              "id": "object-09",
-              "style": [
-                "z-index: 5",
-                "left: 40.25%",
-                "top: 55.25%"
-              ]
-            },
-            {
-              "objectId": "object-255",
-              "id": "object-10",
-              "style": [
-                "z-index: 5",
-                "left: 38.25%",
-                "top: 35.5%"
-              ]
+              "type": "dialogue"
             },
             {
               "objectId": "object-221",
@@ -2462,57 +2354,27 @@
               "type": "dialogue"
             },
             {
-              "objectId": "object-256",
+              "objectId": "object-289",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 49.25%",
-                "top: 54%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
-              "objectId": "object-257",
+              "objectId": "object-290",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
               "style": [
-                "z-index: 5",
-                "left: 56.5%",
-                "top: 57%"
-              ]
-            },
-            {
-              "objectId": "object-257",
-              "id": "object-09",
-              "style": [
-                "z-index: 5",
-                "left: 57.25%",
-                "top: 43.5%"
-              ]
-            },
-            {
-              "objectId": "object-258",
-              "id": "object-10",
-              "style": [
-                "z-index: 5",
-                "left: 50.25%",
-                "top: 33%"
-              ]
-            },
-            {
-              "objectId": "object-258",
-              "id": "object-11",
-              "style": [
-                "z-index: 5",
-                "left: 55.25%",
-                "top: 55%"
-              ]
-            },
-            {
-              "objectId": "object-258",
-              "id": "object-12",
-              "style": [
-                "z-index: 5",
-                "left: 60.75%",
-                "top: 50%"
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -4420,7 +4282,7 @@
     "object-24": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "Next is BATETE, Kingiodendron alternifolium.",
+      "text": "Next is BATETE, *Kingiodendron alternifolium*.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4438,7 +4300,7 @@
     "object-27": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "Next is GOLDEN SHOWER, Cassia fistula.",
+      "text": "Next is GOLDEN SHOWER, *Cassia fistula*.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4456,7 +4318,7 @@
     "object-30": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "Next is KAKAUATE, Gliricidia sepium.",
+      "text": "Next is KAKAUATE, *Gliricidia sepium*.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4474,7 +4336,7 @@
     "object-33": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "Next is LOGWOOD, Haematoxylum.",
+      "text": "Next is LOGWOOD, *Haematoxylum campechianum*.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4524,7 +4386,7 @@
     "object-41": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Sue clicks on NARRA, Pterocarpus indicus forma indicus.",
+      "text": "Sue clicks on NARRA, *Pterocarpus indicus* forma indicus.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4542,7 +4404,7 @@
     "object-44": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Sue clicks on SIAR, Peltophorum pterocarpum.",
+      "text": "Sue clicks on SIAR, *Peltophorum pterocarpum*.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4560,7 +4422,7 @@
     "object-47": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Sue clicks on RAIN TREE, Samanea saman",
+      "text": "Sue clicks on RAIN TREE, *Samanea saman*",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4625,7 +4487,7 @@
     "object-58": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Sue inspected the permit and took note of the species listed in the permit.\n\nThese are Supa, Moluccan sau, Akel, Manggis and Banuyo.",
+      "text": "Sue inspected the permit and took note of the species listed in the permit.\n\nThese are Supa, Moluccan sau, Akle, Manggis and Banuyo.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4643,13 +4505,13 @@
     "object-61": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "These characteristics match that of SUPA, Sindora supa.",
+      "text": "These characteristics match that of SUPA, *Sindora supa*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
     "object-62": {
       "type": "image",
-      "src": "/images/moluccan-sau.jpg"
+      "src": "/images/molluccan-sau-2.jpg"
     },
     "object-63": {
       "type": "dialogue",
@@ -4661,7 +4523,7 @@
     "object-64": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "These characteristics match that of MOLUCCAN SAU, Paraserianthes.",
+      "text": "These characteristics match that of MOLUCCAN SAU, *Paraserianthes falcataria*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4679,7 +4541,7 @@
     "object-67": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "These characteristics match that of AKLE, Alhizia acle.",
+      "text": "These characteristics match that of AKLE, *Albizia acle*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4690,14 +4552,14 @@
     "object-69": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "She inspected the next log and noted the following characteristics:\n\nIt is light red to cacao red in color, pores are moderately few and are large to large in size, with vasicentric and concentric parenchyma and riplle marks.",
+      "text": "She inspected the next log and noted the following characteristics:\n\nIt is light red to cacao red in color, pores are moderately few and are large to large in size, with vasicentric and concentric parenchyma and ripple marks.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-70": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "These characteristics match that of MANGGIS, Koompassia excelsa.",
+      "text": "These characteristics match that of MANGGIS, *Koompassia excelsa*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4715,7 +4577,7 @@
     "object-73": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "These characteristics match that of BANUYO, Wallaceodendron celebicum.",
+      "text": "These characteristics match that of BANUYO, *Wallaceodendron celebicum*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4784,7 +4646,7 @@
     "object-84": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Congratulations! You have correctly identified Ipil, Intsia bijuga.",
+      "text": "Congratulations! You have correctly identified Ipil, *Intsia bijuga*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4810,7 +4672,7 @@
     "object-88": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Congratulations! You have correctly identified Tindalo, Afzelia rhomboidea.",
+      "text": "Congratulations! You have correctly identified Tindalo, *Afzelia rhomboidea*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4836,7 +4698,7 @@
     "object-92": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Congratulations! You have correctly identified KAMATOG, Sympetalandra densiflora.",
+      "text": "Congratulations! You have correctly identified KAMATOG, *Sympetalandra densiflora*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4862,7 +4724,7 @@
     "object-96": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Congratulations! You have correctly identified MANGIUM, Acacia mangium.",
+      "text": "Congratulations! You have correctly identified MANGIUM, *Acacia mangium*.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -5186,33 +5048,33 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary,\nRadial multiples of 2-3",
+            "right": "Solitary",
             "keyword": true,
             "color": "red"
           },
           "tyloses": {
             "left": "Tyloses",
             "right": "Present",
-            "keyword": true,
-            "color": "blue"
+            "keyword": false,
+            "color": "black"
           },
           "deposits": {
             "left": "Deposits",
             "right": "White deposits",
             "keyword": true,
-            "color": "brown"
+            "color": "blue"
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Apotracheal diffuse,\nParatracheal Vasicentric",
+            "right": "Paratracheal Vasicentric",
             "keyword": true,
             "color": "yellow"
           },
           "rays": {
             "left": "Wood Rays",
             "right": "Narrow",
-            "keyword": true,
-            "color": "maroon"
+            "keyword": false,
+            "color": "black"
           },
           "ripple": {
             "left": "Ripple Marks",
@@ -5312,13 +5174,13 @@
           },
           "deposits": {
             "left": "Deposits",
-            "right": "White, Yellow and Orange Deposits",
+            "right": "White",
             "keyword": true,
             "color": "yellow"
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Boundary Paratracheal Aliform,\nAliform Confluent,\nVasicentric",
+            "right": "Vasicentric",
             "keyword": true,
             "color": "red"
           },
@@ -5414,15 +5276,15 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary\nRadial multiples of 2-3",
+            "right": "Radial multiples of 2-3",
             "keyword": true,
             "color": "yellow"
           },
           "tyloses": {
             "left": "Tyloses",
             "right": "Present",
-            "keyword": true,
-            "color": "orange"
+            "keyword": false,
+            "color": "black"
           },
           "deposits": {
             "left": "Deposits",
@@ -5432,7 +5294,7 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nAliform Confluent,\nBanded Confluent",
+            "right": "Banded Confluent",
             "keyword": true,
             "color": "purple"
           },
@@ -5546,7 +5408,7 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nAliform Confluent,\nBanded Confluent",
+            "right": "Banded Confluent",
             "keyword": true,
             "color": "purple"
           },
@@ -5642,25 +5504,25 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary,\nRadial Multiples of 2-3",
+            "right": "Solitary",
             "keyword": true,
             "color": "yellow"
           },
           "tyloses": {
             "left": "Tyloses",
             "right": "Present",
-            "keyword": true,
-            "color": "lightblue"
+            "keyword": false,
+            "color": "black"
           },
           "deposits": {
             "left": "Deposits",
             "right": "White",
             "keyword": true,
-            "color": "lightgreen"
+            "color": "green"
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nAliform Confluent,\nVasicentric",
+            "right": "Aliform Confluent",
             "keyword": true,
             "color": "purple"
           },
@@ -5751,12 +5613,12 @@
           "topography": {
             "left": "Topography",
             "right": "Ring Porous",
-            "keyword": true,
-            "color": "lightblue"
+            "keyword": false,
+            "color": "black"
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-4 or more",
+            "right": "Solitary",
             "keyword": true,
             "color": "yellow"
           },
@@ -5774,7 +5636,7 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nLong Aliform Confluent,\nBoundary",
+            "right": "Long Aliform Confluent",
             "keyword": true,
             "color": "purple"
           },
@@ -5870,9 +5732,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-3",
+            "right": "Radial multiples of 2-3",
             "keyword": true,
-            "color": "yellow"
+            "color": "green"
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5888,9 +5750,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Vasicentric,\nAliform,\nAliform Confluent,\nBoundary",
+            "right": "Boundary",
             "keyword": true,
-            "color": "maroon"
+            "color": "purple"
           },
           "rays": {
             "left": "Wood Rays",
@@ -5984,7 +5846,7 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-3",
+            "right": "Solitary",
             "keyword": true,
             "color": "yellow"
           },
@@ -6002,7 +5864,7 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nVasicentric",
+            "right": "Vasicentric",
             "keyword": true,
             "color": "red"
           },
@@ -6098,9 +5960,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-3",
+            "right": "Solitary",
             "keyword": true,
-            "color": "yellow"
+            "color": "green"
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6111,14 +5973,14 @@
           "deposits": {
             "left": "Deposits",
             "right": "Yellow, Red",
-            "keyword": true,
-            "color": "blue"
+            "keyword": false,
+            "color": "black"
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nVasicentric",
+            "right": "Vasicentric",
             "keyword": true,
-            "color": "maroon"
+            "color": "red"
           },
           "rays": {
             "left": "Wood Rays",
@@ -6135,8 +5997,8 @@
           "ducts": {
             "left": "Ducts",
             "right": "Present,\nConcentric Oil Ducts",
-            "keyword": true,
-            "color": "lightgreen"
+            "keyword": false,
+            "color": "black"
           }
         }
       }
@@ -6212,9 +6074,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-3",
+            "right": "Solitary",
             "keyword": true,
-            "color": "yellow"
+            "color": "green"
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6230,15 +6092,15 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Apotracheal Diffuse,\nParatracheal Vasicentric",
+            "right": "Paratracheal Vasicentric",
             "keyword": true,
             "color": "red"
           },
           "rays": {
             "left": "Wood Rays",
             "right": "Narrow",
-            "keyword": true,
-            "color": "blue"
+            "keyword": false,
+            "color": "black"
           },
           "ripple": {
             "left": "Ripple Marks",
@@ -6326,25 +6188,25 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-3",
+            "right": "Solitary",
             "keyword": true,
-            "color": "yellow"
+            "color": "green"
           },
           "tyloses": {
             "left": "Tyloses",
             "right": "Present",
-            "keyword": true,
-            "color": "blue"
+            "keyword": false,
+            "color": "black"
           },
           "deposits": {
             "left": "Deposits",
-            "right": "Yellow, Red, Black",
+            "right": "Yellow",
             "keyword": true,
-            "color": "lightblue"
+            "color": "blue"
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform,\nVasicentric,\nAliform Confluent",
+            "right": "Aliform Confluent",
             "keyword": true,
             "color": "purple"
           },
@@ -6440,15 +6302,15 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-4 or more",
+            "right": "Radial multiples of 2-4 or more",
             "keyword": true,
-            "color": "yellow"
+            "color": "green"
           },
           "tyloses": {
             "left": "Tyloses",
             "right": "Present",
-            "keyword": true,
-            "color": "lightblue"
+            "keyword": false,
+            "color": "black"
           },
           "deposits": {
             "left": "Deposits",
@@ -6458,7 +6320,7 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Vasicentric,\nConcentric",
+            "right": "Concentric",
             "keyword": true,
             "color": "red"
           },
@@ -6554,9 +6416,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary and Radial multiples of 2-3, Echelon",
+            "right": "Echelon",
             "keyword": true,
-            "color": "yellow"
+            "color": "red"
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6572,7 +6434,7 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Apotracheal Diffuse,\nParatracheal Aliform,\nVasicentric,\nAliform Confluent",
+            "right": "Paratracheal Aliform",
             "keyword": true,
             "color": "purple"
           },
@@ -7289,10 +7151,12 @@
     "object-177": {
       "type": "references",
       "references": {
-        "1": "Photo credits: For. Arlene DJ. Romano",
-        "2": "Illustration: Prof. Vanessa Palma-Torres",
-        "3": "Story Concept: Profs. TJ Monserrat and Rosalie C. Mendoza",
-        "4": "Animation and Graphic Design: Prof TJ Monserrat, Mark Jay Nicolas, and Rafiel Timothy Valencia"
+        "1": "Content: Prof. Vivian Daracan",
+        "2": "Language Editor: Prof. Vivian C. Daracan",
+        "3": "Illustration: Prof. Vanessa Palma-Torres",
+        "4": "Story Concept: Prof. TJ Monserrat and Prof. Vivian Daracan",
+        "5": "Images: For. Arlene DJ. Romano",
+        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia"
       }
     },
     "object-178": {
@@ -7310,176 +7174,6 @@
     "object-181": {
       "type": "label",
       "text": "MANGIUM"
-    },
-    "object-182": {
-      "type": "circle",
-      "name": "ayangile1",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "30",
-      "cy": "30",
-      "color": "red"
-    },
-    "object-183": {
-      "type": "circle",
-      "name": "batete1",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "45",
-      "cy": "40",
-      "color": "red"
-    },
-    "object-184": {
-      "type": "circle",
-      "name": "batete2",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "30",
-      "cy": "30",
-      "color": "red"
-    },
-    "object-185": {
-      "type": "circle",
-      "name": "batete3",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "30",
-      "cy": "30",
-      "color": "red"
-    },
-    "object-186": {
-      "type": "circle",
-      "name": "batete4",
-      "h": "60",
-      "w": "60",
-      "r": "15",
-      "cx": "20",
-      "cy": "20",
-      "color": "yellow"
-    },
-    "object-187": {
-      "type": "circle",
-      "name": "golden-shower1",
-      "h": "60",
-      "w": "60",
-      "r": "15",
-      "cx": "20",
-      "cy": "20",
-      "color": "yellow"
-    },
-    "object-188": {
-      "type": "circle",
-      "name": "golden-shower2",
-      "h": "60",
-      "w": "60",
-      "r": "15",
-      "cx": "20",
-      "cy": "20",
-      "color": "red"
-    },
-    "object-189": {
-      "type": "circle",
-      "name": "golden-shower3",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "25",
-      "cy": "25",
-      "color": "yellow"
-    },
-    "object-190": {
-      "type": "circle",
-      "name": "golden-shower4",
-      "h": "60",
-      "w": "60",
-      "r": "15",
-      "cx": "20",
-      "cy": "20",
-      "color": "orange"
-    },
-    "object-191": {
-      "type": "circle",
-      "name": "narra1",
-      "h": "60",
-      "w": "60",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "yellow"
-    },
-    "object-192": {
-      "type": "circle",
-      "name": "rain-tree1",
-      "h": "100",
-      "w": "100",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "yellow"
-    },
-    "object-193": {
-      "type": "circle",
-      "name": "rain-tree2",
-      "h": "100",
-      "w": "100",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "red"
-    },
-    "object-194": {
-      "type": "circle",
-      "name": "supa1",
-      "h": "60",
-      "w": "60",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "maroon"
-    },
-    "object-195": {
-      "type": "circle",
-      "name": "supa2",
-      "h": "60",
-      "w": "60",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "yellow"
-    },
-    "object-196": {
-      "type": "circle",
-      "name": "supa3",
-      "h": "60",
-      "w": "60",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "blue"
-    },
-    "object-197": {
-      "type": "circle",
-      "name": "moluccan-sau1",
-      "h": "60",
-      "w": "60",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "yellow"
-    },
-    "object-198": {
-      "type": "circle",
-      "name": "moluccan-sau2",
-      "h": "60",
-      "w": "60",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "yellow"
     },
     "object-199": {
       "type": "block",
@@ -7581,383 +7275,6 @@
       "type": "menu",
       "event": "43"
     },
-    "object-222": {
-      "type": "circle",
-      "name": "ayangile2",
-      "h": "100",
-      "w": "80",
-      "r": "25",
-      "cx": "30",
-      "cy": "30",
-      "color": "red"
-    },
-    "object-223": {
-      "type": "circle",
-      "name": "ayangile3",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "30",
-      "cy": "30",
-      "color": "brown"
-    },
-    "object-224": {
-      "type": "circle",
-      "name": "ayangile4",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "30",
-      "cy": "30",
-      "color": "red"
-    },
-    "object-225": {
-      "type": "circle",
-      "name": "batete5",
-      "h": "80",
-      "w": "80",
-      "r": "20",
-      "cx": "30",
-      "cy": "30",
-      "color": "yellow"
-    },
-    "object-226": {
-      "type": "ellipse",
-      "name": "kakauate1",
-      "h": "50",
-      "w": "405",
-      "rx": "200",
-      "ry": "25",
-      "cx": "200",
-      "cy": "25",
-      "color": "purple"
-    },
-    "object-227": {
-      "type": "circle",
-      "name": "kakauate2",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "65",
-      "cy": "45",
-      "color": "purple"
-    },
-    "object-228": {
-      "type": "ellipse",
-      "name": "kakauate3",
-      "h": "50",
-      "w": "205",
-      "rx": "100",
-      "ry": "25",
-      "cx": "100",
-      "cy": "25",
-      "color": "purple"
-    },
-    "object-229": {
-      "type": "circle",
-      "name": "kakauate4",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "red"
-    },
-    "object-230": {
-      "type": "circle",
-      "name": "kakauate5",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "red"
-    },
-    "object-231": {
-      "type": "circle",
-      "name": "kakauate6",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-232": {
-      "type": "circle",
-      "name": "logwood1",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "lightgreen"
-    },
-    "object-233": {
-      "type": "circle",
-      "name": "logwood2",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-234": {
-      "type": "circle",
-      "name": "logwood3",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-235": {
-      "type": "circle",
-      "name": "logwood4",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "lightblue"
-    },
-    "object-236": {
-      "type": "ellipse",
-      "name": "logwood5",
-      "h": "105",
-      "w": "205",
-      "rx": "75",
-      "ry": "20",
-      "cx": "100",
-      "cy": "45",
-      "color": "purple"
-    },
-    "object-237": {
-      "type": "circle",
-      "name": "logwood6",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "purple"
-    },
-    "object-238": {
-      "type": "circle",
-      "name": "logwood7",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "purple"
-    },
-    "object-239": {
-      "type": "ellipse",
-      "name": "narra2",
-      "h": "105",
-      "w": "260",
-      "rx": "125",
-      "ry": "15",
-      "cx": "130",
-      "cy": "45",
-      "color": "purple"
-    },
-    "object-240": {
-      "type": "circle",
-      "name": "siar1",
-      "h": "305",
-      "w": "305",
-      "r": "100",
-      "cx": "150",
-      "cy": "150",
-      "color": "maroon"
-    },
-    "object-241": {
-      "type": "circle",
-      "name": "siar2",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-242": {
-      "type": "circle",
-      "name": "rain-tree3",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-243": {
-      "type": "circle",
-      "name": "supa4",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "maroon"
-    },
-    "object-244": {
-      "type": "circle",
-      "name": "supa5",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "65",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-245": {
-      "type": "circle",
-      "name": "moluccan-sau3",
-      "h": "105",
-      "w": "105",
-      "r": "25",
-      "cx": "45",
-      "cy": "45",
-      "color": "red"
-    },
-    "object-246": {
-      "type": "circle",
-      "name": "moluccan-sau4",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "blue"
-    },
-    "object-247": {
-      "type": "ellipse",
-      "name": "akle1",
-      "h": "105",
-      "w": "205",
-      "rx": "85",
-      "ry": "25",
-      "cx": "90",
-      "cy": "30",
-      "color": "purple"
-    },
-    "object-248": {
-      "type": "circle",
-      "name": "akle2",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "purple"
-    },
-    "object-249": {
-      "type": "circle",
-      "name": "akle3",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-250": {
-      "type": "circle",
-      "name": "akle4",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "blue"
-    },
-    "object-251": {
-      "type": "circle",
-      "name": "akle5",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "lightblue"
-    },
-    "object-252": {
-      "type": "circle",
-      "name": "manggis1",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-253": {
-      "type": "circle",
-      "name": "manggis2",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "lightblue"
-    },
-    "object-254": {
-      "type": "circle",
-      "name": "manggis3",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "red"
-    },
-    "object-255": {
-      "type": "ellipse",
-      "name": "manggis4",
-      "h": "105",
-      "w": "205",
-      "rx": "90",
-      "ry": "30",
-      "cx": "95",
-      "cy": "35",
-      "color": "red"
-    },
-    "object-256": {
-      "type": "ellipse",
-      "name": "banuyo1",
-      "h": "125",
-      "w": "205",
-      "rx": "45",
-      "ry": "40",
-      "cx": "65",
-      "cy": "55",
-      "color": "yellow"
-    },
-    "object-257": {
-      "type": "circle",
-      "name": "banuyo2",
-      "h": "105",
-      "w": "105",
-      "r": "30",
-      "cx": "45",
-      "cy": "45",
-      "color": "yellow"
-    },
-    "object-258": {
-      "type": "circle",
-      "name": "banuyo3",
-      "h": "105",
-      "w": "105",
-      "r": "20",
-      "cx": "45",
-      "cy": "45",
-      "color": "purple"
-    },
     "object-259": {
       "type": "hide",
       "style": [
@@ -7965,6 +7282,192 @@
         "right: 10%",
         "bottom: 5%"
       ]
+    },
+    "object-260": {
+      "type": "image",
+      "name": "ayangile-cross_red",
+      "src": "/images/ayangile-cross_red.jpg",
+      "color": "red"
+    },
+    "object-261": {
+      "type": "image",
+      "name": "ayangile-cross_blue",
+      "src": "/images/ayangile-cross_blue.jpg",
+      "color": "blue"
+    },
+    "object-262": {
+      "type": "image",
+      "name": "ayangile-cross_yellow",
+      "src": "/images/ayangile-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-263": {
+      "type": "image",
+      "name": "batete-cross_yellow",
+      "src": "/images/batete-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-264": {
+      "type": "image",
+      "name": "batete-cross_red",
+      "src": "/images/batete-cross_red.jpg",
+      "color": "red"
+    },
+    "object-265": {
+      "type": "image",
+      "name": "golden-shower-cross_red",
+      "src": "/images/golden-shower-cross_red.jpg",
+      "color": "red"
+    },
+    "object-266": {
+      "type": "image",
+      "name": "golden-shower-cross_yellow",
+      "src": "/images/golden-shower-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-267": {
+      "type": "image",
+      "name": "golden-shower-cross_purple",
+      "src": "/images/golden-shower-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-268": {
+      "type": "image",
+      "name": "kakaute-cross_red",
+      "src": "/images/kakaute-cross_red.jpg",
+      "color": "red"
+    },
+    "object-269": {
+      "type": "image",
+      "name": "kakaute-cross_yellow",
+      "src": "/images/kakaute-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-270": {
+      "type": "image",
+      "name": "kakaute-cross_purple",
+      "src": "/images/kakaute-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-271": {
+      "type": "image",
+      "name": "logwood-cross_green",
+      "src": "/images/logwood-cross_green.jpg",
+      "color": "green"
+    },
+    "object-272": {
+      "type": "image",
+      "name": "logwood-cross_yellow",
+      "src": "/images/logwood-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-273": {
+      "type": "image",
+      "name": "logwood-cross_purple",
+      "src": "/images/logwood-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-274": {
+      "type": "image",
+      "name": "narra-cross_yellow",
+      "src": "/images/narra-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-275": {
+      "type": "image",
+      "name": "narra-cross_purple",
+      "src": "/images/narra-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-276": {
+      "type": "image",
+      "name": "siar-cross_green",
+      "src": "/images/siar-cross_green.jpg",
+      "color": "green"
+    },
+    "object-277": {
+      "type": "image",
+      "name": "siar-cross_purple",
+      "src": "/images/siar-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-278": {
+      "type": "image",
+      "name": "raintree-cross_red",
+      "src": "/images/raintree-cross_red.jpg",
+      "color": "red"
+    },
+    "object-279": {
+      "type": "image",
+      "name": "raintree-cross_yellow",
+      "src": "/images/raintree-cross_yellow.jpg",
+      "color": "yellow"
+    },
+    "object-280": {
+      "type": "image",
+      "name": "supa-cross_green",
+      "src": "/images/supa-cross_green.jpg",
+      "color": "green"
+    },
+    "object-281": {
+      "type": "image",
+      "name": "supa-cross_red",
+      "src": "/images/supa-cross_red.jpg",
+      "color": "red"
+    },
+    "object-282": {
+      "type": "image",
+      "name": "molluccan-sau-2_green",
+      "src": "/images/molluccan-sau-2_green.jpg",
+      "color": "green"
+    },
+    "object-283": {
+      "type": "image",
+      "name": "molluccan-sau-2_red",
+      "src": "/images/molluccan-sau-2_red.jpg",
+      "color": "red"
+    },
+    "object-284": {
+      "type": "image",
+      "name": "akle-cross_blue",
+      "src": "/images/akle-cross_blue.jpg",
+      "color": "blue"
+    },
+    "object-285": {
+      "type": "image",
+      "name": "akle-cross_green",
+      "src": "/images/akle-cross_green.jpg",
+      "color": "green"
+    },
+    "object-286": {
+      "type": "image",
+      "name": "akle-cross_purple",
+      "src": "/images/akle-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-287": {
+      "type": "image",
+      "name": "manggis-cross_red",
+      "src": "/images/manggis-cross_red.jpg",
+      "color": "red"
+    },
+    "object-288": {
+      "type": "image",
+      "name": "manggis-cross_green",
+      "src": "/images/manggis-cross_green.jpg",
+      "color": "green"
+    },
+    "object-289": {
+      "type": "image",
+      "name": "banuyo-cross_red",
+      "src": "/images/banuyo-cross_red.jpg",
+      "color": "red"
+    },
+    "object-290": {
+      "type": "image",
+      "name": "banuyo-cross_purple",
+      "src": "/images/banuyo-cross_purple.jpg",
+      "color": "purple"
     }
   },
   "eventStart": "event-01"
