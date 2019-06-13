@@ -8107,7 +8107,7 @@
           "prev": "6"
         },
         "8": {
-          "src": "/images/ilo2/Kaatoan-bangkal_02.jpg",
+          "src": "/images/ilo2/Kaatoan-bangkal_06.jpg",
           "name": "Pore Multiple",
           "desc": "Kaatoan bangkal (*Neolamarckia cadamba* (Roxb.) Bosser)",
           "next": "9",
@@ -8531,7 +8531,7 @@
     },
     "object-70": {
       "type": "choice",
-      "src": "/images/ilo2/Mangium_03.jpg",
+      "src": "/images/ilo2/Mangium_07.jpg",
       "title": "Select Pore Size",
       "answer": "Small",
       "options": {
@@ -8653,7 +8653,7 @@
     },
     "object-80": {
       "type": "choice",
-      "src": "/images/ilo2/Rain_Tree_03.jpg",
+      "src": "/images/ilo2/Rain_Tree_04.jpg",
       "title": "Select Pore Frequency",
       "answer": "Moderately Few",
       "options": {
@@ -9422,10 +9422,13 @@
     "object-138": {
       "type": "references",
       "references": {
-        "1": "Photo credits: For. Arlene DJ. Romano",
-        "2": "Illustration: Prof. Vanessa Palma-Torres",
-        "3": "Story Concept: Profs. TJ Monserrat and Rosalie C. Mendoza",
-        "4": "Animation and Graphic Design: Prof TJ Monserrat"
+        "1": "Content: Prof. Alfie M. Torres and Prof. Rosalie C. Mendoza",
+        "2": "Language Editor: Prof. Vivian C. Daracan",
+        "3": "Illustration: Prof. Vanessa Palma-Torres",
+        "4": "Story Concept: Prof. TJ Monserrat and Prof. Alfie M. Torres",
+        "5": "Images: For. Arlene DJ. Romano",
+        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia"
+        
       }
     },
     "object-139": {
