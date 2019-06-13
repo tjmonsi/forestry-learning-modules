@@ -1,0 +1,4576 @@
+{
+  "baseURL": "/assets/forestry",
+  "events": {
+    "event-01": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-02",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 1",
+                "top: 42%",
+                "left: 10%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-03",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 2",
+                "top: 2%",
+                "left: 60%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-04",
+              "id": "object-04",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 3",
+                "top: 2%",
+                "left: 10%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-05",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 4",
+                "top: 42%",
+                "left: 60%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-06",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 5",
+                "top: 15%",
+                "left: 40%",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-07",
+              "id": "object-07",
+              "type": "dialogue"
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-08"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-02"
+        }
+      }
+    },
+    "event-02": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-09",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 25%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-10",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 25%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-11",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 25%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-12",
+              "id": "object-05",
+              "style": [
+                "z-index: 4",
+                "top: 25%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-13",
+              "id": "object-06",
+              "style": [
+                "z-index: 5",
+                "top: 25%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "event-03": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-02"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-14",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "color: white",
+                "font-weight: bold",
+                "top: 5%",
+                "left: 7.5%",
+                "display: flex",
+                "align-items: center",
+                "height: 100vh",
+                "width: 100vw",
+                "box-sizing: border-box"
+              ]
+            },
+            {
+              "objectId": "object-200",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-04"
+        }
+      }
+    },
+    "event-04": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-03"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-02",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smallest-character"
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-01",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "tablet-small tablet-left"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-15",
+              "id": "object-04",
+              "meta": {
+                "cover": false
+              },
+              "relative": "object-14",
+              "style": [
+                "z-index: 3",
+                "font-size: 2.5rem",
+                "font-weight: bold",
+                "top: 30%",
+                "left: 7.5%"
+              ]
+            },
+            {
+              "objectId": "object-17",
+              "id": "object-05",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-05"
+        }
+      }
+    },
+    "event-05": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-04"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-18",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 24px",
+                "margin: 0",
+                "bottom: 35%",
+                "left: 10%"
+              ]
+            },
+            {
+              "objectId": "object-19",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-06"
+        }
+      }
+    },
+    "event-06": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-05"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-20",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-21",
+              "id": "object-02",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-07"
+        }
+      }
+    },
+    "event-07": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-06"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-02",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 1",
+                "width: 55%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-23",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smallest-character"
+              },
+              "style": [
+                "z-index: 2",
+                "right: 0"
+              ]
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-24"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-08"
+        }
+      }
+    },
+    "event-08": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-07"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-26",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-28",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smallest-character"
+              },
+              "style": [
+                "z-index: 2",
+                "right: 0"
+              ]
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-29"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-09"
+        }
+      }
+    },
+    "event-09": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-08"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-181",
+              "id": "object-02",
+              "meta": {
+                "fullscreen": false,
+                "cover": true
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-30",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-10"
+        }
+      }
+    },
+    "event-10": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-09"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-90",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-31",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-11"
+        }
+      }
+    },
+    "event-11": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-10"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-91",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smaller-character"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-33",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-34"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-12"
+        }
+      }
+    },
+    "event-12": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-11"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-93",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-35",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-13"
+        }
+      }
+    },
+    "event-13": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-12"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-94",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-41",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 2%",
+                "left: 32%",
+                "background: blue"
+              ]
+            },
+            {
+              "objectId": "object-36",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-14"
+        }
+      }
+    },
+    "event-14": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-13"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-95",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-96",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smaller-character"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-37",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-15"
+        }
+      }
+    },
+    "event-15": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-14"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-97",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-43",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-16"
+        }
+      }
+    },
+    "event-16": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-15"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-98",
+              "id": "object-03",
+              "meta": {
+                "cover": false
+              },
+              "style": [
+                "z-index: 2",
+                "right: 40%",
+                "top: 15%",
+                "width: 25%"
+
+              ]
+            },
+            {
+              "objectId": "object-45",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-17"
+        }
+      }
+    },
+    "event-17": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-16"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-184",
+              "id": "object-03",
+              "meta": {
+                "fullscreen": false,
+                "cover": true
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-47",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-18"
+        }
+      }
+    },
+    "event-18": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-17"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-50",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: black",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 35%"
+              ]
+            },
+            {
+              "objectId": "object-99",
+              "id": "object-03",
+              "meta": {
+                "cover": false
+              },
+              "style": [
+                "z-index: 2",
+                "right: 25%",
+                "top: 10%",
+                "width: 50%"
+
+              ]
+            },
+            {
+              "objectId": "object-49",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-19"
+        }
+      }
+    },
+    "event-19": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-18"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-52",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: black",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 35%"
+              ]
+            },
+            {
+              "objectId": "object-223",
+              "id": "object-03",
+              "meta": {
+                "cover": false
+              },
+              "style": [
+                "z-index: 2",
+                "right: 25%",
+                "top: 10%",
+                "width: 50%"
+
+              ]
+            },
+            {
+              "objectId": "object-51",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-20"
+        }
+      }
+    },
+    "event-20": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-19"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-100",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-55",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 3rem",
+                "text-align: left",
+                "color: black",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 10%",
+                "right: 20%",
+                "background: blue"
+              ]
+            },
+            {
+              "objectId": "object-53",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "dialogue",
+          "objectId": "object-54"
+        },
+        "trigger-03": {
+          "type": "next",
+          "event": "event-21"
+        }
+      }
+    },
+    "event-21": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-20"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-56",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-23"
+        }
+      }
+    },
+    "event-23": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-21"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-58",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-24"
+        }
+      }
+    },
+    "event-24": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-23"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-103",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0%",
+                "left: 32%"
+              ]
+            },
+            {
+              "objectId": "object-59",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-25"
+        }
+      }
+    },
+    "event-25": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-24"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-105",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "left: 20%",
+                "width: 60%"
+              ]
+            },
+            {
+              "objectId": "object-60",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-224",
+              "id": "object-06",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 40%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-26"
+        }
+      }
+    },
+    "event-26": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-25"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-106",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "left: 20%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-107",
+              "id": "object-04",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "right: 20%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-108",
+              "id": "object-05",
+              "style": [
+                "z-index: 2",
+                "top: 67%",
+                "right: 20%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-61",
+              "id": "object-06",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-07",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-225",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 45%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-27"
+        }
+      }
+    },
+    "event-27": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-26"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-109",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-62",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-226",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 35%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-28"
+        }
+      }
+    },
+    "event-28": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-27"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-182",
+              "id": "object-02",
+              "meta": {
+                "fullscreen": false,
+                "cover": true
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "character"
+              },
+              "style": [
+                "z-index: 5",
+                "right: 0",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-63",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-29"
+        }
+      }
+    },
+    "event-29": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-28"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-110",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 5%",
+                "left: 25%",
+                "width: 50%"
+              ]
+            },
+            {
+              "objectId": "object-64",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-30"
+        }
+      }
+    },
+    "event-30": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-29"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-112",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "left: 20%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-111",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 20%",
+                "left: 50%",
+                "width: 35%"
+              ]
+            },
+            {
+              "objectId": "object-65",
+              "id": "object-05",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-06",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-227",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 40%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-31"
+        }
+      }
+    },
+    "event-31": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-30"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-114",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "left: 15%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-113",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 20%",
+                "left: 50%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-66",
+              "id": "object-05",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-06",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-228",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 40%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-32"
+        }
+      }
+    },
+    "event-32": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-31"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-115",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 20%",
+                "left: 25%",
+                "width: 50%"
+              ]
+            },
+            {
+              "objectId": "object-67",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-229",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 40%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-33"
+        }
+      }
+    },
+    "event-33": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-32"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-116",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 20%",
+                "left: 25%",
+                "width: 50%"
+              ]
+            },
+            {
+              "objectId": "object-68",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-230",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 40%"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-34"
+        }
+      }
+    },
+    "event-34": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-33"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-183",
+              "id": "object-02",
+              "meta": {
+                "fullscreen": false,
+                "cover": true
+              },
+              "style": [
+                "z-index: 1"
+              ]
+            },
+            {
+              "objectId": "object-69",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-35"
+        }
+      }
+    },
+    "event-35": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-34"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-70",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-36"
+        }
+      }
+    },
+    "event-36": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-35"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-71",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-37"
+        }
+      }
+    },
+    "event-37": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-36"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-139",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 2%",
+                "left: 7.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-140",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 2%",
+                "left: 36%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-141",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 2%",
+                "left: 64.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-145",
+              "id": "object-05",
+              "style": [
+                "z-index: 4",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 17%"
+              ]
+            },
+            {
+              "objectId": "object-146",
+              "id": "object-06",
+              "style": [
+                "z-index: 5",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 45%"
+              ]
+            },
+            {
+              "objectId": "object-147",
+              "id": "object-07",
+              "style": [
+                "z-index: 6",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 75%"
+              ]
+            },
+            {
+              "objectId": "object-142",
+              "id": "object-08",
+              "style": [
+                "z-index: 7",
+                "top: 42%",
+                "left: 7.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-143",
+              "id": "object-09",
+              "style": [
+                "z-index: 8",
+                "top: 42%",
+                "left: 36%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-144",
+              "id": "object-10",
+              "style": [
+                "z-index: 9",
+                "top: 42%",
+                "left: 64.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-148",
+              "id": "object-11",
+              "style": [
+                "z-index: 10",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 42%",
+                "left: 16%"
+              ]
+            },
+            {
+              "objectId": "object-149",
+              "id": "object-12",
+              "style": [
+                "z-index: 11",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 42%",
+                "left: 45%"
+              ]
+            },
+            {
+              "objectId": "object-150",
+              "id": "object-13",
+              "style": [
+                "z-index: 10",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 42%",
+                "left: 75%"
+              ]
+            },
+            {
+              "objectId": "object-72",
+              "id": "object-14",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-38"
+        }
+      }
+    },
+    "event-38": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-37"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-118",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 7.5%",
+                "width: 42.5%"
+              ]
+            },
+            {
+              "objectId": "object-119",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 50%",
+                "width: 42.5%"
+              ]
+            },
+            {
+              "objectId": "object-120",
+              "id": "object-04",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 25%"
+              ]
+            },
+            {
+              "objectId": "object-121",
+              "id": "object-05",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 70%"
+              ]
+            },
+            {
+              "objectId": "object-73",
+              "id": "object-06",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-07",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-39"
+        }
+      }
+    },
+    "event-39": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-38"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-122",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 7.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-123",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 15%",
+                "left: 36%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-124",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 15%",
+                "left: 64.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-125",
+              "id": "object-05",
+              "style": [
+                "z-index: 4",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-126",
+              "id": "object-06",
+              "style": [
+                "z-index: 5",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 45%"
+              ]
+            },
+            {
+              "objectId": "object-127",
+              "id": "object-07",
+              "style": [
+                "z-index: 6",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 75%"
+              ]
+            },
+            {
+              "objectId": "object-74",
+              "id": "object-08",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-09",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-40"
+        }
+      }
+    },
+    "event-40": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-39"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-128",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 7.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-129",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 15%",
+                "left: 36%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-130",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 15%",
+                "left: 64.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-131",
+              "id": "object-05",
+              "style": [
+                "z-index: 4",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 12.5%"
+              ]
+            },
+            {
+              "objectId": "object-132",
+              "id": "object-06",
+              "style": [
+                "z-index: 5",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 42.5%"
+              ]
+            },
+            {
+              "objectId": "object-133",
+              "id": "object-07",
+              "style": [
+                "z-index: 6",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 70%"
+              ]
+            },
+            {
+              "objectId": "object-75",
+              "id": "object-08",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-09",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-41"
+        }
+      }
+    },
+    "event-41": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-40"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-134",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 7.5%",
+                "width: 42.5%"
+              ]
+            },
+            {
+              "objectId": "object-135",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 50%",
+                "width: 42.5%"
+              ]
+            },
+            {
+              "objectId": "object-136",
+              "id": "object-04",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 25%"
+              ]
+            },
+            {
+              "objectId": "object-137",
+              "id": "object-05",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 70%"
+              ]
+            },
+            {
+              "objectId": "object-76",
+              "id": "object-06",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-07",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-42"
+        }
+      }
+    },
+    "event-42": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-41"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-77",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-43"
+        }
+      }
+    },
+    "event-43": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-42"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-151",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 10%",
+                "width: 35%"
+              ]
+            },
+            {
+              "objectId": "object-130",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 55%",
+                "width: 35%"
+              ]
+            },
+            {
+              "objectId": "object-152",
+              "id": "object-04",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 10%"
+              ]
+            },
+            {
+              "objectId": "object-153",
+              "id": "object-05",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 55%"
+              ]
+            },
+            {
+              "objectId": "object-78",
+              "id": "object-06",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-07",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-44"
+        }
+      }
+    },
+    "event-44": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-43"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-154",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 2%",
+                "left: 20%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-155",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "top: 2%",
+                "left: 55%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-158",
+              "id": "object-04",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-159",
+              "id": "object-05",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 56.5%"
+              ]
+            },
+            {
+              "objectId": "object-156",
+              "id": "object-06",
+              "style": [
+                "z-index: 1",
+                "top: 42%",
+                "left:  20%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-157",
+              "id": "object-07",
+              "style": [
+                "z-index: 1",
+                "top: 42%",
+                "left: 55%",
+                "width: 25%"
+              ]
+            },
+            {
+              "objectId": "object-160",
+              "id": "object-08",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 42%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-161",
+              "id": "object-09",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "top: 42%",
+                "left: 56.5%"
+              ]
+            },
+            {
+              "objectId": "object-79",
+              "id": "object-10",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-11",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-45"
+        }
+      }
+    },
+    "event-45": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-44"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-162",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 2%",
+                "left: 25%",
+                "width: 50%"
+              ]
+            },
+            {
+              "objectId": "object-80",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-46"
+        }
+      }
+    },
+    "event-46": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-45"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-164",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 10%",
+                "width: 35%"
+              ]
+            },
+            {
+              "objectId": "object-165",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 55%",
+                "width: 35%"
+              ]
+            },
+            {
+              "objectId": "object-166",
+              "id": "object-04",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 10%"
+              ]
+            },
+            {
+              "objectId": "object-167",
+              "id": "object-05",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 55%"
+              ]
+            },
+            {
+              "objectId": "object-81",
+              "id": "object-06",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-07",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-47"
+        }
+      }
+    },
+    "event-47": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-46"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-168",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 2%",
+                "left: 7.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-169",
+              "id": "object-03",
+              "style": [
+                "z-index: 2",
+                "top: 2%",
+                "left: 36%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-170",
+              "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "top: 2%",
+                "left: 64.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-173",
+              "id": "object-05",
+              "style": [
+                "z-index: 4",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 7.5%"
+              ]
+            },
+            {
+              "objectId": "object-174",
+              "id": "object-06",
+              "style": [
+                "z-index: 5",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 36%"
+              ]
+            },
+            {
+              "objectId": "object-175",
+              "id": "object-07",
+              "style": [
+                "z-index: 6",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 0",
+                "left: 64.5%"
+              ]
+            },
+            {
+              "objectId": "object-171",
+              "id": "object-08",
+              "style": [
+                "z-index: 7",
+                "top: 42%",
+                "left: 7.5%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-172",
+              "id": "object-09",
+              "style": [
+                "z-index: 8",
+                "top: 42%",
+                "left: 36%",
+                "width: 27.5%"
+              ]
+            },
+            {
+              "objectId": "object-176",
+              "id": "object-11",
+              "style": [
+                "z-index: 10",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 42%",
+                "left: 7.5%"
+              ]
+            },
+            {
+              "objectId": "object-177",
+              "id": "object-12",
+              "style": [
+                "z-index: 11",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "top: 42%",
+                "left: 36%"
+              ]
+            },
+            {
+              "objectId": "object-82",
+              "id": "object-13",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-14",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-48"
+        }
+      }
+    },
+    "event-48": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-47"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-178",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 30%",
+                "width: 40%"
+              ]
+            },
+            {
+              "objectId": "object-179",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 30%"
+              ]
+            },
+            {
+              "objectId": "object-83",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-49"
+        }
+      }
+    },
+    "event-49": {
+      "default": "trigger-01",
+      "triggers": {
+        "trigger-00": {
+          "type": "next",
+          "event": "event-48"
+        },
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-178",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "top: 15%",
+                "left: 30%",
+                "width: 40%"
+              ]
+            },
+            {
+              "objectId": "object-179",
+              "id": "object-03",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: left",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0",
+                "left: 30%"
+              ]
+            },
+            {
+              "objectId": "object-180",
+              "id": "object-04",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 2",
+                "width: 10%",
+                "top: 15%",
+                "right: 15%"
+              ]
+            },
+            {
+              "objectId": "object-84",
+              "id": "object-05",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-06",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-50"
+        }
+      }
+    },
+    "event-50": {
+      "default": "trigger-01",
+      "click": "trigger-02",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-87",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-88",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "font-weight: bold",
+                "padding: 24px",
+                "margin: 0",
+                "bottom: 0",
+                "left: 0"
+              ]
+            },
+            {
+              "objectId": "object-86",
+              "id": "object-03",
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-51"
+        }
+      }
+    },
+    "event-51": {
+      "default": "trigger-01",
+      "click": "trigger-02",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-87",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-89",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "font-weight: bold",
+                "padding: 24px",
+                "margin: 0",
+                "bottom: 0",
+                "left: 0"
+              ]
+            },
+            {
+              "objectId": "object-104",
+              "id": "object-03",
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-52"
+        }
+      }
+    },
+    "event-52": {
+      "default": "trigger-01",
+      "click": "trigger-02",
+      "triggers": {
+        "trigger-01": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-87",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-89",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 2.5rem",
+                "text-align: center",
+                "font-weight: bold",
+                "padding: 24px",
+                "margin: 0",
+                "bottom: 0",
+                "left: 0"
+              ]
+            },
+            {
+              "objectId": "object-85",
+              "id": "object-03",
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-04",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-02": {
+          "type": "next",
+          "event": "event-50"
+        }
+      }
+    }
+  },
+  "objects": {
+    "object-01": {
+      "type": "image",
+      "src": "/images/tablet.png"
+    },
+    "object-02": {
+      "type": "image",
+      "src": "/images/ilo1/1.jpg"
+    },
+    "object-03": {
+      "type": "image",
+      "src": "/images/ilo1/2.jpg"
+    },
+    "object-04": {
+      "type": "image",
+      "src": "/images/ilo1/3.jpg"
+    },
+    "object-05": {
+      "type": "image",
+      "src": "/images/ilo1/4.jpg"
+    },
+    "object-06": {
+      "type": "image",
+      "src": "/images/ilo1/5.jpg"
+    },
+    "object-07": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "We see wooden objects every day, from our house, to our school or office, or even on streets. These woods are being used in different forms. Have you wondered what these wood species are? How can we identify these wood species?",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-08": {
+      "type": "dialogue",
+      "character": "Narrator",
+      "text": "Let us take a closer look and appreciate wood identification through this learning object entitled:\n\nWood Identification: Importance, Methods and Principles",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-09": {
+      "type": "block",
+      "src": "/images/golden-shower.jpg",
+      "label": "Objectives of the Learning Object",
+      "link": "/?currentEvent=event-03"
+    },
+    "object-10": {
+      "type": "block",
+      "src": "/images/tindalo.jpg",
+      "label": "Importance of Wood Identification",
+      "link": "/?currentEvent=event-07"
+    },
+    "object-11": {
+      "type": "block",
+      "src": "/images/golden-shower.jpg",
+      "label": "Methods of Wood Identification",
+      "link": "/?currentEvent=event-13"
+    },
+    "object-12": {
+      "type": "block",
+      "src": "/images/tindalo.jpg",
+      "label": "Principles of Wood Identification",
+      "link": "/?currentEvent=event-20"
+    },
+    "object-13": {
+      "type": "block",
+      "src": "/images/golden-shower.jpg",
+      "label": "References/Credits",
+      "link": "/?currentEvent=event-50"
+    },
+    "object-14": {
+      "type": "text",
+      "text": "Objectives:\n\nAt the end of this learning object, the viewer should be able to:\n\n1) explain the importance of wood identification\n\n2) describe the methods that can be used in wood identification\n\n3) know the principles involved in wood identification"
+    },
+    "object-15": {
+      "type": "text",
+      "text": "Wood Identification:\n\nImportance, Methods and Principles"
+    },
+    "object-16": {
+      "type": "image",
+      "src": "/images/ilo1/teacher.png"
+    },
+    "object-17": {
+      "type": "dialogue",
+      "character": "Teacher (At Lab Classroom)",
+      "text": "Our topic for today is about wood identification, its importance, methods and the principles involved in identifying woods.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-18": {
+      "type": "text",
+      "text": "Wood identification is the establishment of the\n\n identity of a wood sample as being similar to or\n\nidentical with an already known wood species."
+    },
+    "object-19": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Wood identification is the establishment of the identity of a wood sample as being similar to or identical with an already known wood species.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-20": {
+      "type": "image",
+      "src": "/images/ilo1/classroom.png"
+    },
+    "object-21": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Now, let me call your classmate assigned to report why identifying the species of wood is important.\n\nSue, could you tell us WHY IS WOOD IDENTIFICATION IMPORTANT?",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-22": {
+      "type": "image",
+      "src": "/images/ilo1/basis.png"
+    },
+    "object-23": {
+      "type": "dialogue",
+      "character": "Sue",
+      "text": "I have found out that identification is important in various ways. First, it is important to know the identity of the wood species before processing it.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-24": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Great, Sue! Wood identification serves as a basis for proper utilization and conversion. We should know the identity of the wood so we will have an idea of its properties that are suitable for a particular use.\n\nCan you tell us another one?",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-25": {
+      "type": "text",
+      "text": "WHY IS WOOD IDENTIFICATION IMPORTANT?\n\n1) it serves as a basis for proper utilization and conversion"
+    },
+    "object-26": {
+      "type": "image",
+      "src": "/images/ilo1/checkpoints.jpg"
+    },
+    "object-27": {
+      "type": "text",
+      "text": "2) It serves as a basis for revenue collection"
+    },
+    "object-28": {
+      "type": "dialogue",
+      "character": "Sue",
+      "text": "It is also important because it can serve as a basis for revenue collection.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-29": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Correct! Officers who are assigned in the collection of forest charges can correctly impose the respective taxes for the harvested logs.",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-30": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "How about if you are canvassing materials for your house construction? Can you select from the following choices the situation when skill in wood identification is beneficial to you?",
+      "next": "trigger-02",
+      "prev": "trigger-00",
+      "form": true
+    },
+    "object-31": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "You got it right! Another importance of wood identification is in the aspect of buying and selling lumber or wooden furniture. Buying and selling of incorrectly identified lumbers or furniture, be it intentionally or unintentionally meant by the seller or buyer can be prevented.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-32": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Ooopps, you picked the wrong answer. Come on, try again!",
+      "next": ""
+    },
+    "object-33": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Now, back to you, Sue. Look at the slide and tell us when wood identification is beneficial to plant taxonomists.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-34": {
+      "type": "dialogue",
+      "character": "Sue",
+      "text": "When the tree is devoid of leaves, flowers and fruits, we can look into its wood to know its identity.",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-35": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Correct, Sue! And lastly, it is crucial to know the identity of the unknown species if we are going to study it. Once we know the species, we will know its properties and we will have an idea on which aspect it should be studied further.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-36": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Now that you know the importance of wood identification, let us look into the methods of identifying these wood species.\n\n1) The first thing that we can do is to consult people with expertise in this field.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-37": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "2) We can also compare the unknown sample with what is available in some wood identification handbooks.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-38": {
+      "type": "text",
+      "text": "3) It aids in checking frauds in buying lumbers"
+    },
+    "object-39": {
+      "type": "text",
+      "text": "4) It helps in assisting plant taxonomists"
+    },
+    "object-40": {
+      "type": "text",
+      "text": "5) It aids in research in wood science and technology"
+    },
+    "object-41": {
+      "type": "text",
+      "text": "METHODS OF WOOD IDENTIFICATION\n"
+    },
+    "object-42": {
+      "type": "text",
+      "text": "2) We can also compare the unknown sample with what is available in some wood identification references."
+    },
+    "object-43": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "3) Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-44": {
+      "type": "text",
+      "text": "3) Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium."
+    },
+    "object-45": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "4) Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-46": {
+      "type": "text",
+      "text": "4) Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy."
+    },
+    "object-47": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "5) Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the list the two types of keys that are useful in wood identification?",
+      "next": "trigger-02",
+      "prev": "trigger-00",
+      "form": true
+    },
+    "object-48": {
+      "type": "text",
+      "text": "5) Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the laret the two types of keys that are useful in wood identification?"
+    },
+    "object-49": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Dichotomous keys use two contrasting statements, and its numbering is always like this: number of species to be identified less one (n-1 principle).",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-50": {
+      "type": "text",
+      "text": "Example of Dichotomous Key"
+    },
+    "object-51": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Card-sorting keys are boards with punched and solid edges. Written at the center of a card is a wood species name, and listed at the outer part are all the features that can observed in examining a wood. When a certain feature is present in the wood, it has a hole adjacent to it. However, if the feature is not present in the species, there will be no punch near the said feature.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-52": {
+      "type": "text",
+      "text": "Example of Card Sorting Key"
+    },
+    "object-53": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Now that you know the different methods of wood identification, let us discuss the principles involved in wood identification.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-54": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "In identifying wood, the usual procedure is to approach it first from the gross to anatomical features - that is, from the visible characteristics wherein little or no magnification are needed, to features that can be observed only at high magnifications using microscope.\n\nUsing more characteristics, a more reliable identification can be made. It must be emphasized that a number of features taken together can give a more accurate identification.\n\nLet’s discuss wood’s gross features that are of value in identification.",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-55": {
+      "type": "text",
+      "text": "PRINCIPLES INVOLVED IN WOOD IDENTIFICATION"
+    },
+    "object-56": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "The gross features of wood is the sum of all physical and structural features of wood that are of value in wood identification. The physical features of wood are all the features of the wood that can be perceived by our senses. These are color, luster, odor, taste, grain, texture, weight and hardness.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-58": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "The structural features are wood features based on their cellular makeup which are visible to the naked eye or with the aid of a hand lens. This group includes characteristics of the pores, parenchyma, wood rays, ducts and included phloem.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-59": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Let’s take a look first on the physical features of the wood. These features are observed without an aid of any magnification and are said to be subjective features (in the sense that different individuals may have different interpretation of these features).",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-60": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Color in wood differs due mainly to extractives. It varies between and within species of wood. Many factors affect this feature, such as age, decay and weathering of wood. Color interpretation may also be subjective due to differences in individual interpretation of shades of color.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-61": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Luster is the ability of wood to reflect light. A wood may be classified as either lustrous or dull. This is also related to the amount of extractives present in the wood.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-62": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Some woods, especially when fresh, possess a distinct odor. Some woods smell like old leather and fresh beans. Some have irritating or agreeable odor. Some woods also have a distinct taste.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-63": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Do you think odor is relevant in wood utilization?\n\nYES OR NO?",
+      "next": "trigger-02",
+      "prev": "trigger-00",
+      "form": true
+    },
+    "object-64": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "You are Correct! Both odor and taste affect the utilization of wood. Due to its distinct odor, some are utilized as ointments, medicines, and cigar boxes.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-65": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Grain is the arrangement of cells in wood. It can be classified as straight or cross (curly, wavy, spiral, diagonal or interlocked). Grain varies within species or in the same piece of wood. Some of the methods in determining grain direction are splitting a veneer, dropping an ink on the wood surface and tracing the grain direction using a pointed object.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-66": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Texture is the size and the proportional amount of cells in the wood as seen in the cross section. The texture of a wood can be classified as coarse, fine, and very fine. For softwood species, the tangential diameter of the tracheids is the basis.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-67": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Wood hardness is determined by cutting a portion of wood with knife/cutter or by applying pressure on the wood with the fingernail. Wood can be classified as hard, moderately hard and soft. The more difficult it is to cut a portion or indent your nails the harder is the wood.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-68": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Weight is the last physical feature that can be observed in woods. Wood species are classified as heavy or light.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-69": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Can you tell which among the choices affect/s the weight of wood?",
+      "next": "trigger-02",
+      "prev": "trigger-00",
+      "form": true
+    },
+    "object-70": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Structural features are more reliable bases for identification than the physical features. Cell distribution patterns and arrangements of vessels or pores, parenchyma, wood rays, and ducts belong to this category.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-71": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Pore is the cross section of a vessel element. It is only present in hardwood species. It can be described according to its arrangement, shape, size, occlusions and topography.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-72": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "PORE ARRANGEMENTS\n\nSolitary, Pore multiple, Pore cluster, Pore chain, Echelon, Flame-like",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-73": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "PORE SHAPE\n\nOval, Round",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-74": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "PORE SIZE\n\nMinute, Small, Large",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-75": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "TOPOGRAPHY\n\nDiffuse-porous, Semi-ring porous, Ring-porous",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-76": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "OCCLUSIONS\n\nTyloses, Deposits",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-77": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Next structural feature is PARENCHYMA. These are short-thin-walled elements concerned primarily with storage and to a lesser extent in the distribution of carbohydrates.\n\nIt can be classified into apotracheal, paratracheal and boundary parenchyma cells.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-78": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "APOTRACHEAL\n\nConcentric, Diffuse-in-aggregates",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-79": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "PARATRACHEAL\n\nVasicentric, Aliform, Aliform confluent, Banded confluent",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-80": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "BOUNDARY",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-81": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Another structural feature is wood ray. Wood rays are ribbon-shaped strand of tissues extending in a radial direction across the grain. Ray width is important in wood identification. It can be described as broad or narrow.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-82": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Presence of oil or resin ducts in wood is also helpful in identifying woods. These are longitudinally and/or horizontally oriented openings that are surrounded by cells secreting resinous, oily or gummy substance. These may occur as a normal characteristic feature or may arise due to injury.\n\nIt may be arranged in diffuse manner or in concentric manner. Ducts may also be empty or filled.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-83": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Completing the line-up of structural features of wood is the presence of included phloem in some wood. This refers to the presence of phloem (bark) in the xylem (wood).",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-84": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Can you bring the arrow to point the included phloem in this wood sample?",
+      "next": "trigger-02",
+      "prev": "trigger-00",
+      "form": true
+    },
+    "object-85": {
+      "type": "references",
+      "references": {
+        "1": "America, et al. Wood Identification Manual",
+        "2": "Findly, W. and P. Kennedy. 1975. Timber: Properties and Uses.",
+        "3": "Haygreen, J.G. and J.L. Bowyer. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
+        "4": "Lantican, C. B. and C. B. Madamba. 1979. Laboratory Manual in Wood Structure and Identification.",
+        "5": "Madamba, Concepcion B. Syllabus in Wood Structure and Identification.",
+        "6": "Meniado, et. Al. 1975. Wood Identification Handbook for Philippine Timbers. Vol. 1. FORPRIDECOM.",
+        "7": "Meniado, et. Al. 1981. Wood Identification Handbook for Philippine Timbers. Vol. 2. FORPRIDECOM.",
+        "8": "Panshin,A.J. and de Zeeuw, C. 1980. Textbook of Wood Technology,4th Edition New York. McGraw-Hill. Vol. 1",
+        "9": "Reyes, L. 1938. Philippine Woods.",
+        "10": "Wangaard, F. F. (ed.) 1979. Wood: Its Structure and Properties.",
+        "11": "Weier, et al. 1982. Botany. An Introduction to Plant Biology. John Wiley and Son. 720p.",
+        "12": "Zimmermann,M.H. and Brown, C.L. 1971. Trees: Structure and Function. New York. SpringerVerlag"
+      }
+    },
+    "object-104": {
+      "type": "references",
+      "references": {
+        "1": "https://www.tauntonstore.com/finishing/understanding-and-identifying-wood-collection-07a783.html",
+        "2": "https://frim.gov.my",
+        "3": "https://www.traffic.org/news/traffic-convenes-timber-identification-workshop-in-madagascar/",
+        "4": "https://fpl.fs.fed.us",
+        "5": "https://www.chinadialogue.net"
+      }
+    },
+    "object-86": {
+      "type": "references",
+      "references": {
+        "1": "Content: Prof. Rosalie C. Mendoza",
+        "2": "Language Editor: Prof. Vivian C. Daracan",
+        "3": "Illustration: Prof. Vanessa Palma-Torres",
+        "4": "Story Concept: Prof. TJ Monserrat and Prof. Rosalie C. Mendoza",
+        "5": "Images: For. Arlene DJ. Romano",
+        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia"
+      }
+    },
+    "object-87": {
+      "type": "image",
+      "src": "/images/blank.png"
+    },
+    "object-88": {
+      "type": "text",
+      "text": "CREDITS"
+    },
+    "object-89": {
+      "type": "text",
+      "text": "REFERENCES"
+    },
+    "object-90": {
+      "type": "image",
+      "src": "/images/ilo1/fraud.png"
+    },
+    "object-91": {
+      "type": "image",
+      "src": "/images/ilo1/taxonomist.png"
+    },
+    "object-92": {
+      "type": "image",
+      "src": "/images/ilo1/sue.png"
+    },
+    "object-93": {
+      "type": "image",
+      "src": "/images/ilo1/research.jpg"
+    },
+    "object-94": {
+      "type": "image",
+      "src": "/images/ilo1/experts.jpg"
+    },
+    "object-95": {
+      "type": "image",
+      "src": "/images/ilo1/sample.jpg"
+    },
+    "object-96": {
+      "type": "image",
+      "src": "/images/ilo1/books.jpg"
+    },
+    "object-97": {
+      "type": "image",
+      "src": "/images/ilo1/xylariums.jpg"
+    },
+    "object-98": {
+      "type": "image",
+      "src": "/images/ilo1/computer.png"
+    },
+    "object-99": {
+      "type": "image",
+      "src": "/images/ilo1/dichotomous_key.jpg"
+    },
+    "object-100": {
+      "type": "image",
+      "src": "/images/start.jpg"
+    },
+    "object-101": {
+      "type": "text",
+      "text": "GROSS FEATURES = PHYSICAL + STRUCTURAL FEATURES\n\n\n\nPHYSICAL FEATURES:\n\nColor\n\nLuster\n\nOdor and Taste\n\nGrain\n\nTexture\n\nWeight\n\nHardness"
+    },
+    "object-102": {
+      "type": "text",
+      "text": "STRUCTURAL FEATURES:\n\nPores\n\nParenchyma\n\nWood rays\n\nDucts\n\nIncluded phloem"
+    },
+    "object-103": {
+      "type": "text",
+      "text": "PHYSICAL FEATURES"
+    },
+    "object-105": {
+      "type": "image",
+      "src": "/images/ilo1/colors.jpg"
+    },
+    "object-106": {
+      "type": "image",
+      "src": "/images/ilo1/luster.jpg"
+    },
+    "object-107": {
+      "type": "image",
+      "src": "/images/ilo1/lustrous.jpg"
+    },
+    "object-108": {
+      "type": "image",
+      "src": "/images/ilo1/dull.jpg"
+    },
+    "object-109": {
+      "type": "image",
+      "src": "/images/ilo1/taste.png"
+    },
+    "object-110": {
+      "type": "image",
+      "src": "/images/ilo1/odor.png"
+    },
+    "object-111": {
+      "type": "image",
+      "src": "/images/ilo1/grain.png"
+    },
+    "object-112": {
+      "type": "image",
+      "src": "/images/ilo1/grain.jpg"
+    },
+    "object-113": {
+      "type": "image",
+      "src": "/images/ilo1/actual.jpg"
+    },
+    "object-114": {
+      "type": "image",
+      "src": "/images/ilo1/coarse.jpg"
+    },
+    "object-115": {
+      "type": "image",
+      "src": "/images/ilo1/hardness.png"
+    },
+    "object-116": {
+      "type": "image",
+      "src": "/images/ilo1/weight.png"
+    },
+    "object-117": {
+      "type": "text",
+      "text": "PORES:\n\nARRANGEMENT\n\nOCCLUSIONS\n\nSHAPE\n\nTOPOGRAPHY\n\nSIZE"
+    },
+    "object-118": {
+      "type": "image",
+      "src": "/images/ilo1/Oval.jpg"
+    },
+    "object-119": {
+      "type": "image",
+      "src": "/images/ilo1/Round.jpg"
+    },
+    "object-120": {
+      "type": "text",
+      "text": "Oval"
+    },
+    "object-121": {
+      "type": "text",
+      "text": "Round"
+    },
+    "object-122": {
+      "type": "image",
+      "src": "/images/ilo1/Minute.jpg"
+    },
+    "object-123": {
+      "type": "image",
+      "src": "/images/ilo1/Small.jpg"
+    },
+    "object-124": {
+      "type": "image",
+      "src": "/images/ilo1/Large.jpg"
+    },
+    "object-125": {
+      "type": "text",
+      "text": "Minute"
+    },
+    "object-126": {
+      "type": "text",
+      "text": "Small"
+    },
+    "object-127": {
+      "type": "text",
+      "text": "Large"
+    },
+    "object-128": {
+      "type": "image",
+      "src": "/images/ilo1/semi-ring.jpg"
+    },
+    "object-129": {
+      "type": "image",
+      "src": "/images/ilo1/ring.jpg"
+    },
+    "object-130": {
+      "type": "image",
+      "src": "/images/ilo1/diffuse.jpg"
+    },
+    "object-131": {
+      "type": "text",
+      "text": "Semi-ring porous"
+    },
+    "object-132": {
+      "type": "text",
+      "text": "Ring porous"
+    },
+    "object-133": {
+      "type": "text",
+      "text": "Diffuse-porous"
+    },
+    "object-134": {
+      "type": "image",
+      "src": "/images/ilo1/Tyloses.jpg"
+    },
+    "object-135": {
+      "type": "image",
+      "src": "/images/ilo1/Deposits.jpg"
+    },
+    "object-136": {
+      "type": "text",
+      "text": "Tyloses"
+    },
+    "object-137": {
+      "type": "text",
+      "text": "Deposits"
+    },
+    "object-138": {
+      "type": "text",
+      "text": "PARENCHYMA:\n\n\n\nAPOTRACHEAL\n\nPARATRACHEAL\n\nBOUNDARY"
+    },
+    "object-139": {
+      "type": "image",
+      "src": "/images/ilo1/solitary.jpg"
+    },
+    "object-140": {
+      "type": "image",
+      "src": "/images/ilo1/multiple.jpg"
+    },
+    "object-141": {
+      "type": "image",
+      "src": "/images/ilo1/cluster.jpg"
+    },
+    "object-142": {
+      "type": "image",
+      "src": "/images/ilo1/chain.jpg"
+    },
+    "object-143": {
+      "type": "image",
+      "src": "/images/ilo1/echelon.jpg"
+    },
+    "object-144": {
+      "type": "image",
+      "src": "/images/ilo1/flame.jpg"
+    },
+    "object-145": {
+      "type": "text",
+      "text": "Solitary"
+    },
+    "object-146": {
+      "type": "text",
+      "text": "Pore Multiple"
+    },
+    "object-147": {
+      "type": "text",
+      "text": "Pore Cluster"
+    },
+    "object-148": {
+      "type": "text",
+      "text": "Pore Chain"
+    },
+    "object-149": {
+      "type": "text",
+      "text": "Echelon"
+    },
+    "object-150": {
+      "type": "text",
+      "text": "Flame-like"
+    },
+    "object-151": {
+      "type": "image",
+      "src": "/images/ilo1/concentric.jpg"
+    },
+    "object-152": {
+      "type": "text",
+      "text": "Concentric"
+    },
+    "object-153": {
+      "type": "text",
+      "text": "Diffuse-in-aggregates"
+    },
+    "object-154": {
+      "type": "image",
+      "src": "/images/ilo1/aliform.jpg"
+    },
+    "object-155": {
+      "type": "image",
+      "src": "/images/ilo1/vasicentric.jpg"
+    },
+    "object-156": {
+      "type": "image",
+      "src": "/images/ilo1/aconfluent.jpg"
+    },
+    "object-157": {
+      "type": "image",
+      "src": "/images/ilo1/bconfluent.jpg"
+    },
+    "object-158": {
+      "type": "text",
+      "text": "Vasicentric"
+    },
+    "object-159": {
+      "type": "text",
+      "text": "Aliform"
+    },
+    "object-160": {
+      "type": "text",
+      "text": "Aliform Confluent"
+    },
+    "object-161": {
+      "type": "text",
+      "text": "Banded Confluent"
+    },
+    "object-162": {
+      "type": "image",
+      "src": "/images/ilo1/boundary.jpg"
+    },
+    "object-163": {
+      "type": "text",
+      "text": "Boundary"
+    },
+    "object-164": {
+      "type": "image",
+      "src": "/images/ilo1/Narrow.jpg"
+    },
+    "object-165": {
+      "type": "image",
+      "src": "/images/ilo1/Broad.jpg"
+    },
+    "object-166": {
+      "type": "text",
+      "text": "Narrow"
+    },
+    "object-167": {
+      "type": "text",
+      "text": "Broad"
+    },
+    "object-168": {
+      "type": "image",
+      "src": "/images/ilo1/doil.jpg"
+    },
+    "object-169": {
+      "type": "image",
+      "src": "/images/ilo1/coil.jpg"
+    },
+    "object-170": {
+      "type": "image",
+      "src": "/images/ilo1/cresin.jpg"
+    },
+    "object-171": {
+      "type": "image",
+      "src": "/images/ilo1/dresin.jpg"
+    },
+    "object-172": {
+      "type": "image",
+      "src": "/images/ilo1/eresin.jpg"
+    },
+    "object-173": {
+      "type": "text",
+      "text": "Diffuse oil ducts"
+    },
+    "object-174": {
+      "type": "text",
+      "text": "Concentric oil ducts"
+    },
+    "object-175": {
+      "type": "text",
+      "text": "Filled concentric\n\nResin ducts"
+    },
+    "object-176": {
+      "type": "text",
+      "text": "Diffuse resin ducts"
+    },
+    "object-177": {
+      "type": "text",
+      "text": "Empty concentric\n\nresin ducts"
+    },
+    "object-178": {
+      "type": "image",
+      "src": "/images/ilo1/phloem.jpg"
+    },
+    "object-179": {
+      "type": "text",
+      "text": "Included phloem"
+    },
+    "object-180": {
+      "type": "lens",
+      "src": "/images/ilo1/arrow.png",
+      "target": "object-179",
+      "answer": "Included phloem"
+    },
+    "object-181": {
+      "type": "choice3",
+      "question": "Choices:",
+      "answer": "c",
+      "options": {
+        "a": "it helps in assisting plant taxonomists",
+        "b": "it helps in research studies in wood science and technology",
+        "c": "it aids in checking frauds in buying lumbers"
+      }
+    },
+    "object-182": {
+      "type": "choice3",
+      "question": "Do you think odor is relevant in wood utilization? Yes or No?",
+      "answer": "a",
+      "options": {
+        "a": "YES",
+        "b": "NO"
+      }
+    },
+    "object-183": {
+      "type": "choice3",
+      "question": "Which is the best answer?",
+      "answer": "d",
+      "options": {
+        "a": "water in wood affects its weight",
+        "b": "chemical components in wood like extractives affect its weight",
+        "c": "types of cells in wood affect its weight",
+        "d": "All of the above"
+      }
+    },
+    "object-184": {
+      "type": "enumerate",
+      "answers": {
+        "a": "Dichotomous keys",
+        "b": "Card sorting keys"
+      },
+      "options": {
+        "a": "Dichotomous keys",
+        "b": "Card sorting keys",
+        "c": "Instruction keys",
+        "d": "Identification keys",
+        "e": "Wood species keys"
+      }
+    },
+    "object-200": {
+      "type": "dialogue",
+      "character": "Objectives",
+      "text": " ",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-221": {
+      "type": "menu",
+      "event": "02"
+    },
+    "object-222": {
+      "type": "image",
+      "src": "/images/ilo1/classroom2.png"
+    },
+    "object-223": {
+      "type": "image",
+      "src": "/images/ilo1/sorting_key.jpg"
+    },
+    "object-224": {
+      "type": "text",
+      "text": "COLOR"
+    },
+    "object-225": {
+      "type": "text",
+      "text": "LUSTER"
+    },
+    "object-226": {
+      "type": "text",
+      "text": "ODOR AND TASTE"
+    },
+    "object-227": {
+      "type": "text",
+      "text": "GRAIN"
+    },
+    "object-228": {
+      "type": "text",
+      "text": "TEXTURE"
+    },
+    "object-229": {
+      "type": "text",
+      "text": "HARDNESS"
+    },
+    "object-230": {
+      "type": "text",
+      "text": "WEIGHT"
+    }
+  },
+  "eventStart": "event-01"
+}
