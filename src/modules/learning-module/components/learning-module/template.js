@@ -261,7 +261,7 @@ const template = (html, self) => function () {
 
           </div>
         ` : ''}
-
+      <!-- TODO: ADD CHECKBOX FUNCTIONALITY, NO FUNCTION IN INDEX YET -->
         ${item.type === 'enumerate' ? html`
           <div class="ilo1-container">
             <h4>${item.question}</h4>
