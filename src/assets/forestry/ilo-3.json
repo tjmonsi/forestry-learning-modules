@@ -1888,27 +1888,6 @@
               ]
             },
             {
-              "objectId": "object-282",
-              "id": "object-08",
-              "meta": {
-                "cover": false,
-                "classList": "cross-inspect"
-              },
-              "style": [
-                "opacity: 0",
-                "z-index: 4"
-              ]
-            },
-            {
-              "objectId": "object-243",
-              "id": "object-10",
-              "style": [
-                "z-index: 7",
-                "left: 39.25%",
-                "top: 63.5%"
-              ]
-            },
-            {
               "objectId": "object-60",
               "id": "object-09",
               "type": "dialogue"
@@ -4196,28 +4175,28 @@
     "object-10": {
       "type": "dialogue",
       "character": "Vic",
-      "text": " I will assign you at the checkpoint today where you need to verify the identity of the logs harvested by different logging companies and collect the corresponding forest charges. ",
+      "text": " I will assign you at the checkpoint today. You need to verify the identity of the logs harvested and transported by different logging companies and collect the corresponding forest charges.",
       "next": "trigger-05",
       "prev": "trigger-06"
     },
     "object-11": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "We need to look at its gross features, specifically its physical and structural features.",
+      "text": "We will look at the gross features of wood, specifically its physical and structural features.",
       "next": "trigger-07",
       "prev": "trigger-08"
     },
     "object-12": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "But before deployment, let us go to our xylarium to review these features.",
+      "text": "But before deployment, let us go to our xylarium to review these physical and structural features of some Philippine wood species.",
       "next": "trigger-09",
       "prev": "trigger-10"
     },
     "object-13": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "Well noted, Sir. Reviewing these features will be very helpful to me. Let me just get my things and I will follow you in the xylarium.",
+      "text": "Well noted, Sir. Reviewing these features will be very helpful to me in the smooth performance of my task. Let me just get my things and I will follow you in the xylarium.",
       "next": "trigger-11",
       "prev": "trigger-12"
     },
@@ -4239,28 +4218,28 @@
     "object-17": {
       "type": "dialogue",
       "character": "Vic",
-      "text": " If you can recall, physical features are those features that can be perceived by the senses and can be observed even without the use of a hand lens, while structural features refer to the types and patterns of cells that make up the wood.",
+      "text": " If you will recall, physical features are those features that can be perceived by the senses and can be observed even without the use of a hand lens, while structural features refer to the cellular make up of the wood.",
       "next": "trigger-03",
       "prev": "trigger-04"
     },
     "object-18": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "We will focus more on the structural features since these are more reliable bases of identification.",
+      "text": "We will focus more on the structural features since these are more reliable bases for identification.",
       "next": "trigger-05",
       "prev": "trigger-06"
     },
     "object-19": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "We also need to take note of the distinct features of each species to help facilitate in identification.",
+      "text": "We also need to take note of the distinct features of each species to help facilitate species identification.",
       "next": "trigger-07",
       "prev": "trigger-08"
     },
     "object-20": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "Let us examine selected species under the family Fabaceae. We will start with AYANGILE, Acacia confusa",
+      "text": "Let us examine selected species under the family Fabaceae. We will start with AYANGILE, *Acacia confusa*",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4289,7 +4268,7 @@
     "object-25": {
       "type": "dialogue",
       "character": "Vic",
-      "text": "Batete's distinct features are:\n\nIts reddish-brown color, moderately numerous pores that are moderately large, parenchyma types are boundary, aliform, aliform confluent, and vasicentric. It has yellow and white deposits, and diffuse oil ducts.",
+      "text": "Batete's distinct features are:\n\nIts reddish-brown color, moderately numerous pores that are moderately large and  parenchyma types are boundary, aliform, aliform confluent, and vasicentric. It has yellow and white deposits, and diffuse oil ducts.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4357,7 +4336,7 @@
     "object-36": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "Yes Sir, I will head now to the checkpoint.",
+      "text": "Yes Sir, Thank you very much. I will head now to the checkpoint.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4411,7 +4390,7 @@
     "object-45": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Siar's distinct features are:\n\nIts whitish brown to light brown color, Moderately few small pores, boundary parenchyma and presence of ripple marks.",
+      "text": "Siar's distinct features are:\n\nIts whitish brown to light brown color, moderately few small pores, boundary parenchyma and presence of ripple marks.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4440,7 +4419,7 @@
     "object-50": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "Sue heard the sound of a truck. She looked on the road and saw the truck approaching the checkpoint.",
+      "text": "Sue heard the sound of an approaching truck loaded with logs.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4462,7 +4441,7 @@
     "object-54": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "Good day, Sir. It seems that you travelled a long distance. I hope that you had a safe travel. May I see your transportation permit.",
+      "text": "Good day, Sir. It seems that you travelled a long distance. I hope that you had a safe travel. As a matter of protocol, may I see your transportation permit.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -4473,7 +4452,7 @@
     "object-56": {
       "type": "dialogue",
       "character": "Manong Nilo",
-      "text": "Well, it's been indeed a long travel. Here is our transportation permit.",
+      "text": "Ma'am, it's been indeed a long travel. Here is our transportation permit.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4638,7 +4617,7 @@
     "object-83": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "This is log one.",
+      "text": "This is log number one.",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
@@ -4664,7 +4643,7 @@
     "object-87": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "This is log two.",
+      "text": "This is log number two.",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
@@ -4690,7 +4669,7 @@
     "object-91": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "This is log three.",
+      "text": "This is log number three.",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
@@ -4716,7 +4695,7 @@
     "object-95": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "This is log four.",
+      "text": "This is log number four.",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true

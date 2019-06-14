@@ -32,6 +32,10 @@
         {
           "source": "/ilo2",
           "destination": "/index.html"
+        },
+        {
+          "source": "/ilo1",
+          "destination": "/index.html"
         }
       ]
     }

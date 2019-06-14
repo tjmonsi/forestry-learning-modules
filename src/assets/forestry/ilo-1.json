@@ -205,7 +205,7 @@
                 "font-size: 2.5rem",
                 "color: white",
                 "font-weight: bold",
-                "top: 5%",
+                "top: 0",
                 "left: 7.5%",
                 "display: flex",
                 "align-items: center",
@@ -383,7 +383,7 @@
               "id": "object-01",
               "meta": {
                 "fullscreen": true,
-                "cover": true
+                "cover": false
               },
               "style": [
                 "z-index: 0"
@@ -3636,7 +3636,7 @@
     },
     "object-14": {
       "type": "text",
-      "text": "Objectives:\n\nAt the end of this learning object, the viewer should be able to:\n\n1) explain the importance of wood identification\n\n2) describe the methods that can be used in wood identification\n\n3) know the principles involved in wood identification"
+      "text": "Objectives:\n\nAt the end of this learning object, the viewer should be able to:\n\n1) recognize the importance of wood identification\n\n2) describe the methods that can be used in wood identification\n\n3) understand the principles involved in wood identification"
     },
     "object-15": {
       "type": "text",
@@ -3689,7 +3689,7 @@
     "object-24": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "Great, Sue! Wood identification serves as a basis for proper utilization and conversion. We should know the identity of the wood so we will have an idea of its properties that are suitable for a particular use.\n\nCan you tell us another one?",
+      "text": "Great, Sue! Wood identification serves as a basis for proper utilization and conversion. We should know the identity of the wood so we will have an idea of its properties that are suitable for a particular use. Can you tell us another one?",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
@@ -3764,28 +3764,28 @@
     "object-36": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "Now that you know the importance of wood identification, let us look into the methods of identifying these wood species.\n\n1) The first thing that we can do is to consult people with expertise in this field.",
+      "text": "Now that you know the importance of wood identification, let us look into the methods of identifying these wood species.\n\nThe first thing that we can do is to consult people with expertise in this field.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-37": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "2) We can also compare the unknown sample with what is available in some wood identification handbooks.",
+      "text": "We can also compare the unknown sample with what is available in some wood identification handbooks.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-38": {
       "type": "text",
-      "text": "3) It aids in checking frauds in buying lumbers"
+      "text": "It aids in checking frauds in buying lumbers"
     },
     "object-39": {
       "type": "text",
-      "text": "4) It helps in assisting plant taxonomists"
+      "text": "It helps in assisting plant taxonomists"
     },
     "object-40": {
       "type": "text",
-      "text": "5) It aids in research in wood science and technology"
+      "text": "It aids in research in wood science and technology"
     },
     "object-41": {
       "type": "text",
@@ -3793,41 +3793,41 @@
     },
     "object-42": {
       "type": "text",
-      "text": "2) We can also compare the unknown sample with what is available in some wood identification references."
+      "text": "We can also compare the unknown sample with what is available in some wood identification references."
     },
     "object-43": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "3) Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium.",
+      "text": "Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-44": {
       "type": "text",
-      "text": "3) Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium."
+      "text": "Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium."
     },
     "object-45": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "4) Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy.",
+      "text": "Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-46": {
       "type": "text",
-      "text": "4) Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy."
+      "text": "Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy."
     },
     "object-47": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "5) Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the list the two types of keys that are useful in wood identification?",
+      "text": "Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the list the two types of keys that are useful in wood identification?",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
     },
     "object-48": {
       "type": "text",
-      "text": "5) Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the laret the two types of keys that are useful in wood identification?"
+      "text": "Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the laret the two types of keys that are useful in wood identification?"
     },
     "object-49": {
       "type": "dialogue",
@@ -3886,7 +3886,7 @@
     "object-59": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "Let’s take a look first on the physical features of the wood. These features are observed without an aid of any magnification and are said to be subjective features (in the sense that different individuals may have different interpretation of these features).",
+      "text": "Let’s take a look first on the physical features of the wood. These features are observed without an aid of any magnification and are said to be subjective features, in the sense that different individuals may have different interpretations of these features.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -3922,7 +3922,7 @@
     "object-64": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "You are Correct! Both odor and taste affect the utilization of wood. Due to its distinct odor, some are utilized as ointments, medicines, and cigar boxes.",
+      "text": "You are Correct! Odor affects the utilization of wood. Due to its distinct odor, some are utilized as ointments, medicines, and cigar boxes.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -3979,7 +3979,7 @@
     "object-72": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "PORE ARRANGEMENTS\n\nSolitary, Pore multiple, Pore cluster, Pore chain, Echelon, Flame-like",
+      "text": "PORE ARRANGEMENTS\n\nSolitary, Pore multiple, Pore cluster, Pore chain, Echelon, Wavy bands",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4000,7 +4000,7 @@
     "object-75": {
       "type": "dialogue",
       "character": "Teacher",
-      "text": "TOPOGRAPHY\n\nDiffuse-porous, Semi-ring porous, Ring-porous",
+      "text": "TOPOGRAPHY\n\nSemi-ring porous, Ring-porous, Diffuse-porous",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -4100,10 +4100,11 @@
       "references": {
         "1": "Content: Prof. Rosalie C. Mendoza",
         "2": "Language Editor: Prof. Vivian C. Daracan",
-        "3": "Illustration: Prof. Vanessa Palma-Torres",
-        "4": "Story Concept: Prof. TJ Monserrat and Prof. Rosalie C. Mendoza",
-        "5": "Images: For. Arlene DJ. Romano",
-        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia"
+        "3": "Illustration: Prof. Vanessa M. Palma-Torres",
+        "4": "Story Concept: Prof. Toni-Jan Keith P. Monserrat and Prof. Rosalie C. Mendoza",
+        "5": "Images: For. Arlene D. Romano and Prof. Alfie M. Torres",
+        "6": "Animation and Graphic Design: Mark Jay A. Nicolas and Rafiel Timothy C. Valencia",
+        "7": "Adviser: Prof. Arian J. Jacildo"
       }
     },
     "object-87": {
@@ -4356,7 +4357,7 @@
     },
     "object-150": {
       "type": "text",
-      "text": "Flame-like"
+      "text": "Wavy bands"
     },
     "object-151": {
       "type": "image",

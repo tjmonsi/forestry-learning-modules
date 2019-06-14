@@ -28,6 +28,7 @@ const theme = {
 const fragments = {
   'page-home': 'src/pages/page-home/index.js',
   'page-ilo2': 'src/pages/page-ilo2/index.js',
+  'page-ilo1': 'src/pages/page-ilo1/index.js',
   'page-not-found': 'src/pages/page-not-found/index.js'
 };
 
@@ -43,6 +44,10 @@ const routes = [
   {
     route: '/ilo2',
     page: 'page-ilo2'
+  },
+  {
+    route: '/ilo1',
+    page: 'page-ilo1'
   },
   {
     route: 'no-page',

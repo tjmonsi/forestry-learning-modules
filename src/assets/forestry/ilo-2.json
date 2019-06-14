@@ -7366,21 +7366,21 @@
     "object-07": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. describe the different structural features that are present in wood;",
+      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. identify the structural features that are present in wood;",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-08": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. describe the different structural features that are present in wood;\n\n\t\tb. familiarize with the structural features present in the wood samples, and;",
+      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. identify the structural features that are present in wood;\n\n\t\tb. describe the structural features present in the wood samples, and;",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-09": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. describe the different structural features that are present in wood;\n\n\t\tb. familiarize with the structural features present in the wood samples, and;\n\n\t\tc. identify all the structural features present in a given wood sample.",
+      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. identify the structural features that are present in wood;\n\n\t\tb. describe the structural features present in the wood samples, and;\n\n\t\tc. differentiate the structural features present in a given wood sample.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -7390,15 +7390,15 @@
     },
     "object-11":{
       "type": "text",
-      "text": "At the end of this learning object, the viewer should be able to:\n\na. describe the different structural features that are present in wood;"
+      "text": "At the end of this learning object, the viewer should be able to:\n\na. identify the structural features that are present in wood;"
     },
     "object-12": {
       "type": "text",
-      "text": "At the end of this learning object, the viewer should be able to:\n\na. describe the different structural features that are present in wood;\n\nb. familiarize with the structural features present in the wood samples, and;"
+      "text": "At the end of this learning object, the viewer should be able to:\n\na. identify the structural features that are present in wood;\n\nb. describe the structural features present in the wood samples, and;"
     },
     "object-13": {
       "type": "text",
-      "text": "At the end of this learning object, the viewer should be able to:\n\na. describe the different structural features that are present in wood;\n\nb. familiarize with the structural features present in the wood samples, and;\n\nc. identify all the structural features present in a given wood sample."
+      "text": "At the end of this learning object, the viewer should be able to:\n\na. identify the structural features that are present in wood;\n\nb. describe the structural features present in the wood samples, and;\n\nc. differentiate the structural features present in a given wood sample."
     },
     "object-14": {
       "type": "image",
@@ -7722,161 +7722,161 @@
         "1": {
           "src": "/images/ilo2/Narig_01.jpg",
           "name": "Minute pore size",
-          "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
+          "desc": "Tamayuan (*Strombosia philippinensis* (Baill.) Rolfe)",
           "next": "2",
           "prev": "23"
         },
         "2": {
           "src": "/images/ilo2/Narig_02.jpg",
           "name": "Minute pore size",
-          "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
+          "desc": "Tamayuan (*Strombosia philippinensis* (Baill.) Rolfe)",
           "next": "3",
           "prev": "1"
         },
         "3": {
           "src": "/images/ilo2/Tamayuan_01.jpg",
           "name": "Minute pore size",
-          "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
+          "desc": "Tamayuan (*Strombosia philippinensis* (Baill.) Rolfe)",
           "next": "4",
           "prev": "2"
         },
         "4": {
           "src": "/images/ilo2/Tamayuan_02.jpg",
           "name": "Minute pore size",
-          "desc": "Tamayuan (Strombosia philippinensis (Baill.) Rolfe)",
+          "desc": "Tamayuan (*Strombosia philippinensis* (Baill.) Rolfe)",
           "next": "5",
           "prev": "3"
         },
         "5": {
           "src": "/images/ilo2/Mangium_01.jpg",
           "name": "Small pore size",
-          "desc": "Mangium (Acacia mangium Willd.)",
+          "desc": "Mangium (*Acacia mangium* Willd.)",
           "next": "6",
           "prev": "4"
         },
         "6": {
           "src": "/images/ilo2/Mangium_02.jpg",
           "name": "Small pore size",
-          "desc": "Mangium (Acacia mangium Willd.)",
+          "desc": "Mangium (*Acacia mangium* Willd.)",
           "next": "7",
           "prev": "5"
         },
         "7": {
           "src": "/images/ilo2/01_Banuyo.jpg",
           "name": "Moderately small pore size",
-          "desc": "Banuyo (Wallaceodendron celebicum Koord.)",
+          "desc": "Banuyo (*Wallaceodendron celebicum* Koord.)",
           "next": "8",
           "prev": "6"
         },
         "8": {
           "src": "/images/ilo2/01_Tanguile.jpg",
           "name": "Moderately large pore size",
-          "desc": "Tanguile (Shorea polysperma (Blanco) Merr.)",
+          "desc": "Tanguile (*Shorea polysperma* (Blanco) Merr.)",
           "next": "9",
           "prev": "7"
         },
         "9": {
           "src": "/images/ilo2/02_Tanguile.jpg",
           "name": "Moderately large pore size",
-          "desc": "Tanguile (Shorea polysperma (Blanco) Merr.)",
+          "desc": "Tanguile (*Shorea polysperma* (Blanco) Merr.)",
           "next": "10",
           "prev": "8"
         },
         "10": {
           "src": "/images/ilo2/01_Red_Lauan.jpg",
           "name": "Large pore size",
-          "desc": "Red Lauan (Shorea negrosensis Foxw.)",
+          "desc": "Red Lauan (*Shorea negrosensis* Foxw.)",
           "next": "11",
           "prev": "9"
         },
         "11": {
           "src": "/images/ilo2/02_Red_Lauan.jpg",
           "name": "Large pore size",
-          "desc": "Red Lauan (Shorea negrosensis Foxw.)",
+          "desc": "Red Lauan (*Shorea negrosensis* Foxw.)",
           "next": "12",
           "prev": "10"
         },
         "12": {
           "src": "/images/ilo2/01_Almon.jpg",
           "name": "Oval Shape",
-          "desc": "Almon (Shorea almon Foxw.)",
+          "desc": "Almon (*Shorea almon* Foxw.)",
           "next": "13",
           "prev": "11"
         },
         "13": {
           "src": "/images/ilo2/02_Almon.jpg",
           "name": "Oval Shape",
-          "desc": "Almon (Shorea almon Foxw.)",
+          "desc": "Almon (*Shorea almon* Foxw.)",
           "next": "14",
           "prev": "12"
         },
         "14": {
           "src": "/images/ilo2/02_White_Lauan.jpg",
           "name": "Round shape pores",
-          "desc": "White Lauan (Shorea contorta Vidal)",
+          "desc": "White Lauan (*Shorea contorta* Vidal)",
           "next": "15",
           "prev": "13"
         },
         "15": {
           "src": "/images/ilo2/01_White_Lauan.jpg",
           "name": "Round shape pores",
-          "desc": "White Lauan (Shorea contorta Vidal)",
+          "desc": "White Lauan (*Shorea contorta* Vidal)",
           "next": "16",
           "prev": "14"
         },
         "16": {
           "src": "/images/ilo2/Taluto_01.jpg",
           "name": "Few",
-          "desc": "Taluto (Pterocymbium tinctorium (Blanco) Merr.)",
+          "desc": "Taluto (*Pterocymbium tinctorium* (Blanco) Merr.)",
           "next": "17",
           "prev": "15"
         },
         "17": {
           "src": "/images/ilo2/Taluto_02.jpg",
           "name": "Few",
-          "desc": "Taluto (Pterocymbium tinctorium (Blanco) Merr.)",
+          "desc": "Taluto (*Pterocymbium tinctorium* (Blanco) Merr.)",
           "next": "18",
           "prev": "16"
         },
         "18": {
           "src": "/images/ilo2/Rain_Tree_01.jpg",
           "name": "Moderately Few",
-          "desc": "Raintree (Samanea saman (Jacq.) Merr.)",
+          "desc": "Raintree (*Samanea saman* (Jacq.) Merr.)",
           "next": "19",
           "prev": "17"
         },
         "19": {
           "src": "/images/ilo2/Rain_Tree_02.jpg",
           "name": "Moderately Few",
-          "desc": "Raintree (Samanea saman (Jacq.) Merr.)",
+          "desc": "Raintree (*Samanea saman* (Jacq.) Merr.)",
           "next": "20",
           "prev": "18"
         },
         "20": {
           "src": "/images/ilo2/Mahogany_01.jpg",
           "name": "Moderately Numerous",
-          "desc": "Mahogany (Swietenia macrophylla King)",
+          "desc": "Mahogany (*Swietenia macrophylla* King)",
           "next": "21",
           "prev": "19"
         },
         "21": {
           "src": "/images/ilo2/Mahogany_02.jpg",
           "name": "Moderately Numerous",
-          "desc": "Mahogany (Swietenia macrophylla King)",
+          "desc": "Mahogany (*Swietenia macrophylla* King)",
           "next": "22",
           "prev": "20"
         },
         "22": {
           "src": "/images/ilo2/Saplungan_01.jpg",
           "name": "Numerous",
-          "desc": "Saplungan (Hopea plagata (Blanco) Vidal)",
+          "desc": "Saplungan (*Hopea plagata* (Blanco) Vidal)",
           "next": "23",
           "prev": "21"
         },
         "23": {
           "src": "/images/ilo2/Saplungan_02.jpg",
           "name": "Numerous",
-          "desc": "Saplungan (Hopea plagata (Blanco) Vidal)",
+          "desc": "Saplungan (*Hopea plagata* (Blanco) Vidal)",
           "next": "1",
           "prev": "22"
         }
@@ -9424,10 +9424,11 @@
       "references": {
         "1": "Content: Prof. Alfie M. Torres and Prof. Rosalie C. Mendoza",
         "2": "Language Editor: Prof. Vivian C. Daracan",
-        "3": "Illustration: Prof. Vanessa Palma-Torres",
-        "4": "Story Concept: Prof. TJ Monserrat and Prof. Alfie M. Torres",
-        "5": "Images: For. Arlene DJ. Romano",
-        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia"
+        "3": "Illustration: Prof. Vanessa M. Palma-Torres",
+        "4": "Story Concept: Prof. Toni-Jan Keith P. Monserrat and Prof. Alfie M. Torres",
+        "5": "Images: For. Arlene D. Romano",
+        "6": "Animation and Graphic Design: Mark Jay A. Nicolas and Rafiel Timothy C. Valencia",
+        "7": "Adviser: Prof. Arian J. Jacildo"
         
       }
     },
