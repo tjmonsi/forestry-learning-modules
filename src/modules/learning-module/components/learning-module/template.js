@@ -129,7 +129,12 @@ const template = (html, self) => function () {
                   <tr>
                     <td height="20.5">${input.left}</td>
                     ${input.keyword === true ? html`
-                      <td><a @click="${blink.bind(this)}" style="color:${input.color}">${input.right}</a></td>
+                    <td>
+                      ${Object.entries(input.right).map(([ind, itm]) => html`
+                        ${input.color[ind] !== 'white' ? html`<a @click="${blink.bind(this)}" style="color:${input.color[ind]}">${input.right[ind]}</a>` : html`<span style="color:white"> ${input.right[ind]}</span>`}
+                        
+                      `)}
+                    </td>
                     ` : html`
                       <td>${input.right}</td>
                     `}

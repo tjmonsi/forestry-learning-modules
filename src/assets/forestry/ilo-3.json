@@ -351,8 +351,9 @@
               "relative": "object-14",
               "style": [
                 "z-index: 3",
-                "top: 220px",
-                "left: 65%"
+                "top: 175px",
+                "left: 60%",
+                "font-size: 3rem"
               ]
             },
             {
@@ -490,6 +491,18 @@
               ]
             },
             {
+              "objectId": "object-291",
+              "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
               "objectId": "object-20",
               "id": "object-09",
               "type": "dialogue"
@@ -592,12 +605,27 @@
               ]
             },
             {
-              "objectId": "object-225",
-              "id": "object-09",
+              "objectId": "object-293",
+              "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
               "style": [
-                "z-index: 7",
-                "left: 51.25%",
-                "top: 45%"
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-292",
+              "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
               ]
             },
             {
@@ -705,6 +733,18 @@
             {
               "objectId": "object-267",
               "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-294",
+              "id": "object-08",
               "meta": {
                 "cover": false,
                 "classList": "cross-solo"
@@ -948,6 +988,18 @@
               ]
             },
             {
+              "objectId": "object-295",
+              "id": "object-09",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
               "objectId": "object-221",
               "id": "object-15",
               "style": [
@@ -1138,8 +1190,9 @@
               "relative": "object-14",
               "style": [
                 "z-index: 3",
-                "top: 220px",
-                "left: 65%"
+                "top: 215px",
+                "left: 60%",
+                "font-size: 3rem"
               ]
             },
             {
@@ -1252,8 +1305,20 @@
               ]
             },
             {
-              "objectId": "object-41",
+              "objectId": "object-296",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-41",
+              "id": "object-09",
               "type": "dialogue"
             },
             {
@@ -1360,6 +1425,18 @@
             {
               "objectId": "object-277",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-297",
+              "id": "object-09",
               "meta": {
                 "cover": false,
                 "classList": "cross-solo"
@@ -1478,8 +1555,20 @@
               ]
             },
             {
-              "objectId": "object-47",
+              "objectId": "object-298",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-solo"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-47",
+              "id": "object-09",
               "type": "dialogue"
             },
             {
@@ -1888,8 +1977,32 @@
               ]
             },
             {
-              "objectId": "object-60",
+              "objectId": "object-299",
+              "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-300",
               "id": "object-09",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-60",
+              "id": "object-10",
               "type": "dialogue"
             },
             {
@@ -2001,8 +2114,20 @@
               ]
             },
             {
-              "objectId": "object-63",
+              "objectId": "object-301",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-63",
+              "id": "object-09",
               "type": "dialogue"
             },
             {
@@ -2131,6 +2256,42 @@
               ]
             },
             {
+              "objectId": "object-302",
+              "id": "object-10",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-303",
+              "id": "object-11",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-304",
+              "id": "object-12",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
               "objectId": "object-221",
               "id": "object-15",
               "style": [
@@ -2239,8 +2400,20 @@
               ]
             },
             {
-              "objectId": "object-69",
+              "objectId": "object-305",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-69",
+              "id": "object-09",
               "type": "dialogue"
             },
             {
@@ -2347,6 +2520,42 @@
             {
               "objectId": "object-290",
               "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-306",
+              "id": "object-09",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-307",
+              "id": "object-10",
+              "meta": {
+                "cover": false,
+                "classList": "cross-inspect"
+              },
+              "style": [
+                "opacity: 0",
+                "z-index: 4"
+              ]
+            },
+            {
+              "objectId": "object-308",
+              "id": "object-11",
               "meta": {
                 "cover": false,
                 "classList": "cross-inspect"
@@ -5027,9 +5236,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,","Radial multiples of 2-3"],
             "keyword": true,
-            "color": "red"
+            "color": ["red", "green"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5039,15 +5248,15 @@
           },
           "deposits": {
             "left": "Deposits",
-            "right": "White deposits",
+            "right": ["White deposits"],
             "keyword": true,
-            "color": "blue"
+            "color": ["blue"]
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Vasicentric",
+            "right": ["Apotracheal Diffuse,","Paratracheal Vasicentric"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["white","yellow"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5141,9 +5350,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary\nRadial multiples of 2-3",
-            "keyword": false,
-            "color": "black"
+            "right": ["Solitary,", "Radial multiples of 2-3"],
+            "keyword": true,
+            "color": ["green", "blue"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5153,15 +5362,15 @@
           },
           "deposits": {
             "left": "Deposits",
-            "right": "White",
+            "right": ["White,", "Yellow, Orange"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["yellow", "white"]
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Vasicentric",
+            "right": ["Boundary, Aliform, Aliform Confluent,","Vasicentric"],
             "keyword": true,
-            "color": "red"
+            "color": ["white", "red"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5255,9 +5464,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Radial multiples of 2-3",
+            "right": ["Solitary,","Radial multiples of 2-3"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["green","yellow"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5267,15 +5476,15 @@
           },
           "deposits": {
             "left": "Deposits",
-            "right": "Red deposits",
+            "right": ["Red deposits"],
             "keyword": true,
-            "color": "red"
+            "color": ["red"]
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Banded Confluent",
+            "right": ["Aliform, Aliform Confluent,","Banded Confluent"],
             "keyword": true,
-            "color": "purple"
+            "color": ["white","purple"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5369,15 +5578,15 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["yellow"]
           },
           "tyloses": {
             "left": "Tyloses",
-            "right": "Present, Profuse",
+            "right": ["Present, Profuse"],
             "keyword": true,
-            "color": "red"
+            "color": ["red"]
           },
           "deposits": {
             "left": "Deposits",
@@ -5387,9 +5596,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Banded Confluent",
+            "right": ["Aliform, Aliform Confluent,","Banded Confluent"],
             "keyword": true,
-            "color": "purple"
+            "color": ["white","purple"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5483,9 +5692,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,", "Radial multiples of 2-3"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["yellow", "red"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5495,15 +5704,15 @@
           },
           "deposits": {
             "left": "Deposits",
-            "right": "White",
+            "right": ["White"],
             "keyword": true,
-            "color": "green"
+            "color": ["green"]
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Aliform Confluent",
+            "right": ["Aliform Confluent"],
             "keyword": true,
-            "color": "purple"
+            "color": ["purple"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5597,9 +5806,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,", "Radial multiples of 2-4"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["green", "red"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5615,9 +5824,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Long Aliform Confluent",
+            "right": ["Aliform,","Long Aliform Confluent,", "Boundary"],
             "keyword": true,
-            "color": "purple"
+            "color": ["white","purple","white"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5711,9 +5920,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Radial multiples of 2-3",
+            "right": ["Solitary,","Radial multiples of 2-3"],
             "keyword": true,
-            "color": "green"
+            "color": ["red","green"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5729,9 +5938,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Boundary",
+            "right": ["Aliform, Aliform Confluent, Vasicentric,","Boundary"],
             "keyword": true,
-            "color": "purple"
+            "color": ["white","purple"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5825,9 +6034,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,", "Radial multiples of 2-3"],
             "keyword": true,
-            "color": "yellow"
+            "color": ["yellow","green"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5843,9 +6052,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Vasicentric",
+            "right": ["Aliform,","Vasicentric"],
             "keyword": true,
-            "color": "red"
+            "color": ["white","red"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -5939,9 +6148,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,", "Radial multiples of 2-3"],
             "keyword": true,
-            "color": "green"
+            "color": ["green", "blue"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -5957,9 +6166,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Vasicentric",
+            "right": ["Aliform,","Vasicentric,","Boundary"],
             "keyword": true,
-            "color": "red"
+            "color": ["white","red","purple"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -6053,9 +6262,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,", "Radial multiples of 2-3"],
             "keyword": true,
-            "color": "green"
+            "color": ["green", "blue"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6071,9 +6280,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Vasicentric",
+            "right": ["Diffuse,","Vasicentric"],
             "keyword": true,
-            "color": "red"
+            "color": ["white","red"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -6167,9 +6376,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Solitary",
+            "right": ["Solitary,", "Radial multiples of 2-3"],
             "keyword": true,
-            "color": "green"
+            "color": ["green", "red"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6179,15 +6388,15 @@
           },
           "deposits": {
             "left": "Deposits",
-            "right": "Yellow",
+            "right": ["Yellow,", "Red,", "Black"],
             "keyword": true,
-            "color": "blue"
+            "color": ["blue","orange","white"]
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Aliform Confluent",
+            "right": ["Aliform,","Aliform Confluent","Vasicentric"],
             "keyword": true,
-            "color": "purple"
+            "color": ["cyan","purple","white"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -6281,9 +6490,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Radial multiples of 2-4 or more",
+            "right": ["Solitary,","Radial multiples of 2-4 or more"],
             "keyword": true,
-            "color": "green"
+            "color": ["blue","green"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6299,9 +6508,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Concentric",
+            "right": ["Vasicentric,","Concentric"],
             "keyword": true,
-            "color": "red"
+            "color": ["white","red"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -6395,9 +6604,9 @@
           },
           "types": {
             "left": "Types and Arrangement",
-            "right": "Echelon",
+            "right": ["Solitary,","Radial multiples of 2-3,","Echelon"],
             "keyword": true,
-            "color": "red"
+            "color": ["green","blue","red"]
           },
           "tyloses": {
             "left": "Tyloses",
@@ -6413,9 +6622,9 @@
           },
           "parenchyma": {
             "left": "Parenchyma",
-            "right": "Paratracheal Aliform",
+            "right": ["Aliform,","Aliform Confluent,","Vasicentric"],
             "keyword": true,
-            "color": "purple"
+            "color": ["purple","white","cyan"]
           },
           "rays": {
             "left": "Wood Rays",
@@ -7348,9 +7557,9 @@
     },
     "object-274": {
       "type": "image",
-      "name": "narra-cross_yellow",
-      "src": "/images/narra-cross_yellow.jpg",
-      "color": "yellow"
+      "name": "narra-cross_green",
+      "src": "/images/narra-cross_green.jpg",
+      "color": "green"
     },
     "object-275": {
       "type": "image",
@@ -7447,6 +7656,114 @@
       "name": "banuyo-cross_purple",
       "src": "/images/banuyo-cross_purple.jpg",
       "color": "purple"
+    },
+    "object-291": {
+      "type": "image",
+      "name": "ayangile-cross_green",
+      "src": "/images/ayangile-cross_green.jpg",
+      "color": "green"
+    },
+    "object-292": {
+      "type": "image",
+      "name": "batete-cross_blue",
+      "src": "/images/batete-cross_blue.jpg",
+      "color": "blue"
+    },
+    "object-293": {
+      "type": "image",
+      "name": "batete-cross_green",
+      "src": "/images/batete-cross_green.jpg",
+      "color": "green"
+    },
+    "object-294": {
+      "type": "image",
+      "name": "golden-shower-cross_green",
+      "src": "/images/golden-shower-cross_green.jpg",
+      "color": "green"
+    },
+    "object-295": {
+      "type": "image",
+      "name": "logwood-cross_red",
+      "src": "/images/logwood-cross_red.jpg",
+      "color": "red"
+    },
+    "object-296": {
+      "type": "image",
+      "name": "narra-cross_red",
+      "src": "/images/narra-cross_red.jpg",
+      "color": "red"
+    },
+    "object-297": {
+      "type": "image",
+      "name": "siar-cross_red",
+      "src": "/images/siar-cross_red.jpg",
+      "color": "red"
+    },
+    "object-298": {
+      "type": "image",
+      "name": "raintree-cross_green",
+      "src": "/images/raintree-cross_green.jpg",
+      "color": "green"
+    },
+    "object-299": {
+      "type": "image",
+      "name": "supa-cross_blue",
+      "src": "/images/supa-cross_blue.jpg",
+      "color": "blue"
+    },
+    "object-300": {
+      "type": "image",
+      "name": "supa-cross_purple",
+      "src": "/images/supa-cross_purple.jpg",
+      "color": "purple"
+    },
+    "object-301": {
+      "type": "image",
+      "name": "molluccan-sau-2_blue",
+      "src": "/images/molluccan-sau-2_blue.jpg",
+      "color": "blue"
+    },
+    "object-302": {
+      "type": "image",
+      "name": "akle-cross_cyan",
+      "src": "/images/akle-cross_cyan.jpg",
+      "color": "cyan"
+    },
+    "object-303": {
+      "type": "image",
+      "name": "akle-cross_red",
+      "src": "/images/akle-cross_red.jpg",
+      "color": "red"
+    },
+    "object-304": {
+      "type": "image",
+      "name": "akle-cross_orange",
+      "src": "/images/akle-cross_orange.jpg",
+      "color": "orange"
+    },
+    "object-305": {
+      "type": "image",
+      "name": "manggis-cross_blue",
+      "src": "/images/manggis-cross_blue.jpg",
+      "color": "blue"
+    },
+    "object-306": {
+      "type": "image",
+      "name": "banuyo-cross_green",
+      "src": "/images/banuyo-cross_green.jpg",
+      "color": "green"
+    },
+    "object-307": {
+      "type": "image",
+      "name": "banuyo-cross_blue",
+      "src": "/images/banuyo-cross_blue.jpg",
+      "color": "blue"
+    },
+    "object-308": {
+      "type": "image",
+      "name": "banuyo-cross_cyan",
+      "src": "/images/banuyo-cross_cyan.jpg",
+      "color": "cyan"
     }
   },
   "eventStart": "event-01"
