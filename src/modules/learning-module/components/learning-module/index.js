@@ -71,6 +71,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       correctCount: {
         type: Number,
         value: 0
+      },
+      formCorrect: {
+        type: Array,
+        value: []
       }
     };
   }
@@ -226,6 +230,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     this.parenchyma = [];
     this.deposits = [];
     this.correctCount = 0;
+    this.formCorrect = [];
 
     var sb = document.querySelector('.snackbar-lite');
     sb.showText('You correctly identified its Structural Features! You may now continue.', 2500);
@@ -310,8 +315,6 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       console.log(target)
       console.log(target.value, this.types);
 
-      
-
       let ans = 'Selected:\n';
       for (let item of this.types) {
         item = item.charAt(0).toUpperCase() + item.slice(1);
@@ -335,6 +338,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       if (answer === '' && correct) {
         target.disabled = true;
         this.correctCount += 1;
+        this.formCorrect.push(target.id);
       }
     } else if (target.name === 'Parenchyma') {
       if (this.parenchyma.indexOf(target.value) === -1) {
@@ -366,43 +370,45 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       if (answer === '' && correct) {
         target.disabled = true;
         this.correctCount += 1;
+        this.formCorrect.push(target.id);
       }
     } else if (target.name === 'Pore Deposits') {
-        if (this.deposits.indexOf(target.value) === -1) {
-          this.deposits.push(target.value);
-        } else {
-          this.deposits.splice(this.deposits.indexOf(target.value), 1);
-        }
-  
-        let ans = 'Selected:\n';
-        for (let item of this.deposits) {
-          item = item.charAt(0).toUpperCase() + item.slice(1);
-          if (ans === 'Selected:\n') {
-            ans = ans + ' ' + item;
-          } else {
-            ans = ans + ', ' + item;
-          }
-        }
-        sb.showText(ans, 15000);
-  
-        let correct = true;
-        for (let item of this.deposits) {
-          if (answer.includes(item)) {
-            answer = answer.replace(item, '');
-          } else {
-            correct = false;
-          }
-        }
-  
-        if (answer === '' && correct) {
-          target.disabled = true;
-          this.correctCount += 1;
-        }
+      if (this.deposits.indexOf(target.value) === -1) {
+        this.deposits.push(target.value);
+      } else {
+        this.deposits.splice(this.deposits.indexOf(target.value), 1);
+      }
 
+      let ans = 'Selected:\n';
+      for (let item of this.deposits) {
+        item = item.charAt(0).toUpperCase() + item.slice(1);
+        if (ans === 'Selected:\n') {
+          ans = ans + ' ' + item;
+        } else {
+          ans = ans + ', ' + item;
+        }
+      }
+      sb.showText(ans, 15000);
+
+      let correct = true;
+      for (let item of this.deposits) {
+        if (answer.includes(item)) {
+          answer = answer.replace(item, '');
+        } else {
+          correct = false;
+        }
+      }
+
+      if (answer === '' && correct) {
+        target.disabled = true;
+        this.correctCount += 1;
+        this.formCorrect.push(target.id);
+      }
     } else {
       if (target.value === answer) {
         target.disabled = true;
         this.correctCount += 1;
+        this.formCorrect.push(target.id);
         sb.showText('Correct!', 2000);
       } else {
         sb.showText('Wrong option! Try again.', 2000);
@@ -414,6 +420,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       const submit = this.shadowRoot.querySelector('#submit');
       submit.disabled = false;
     }
+
+    this.requestUpdate();
   }
 
   blink (event) {
@@ -516,7 +524,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
     if (target.getAttribute('data-answer') === target.getAttribute('data-choice')) {
       sb.showText('YOUR ANSWER IS CORRECT! GOOD JOB!', 2000);
-      
+
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
     } else {

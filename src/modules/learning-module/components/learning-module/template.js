@@ -61,7 +61,7 @@ const template = (html, self) => function () {
           </div>
         ` : ''}
 
-        ${item.type === 'hide' ? html `
+        ${item.type === 'hide' ? html`
           <div class="absolute hide" style="${styleString}">
             <a id="hide" type="button" class="button">
               Hide
@@ -69,7 +69,7 @@ const template = (html, self) => function () {
           </div>
         ` : ''}
 
-        ${item.type === 'menu' ? html `
+        ${item.type === 'menu' ? html`
           <div class="absolute menu" style="${styleString}">
             <a id="menu" type="button" class="button" href="${window.location.pathname.split('?')[0]}?currentEvent=event-${item.event}">
               Main Menu
@@ -101,8 +101,7 @@ const template = (html, self) => function () {
               ` : ''}
             `}
 
-            ${item.hide ? ''
-            : html`
+            ${item.hide ? '' : html`
               <button type="button" class="button" @click="${_hide.bind(this)}" value="">
                   Hide
               </button>
@@ -132,7 +131,7 @@ const template = (html, self) => function () {
                     <td>
                       ${Object.entries(input.right).map(([ind, itm]) => html`
                         ${input.color[ind] !== 'white' ? html`<a @click="${blink.bind(this)}" style="color:${input.color[ind]}">${input.right[ind]}</a>` : html`<span style="color:white"> ${input.right[ind]}</span>`}
-                        
+
                       `)}
                     </td>
                     ` : html`
@@ -165,6 +164,10 @@ const template = (html, self) => function () {
                   <input-container>
                     <label slot="label">
                       ${input.name}
+
+                      ${this.formCorrect.indexOf(key) >= 0 ? html`
+                        <span style="color:green">Correct</span>
+                      ` : ''}
                     </label>
                     ${input.type === 'select' ? html`
                       <select
@@ -181,6 +184,7 @@ const template = (html, self) => function () {
                             answer=${item.answer[key]}>${label}</option>
                         `)}
                       </select>
+
                     ` : ''}
                   </input-container>
                 `)}
@@ -270,7 +274,7 @@ const template = (html, self) => function () {
         ${item.type === 'enumerate' ? html`
           <div class="ilo1-container">
             <h4>${item.question}</h4>
-            <form class="checkboxes" action="">  
+            <form class="checkboxes" action="">
               ${Object.entries(item.options).map(([key, input]) => html`
                 <input type="checkbox" name="${key}" value="${key}" data-answer=${item.answers.toString()} data-choice=${key}}>${input}</p>
               `)}
@@ -280,7 +284,7 @@ const template = (html, self) => function () {
 
         ${item.type === 'choice3' ? html`
           <div class="ilo1-container">
-            <div class="ilo1-choices">  
+            <div class="ilo1-choices">
               <h4>${item.question}</h4>
               ${Object.entries(item.options).map(([key, input]) => html`
                 <p data-answer=${item.answer} data-choice=${key} @click=${ilo1select.bind(this)}>${key}) ${input}</p>

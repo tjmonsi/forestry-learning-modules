@@ -4826,7 +4826,7 @@
     "object-83": {
       "type": "dialogue",
       "character": "Narrator",
-      "text": "This is log number one.",
+      "text": "This is log number one. (Press submit at the end of the form once answers are correct to continue)",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
