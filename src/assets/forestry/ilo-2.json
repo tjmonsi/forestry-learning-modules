@@ -252,7 +252,7 @@
       "triggers": {
         "trigger-00": {
           "type": "next",
-          "event": "event-05"
+          "event": "event-02"
         },
         "trigger-01": {
           "type": "load",
@@ -274,13 +274,12 @@
               "style": [
                 "z-index: 1",
                 "font-size: 2.5rem",
-                "text-align: center",
                 "color: white",
                 "font-weight: bold",
                 "padding: 24px",
                 "margin: 0",
-                "top: 10%",
-                "left: 10%",
+                "top: 20%",
+                "left: 15%",
                 "background-color: #3f2a14",
                 "border-style: solid",
                 "border-width: 5px",
@@ -7379,8 +7378,8 @@
     },
     "object-09": {
       "type": "dialogue",
-      "character": "Narrator",
-      "text": "At the end of this learning object, the viewer should be able to:\n\n\t\ta. identify the structural features that are present in wood;\n\n\t\tb. describe the structural features present in the wood samples, and;\n\n\t\tc. differentiate the structural features present in a given wood sample.",
+      "character": " ",
+      "text": "",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -7748,14 +7747,14 @@
           "prev": "3"
         },
         "5": {
-          "src": "/images/ilo2/Mangium_01.jpg",
+          "src": "/images/ilo2/Mangium_08.jpg",
           "name": "Small pore size",
           "desc": "Mangium (*Acacia mangium* Willd.)",
           "next": "6",
           "prev": "4"
         },
         "6": {
-          "src": "/images/ilo2/Mangium_02.jpg",
+          "src": "/images/ilo2/Mangium_09.jpg",
           "name": "Small pore size",
           "desc": "Mangium (*Acacia mangium* Willd.)",
           "next": "7",
@@ -7853,14 +7852,14 @@
           "prev": "18"
         },
         "20": {
-          "src": "/images/ilo2/Mahogany_01.jpg",
+          "src": "/images/ilo2/Mahogany_04.jpg",
           "name": "Moderately Numerous",
           "desc": "Mahogany (*Swietenia macrophylla* King)",
           "next": "21",
           "prev": "19"
         },
         "21": {
-          "src": "/images/ilo2/Mahogany_02.jpg",
+          "src": "/images/ilo2/Mahogany_05.jpg",
           "name": "Moderately Numerous",
           "desc": "Mahogany (*Swietenia macrophylla* King)",
           "next": "22",
@@ -8467,7 +8466,7 @@
           "prev": "5"
         },
         "7": {
-          "src": "/images/ilo2/Almon_04.jpg",
+          "src": "/images/ilo2/Almon_03.jpg",
           "name": "Concentric Resin Ducts",
           "desc": "Almon (*Shorea almon* Foxw.)",
           "next": "8",
@@ -8619,7 +8618,7 @@
     },
     "object-77": {
       "type": "choice",
-      "src": "/images/ilo2/03_Almon.jpg",
+      "src": "/images/ilo2/3_Almon oval pores.jpg",
       "title": "Select Pore Shape",
       "answer": "Oval",
       "options": {
@@ -9252,7 +9251,7 @@
     },
     "object-126": {
       "type": "choice",
-      "src": "/images/ilo2/Batete_03.jpg",
+      "src": "/images/ilo2/Batete_02.jpg",
       "title": "Select Duct Type",
       "answer": "Diffuse Oil Ducts",
       "options": {
@@ -9278,7 +9277,7 @@
     },
     "object-128": {
       "type": "choice2",
-      "src": "/images/ilo2/Rain_Tree_03.jpg",
+      "src": "/images/ilo2/Rain_Tree_05.jpg",
       "species": "Rain Tree",
       "question": "2. Which type of paratracheal parenchyma is shown in the picture?",
       "title": "Select Paratracheal Parenchyma",
@@ -9436,7 +9435,7 @@
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "OBJECTIVES",
-      "link": "?currentEvent=event-04"
+      "link": "?currentEvent=event-06"
     },
     "object-140": {
       "type": "block",
