@@ -75,6 +75,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       formCorrect: {
         type: Array,
         value: []
+      },
+      selectCorrect: {
+        type: Boolean,
+        value: false
       }
     };
   }
@@ -166,6 +170,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     this.types = [];
     this.parenchyma = [];
     this.deposits = [];
+    this.selectCorrect = false;
+    this.formCorrect = [];
   }
 
   _click () {
@@ -189,6 +195,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     this.types = [];
     this.parenchyma = [];
     this.deposits = [];
+    this.selectCorrect = false;
+    this.formCorrect = [];
   }
 
   updated () {
@@ -297,6 +305,29 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
     }
     this.requestUpdate();
+  }
+
+  _multipleOption (event) {
+    const { target } = event;
+    const answer = target.getAttribute('answer');
+    const sb = document.querySelector('.snackbar-lite');
+    const form = target.form;
+    const values = [];
+    for (let i = 0; i < form[target.name].length; i++) {
+      if (form[target.name][i].checked) {
+        values.push(form[target.name][i].value);
+      }
+    }
+
+    if (values.join('') === answer) {
+      this.correctCount += 1;
+      this.formCorrect.push(target.name);
+      sb.showText('Correct!', 2000);
+      for (let i = 0; i < form[target.name].length; i++) {
+        form[target.name][i].disabled = true;
+      }
+    }
+    // console.log(answer, values, values.join('') === answer);
   }
 
   onChange (event) {

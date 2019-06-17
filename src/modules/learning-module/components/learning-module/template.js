@@ -168,12 +168,12 @@ const template = (html, self) => function () {
                       ${this.formCorrect.indexOf(key) >= 0 ? html`
                         <span style="color:green">Correct</span>
                       ` : ''}
+
                     </label>
-                    ${input.type === 'select' ? html`
+                    ${input.type === 'select' && !input.multiple ? html`
                       <select
                         slot="input"
                         id="${key}"
-                        .multiple="${input.multiple}"
                         name="${input.name}"
                         answer=${item.answer[key]}
                         @change="${onChange.bind(this)}">
@@ -184,9 +184,18 @@ const template = (html, self) => function () {
                             answer=${item.answer[key]}>${label}</option>
                         `)}
                       </select>
-
                     ` : ''}
+
+
                   </input-container>
+
+                  ${input.type === 'select' && input.multiple ? html`
+                    <div style="padding-bottom: 24px">
+                      ${Object.entries(input.options).map(([value, label]) => html`
+                        <input type="checkbox" value="${value}" id="${value}" name="${key}" answer=${item.answer[key]} @click="${this._multipleOption.bind(this)}"><label for="${value}">${label}</label><br>
+                      `)}
+                    </div>
+                  ` : ''}
                 `)}
               </div>
             `)}
@@ -197,7 +206,7 @@ const template = (html, self) => function () {
         ${item.type === 'discussion' ? html`
           <div class="carousel" id = "container">
             <div class="carousel-inner">
-              ${Object.entries(item.items).map(([key,input]) => html`
+              ${Object.entries(item.items).map(([key, input]) => html`
                 <input class="carousel-open" type="radio" id="carousel-${key}" name="carousel" aria-hidden="true" hidden="" checked="checked">
                 <div class="carousel-item">
                   <img src="${input.src ? baseURL + input.src : ''}">
