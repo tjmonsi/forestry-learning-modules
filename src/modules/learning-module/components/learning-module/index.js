@@ -197,6 +197,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     this.deposits = [];
     this.selectCorrect = false;
     this.formCorrect = [];
+    this.requestUpdate();
   }
 
   updated () {
@@ -309,17 +310,29 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
 
   _multipleOption (event) {
     const { target } = event;
-    const answer = target.getAttribute('answer');
+    let answer = target.getAttribute('answer');
     const sb = document.querySelector('.snackbar-lite');
     const form = target.form;
     const values = [];
+    let correct = true;
     for (let i = 0; i < form[target.name].length; i++) {
       if (form[target.name][i].checked) {
         values.push(form[target.name][i].value);
       }
     }
 
-    if (values.join('') === answer) {
+    for (const i of values) {
+      console.log(i, answer.indexOf(i))
+      if (answer.indexOf(i) >= 0) {
+        answer = answer.replace(i, '').trim();
+      } else {
+        correct = false;
+      }
+    }
+
+    console.log(answer, values, correct)
+
+    if (!answer && correct) {
       this.correctCount += 1;
       this.formCorrect.push(target.name);
       sb.showText('Correct!', 2000);
@@ -446,7 +459,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
     }
 
-    if (this.correctCount === 11) {
+    if (this.correctCount >= 11) {
       this.complete = true;
       const submit = this.shadowRoot.querySelector('#submit');
       submit.disabled = false;
