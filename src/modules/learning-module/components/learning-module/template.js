@@ -148,7 +148,7 @@ const template = (html, self) => function () {
           <div class="absolute" id="references" style="${styleString}">
             <ul>
             ${Object.entries(item.references).map(([key, input]) => html`
-              <li>${input}</li>
+              <li style="font-size: 30px">${input}</li>
             `)}
             </ul>
           </div>
@@ -211,8 +211,8 @@ const template = (html, self) => function () {
                 <div class="carousel-item">
                   <img src="${input.src ? baseURL + input.src : ''}">
                   <div class="carousel-caption">
-                    <h3>${input.name}</h3>
-                    <mark-lite .text="${input.desc}"></mark-lite>
+                    <h2>${input.name}</h2>
+                    <mark-lite .text="${input.desc}" style="font-size: 22px"></mark-lite>
                   </div>
                 </div>
               `)}
