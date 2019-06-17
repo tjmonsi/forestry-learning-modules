@@ -322,15 +322,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
 
     for (const i of values) {
-      console.log(i, answer.indexOf(i))
       if (answer.indexOf(i) >= 0) {
         answer = answer.replace(i, '').trim();
       } else {
         correct = false;
       }
     }
-
-    console.log(answer, values, correct)
 
     if (!answer && correct) {
       this.correctCount += 1;
