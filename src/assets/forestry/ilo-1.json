@@ -452,23 +452,11 @@
               "id": "object-05",
               "meta": {
                 "cover": false,
-                "classList": "character character-right smallest-character"
+                "classList": "character character-left smallest-character"
               },
               "style": [
                 "z-index: 2",
                 "right: 0"
-              ]
-            },
-            {
-              "objectId": "object-16",
-              "id": "object-06",
-              "meta": {
-                "cover": false,
-                "classList": "character character-left smallest-character"
-              },
-              "style": [
-                "z-index: 1",
-                "width: 20%"
               ]
             },
             {
@@ -480,9 +468,57 @@
             }
           ]
         },
-        "trigger-02": {
-          "type": "dialogue",
-          "objectId": "object-24"
+        "trigger-02":{
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-02",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 1",
+                "width: 55%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-24",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 22%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
         },
         "trigger-03": {
           "type": "next",
@@ -521,23 +557,11 @@
               "id": "object-05",
               "meta": {
                 "cover": false,
-                "classList": "character character-right smallest-character"
+                "classList": "character character-left smallest-character"
               },
               "style": [
                 "z-index: 2",
                 "right: 0"
-              ]
-            },
-            {
-              "objectId": "object-16",
-              "id": "object-06",
-              "meta": {
-                "cover": false,
-                "classList": "character character-left smallest-character"
-              },
-              "style": [
-                "z-index: 1",
-                "width: 20%"
               ]
             },
             {
@@ -550,8 +574,44 @@
           ]
         },
         "trigger-02": {
-          "type": "dialogue",
-          "objectId": "object-29"
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-26",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-29",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 22%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
         },
         "trigger-03": {
           "type": "next",
@@ -928,7 +988,7 @@
               },
               "style": [
                 "z-index: 2",
-                "right: 40%",
+                "left: 10%",
                 "top: 15%",
                 "width: 25%"
 
@@ -944,6 +1004,34 @@
               "id": "object-05",
               "style": [
                 "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-234",
+              "id": "object-06",
+              "meta": {
+                "cover": false
+              },
+              "style": [
+                "z-index: 2",
+                "left: 37.5%",
+                "top: 15%",
+                "width: 25%"
+
+              ]
+            },
+            {
+              "objectId": "object-235",
+              "id": "object-07",
+              "meta": {
+                "cover": false
+              },
+              "style": [
+                "z-index: 2",
+                "left: 65%",
+                "top: 15%",
+                "width: 25%"
+
               ]
             }
           ]
@@ -1336,6 +1424,91 @@
               "style": [
                 "z-index: 1000001"
               ]
+            },
+            {
+              "objectId": "object-105",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 1",
+                "top: 47%",
+                "left: 13%",
+                "width: 15%",
+                "height: 22%"
+              ]
+            },
+            {
+              "objectId": "object-106",
+              "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 2",
+                "top: 15%",
+                "left: 48%",
+                "width: 19%"
+              ]
+            },
+            {
+              "objectId": "object-111",
+              "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 3",
+                "top: 15%",
+                "left: 13%",
+                "width: 15%"
+              ]
+            },
+            {
+              "objectId": "object-115",
+              "id": "object-09",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 4",
+                "top: 47%",
+                "left: 70%",
+                "width: 15%"
+              ]
+            },
+            {
+              "objectId": "object-116",
+              "id": "object-10",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 4",
+                "top: 15%",
+                "left: 70%",
+                "width: 15%"
+              ]
+            },
+            {
+              "objectId": "object-109",
+              "id": "object-11",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 5",
+                "top: 15%",
+                "left: 30%",
+                "width: 15%"
+              ]
             }
           ]
         },
@@ -1372,8 +1545,8 @@
               "style": [
                 "z-index: 2",
                 "top: 20%",
-                "left: 20%",
-                "width: 60%"
+                "left: 22%",
+                "width: 55%"
               ]
             },
             {
@@ -1400,7 +1573,7 @@
                 "padding: 12px",
                 "margin: 0",
                 "top: 0",
-                "left: 40%"
+                "left: 42%"
               ]
             }
           ]
@@ -1605,7 +1778,7 @@
               "style": [
                 "z-index: 5",
                 "right: 0",
-                "width: 25%"
+                "width: 23%"
               ]
             },
             {
@@ -1707,7 +1880,7 @@
                 "z-index: 2",
                 "top: 20%",
                 "left: 20%",
-                "width: 25%"
+                "width: 23%"
               ]
             },
             {
@@ -1952,7 +2125,7 @@
                 "padding: 12px",
                 "margin: 0",
                 "top: 0",
-                "left: 40%"
+                "left: 43%"
               ]
             }
           ]
@@ -2037,7 +2210,7 @@
               ]
             },
             {
-              "objectId": "object-70",
+              "objectId": "object-231",
               "id": "object-04",
               "type": "dialogue"
             },
@@ -2051,6 +2224,161 @@
           ]
         },
         "trigger-02": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-233",
+              "id": "object-02",
+              "style": [
+                "z-index: 1",
+                "font-size: 4rem",
+                "text-align: center",
+                "color: white",
+                "font-weight: bold",
+                "padding: 12px",
+                "margin: 0",
+                "top: 0%",
+                "left: 32%"
+              ]
+            },
+            {
+              "objectId": "object-232",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            },
+            {
+              "objectId": "object-139",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 1",
+                "top: 47%",
+                "left: 15%",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-170",
+              "id": "object-07",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 2",
+                "top: 15%",
+                "left: 40%",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-140",
+              "id": "object-08",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 3",
+                "top: 15%",
+                "left: 15%",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-154",
+              "id": "object-09",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 4",
+                "top: 47%",
+                "left: 65%",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-155",
+              "id": "object-10",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 4",
+                "top: 15%",
+                "left: 65%",
+                "width: 20%"
+              ]
+            },
+            {
+              "objectId": "object-164",
+              "id": "object-11",
+              "meta": {
+                "cover": false,
+                "classList": "small-image"
+              },
+              "style": [
+                "z-index: 5",
+                "top: 47%",
+                "left: 40%",
+                "width: 20%"
+              ]
+            }
+          ]
+        },
+        "trigger-03": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-222",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": false
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-70",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-04": {
           "type": "next",
           "event": "event-36"
         }
@@ -2124,7 +2452,7 @@
               "style": [
                 "z-index: 1",
                 "top: 2%",
-                "left: 7.5%",
+                "left: 20%",
                 "width: 27.5%"
               ]
             },
@@ -2134,17 +2462,7 @@
               "style": [
                 "z-index: 2",
                 "top: 2%",
-                "left: 36%",
-                "width: 27.5%"
-              ]
-            },
-            {
-              "objectId": "object-141",
-              "id": "object-04",
-              "style": [
-                "z-index: 3",
-                "top: 2%",
-                "left: 64.5%",
+                "left: 50%",
                 "width: 27.5%"
               ]
             },
@@ -2155,10 +2473,10 @@
                 "z-index: 4",
                 "font-size: 2.5rem",
                 "text-align: center",
-                "color: white",
+                "color: White",
                 "font-weight: bold",
                 "top: 0",
-                "left: 17%"
+                "left: 28%"
               ]
             },
             {
@@ -2168,23 +2486,10 @@
                 "z-index: 5",
                 "font-size: 2.5rem",
                 "text-align: center",
-                "color: white",
+                "color: White",
                 "font-weight: bold",
                 "top: 0",
-                "left: 45%"
-              ]
-            },
-            {
-              "objectId": "object-147",
-              "id": "object-07",
-              "style": [
-                "z-index: 6",
-                "font-size: 2.5rem",
-                "text-align: center",
-                "color: white",
-                "font-weight: bold",
-                "top: 0",
-                "left: 75%"
+                "left: 59%"
               ]
             },
             {
@@ -2193,17 +2498,7 @@
               "style": [
                 "z-index: 7",
                 "top: 42%",
-                "left: 7.5%",
-                "width: 27.5%"
-              ]
-            },
-            {
-              "objectId": "object-143",
-              "id": "object-09",
-              "style": [
-                "z-index: 8",
-                "top: 42%",
-                "left: 36%",
+                "left: 20%",
                 "width: 27.5%"
               ]
             },
@@ -2213,7 +2508,7 @@
               "style": [
                 "z-index: 9",
                 "top: 42%",
-                "left: 64.5%",
+                "left: 50%",
                 "width: 27.5%"
               ]
             },
@@ -2224,23 +2519,10 @@
                 "z-index: 10",
                 "font-size: 2.5rem",
                 "text-align: center",
-                "color: white",
+                "color: White",
                 "font-weight: bold",
                 "top: 42%",
-                "left: 16%"
-              ]
-            },
-            {
-              "objectId": "object-149",
-              "id": "object-12",
-              "style": [
-                "z-index: 11",
-                "font-size: 2.5rem",
-                "text-align: center",
-                "color: white",
-                "font-weight: bold",
-                "top: 42%",
-                "left: 45%"
+                "left: 28%"
               ]
             },
             {
@@ -2250,10 +2532,10 @@
                 "z-index: 10",
                 "font-size: 2.5rem",
                 "text-align: center",
-                "color: white",
+                "color: White",
                 "font-weight: bold",
                 "top: 42%",
-                "left: 75%"
+                "left: 59%"
               ]
             },
             {
@@ -3546,7 +3828,8 @@
               "objectId": "object-85",
               "id": "object-03",
               "style": [
-                "z-index: 2"
+                "z-index: 2",
+                "font-size: 12px"
               ]
             },
             {
@@ -3648,7 +3931,7 @@
     },
     "object-17": {
       "type": "dialogue",
-      "character": "Teacher (At Lab Classroom)",
+      "character": "Maam Lani (At Lab Classroom)",
       "text": "Our topic for today is about wood identification, its importance, methods and the principles involved in identifying woods.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3659,8 +3942,8 @@
     },
     "object-19": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "Wood identification is the establishment of the identity of a wood sample as being similar to or identical with an already known wood species.",
+      "character": " ",
+      "text": "",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -3670,7 +3953,7 @@
     },
     "object-21": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Now, let me call your classmate assigned to report why identifying the species of wood is important.\n\nSue, could you tell us WHY IS WOOD IDENTIFICATION IMPORTANT?",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3688,7 +3971,7 @@
     },
     "object-24": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Great, Sue! Wood identification serves as a basis for proper utilization and conversion. We should know the identity of the wood so we will have an idea of its properties that are suitable for a particular use. Can you tell us another one?",
       "next": "trigger-03",
       "prev": "trigger-01"
@@ -3714,14 +3997,14 @@
     },
     "object-29": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Correct! Officers who are assigned in the collection of forest charges can correctly impose the respective taxes for the harvested logs.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
     "object-30": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "How about if you are canvassing materials for your house construction? Can you select from the following choices the situation when skill in wood identification is beneficial to you?",
       "next": "trigger-02",
       "prev": "trigger-00",
@@ -3729,20 +4012,20 @@
     },
     "object-31": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "You got it right! Another importance of wood identification is in the aspect of buying and selling lumber or wooden furniture. Buying and selling of incorrectly identified lumbers or furniture, be it intentionally or unintentionally meant by the seller or buyer can be prevented.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-32": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Ooopps, you picked the wrong answer. Come on, try again!",
       "next": ""
     },
     "object-33": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Now, back to you, Sue. Look at the slide and tell us when wood identification is beneficial to plant taxonomists.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3756,21 +4039,21 @@
     },
     "object-35": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Correct, Sue! And lastly, it is crucial to know the identity of the unknown species if we are going to study it. Once we know the species, we will know its properties and we will have an idea on which aspect it should be studied further.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-36": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Now that you know the importance of wood identification, let us look into the methods of identifying these wood species.\n\nThe first thing that we can do is to consult people with expertise in this field.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-37": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "We can also compare the unknown sample with what is available in some wood identification handbooks.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3797,7 +4080,7 @@
     },
     "object-43": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Wood library or technically xylarium is also a place to go to identify unknown samples, by comparing it with authentic samples stored in the xylarium.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3808,7 +4091,7 @@
     },
     "object-45": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Wood identification using computer-operated devices or applications are available nowadays such as Xylotron and chemistry-based identification like near-infrared spectroscopy.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3819,7 +4102,7 @@
     },
     "object-47": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Lastly, there are two types of keys that are still relevant in wood identification.\n\nCan you pick from the list the two types of keys that are useful in wood identification?",
       "next": "trigger-02",
       "prev": "trigger-00",
@@ -3831,7 +4114,7 @@
     },
     "object-49": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Dichotomous keys use two contrasting statements, and its numbering is always like this: number of species to be identified less one (n-1 principle).",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3842,7 +4125,7 @@
     },
     "object-51": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Card-sorting keys are boards with punched and solid edges. Written at the center of a card is a wood species name, and listed at the outer part are all the features that can observed in examining a wood. When a certain feature is present in the wood, it has a hole adjacent to it. However, if the feature is not present in the species, there will be no punch near the said feature.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -3853,14 +4136,14 @@
     },
     "object-53": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Now that you know the different methods of wood identification, let us discuss the principles involved in wood identification.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-54": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "In identifying wood, the usual procedure is to approach it first from the gross to anatomical features - that is, from the visible characteristics wherein little or no magnification are needed, to features that can be observed only at high magnifications using microscope.\n\nUsing more characteristics, a more reliable identification can be made. It must be emphasized that a number of features taken together can give a more accurate identification.\n\nLet’s discuss wood’s gross features that are of value in identification.",
       "next": "trigger-03",
       "prev": "trigger-01"
@@ -3871,49 +4154,49 @@
     },
     "object-56": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "The gross features of wood is the sum of all physical and structural features of wood that are of value in wood identification. The physical features of wood are all the features of the wood that can be perceived by our senses. These are color, luster, odor, taste, grain, texture, weight and hardness.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-58": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "The structural features are wood features based on their cellular makeup which are visible to the naked eye or with the aid of a hand lens. This group includes characteristics of the pores, parenchyma, wood rays, ducts and included phloem.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-59": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Let’s take a look first on the physical features of the wood. These features are observed without an aid of any magnification and are said to be subjective features, in the sense that different individuals may have different interpretations of these features.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-60": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Color in wood differs due mainly to extractives. It varies between and within species of wood. Many factors affect this feature, such as age, decay and weathering of wood. Color interpretation may also be subjective due to differences in individual interpretation of shades of color.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-61": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Luster is the ability of wood to reflect light. A wood may be classified as either lustrous or dull. This is also related to the amount of extractives present in the wood.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-62": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Some woods, especially when fresh, possess a distinct odor. Some woods smell like old leather and fresh beans. Some have irritating or agreeable odor. Some woods also have a distinct taste.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-63": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Do you think odor is relevant in wood utilization?\n\nYES OR NO?",
       "next": "trigger-02",
       "prev": "trigger-00",
@@ -3921,42 +4204,42 @@
     },
     "object-64": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "You are Correct! Odor affects the utilization of wood. Due to its distinct odor, some are utilized as ointments, medicines, and cigar boxes.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-65": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Grain is the arrangement of cells in wood. It can be classified as straight or cross (curly, wavy, spiral, diagonal or interlocked). Grain varies within species or in the same piece of wood. Some of the methods in determining grain direction are splitting a veneer, dropping an ink on the wood surface and tracing the grain direction using a pointed object.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-66": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Texture is the size and the proportional amount of cells in the wood as seen in the cross section. The texture of a wood can be classified as coarse, fine, and very fine. For softwood species, the tangential diameter of the tracheids is the basis.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-67": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Wood hardness is determined by cutting a portion of wood with knife/cutter or by applying pressure on the wood with the fingernail. Wood can be classified as hard, moderately hard and soft. The more difficult it is to cut a portion or indent your nails the harder is the wood.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-68": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Weight is the last physical feature that can be observed in woods. Wood species are classified as heavy or light.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-69": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Can you tell which among the choices affect/s the weight of wood?",
       "next": "trigger-02",
       "prev": "trigger-00",
@@ -3964,105 +4247,105 @@
     },
     "object-70": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Structural features are more reliable bases for identification than the physical features. Cell distribution patterns and arrangements of vessels or pores, parenchyma, wood rays, and ducts belong to this category.",
-      "next": "trigger-02",
-      "prev": "trigger-00"
+      "next": "trigger-04",
+      "prev": "trigger-02"
     },
     "object-71": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Pore is the cross section of a vessel element. It is only present in hardwood species. It can be described according to its arrangement, shape, size, occlusions and topography.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-72": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "PORE ARRANGEMENTS\n\nSolitary, Pore multiple, Pore cluster, Pore chain, Echelon, Wavy bands",
+      "character": "Maam Lani",
+      "text": "PORE ARRANGEMENTS",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-73": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "PORE SHAPE\n\nOval, Round",
+      "character": "Maam Lani",
+      "text": "PORE SHAPE",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-74": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "PORE SIZE\n\nMinute, Small, Large",
+      "character": "Maam Lani",
+      "text": "PORE SIZE",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-75": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "TOPOGRAPHY\n\nSemi-ring porous, Ring-porous, Diffuse-porous",
+      "character": "Maam Lani",
+      "text": "TOPOGRAPHY",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-76": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "OCCLUSIONS\n\nTyloses, Deposits",
+      "character": "Maam Lani",
+      "text": "OCCLUSIONS",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-77": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Next structural feature is PARENCHYMA. These are short-thin-walled elements concerned primarily with storage and to a lesser extent in the distribution of carbohydrates.\n\nIt can be classified into apotracheal, paratracheal and boundary parenchyma cells.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-78": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "APOTRACHEAL\n\nConcentric, Diffuse-in-aggregates",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-79": {
       "type": "dialogue",
-      "character": "Teacher",
-      "text": "PARATRACHEAL\n\nVasicentric, Aliform, Aliform confluent, Banded confluent",
+      "character": "Maam Lani",
+      "text": "PARATRACHEAL",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-80": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "BOUNDARY",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-81": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Another structural feature is wood ray. Wood rays are ribbon-shaped strand of tissues extending in a radial direction across the grain. Ray width is important in wood identification. It can be described as broad or narrow.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-82": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Presence of oil or resin ducts in wood is also helpful in identifying woods. These are longitudinally and/or horizontally oriented openings that are surrounded by cells secreting resinous, oily or gummy substance. These may occur as a normal characteristic feature or may arise due to injury.\n\nIt may be arranged in diffuse manner or in concentric manner. Ducts may also be empty or filled.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-83": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Completing the line-up of structural features of wood is the presence of included phloem in some wood. This refers to the presence of phloem (bark) in the xylem (wood).",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-84": {
       "type": "dialogue",
-      "character": "Teacher",
+      "character": "Maam Lani",
       "text": "Can you bring the arrow to point the included phloem in this wood sample?",
       "next": "trigger-02",
       "prev": "trigger-00",
@@ -4073,16 +4356,17 @@
       "references": {
         "1": "America, et al. Wood Identification Manual",
         "2": "Findly, W. and P. Kennedy. 1975. Timber: Properties and Uses.",
-        "3": "Haygreen, J.G. and J.L. Bowyer. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
-        "4": "Lantican, C. B. and C. B. Madamba. 1979. Laboratory Manual in Wood Structure and Identification.",
-        "5": "Madamba, Concepcion B. Syllabus in Wood Structure and Identification.",
-        "6": "Meniado, et. Al. 1975. Wood Identification Handbook for Philippine Timbers. Vol. 1. FORPRIDECOM.",
-        "7": "Meniado, et. Al. 1981. Wood Identification Handbook for Philippine Timbers. Vol. 2. FORPRIDECOM.",
-        "8": "Panshin,A.J. and de Zeeuw, C. 1980. Textbook of Wood Technology,4th Edition New York. McGraw-Hill. Vol. 1",
-        "9": "Reyes, L. 1938. Philippine Woods.",
-        "10": "Wangaard, F. F. (ed.) 1979. Wood: Its Structure and Properties.",
-        "11": "Weier, et al. 1982. Botany. An Introduction to Plant Biology. John Wiley and Son. 720p.",
-        "12": "Zimmermann,M.H. and Brown, C.L. 1971. Trees: Structure and Function. New York. SpringerVerlag"
+        "3": "Forest Management Bureau, Department of Environment and Natural Resources. 2019.",
+        "4": "Haygreen, J.G. and J.L. Bowyer. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
+        "5": "Lantican, C. B. and C. B. Madamba. 1979. Laboratory Manual in Wood Structure and Identification.",
+        "6": "Madamba, Concepcion B. Syllabus in Wood Structure and Identification.",
+        "7": "Meniado, J.A., Tamolang, F.N., Lopez, F.R. America, W.M. and D.S.Alonzo (1975). Wood identification handbook for Philippine timbers. v.1. Department of Science and Technology - Forest Products Research and Development Institute, Manila:   CARAMBAS Government Printing Office. 370p.",
+        "8": "Meniado, J.A., Tamolang, F.N., Lopez, F.R. America, W.M. and D.S.Alonzo (1981). Wood identification handbook for Philippine timbers. v.2. Department of Science and Technology - Forest Products Research and Development Institute, Quezon City: APO Production Unit, Inc. 186p.",
+        "9": "Panshin,A.J. and de Zeeuw, C. 1980. Textbook of Wood Technology,4th Edition New York. McGraw-Hill. Vol. 1",
+        "10": "Reyes, L. 1938. Philippine Woods.",
+        "11": "Wangaard, F. F. (ed.) 1979. Wood: Its Structure and Properties.",
+        "12": "Weier, T.E., Stocking, C.R., and Barbour, M.G. 1982. Botany : an introduction to plant biology. 720p.",
+        "13": "Zimmermann,M.H. and Brown, C.L. 1971. Trees: Structure and Function. New York. SpringerVerlag"
       }
     },
     "object-104": {
@@ -4177,7 +4461,7 @@
     },
     "object-105": {
       "type": "image",
-      "src": "/images/ilo1/colors.jpg"
+      "src": "/images/ilo1/colors_in_wood.jpg"
     },
     "object-106": {
       "type": "image",
@@ -4229,7 +4513,7 @@
     },
     "object-118": {
       "type": "image",
-      "src": "/images/ilo1/Oval.jpg"
+      "src": "/images/ilo1/3_Almon oval pores.jpg"
     },
     "object-119": {
       "type": "image",
@@ -4457,7 +4741,7 @@
     },
     "object-175": {
       "type": "text",
-      "text": "Filled concentric\n\nResin ducts"
+      "text": "Filled concentric Resin ducts"
     },
     "object-176": {
       "type": "text",
@@ -4465,7 +4749,7 @@
     },
     "object-177": {
       "type": "text",
-      "text": "Empty concentric\n\nresin ducts"
+      "text": "Empty concentric resin ducts"
     },
     "object-178": {
       "type": "image",
@@ -4527,7 +4811,7 @@
     },
     "object-200": {
       "type": "dialogue",
-      "character": "Objectives",
+      "character": " ",
       "text": " ",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -4571,6 +4855,32 @@
     "object-230": {
       "type": "text",
       "text": "WEIGHT"
+    },
+    "object-231": {
+      "type": "dialogue",
+      "character": "Maam Lani",
+      "text": "That completes our discussion of physical features. The other set of features is the STRUCTURAL FEATURES.",
+      "next": "trigger-02",
+      "prev": "trigger-00"
+    },
+    "object-232": {
+      "type": "dialogue",
+      "character": " ",
+      "text": "",
+      "next": "trigger-03",
+      "prev": "trigger-01"
+    },
+    "object-233": {
+      "type": "text",
+      "text": "STRUCTURAL FEATURES"
+    },
+    "object-234": {
+      "type": "image",
+      "src": "/images/ilo1/computer2.jpg"
+    },
+    "object-235": {
+      "type": "image",
+      "src": "/images/ilo1/computer3.png"
     }
   },
   "eventStart": "event-01"

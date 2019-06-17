@@ -148,7 +148,7 @@ const template = (html, self) => function () {
           <div class="absolute" id="references" style="${styleString}">
             <ul>
             ${Object.entries(item.references).map(([key, input]) => html`
-              <li>${input}</li>
+              <li style="font-size: 30px">${input}</li>
             `)}
             </ul>
           </div>
