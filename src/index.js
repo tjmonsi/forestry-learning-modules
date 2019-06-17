@@ -60,4 +60,7 @@ if (window.SnackerMessages && window.SnackerMessages.length) {
   }
 }
 
+// const bgmusic = document.querySelector('#bg-music');
+// bgmusic.addEventListener('canplay', () => bgmusic.play());
+
 // throw new Error();

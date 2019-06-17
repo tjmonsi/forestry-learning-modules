@@ -79,6 +79,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       selectCorrect: {
         type: Boolean,
         value: false
+      },
+      currentMusic: {
+        type: String,
+        value: null
       }
     };
   }
@@ -115,16 +119,45 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (!this.currentEvent) {
       this.currentEvent = this.moduleObj.eventStart;
     } else {
-      this._loadEvent(this.currentEvent);
+      await this._loadEvent(this.currentEvent);
     }
     // this.currentEvent = this.currentEvent || this.moduleObj.eventStart;
   }
 
-  _loadEvent (currentEvent) {
+  async _loadEvent (currentEvent) {
     if (this.moduleObj && this.moduleObj.events && currentEvent) {
       const event = this.moduleObj.events[currentEvent];
-      const { triggers, default: deafaultTrigger } = event;
+      const { triggers, default: deafaultTrigger, music } = event;
       this._doTrigger(triggers[deafaultTrigger]);
+
+      // console.log(currentEvent, music, this.currentMusic, music !== this.currentMusic, this, this.getBoundingClientRect());
+      const { right, width } = this.getBoundingClientRect();
+      const bgmusic = document.querySelector('#bg-music');
+      if (bgmusic.paused) {
+        try {
+          bgmusic.play();
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      if (music && music !== 'none' && music !== this.currentMusic && right && width) {
+        const bgsource = document.querySelector('#bg-music-source');
+        bgsource.src = music;
+        bgmusic.volume = 0.15;
+        // console.log(bgmusic)
+        try {
+          // console.log('go on');
+          await bgmusic.load();
+          this.currentMusic = music;
+        } catch (e) {
+          console.log(e);
+        }
+      } else if (music && music === 'none' && right && width) {
+        const bgsource = document.querySelector('#bg-music-source');
+        bgsource.src = '';
+        bgmusic.load();
+      }
     }
   }
 

@@ -4,6 +4,7 @@
     "event-01": {
       "default": "trigger-01",
       "click": "trigger-02",
+      "music": "/assets/forestry/audio/your-call-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-01": {
           "type": "load",
@@ -209,6 +210,7 @@
     },
     "event-03": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/lobby-time-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-01": {
           "type": "load",
@@ -402,6 +404,7 @@
     },
     "event-05": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/lobby-time-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-00": {
           "type": "next",
@@ -2824,6 +2827,7 @@
     },
     "event-30": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/artifact-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-00": {
           "type": "next",
@@ -4232,6 +4236,7 @@
     },
     "event-41": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/acid-trumpet-by-kevin-macleod.mp3",
       "click": "trigger-02",
       "triggers": {
         "trigger-01": {
@@ -7344,7 +7349,11 @@
         "3": "Illustration: Prof. Vanessa Palma-Torres",
         "4": "Story Concept: Prof. TJ Monserrat and Prof. Vivian Daracan",
         "5": "Images: For. Arlene DJ. Romano",
-        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia"
+        "6": "Animation and Graphic Design: Mark Jay Nicolas and Rafiel Timothy Valencia",
+        "7": "Music from https://filmmusic.io: \"Your Call\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "8": "Music from https://filmmusic.io: \"Acid Trumpet\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "9": "Music from https://filmmusic.io: \"Lobby Time\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "10": "Music from https://filmmusic.io: \"Artifact\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)"
       }
     },
     "object-178": {

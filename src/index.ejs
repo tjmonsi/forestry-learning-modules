@@ -51,6 +51,8 @@
     <meta name="msapplication-TileColor" content="<%= theme.themeColor %>">
     <meta name="msapplication-tap-highlight" content="<%= theme.webApp.tapHighlight %>">
 
+
+
     <style>
       <%= require('./index.styl') %>
     </style>
@@ -65,6 +67,10 @@
     <%= require('./ejs-templates/google-analytics.ejs')(data) %>
     <%= require('./ejs-templates/core-loader.ejs')(data) %>
     <%= require('./ejs-templates/polyfill-loader.ejs')(data) %>
+
+    <audio id="bg-music" style="display: none" autoplay loop>
+      <source id="bg-music-source">
+    </audio>
   </body>
 
 </html>
