@@ -322,9 +322,10 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
       event.preventDefault();
       var sb = document.querySelector('.snackbar-lite');
-
-      if (dragged.id === target.id) {
-        console.log(dragged.id);
+      const y = event.clientY;
+      // console.log(event.clientY);
+      if (dragged.id === target.id && ((y >= 160 && y <= 270) || (y >= 420 && y <= 470) || (y >= 610 && y <= 640))) {
+        target.src = '/assets/forestry/images/ilo1/phloem-blur.jpg'
         dragged.remove();
         sb.showText('Correct!', 2000);
         const label = this.shadowRoot.querySelectorAll('#label');
@@ -333,9 +334,8 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
             label[item].style.zIndex = 100;
           }
         }
-        // label.style.zIndex = 100;
       } else {
-        sb.showText('Wrong option! Try again.', 2000);
+        sb.showText('Not that one. Try again.', 2000);
       }
     }
     this.requestUpdate();
