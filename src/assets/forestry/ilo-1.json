@@ -3,6 +3,7 @@
   "events": {
     "event-01": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/your-call-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-01": {
           "type": "load",
@@ -370,6 +371,7 @@
     },
     "event-06": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/acid-trumpet-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-00": {
           "type": "next",
@@ -4388,7 +4390,9 @@
         "4": "Story Concept: Prof. Toni-Jan Keith P. Monserrat and Prof. Rosalie C. Mendoza",
         "5": "Images: For. Arlene D. Romano and Prof. Alfie M. Torres",
         "6": "Animation and Graphic Design: Mark Jay A. Nicolas and Rafiel Timothy C. Valencia",
-        "7": "Adviser: Prof. Arian J. Jacildo"
+        "7": "Adviser: Prof. Arian J. Jacildo",
+        "8": "Music from https://filmmusic.io: \"Your Call\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "9": "Music from https://filmmusic.io: \"Acid Trumpet\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)"
       }
     },
     "object-87": {
@@ -4797,6 +4801,7 @@
     },
     "object-184": {
       "type": "enumerate",
+      "question": "Which of these are the two types of keys that are useful in wood identification?",
       "answers": {
         "a": "Dichotomous keys",
         "b": "Card sorting keys"

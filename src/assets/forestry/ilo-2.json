@@ -3,6 +3,7 @@
   "events": {
     "event-01": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/your-call-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-01": {
           "type": "load",
@@ -249,6 +250,7 @@
     },
     "event-06": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/lobby-time-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-00": {
           "type": "next",
@@ -671,6 +673,7 @@
     },
     "event-12": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/artifact-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-00": {
           "type": "next",
@@ -6369,6 +6372,7 @@
     },
     "event-30": {
       "default": "trigger-01",
+      "music": "/assets/forestry/audio/artifact-by-kevin-macleod.mp3",
       "triggers": {
         "trigger-00": {
           "type": "next",
@@ -9427,8 +9431,12 @@
         "4": "Story Concept: Prof. Toni-Jan Keith P. Monserrat and Prof. Alfie M. Torres",
         "5": "Images: For. Arlene D. Romano",
         "6": "Animation and Graphic Design: Mark Jay A. Nicolas and Rafiel Timothy C. Valencia",
-        "7": "Adviser: Prof. Arian J. Jacildo"
-        
+        "7": "Adviser: Prof. Arian J. Jacildo",
+        "8": "Music from https://filmmusic.io: \"Your Call\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "9": "Music from https://filmmusic.io: \"Acid Trumpet\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "10": "Music from https://filmmusic.io: \"Lobby Time\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)",
+        "11": "Music from https://filmmusic.io: \"Artifact\" by Kevin MacLeod (https://incompetech.com) Licence: CC BY (http://creativecommons.org/licenses/by/4.0/)"
+
       }
     },
     "object-139": {

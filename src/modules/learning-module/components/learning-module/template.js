@@ -130,7 +130,7 @@ const template = (html, self) => function () {
                     ${input.keyword === true ? html`
                     <td>
                       ${Object.entries(input.right).map(([ind, itm]) => html`
-                        ${input.color[ind] !== 'white' ? html`<a @click="${blink.bind(this)}" style="color:${input.color[ind]}">${input.right[ind]}</a>` : html`<span style="color:white"> ${input.right[ind]}</span>`}
+                        ${input.color[ind] !== 'white' ? html`<a @click="${blink.bind(this)}" style="color: ${input.color[ind]}">${input.right[ind]}</a>` : html`<span style="color:white"> ${input.right[ind]}</span>`}
 
                       `)}
                     </td>
@@ -242,7 +242,13 @@ const template = (html, self) => function () {
             <div class="space"></div>
 
             <div class="choices">
-              <h4>${item.title}</h4>
+              <h4>${item.title}
+                ${this.choiceCorrect ? html`
+                  <span style="color: green">
+                    <br>Correct! You can now proceed.
+                  </span>
+                ` : ''}
+              </h4>
               <ol type="a">
                 ${Object.entries(item.options).map(([key, input]) => html`
                   <li id="choice" data-answer=${input} data-choice="${key}" @click=${select.bind(this)}>${input}</li>
@@ -268,7 +274,13 @@ const template = (html, self) => function () {
               <div class="space"></div>
 
               <div class="choices">
-                <h3>Multiple options:</h3>
+                <h3>Multiple options:
+                ${this.choiceCorrect ? html`
+                  <span style="color: green">
+                  <br>Correct! You can now proceed.
+                  </span>
+                ` : ''}
+                </h3>
                 <ol type="a">
                   ${Object.entries(item.options).map(([key, input]) => html`
                     <li data-answer=${input} data-choice="${key}" @click=${select.bind(this)}>${input}</li>
@@ -279,14 +291,26 @@ const template = (html, self) => function () {
 
           </div>
         ` : ''}
-      <!-- TODO: ADD CHECKBOX FUNCTIONALITY, NO FUNCTION IN INDEX YET -->
+
         ${item.type === 'enumerate' ? html`
           <div class="ilo1-container">
-            <h4>${item.question}</h4>
+            <h4>${item.question} (${Object.entries(item.answers).length} answers)
+
+              ${this.enumerateCorrect ? html`
+                <span style="color: green">
+                  Correct!
+                </span>
+              ` : ''}
+
+            </h4>
             <form class="checkboxes" action="">
-              ${Object.entries(item.options).map(([key, input]) => html`
-                <input type="checkbox" name="${key}" value="${key}" data-answer=${item.answers.toString()} data-choice=${key}}>${input}</p>
-              `)}
+              <div style="padding: 24px">
+                ${Object.entries(item.options).map(([key, input]) => html`
+                  <label for="choice-${key}">
+                  <input type="checkbox" id="choice-${key}" name="${item.type}" value="${key}" data-answer=${Object.keys(item.answers).join('')} data-choice=${key}} style="vertical-align: middle; margin-bottom: 6px; margin-right: 12px;" @click="${this._checkEnumerate.bind(this)}">${input}
+                  </label><br><br>
+                `)}
+              </div>
             </form>
           </div>
         ` : ''}
@@ -294,7 +318,15 @@ const template = (html, self) => function () {
         ${item.type === 'choice3' ? html`
           <div class="ilo1-container">
             <div class="ilo1-choices">
-              <h4>${item.question}</h4>
+              <h4>${item.question}
+
+              ${this.choice3Correct ? html`
+                <span style="color: green">
+                  Correct!
+                </span>
+              ` : ''}
+
+              </h4>
               ${Object.entries(item.options).map(([key, input]) => html`
                 <p data-answer=${item.answer} data-choice=${key} @click=${ilo1select.bind(this)}>${key}) ${input}</p>
               `)}

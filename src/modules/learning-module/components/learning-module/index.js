@@ -80,6 +80,22 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         type: Boolean,
         value: false
       },
+      enumerateCorrect: {
+        type: Boolean,
+        value: false
+      },
+      choice3Correct: {
+        type: Boolean,
+        value: false
+      },
+      choice2Correct: {
+        type: Boolean,
+        value: false
+      },
+      choiceCorrect: {
+        type: Boolean,
+        value: false
+      },
       currentMusic: {
         type: String,
         value: null
@@ -161,6 +177,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     }
   }
 
+  resetCorrect () {
+    this.types = [];
+    this.parenchyma = [];
+    this.deposits = [];
+    this.selectCorrect = false;
+    this.formCorrect = [];
+    this.enumerateCorrect = false;
+    this.choice3Correct = false;
+    this.choice2Correct = false;
+    this.choiceCorrect = false;
+  }
+
   _doTrigger (trigger) {
     const { type } = trigger;
     const { objects } = this.moduleObj;
@@ -200,11 +228,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
       this.requestUpdate();
     }
-    this.types = [];
-    this.parenchyma = [];
-    this.deposits = [];
-    this.selectCorrect = false;
-    this.formCorrect = [];
+    this.resetCorrect();
   }
 
   _click () {
@@ -225,11 +249,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       const { triggers } = event;
       this._doTrigger(triggers[value]);
     }
-    this.types = [];
-    this.parenchyma = [];
-    this.deposits = [];
-    this.selectCorrect = false;
-    this.formCorrect = [];
+    this.resetCorrect();
     this.requestUpdate();
   }
 
@@ -268,11 +288,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     label.style.visibility = 'visible';
     label.style.zIndex = 100;
 
-    this.types = [];
-    this.parenchyma = [];
-    this.deposits = [];
-    this.correctCount = 0;
-    this.formCorrect = [];
+    this.resetCorrect();
 
     var sb = document.querySelector('.snackbar-lite');
     sb.showText('You correctly identified its Structural Features! You may now continue.', 2500);
@@ -371,6 +387,40 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       }
     }
     // console.log(answer, values, values.join('') === answer);
+  }
+
+  _checkEnumerate (event) {
+    const { target } = event;
+    let answer = target.getAttribute('data-answer');
+    const sb = document.querySelector('.snackbar-lite');
+    const form = target.form;
+    const values = [];
+    let correct = true;
+    for (let i = 0; i < form[target.name].length; i++) {
+      if (form[target.name][i].checked) {
+        values.push(form[target.name][i].value);
+      }
+    }
+
+    for (const i of values) {
+      if (answer.indexOf(i) >= 0) {
+        answer = answer.replace(i, '').trim();
+      } else {
+        correct = false;
+      }
+    }
+
+    if (!answer && correct) {
+      this.enumerateCorrect = true;
+      this.formCorrect.push(target.name);
+      sb.showText('Correct!', 2000);
+      for (let i = 0; i < form[target.name].length; i++) {
+        form[target.name][i].disabled = true;
+      }
+
+      const next = this.shadowRoot.querySelector('#next');
+      next.disabled = false;
+    }
   }
 
   onChange (event) {
@@ -520,19 +570,28 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     var identify = this.shadowRoot.querySelector('#identify');
     var sb = document.querySelector('.snackbar-lite');
 
+    const oldAnswer = this.shadowRoot.querySelector('.choice-answer');
+
+    if (oldAnswer) {
+      oldAnswer.classList.remove('choice-answer');
+    }
+
+    target.classList.add('choice-answer');
+
     if (target.getAttribute('data-answer') === identify.getAttribute('data-answer')) {
       sb.showText('Correct! Congratulations! You are one step forward to becoming a wood wizard.', 2000);
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
+      this.choiceCorrect = true;
 
-      const choices = this.shadowRoot.querySelectorAll('#choice');
-      for (let item in choices) {
-        choices[item].removeEventListener('click', this.select, true);
-      }
+      // const choices = this.shadowRoot.querySelectorAll('#choice');
+      // for (let item in choices) {
+      //   choices[item].removeEventListener('click', this.select, true);
+      // }
     } else {
       sb.showText('Wrong answer! Try again.', 2000);
     }
-    this._select();
+    // this._select();
   }
 
   // _select () {
@@ -595,12 +654,19 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
   ilo1select (event) {
     var target = event.target;
     var sb = document.querySelector('.snackbar-lite');
+    const oldAnswer = this.shadowRoot.querySelector('.choice3-answer');
+
+    if (oldAnswer) {
+      oldAnswer.classList.remove('choice3-answer');
+    }
+
+    target.classList.add('choice3-answer');
 
     if (target.getAttribute('data-answer') === target.getAttribute('data-choice')) {
-      sb.showText('YOUR ANSWER IS CORRECT! GOOD JOB!', 2000);
-
+      sb.showText('Your answer is correct! Good job!', 2000);
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
+      this.choice3Correct = true;
     } else {
       sb.showText('Ooopps, you picked the wrong answer. Come on, try again!', 2000);
     }
