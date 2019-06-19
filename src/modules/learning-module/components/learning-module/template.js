@@ -1,5 +1,5 @@
 const template = (html, self) => function () {
-  const { moduleObj, sceneObjects, _click, _dialogue, _form, _hide, onChange, onDragStart, onDragEnd, onDrop, onDragOver, onDragEnter, blink, select, ilo1select } = this;
+  const { moduleObj, sceneObjects, _click, _dialogue, _form, _hide, onChange, onDragStart, onDragEnd, onDrop, onDrop2, onDragOver, onDragEnter, blink, select, ilo1select } = this;
   if (!moduleObj) return html`Loading...`;
   const { events, baseURL } = moduleObj;
   // console.log(sceneObjects)
@@ -13,6 +13,24 @@ const template = (html, self) => function () {
         <div
           id="${item.objectId}"
           @drop="${onDrop.bind(this)}"
+          @dragover="${onDragOver.bind(this)}"
+          @dragenter="${onDragEnter.bind(this)}"
+        >
+        <lazy-picture
+            id="${item.answer}"
+            .cover="${item.meta && item.meta.cover}"
+            color="${item.color}"
+            class="absolute image ${item.meta && item.meta.fullscreen ? 'fullscreen' : ''} ${item.meta && item.meta.classList}"
+            style="${styleString}"
+            src="${item.src ? baseURL + item.src : ''}">
+        </lazy-picture>
+        </div>
+        ` : ''}
+
+        ${item.type === 'image2' ? html`
+        <div
+          id="${item.objectId}"
+          @drop="${onDrop2.bind(this)}"
           @dragover="${onDragOver.bind(this)}"
           @dragenter="${onDragEnter.bind(this)}"
         >
