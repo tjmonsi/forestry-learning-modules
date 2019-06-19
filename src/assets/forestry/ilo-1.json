@@ -3894,31 +3894,31 @@
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "Objectives of the Learning Object",
-      "link": "/?currentEvent=event-03"
+      "link": "?currentEvent=event-03"
     },
     "object-10": {
       "type": "block",
       "src": "/images/tindalo.jpg",
       "label": "Importance of Wood Identification",
-      "link": "/?currentEvent=event-07"
+      "link": "?currentEvent=event-07"
     },
     "object-11": {
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "Methods of Wood Identification",
-      "link": "/?currentEvent=event-13"
+      "link": "?currentEvent=event-13"
     },
     "object-12": {
       "type": "block",
       "src": "/images/tindalo.jpg",
       "label": "Principles of Wood Identification",
-      "link": "/?currentEvent=event-20"
+      "link": "?currentEvent=event-20"
     },
     "object-13": {
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "References/Credits",
-      "link": "/?currentEvent=event-50"
+      "link": "?currentEvent=event-50"
     },
     "object-14": {
       "type": "text",
