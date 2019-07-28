@@ -352,10 +352,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       var sb = document.querySelector('.snackbar-lite');
       const y = event.clientY;
       // console.log(event.clientY);
-      if (dragged.id === target.id && ((y >= 160 && y <= 270) || (y >= 420 && y <= 470) || (y >= 610 && y <= 640))) {
-        target.src = '/assets/forestry/images/ilo1/phloem-blur.jpg'
+      if (dragged.id === target.id) {
         dragged.remove();
-        sb.showText('Correct!', 2000);
+        sb.showText('Correct!', 3000);
         const label = this.shadowRoot.querySelectorAll('#label');
         for (let item in label) {
           if (label[item].getAttribute('value').toLowerCase() === dragged.id) {
@@ -363,11 +362,39 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
           }
         }
       } else {
-        sb.showText('Not that one. Try again.', 2000);
+        sb.showText('Not that one. Try again.', 3000);
       }
     }
     this.requestUpdate();
   }
+
+  onDrop2 (event) {
+    this.canvas = event.target;
+    const target = this.canvas;
+    const dragged = this.dragged;
+    if (dragged && target) {
+      // const isLink = this._contains(event.dataTransfer.types, 'text/uri-list');
+      event.preventDefault();
+      var sb = document.querySelector('.snackbar-lite');
+      const y = event.clientY;
+      // console.log(event.clientY);
+      if (dragged.id === target.id && ((y >= 160 && y <= 270) || (y >= 420 && y <= 470) || (y >= 610 && y <= 640))) {
+        target.src = '/assets/forestry/images/ilo1/phloem2.jpg'
+        dragged.remove();
+        sb.showText('Correct!', 3000);
+        const label = this.shadowRoot.querySelectorAll('#label');
+        for (let item in label) {
+          if (label[item].getAttribute('value').toLowerCase() === dragged.id) {
+            label[item].style.zIndex = 100;
+          }
+        }
+      } else {
+        sb.showText('Not that one. Try again.', 3000);
+      }
+    }
+    this.requestUpdate();
+  }
+
 
   _multipleOption (event) {
     const { target } = event;
@@ -393,7 +420,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (!answer && correct) {
       this.correctCount += 1;
       this.formCorrect.push(target.name);
-      sb.showText('Correct!', 2000);
+      sb.showText('Correct!', 3000);
       for (let i = 0; i < form[target.name].length; i++) {
         form[target.name][i].disabled = true;
       }
@@ -425,7 +452,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     if (!answer && correct) {
       this.enumerateCorrect = true;
       this.formCorrect.push(target.name);
-      sb.showText('Correct!', 2000);
+      sb.showText('Correct!', 3000);
       for (let i = 0; i < form[target.name].length; i++) {
         form[target.name][i].disabled = true;
       }
@@ -545,9 +572,9 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
         target.disabled = true;
         this.correctCount += 1;
         this.formCorrect.push(target.id);
-        sb.showText('Correct!', 2000);
+        sb.showText('Correct!', 3000);
       } else {
-        sb.showText('Wrong option! Try again.', 2000);
+        sb.showText('Wrong option! Try again.', 3000);
       }
     }
 
@@ -591,7 +618,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     target.classList.add('choice-answer');
 
     if (target.getAttribute('data-answer') === identify.getAttribute('data-answer')) {
-      sb.showText('Correct! Congratulations! You are one step forward to becoming a wood wizard.', 2000);
+      sb.showText('Correct! Congratulations! You are one step forward to becoming a wood wizard.', 3000);
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
       this.choiceCorrect = true;
@@ -601,7 +628,7 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
       //   choices[item].removeEventListener('click', this.select, true);
       // }
     } else {
-      sb.showText('Wrong answer! Try again.', 2000);
+      sb.showText('Wrong answer! Try again.', 3000);
     }
     // this._select();
   }
@@ -675,12 +702,12 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     target.classList.add('choice3-answer');
 
     if (target.getAttribute('data-answer') === target.getAttribute('data-choice')) {
-      sb.showText('Your answer is correct! Good job!', 2000);
+      sb.showText('Your answer is correct! Good job!', 3000);
       const next = this.shadowRoot.querySelector('#next');
       next.disabled = false;
       this.choice3Correct = true;
     } else {
-      sb.showText('Ooopps, you picked the wrong answer. Come on, try again!', 2000);
+      sb.showText('Ooopps, you picked the wrong answer. Come on, try again!', 3000);
     }
   }
 }

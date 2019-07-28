@@ -7376,25 +7376,25 @@
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "Objectives of the Learning Object",
-      "link": "/?currentEvent=event-44"
+      "link": "?currentEvent=event-44"
     },
     "object-200": {
       "type": "block",
       "src": "/images/tindalo.jpg",
       "label": "Gross Features of Selected Philippine Wood Species",
-      "link": "/?currentEvent=event-05"
+      "link": "?currentEvent=event-05"
     },
     "object-201": {
       "type": "block",
       "src": "/images/golden-shower.jpg",
       "label": "References",
-      "link": "/?currentEvent=event-42"
+      "link": "?currentEvent=event-42"
     },
     "object-202": {
       "type": "block",
       "src": "/images/tindalo.jpg",
       "label": "Credits",
-      "link": "/?currentEvent=event-41"
+      "link": "?currentEvent=event-41"
     },
     "object-203": {
       "type": "label",
