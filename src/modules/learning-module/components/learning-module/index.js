@@ -140,6 +140,18 @@ class Component extends TemplateLite(ObserversLite(HTMLElement)) {
     // this.currentEvent = this.currentEvent || this.moduleObj.eventStart;
   }
 
+  _getLink (link) {
+    // ${window.location.pathname.split('?')[0]}${item.link}
+    const base = window.location.pathname.split('?')[0];
+    const array = base.split('/');
+
+    if (!array[array.length - 1]) {
+      array.pop();
+    }
+
+    return array.join('/') + link;
+  }
+
   async _loadEvent (currentEvent) {
     if (this.moduleObj && this.moduleObj.events && currentEvent) {
       const event = this.moduleObj.events[currentEvent];

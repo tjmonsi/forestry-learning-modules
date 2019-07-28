@@ -29,7 +29,7 @@ const template = (html, self) => function () {
 
         ${item.type === 'block' ? html`
           <div class="block">
-            <a href='${window.location.pathname.split('?')[0]}${item.link}'>
+            <a href='${this._getLink(item.link)}'>
               <img src="${item.src ? baseURL + item.src : ''}" style="${styleString}">
               <div class="centered">${item.label}</div>
             </a>
@@ -154,7 +154,6 @@ const template = (html, self) => function () {
           </div>
         ` : ''}
 
-        ${item.type} ${item.objectId}
         ${item.type === 'form' ? html`
           <form class="absolute form overflow ${item.meta && item.meta.classList}" id="${item.objectId}" style="${styleString}" @submit="${_form.bind(this)}" finished="false">
             ${Object.entries(item.form).map(([, formGroup]) => html`
