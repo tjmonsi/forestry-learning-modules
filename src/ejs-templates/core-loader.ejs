@@ -23,7 +23,7 @@
       });
       refScript.parentNode.insertBefore(script, refScript);
 
-      <% if (options.dev) { %>
+      console.log('loading core')
       var scriptModule = document.createElement('script');
       scriptModule.async = true
       scriptModule.src = '/module.core.<%= package.version %>.js';
@@ -35,9 +35,6 @@
         }
       });
       refScript.parentNode.insertBefore(scriptModule, refScript);
-      <% } else { %>
-        window.dispatchEvent(new window.CustomEvent('window-core-start'));
-      <% } %>
     }, false)
   })()
 </script>

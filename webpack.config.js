@@ -74,12 +74,12 @@ const copyStatics = {
   ]
 };
 
-if (IS_DEV_SERVER) {
-  copyStatics.copyPolyfills.push({
-    from: resolve(__dirname, './src/service-worker.js'),
-    to: 'service-worker.js'
-  });
-}
+// if (IS_DEV_SERVER) {
+copyStatics.copyPolyfills.push({
+  from: resolve(__dirname, './src/service-worker.js'),
+  to: 'service-worker.js'
+});
+// }
 
 const shared = env => {
   const IS_MODULE_BUILD = env.BROWSERS === 'module';
@@ -87,13 +87,16 @@ const shared = env => {
   const plugins = [
     new HTMLWebpackPlugin(getHtmlOptions(IS_DEV_SERVER, IS_MODULE_BUILD, 'index')),
     new HTMLWebpackPlugin(getHtmlOptions(IS_DEV_SERVER, IS_MODULE_BUILD, '404')),
-    new CopyWebpackPlugin(copyStatics.copyPolyfills),
-    new BundleAnalyzerPlugin({
+    new CopyWebpackPlugin(copyStatics.copyPolyfills)
+  ];
+
+  if (IS_DEV_SERVER) {
+    plugins.push(new BundleAnalyzerPlugin({
       reportFilename: '_bundle-report.html',
       defaultSizes: 'gzip',
       statsFilename: '_bundle-stats.json'
-    })
-  ];
+    }));
+  }
 
   return {
     entry: {

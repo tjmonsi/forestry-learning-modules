@@ -164,8 +164,18 @@
               ]
             },
             {
-              "objectId": "object-13",
+              "objectId": "object-12-1",
               "id": "object-06",
+              "style": [
+                "z-index: 4",
+                "top: 25%",
+                "left: 35%",
+                "width: 30%"
+              ]
+            },
+            {
+              "objectId": "object-13",
+              "id": "object-07",
               "style": [
                 "z-index: 5",
                 "top: 25%",
@@ -522,7 +532,215 @@
             }
           ]
         },
-        "trigger-03": {
+        "trigger-03":{
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-02",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 1",
+                "width: 55%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-24-1",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 22%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-04":{
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-02",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 1",
+                "width: 55%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-24-2",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 22%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-05":{
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-02",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 1",
+                "width: 55%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-24-3",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 22%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-06":{
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-01",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-22",
+              "id": "object-02",
+              "meta": {
+                "cover": true
+              },
+              "style": [
+                "z-index: 1",
+                "width: 55%",
+                "left: 20%"
+              ]
+            },
+            {
+              "objectId": "object-24-4",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-16",
+              "id": "object-06",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 1",
+                "width: 22%"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-final": {
           "type": "next",
           "event": "event-08"
         }
@@ -590,6 +808,86 @@
               ]
             },
             {
+              "objectId": "object-28-1",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 2",
+                "right: 0"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-03": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-26",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-28-2",
+              "id": "object-03",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-05",
+              "meta": {
+                "cover": false,
+                "classList": "character character-left smallest-character"
+              },
+              "style": [
+                "z-index: 2",
+                "right: 0"
+              ]
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-15",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
+        },
+        "trigger-04": {
+          "type": "load",
+          "load": [
+            {
+              "objectId": "object-26",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
               "objectId": "object-29",
               "id": "object-03",
               "type": "dialogue"
@@ -615,9 +913,9 @@
             }
           ]
         },
-        "trigger-03": {
+        "trigger-05": {
           "type": "next",
-          "event": "event-09"
+          "event": "event-10"
         }
       }
     },
@@ -736,7 +1034,7 @@
               ]
             },
             {
-              "objectId": "object-92",
+              "objectId": "object-16",
               "id": "object-03",
               "meta": {
                 "cover": false,
@@ -761,8 +1059,44 @@
           ]
         },
         "trigger-02": {
-          "type": "dialogue",
-          "objectId": "object-34"
+          "type": "load",
+          "objectId": "object-34",
+          "load": [
+            {
+              "objectId": "object-91",
+              "id": "object-01",
+              "meta": {
+                "fullscreen": true,
+                "cover": true
+              },
+              "style": [
+                "z-index: 0"
+              ]
+            },
+            {
+              "objectId": "object-92",
+              "id": "object-03",
+              "meta": {
+                "cover": false,
+                "classList": "character character-right smaller-character"
+              },
+              "style": [
+                "z-index: 2"
+              ]
+            },
+            {
+              "objectId": "object-34",
+              "id": "object-04",
+              "type": "dialogue"
+            },
+            {
+              "objectId": "object-221",
+              "id": "object-05",
+              "style": [
+                "z-index: 1000001"
+              ]
+            }
+          ]
         },
         "trigger-03": {
           "type": "next",
@@ -3914,6 +4248,12 @@
       "label": "Principles of Wood Identification",
       "link": "?currentEvent=event-20"
     },
+    "object-12-1": {
+      "type": "block",
+      "src": "/images/tindalo.jpg",
+      "label": "Self-Assessment Questions",
+      "link": "?currentEvent=event-20"
+    },
     "object-13": {
       "type": "block",
       "src": "/images/golden-shower.jpg",
@@ -3922,7 +4262,7 @@
     },
     "object-14": {
       "type": "text",
-      "text": "Objectives:\n\nAt the end of this learning object, the viewer should be able to:\n\n1) recognize the importance of wood identification\n\n2) describe the methods that can be used in wood identification\n\n3) understand the principles involved in wood identification"
+      "text": "Objectives:\n\nAt the end of this learning object, the viewer should be able to:\n\n1) enumerate the importance of wood identification\n\n2) describe the methods that can be used in wood identification\n\n3) discuss the principles involved in wood identification"
     },
     "object-15": {
       "type": "text",
@@ -3934,8 +4274,8 @@
     },
     "object-17": {
       "type": "dialogue",
-      "character": "Maam Lani (At Lab Classroom)",
-      "text": "Our topic for today is about wood identification, its importance, methods and the principles involved in identifying woods.",
+      "character": "Teacher",
+      "text": "(Lab Classroom Setting)\n\n Good morning class! Our topic for today is about wood identification. We will enumerate its importance, describe the methods used in wood identification and discuss the principles involved in identifying woods.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -3956,8 +4296,8 @@
     },
     "object-21": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "Now, let me call your classmate assigned to report why identifying the species of wood is important.\n\nSue, could you tell us WHY IS WOOD IDENTIFICATION IMPORTANT?",
+      "character": "Teacher",
+      "text": "Now, let me call your classmate assigned to report the importance of wood identification.\n\nSue, could you tell us why this course is important?",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -3968,16 +4308,44 @@
     "object-23": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "I have found out that identification is important in various ways. First, it is important to know the identity of the wood species before processing it.",
+      "text": "Thank you, Ma’am. I have found out that identification is important in various ways. First, it is important to know the identity of the wood species before processing it.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-24": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "Great, Sue! Wood identification serves as a basis for proper utilization and conversion. We should know the identity of the wood so we will have an idea of its properties that are suitable for a particular use. Can you tell us another one?",
+      "character": "Teacher",
+      "text": "Great, Sue! Wood identification serves as a basis for proper utilization and conversion. We should know the identity of the wood so we will have an idea if its properties are suitable for a particular use.",
       "next": "trigger-03",
       "prev": "trigger-01"
+    },
+    "object-24-1": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "For example, you will only use a wood species for building construction if you know that it has good strength properties like Guijo or Yakal.",
+      "next": "trigger-04",
+      "prev": "trigger-02"
+    },
+    "object-24-2": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Another example is if you need fuelwood, and you have available Narra wood, and you are aware that Narra’s properties are very suitable for furniture making, which is way more valuable than fuelwood. Then you will not burn it to cook your food. Right, Sue?",
+      "next": "trigger-05",
+      "prev": "trigger-03"
+    },
+    "object-24-3": {
+      "type": "dialogue",
+      "character": "Sue",
+      "text": "Yes, Ma’am!",
+      "next": "trigger-06",
+      "prev": "trigger-04"
+    },
+    "object-24-4": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Can you tell us another importance of wood identification and explain it to your classmates?",
+      "next": "trigger-final",
+      "prev": "trigger-05"
     },
     "object-25": {
       "type": "text",
@@ -3994,28 +4362,42 @@
     "object-28": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "It is also important because it can serve as a basis for revenue collection.",
+      "text": "It is also important because it can serve as a basis for revenue collection. Officers who are assigned in the collection of forest charges can correctly impose the respective taxes for the harvested logs.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
-    "object-29": {
+    "object-28-1": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "Correct! Officers who are assigned in the collection of forest charges can correctly impose the respective taxes for the harvested logs.",
+      "character": "Sue",
+      "text": "By correctly identifying the logs that they harvest and transport, the DENR patrollers and officers can verify if the logging companies or wood-based industries are declaring the real identity of the wood that they are transporting.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
+    "object-28-2": {
+      "type": "dialogue",
+      "character": "Sue",
+      "text": "If they are not stating the true identity of the species, then the patrollers and officers can make corrective action to penalize the violators.",
+      "next": "trigger-05",
+      "prev": "trigger-02"
+    },
+    "object-29": {
+      "type": "dialogue",
+      "character": "Teacher",
+      "text": "Well explained, Sue!",
+      "next": "trigger-05",
+      "prev": "trigger-03"
+    },
     "object-30": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "How about if you are canvassing materials for your house construction? Can you select from the following choices the situation when skill in wood identification is beneficial to you?",
+      "character": "Teacher (to you)",
+      "text": "How about if you are sourcing materials for your house construction? When is the skill in wood identification beneficial to you?",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
     },
     "object-31": {
       "type": "dialogue",
-      "character": "Maam Lani",
+      "character": "Teacher",
       "text": "You got it right! Another importance of wood identification is in the aspect of buying and selling lumber or wooden furniture. Buying and selling of incorrectly identified lumbers or furniture, be it intentionally or unintentionally meant by the seller or buyer can be prevented.",
       "next": "trigger-02",
       "prev": "trigger-00"
@@ -4028,29 +4410,29 @@
     },
     "object-33": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "Now, back to you, Sue. Look at the slide and tell us when wood identification is beneficial to plant taxonomists.",
+      "character": "Teacher",
+      "text": "Now, Sue, look at the slide and tell us why wood identification is beneficial to plant taxonomists.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-34": {
       "type": "dialogue",
       "character": "Sue",
-      "text": "When the tree is devoid of leaves, flowers and fruits, we can look into its wood to know its identity.",
+      "text": "There are cases when the species to be identified by taxonomists are devoid of leaves, flowers and fruits. For example, an area severely damaged by typhoon, or attacked by pests might be heavily defoliated. By looking at its wood, we can still verify the identity of the species present in that area.",
       "next": "trigger-03",
       "prev": "trigger-01"
     },
     "object-35": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "Correct, Sue! And lastly, it is crucial to know the identity of the unknown species if we are going to study it. Once we know the species, we will know its properties and we will have an idea on which aspect it should be studied further.",
+      "character": "Teacher",
+      "text": "Correct, Sue! And lastly, wood identification is also crucial in research in wood science and technology. This is because the properties and behaviour of wood in use may exhibit considerable variations from one species to another. Thus, it is a must that the wood specimens to be used for research are properly identified.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
     "object-36": {
       "type": "dialogue",
-      "character": "Maam Lani",
-      "text": "Now that you know the importance of wood identification, let us look into the methods of identifying these wood species.\n\nThe first thing that we can do is to consult people with expertise in this field.",
+      "character": "Teacher",
+      "text": "Now that you know the importance of wood identification, let us look into the methods of identifying these wood species.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },

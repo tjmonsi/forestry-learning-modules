@@ -7401,7 +7401,7 @@
     },
     "object-13": {
       "type": "text",
-      "text": "At the end of this learning object, the viewer should be able to:\n\na. identify the structural features that are present in wood;\n\nb. describe the structural features present in the wood samples, and;\n\nc. differentiate the structural features present in a given wood sample."
+      "text": "At the end of this learning object, you should be able to:\n\na. identify the structural features that are present in wood, and;\n\nb. describe the structural features present in the wood samples"
     },
     "object-14": {
       "type": "image",
@@ -7548,7 +7548,7 @@
     "object-36": {
       "type": "dialogue",
       "character": "Forester",
-      "text": "Okay let me test you about the sizes, shapes and frequency of pores.\n\n\t\tSelect the letter that best describe the cross-section displayed on the left.",
+      "text": "Okay let me test you about the sizes, shapes and frequency of pores.\n\n\t\tSelect the letter that best describes the cross-section displayed on the left.",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true
@@ -7563,7 +7563,7 @@
     "object-38": {
       "type": "dialogue",
       "character": "Forester",
-      "text": "Okay this time you should be able to differentiate a deposit from a tylosis.\n\n\t\tSelect the letter that best describe the cross-section displayed on the left.",
+      "text": "Okay this time you should be able to differentiate a deposit from a tylosis.\n\n\t\tSelect the letter that best describes the cross-section displayed on the left.",
       "next": "trigger-02",
       "prev": "trigger-00",
       "form": true

@@ -8,6 +8,7 @@
     "compile": "node ./utils/compiler",
     "compile-watch": "node ./utils/compiler --dev --watch",
     "dev": "./node_modules/.bin/npm-run-all --parallel compile-watch serve webpack-dev",
+    "prod": "./node_modules/.bin/npm-run-all --serial compile webpack-prod webpack-prod-module",
     "serve": "node ./utils/server",
     "webpack-dev": "./node_modules/.bin/webpack --env.BROWSERS=module --mode=development --watch",
     "webpack-prod": "./node_modules/.bin/webpack --mode=production",
@@ -28,6 +29,10 @@
     "single-page",
     "application",
     "firebase"
+  ],
+  "flat": true,
+  "sideEffects": [
+    "./src/modules/**/**/*.js"
   ],
   "author": "",
   "license": "MIT",
@@ -102,8 +107,6 @@
     "workbox-cli": "^3.6.3",
     "worker-loader": "^2.0.0"
   },
-  "flat": true,
-  "sideEffects": false,
   "size-limit": [],
   "semistandard": {
     "parser": "babel-eslint",
