@@ -4292,7 +4292,7 @@
     },
     "object-20": {
       "type": "image",
-      "src": "/images/ilo1/classroom.png"
+      "src": "/images/ilo1/classroom.jpg"
     },
     "object-21": {
       "type": "dialogue",
@@ -4792,11 +4792,11 @@
     },
     "object-90": {
       "type": "image",
-      "src": "/images/ilo1/fraud.png"
+      "src": "/images/ilo1/fraud.jpg"
     },
     "object-91": {
       "type": "image",
-      "src": "/images/ilo1/taxonomist.png"
+      "src": "/images/ilo1/taxonomist.jpg"
     },
     "object-92": {
       "type": "image",
@@ -4868,7 +4868,7 @@
     },
     "object-110": {
       "type": "image",
-      "src": "/images/ilo1/odor.png"
+      "src": "/images/ilo1/odor.jpg"
     },
     "object-111": {
       "type": "image",
@@ -4888,11 +4888,11 @@
     },
     "object-115": {
       "type": "image",
-      "src": "/images/ilo1/hardness.png"
+      "src": "/images/ilo1/hardness.jpg"
     },
     "object-116": {
       "type": "image",
-      "src": "/images/ilo1/weight.png"
+      "src": "/images/ilo1/weight.jpg"
     },
     "object-117": {
       "type": "text",
@@ -5210,7 +5210,7 @@
     },
     "object-222": {
       "type": "image",
-      "src": "/images/ilo1/classroom2.png"
+      "src": "/images/ilo1/classroom2.jpg"
     },
     "object-223": {
       "type": "image",
