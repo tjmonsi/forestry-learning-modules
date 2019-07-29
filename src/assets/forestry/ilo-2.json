@@ -9408,18 +9408,16 @@
     "object-137": {
       "type": "references",
       "references": {
-        "1": "America, et al. Wood Identification Manual",
-        "2": "Findly, W. and P. Kennedy. 1975. Timber: Properties and Uses.",
-        "3": "Haygreen, J.G. and J.L. Bowyer. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
-        "4": "Lantican, C. B. and C. B. Madamba. 1979. Laboratory Manual in Wood Structure and Identification.",
-        "5": "Madamba, Concepcion B. Syllabus in Wood Structure and Identification.",
-        "6": "Meniado, et. Al. 1975. Wood Identification Handbook for Philippine Timbers. Vol. 1. FORPRIDECOM.",
-        "7": "Meniado, et. Al. 1981. Wood Identification Handbook for Philippine Timbers. Vol. 2. FORPRIDECOM.",
-        "8": "Panshin,A.J. and de Zeeuw, C. 1980. Textbook of Wood Technology,4th Edition New York. McGraw-Hill. Vol. 1",
-        "9": "Reyes, L. 1938. Philippine Woods.",
-        "10": "Wangaard, F. F. (ed.) 1979. Wood: Its Structure and Properties.",
-        "11": "Weier, et al. 1982. Botany. An Introduction to Plant Biology. John Wiley and Son. 720p.",
-        "12": "Zimmermann,M.H. and Brown, C.L. 1971. Trees: Structure and Function. New York. SpringerVerlag"
+        "1": "HAYGREEN, J.G. and J.L. BOWYER. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
+        "2": "LANTICAN, CB and C. B. MADAMBA. 1979. Laboratory Manual in Wood Structure and Identification.",
+        "3": "MADAMBA, C. B. Syllabus in Wood Structure and Identification.",
+        "4": "MENIADO, J.A, TAMOLANG, F.N, LOPEZ, F.R, AMERICA, W.M, ALONZO, D.S. 1975. Wood identification handbook. Vol 1. Manila: Government Printing Office. 370p.",
+        "5": "MENIADO, J.A, TAMOLANG, F.N, LOPEZ, F.R, AMERICA, W.M, ALONZO, D.S.. 1981. Wood Identification Handbook for Philippine Timbers. Vol. 2. FORPRIDECOM.",
+        "6": "PANSHIN, A.J, DE ZEEUW C. 1980. Textbook of Wood Technology, 4th Ed. New York: McGraw-Hill Book Company. 722p.",
+        "7": "REYES, L.J. 1938. Philippine Woods. Technical Bulletin 7. Department of Agriculture. Comm. Manila",
+        "8": "WANGAARD, F.F. (edited) 1979. Wood: Its Structure and Properties. University Park, Pa. : Educational Modules for Materials Science and Engineering Project, Materials Research Laboratory, Pennsylvania State University, c1979",
+        "9": "WEIER, T.E, STOCKING, C.R, BARBOUR, M.G, and ROST, T.L. 1982. Botany. An Introduction to Plant Biology. John Wiley and Sons. 720p.",
+        "10": "ZIMMERMANN, M.H and BROWN, C.L. 1971. Trees: Structure and Function. Springer-Verlag Berlin Heidelberg"
       }
     },
     "object-138": {

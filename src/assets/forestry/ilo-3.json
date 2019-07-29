@@ -4359,7 +4359,7 @@
     },
     "object-04": {
       "type": "text",
-      "text": "Objectives of the Learning Object\n\n1. review with the gross features of selected Philippine wood species, and\n\n2. identify these species on the basis of its gross features."
+      "text": "Objectives:\n\nIdentify selected Fabaceae species using the gross features of wood"
     },
     "object-05": {
       "type": "image",
@@ -4432,7 +4432,7 @@
     "object-17": {
       "type": "dialogue",
       "character": "Vic",
-      "text": " If you will recall, physical features are those features that can be perceived by the senses and can be observed even without the use of a hand lens, while structural features refer to the cellular make up of the wood.",
+      "text": " If you will recall, physical features are those features that can be perceived by our senses and can be observed even without the use of a hand lens, while structural features refer to the cellular make up of the wood.",
       "next": "trigger-03",
       "prev": "trigger-04"
     },
@@ -7327,18 +7327,15 @@
     "object-176": {
       "type": "references",
       "references": {
-        "1": "America, et al. Wood Identification Manual",
-        "2": "Findly, W. and P. Kennedy. 1975. Timber: Properties and Uses.",
-        "3": "Haygreen, J.G. and J.L. Bowyer. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
-        "4": "Lantican, C. B. and C. B. Madamba. 1979. Laboratory Manual in Wood Structure and Identification.",
-        "5": "Madamba, Concepcion B. Syllabus in Wood Structure and Identification.",
-        "6": "Meniado, et. Al. 1975. Wood Identification Handbook for Philippine Timbers. Vol. 1. FORPRIDECOM.",
-        "7": "Meniado, et. Al. 1981. Wood Identification Handbook for Philippine Timbers. Vol. 2. FORPRIDECOM.",
-        "8": "Panshin,A.J. and de Zeeuw, C. 1980. Textbook of Wood Technology,4th Edition New York. McGraw-Hill. Vol. 1",
-        "9": "Reyes, L. 1938. Philippine Woods.",
-        "10": "Wangaard, F. F. (ed.) 1979. Wood: Its Structure and Properties.",
-        "11": "Weier, et al. 1982. Botany. An Introduction to Plant Biology. John Wiley and Son. 720p.",
-        "12": "Zimmermann,M.H. and Brown, C.L. 1971. Trees: Structure and Function. New York. SpringerVerlag"
+        "1": "Haygreen J.G. and J.L. Bowyer. 1996. Forest Products and Wood Science. An Introduction. Third Edition. Iowa State University Press.",
+        "2": "Lantican, C. B. and C. B. Madamba. 1979. Laboratory Manual in Wood Structure and Identification.",
+        "3": "Madamba, Concepcion B. 1990. Syllabus in Wood Structure and Identification.",
+        "4": "Meniado J.A., Tamolang F.N., Lopez F.R., America W.M. and D.S. Alonzo. 1975. Wood Identification Handbook for Philippine Timbers. Vol 1. FORPRIDECOM.",
+        "5": "Meniado J.A., Tamolang F.N., Lopez F.R., America W.M. and D.S. Alonzo. 1981. Wood Identification Handbook for Philippine Timbers. Vol 1. FORPRIDECOM.",
+        "6": "Panshin A.J. and C. de Zeeuw. 1980. Textbook of Wood Technology,4th Edition New York. McGraw-Hill. Vol. 1 ",
+        "7": "Reyes L.J. 1938. Philippine Woods. Department of Agriculture and Commerce.",
+        "8": "Weier, et al. 1982. Botany. An Introduction to Plant Biology. John Wiley and Son. 720p.",
+        "9": "Zimmermann,M.H. and Brown, C.L. 1971. Trees: Structure and Function. New York. SpringerVerlag"
       }
     },
     "object-177": {
