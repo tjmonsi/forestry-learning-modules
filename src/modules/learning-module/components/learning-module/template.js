@@ -221,7 +221,7 @@ const template = (html, self) => function () {
         ` : ''}
 
         ${item.type === 'discussion' ? html`
-          <div class="carousel" id = "container">
+          <div class="carousel" id = "container" style="${styleString}">
             <div class="carousel-inner">
               ${Object.entries(item.items).map(([key, input]) => html`
                 <input class="carousel-open" type="radio" id="carousel-${key}" name="carousel" aria-hidden="true" hidden="" checked="checked">
@@ -249,6 +249,8 @@ const template = (html, self) => function () {
             </div>
           </div>
         ` : ''}
+
+
 
         ${item.type === 'choice' ? html`
           <div class="container">

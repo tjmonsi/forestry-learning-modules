@@ -641,8 +641,18 @@
               ]
             },
             {
-              "objectId": "object-34",
+              "objectId": "object-pore-frequency",
               "id": "object-04",
+              "style": [
+                "z-index: 3",
+                "left: 5%",
+                "top: 20%",
+                "width: 350px"
+              ]
+            },
+            {
+              "objectId": "object-34",
+              "id": "object-05",
               "meta": {
                 "cover": false,
                 "classList": "tablet"
@@ -653,7 +663,7 @@
             },
             {
               "objectId": "object-35",
-              "id": "object-05",
+              "id": "object-06",
               "type": "dialogue"
             },
             {
@@ -1835,6 +1845,16 @@
               ]
             },
             {
+              "objectId": "object-tyloses-deposits",
+              "id": "object-07",
+              "style": [
+                "z-index: 3",
+                "left: 5%",
+                "top: 20%",
+                "width: 350px"
+              ]
+            },
+            {
               "objectId": "object-37",
               "id": "object-06",
               "type": "dialogue"
@@ -2405,6 +2425,16 @@
               },
               "style": [
                 "z-index: 100"
+              ]
+            },
+            {
+              "objectId": "object-topography",
+              "id": "object-07",
+              "style": [
+                "z-index: 3",
+                "left: 5%",
+                "top: 20%",
+                "width: 350px"
               ]
             },
             {
@@ -3080,6 +3110,16 @@
               ]
             },
             {
+              "objectId": "object-42-1",
+              "id": "object-07",
+              "style": [
+                "z-index: 3",
+                "left: 5%",
+                "top: 20%",
+                "width: 350px"
+              ]
+            },
+            {
               "objectId": "object-41",
               "id": "object-05",
               "type": "dialogue"
@@ -3727,17 +3767,6 @@
               ]
             },
             {
-              "objectId": "object-19",
-              "id": "object-03",
-              "meta": {
-                "cover": false,
-                "classList": "character-right-2 smaller-character"
-              },
-              "style": [
-                "z-index: 100"
-              ]
-            },
-            {
               "objectId": "object-43",
               "id": "object-04",
               "type": "dialogue"
@@ -3802,6 +3831,16 @@
               },
               "style": [
                 "z-index: 100"
+              ]
+            },
+            {
+              "objectId": "object-parenchyma",
+              "id": "object-07",
+              "style": [
+                "z-index: 5",
+                "left: 5%",
+                "top: 5%",
+                "width: 350px"
               ]
             },
             {
@@ -3872,6 +3911,16 @@
               },
               "style": [
                 "z-index: 100"
+              ]
+            },
+            {
+              "objectId": "object-parenchyma",
+              "id": "object-07",
+              "style": [
+                "z-index: 5",
+                "left: 5%",
+                "top: 5%",
+                "width: 350px"
               ]
             },
             {
@@ -5220,6 +5269,16 @@
               ]
             },
             {
+              "objectId": "object-parenchyma",
+              "id": "object-07",
+              "style": [
+                "z-index: 5",
+                "left: 5%",
+                "top: 5%",
+                "width: 350px"
+              ]
+            },
+            {
               "objectId": "object-67",
               "id": "object-04",
               "style": [
@@ -5701,6 +5760,16 @@
               ]
             },
             {
+              "objectId": "object-ducts",
+              "id": "object-07",
+              "style": [
+                "z-index: 5",
+                "left: 5%",
+                "top: 20%",
+                "width: 350px"
+              ]
+            },
+            {
               "objectId": "object-68",
               "id": "object-04",
               "style": [
@@ -5768,6 +5837,16 @@
               },
               "style": [
                 "z-index: 100"
+              ]
+            },
+            {
+              "objectId": "object-included-phloem",
+              "id": "object-07",
+              "style": [
+                "z-index: 5",
+                "left: 5%",
+                "top: 20%",
+                "width: 350px"
               ]
             },
             {
@@ -7541,7 +7620,7 @@
     "object-35": {
       "type": "dialogue",
       "character": " ",
-      "text": "Let's discuss one by one the different structural features of wood. Let's start with:\n\n1. PORES are cross-sections of vessel elements. These provide a number of features that are of value in identification like the size, shape, number and distrubution, occlusions, topography and type and arrangement.\n\n\t\t(a) Size of pores can vary from minute to large.\t\t(b) Shape of pores can be rounded, angular or oval.\n\n\t\t(c) Number of pores can range from few to numerous.",
+      "text": "Let's discuss one by one the different structural features of wood. Let's start with:\n\n1. PORES are cross-sections of vessel elements. These provide a number of features that are of value in identification like the size, shape, number and distrubution, occlusions, topography and type and arrangement.\n\n\t\tSize of pores can vary from minute to large.\t\tShape of pores can be rounded, angular or oval.\n\n\t\tNumber of pores can range from few to numerous.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -7556,7 +7635,7 @@
     "object-37": {
       "type": "dialogue",
       "character": " ",
-      "text": "\t\td. Occlusions. Pores may also be empty or filled. Two types of occlusions that can be found inside the pores are tyloses and deposits.",
+      "text": "\t\tOcclusions. Pores may also be empty or filled. Two types of occlusions that can be found inside the pores are tyloses and deposits.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -7571,7 +7650,7 @@
     "object-39": {
       "type": "dialogue",
       "character": " ",
-      "text": "\t\te. Topography refers to the classification of hardwoods on the basis of pore size and distribution. There are three types of topography:",
+      "text": "\t\tTopography refers to the classification of hardwoods on the basis of pore size and distribution.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -7586,7 +7665,7 @@
     "object-41": {
       "type": "dialogue",
       "character": " ",
-      "text": "\t\tf. Types and arragement\n\nPores are found in different arrangements which are useful for identification purposes, they may be grouped or arranged as follows:",
+      "text": "\t\tTypes and arragement\n\nPores are found in different arrangements which are useful for identification purposes.",
       "next": "trigger-02",
       "prev": "trigger-00"
     },
@@ -7718,6 +7797,186 @@
     "object-61": {
       "type": "text",
       "text": "CREDITS"
+    },
+    "object-62-1": {
+      "type": "table",
+      "table": {
+        "name": "Pore size and Shape",
+        "rows": {
+          "1": {
+            "left": "Minute",
+            "right": "Pores are only visible with the aid of hand lens."
+          },
+          "2": {
+            "left": "Small",
+            "right": "Pores are barely or hardly visible to unaided eye."
+          },
+          "3": {
+            "left": "Large",
+            "right": "Pores are very distinct to unaided eye."
+          },
+          "4": {
+            "left": "Round",
+            "right": "Pore outline is circular."
+          },
+          "5": {
+            "left": "Oval",
+            "right": "Pore outline is elliptical"
+          }
+        }
+      }
+    },
+    "object-parenchyma": {
+      "type": "table",
+      "table": {
+        "name": "Parenchyma",
+        "rows": {
+          "1": {
+            "left": "Diffuse",
+            "right": "Soft tissues appearing as dots, distributed irregularly among fibers. This is often difficult to observe but can be discerned with the aid of a hand lens especially if the surface of wood is moistened."
+          },
+          "2": {
+            "left": "Diffuse in-aggregates",
+            "right": "Soft tissues that tend to be grouped in short and interrupted lines or layers from ray to ray."
+          },
+          "3": {
+            "left": "Concentric",
+            "right": "Parenchyma is arranged in bands or lines, one to several cells wide radially."
+          },
+          "4": {
+            "left": "Vasicentric",
+            "right": "Parenchyma forms a complete sheath around the pores, varying in width , in circular or oval shapes."
+          },
+          "5": {
+            "left": "Aliform",
+            "right": "Parenchyma has wing-like or eye-like lateral extensions or in fine lines that taper nearly to a point."
+          },
+          "6": {
+            "left": "Aliform confluent",
+            "right": "These are coalesced aliform parenchyma which form irregularly in tangential or diagonal bands."
+          },
+          "7": {
+            "left": "Banded confluent",
+            "right": "Paratracheal parenchyma arranged in concentric lines or bands linking adjacent vessels."
+          },
+          "8": {
+            "left": "Boundary",
+            "right": "Parenchyma at the beginning and end of a growth ring."
+          }
+        }
+      }
+    },
+    "object-42-1": {
+      "type": "table",
+      "table": {
+        "name": "Pore type and arrangement",
+        "rows": {
+          "1": {
+            "left": "Solitary",
+            "right": "Pores generally occur as single or solitary opening."
+          },
+          "2": {
+            "left": "Pore Multiples",
+            "right": "Contiguous pores appearing as one."
+          },
+          "3": {
+            "left": "Pore Chains",
+            "right": "It refers to a series of adjacent solitary pores. Radial multiples are four or more pores long. It can be classified as a radial chain or line or echelon."
+          },
+          "4": {
+            "left": "Wavy bands",
+            "right": "Tangential grouping of pores. It can be classified as flame-like or dendritic, tangential festoons or ulmiform."
+          }
+        }
+      }
+    },
+    "object-pore-frequency": {
+      "type": "table",
+      "table": {
+        "name": "Pore frequency",
+        "rows": {
+          "1": {
+            "left": "Few",
+            "right": "The number or frequency of pores per unit area is less than 30 pores."
+          },
+          "2": {
+            "left": "Moderately numerous",
+            "right": "The number or frequency of pores per unit area is between 30 to 80 pores."
+          },
+          "3": {
+            "left": "Numerous",
+            "right": "The number or frequency of pores per unit area is more than 80 pores."
+          }
+        }
+      }
+    },
+    "object-ducts": {
+      "type": "table",
+      "table": {
+        "name": "Ducts",
+        "rows": {
+          "1": {
+            "left": "Resin ducts",
+            "right": "Longitudinally and/or horizontally oriented openings that are surrounded by cells excreting resinous substance. It may be arranged in diffuse or concentric manner."
+          },
+          "2": {
+            "left": "Oil ducts",
+            "right": "Longitudinally and/or horizontally oriented openings that are surrounded by cells excreting gummy or oily substance. It may be arranged in diffuse or concentric manner."
+          },
+          "3": {
+            "left": "Empty and filled ducts",
+            "right": "Ducts can be also filled or empty, meaning, resin, gum or oil can be very visible at the surface of the ducts or it can be occluded on its inner portion."
+          }
+        }
+      }
+    },
+    "object-included-phloem": {
+      "type": "table",
+      "table": {
+        "name": "Included phloem",
+        "rows": {
+          "1": {
+            "left": "Included phloem",
+            "right": "This refers to the presence of phloem (bark) in the xylem (wood)."
+          }
+        }
+      }
+    },
+    "object-topography": {
+      "type": "table",
+      "table": {
+        "name": "Topography",
+        "rows": {
+          "1": {
+            "left": "Diffuse porous",
+            "right": "The characteristics of wood in which the pores are fairly uniform or only gradually changing in size and distribution throughout the growth. Majority of hardwoods are diffuse porous."
+          },
+          "2": {
+            "left": "Ring porous",
+            "right": "The characteristics of wood in which the pores are formed at the beginning of the growth period are larger than those farther out in the growth ring."
+          },
+          "3": {
+            "left": "Semi-ring porous",
+            "right": "The characteristics of wood in which the pores formed along the growth rings are made up of large and small sizes, which are intermediate between ring porous and diffuse porous condition, but sometimes difficult to define."
+          }
+        }
+      }
+    },
+    "object-tyloses-deposits": {
+      "type": "table",
+      "table": {
+        "name": "Tyloses and Deposits",
+        "rows": {
+          "1": {
+            "left": "Tyloses",
+            "right": "These are cyst like outgrowths of parenchyma cells that appear as bubble-like structures that grow in open pores, and in some cases, completely stop-up the pores (e.g clogged pores, filled up pores). Tyloses may be small and restricted in size, or they may swell to occlude the vessel lumen. Tyloses are by-product of the conversion of sapwood to heartwood."
+          },
+          "2": {
+            "left": "Deposits",
+            "right": "The presence, form, color and chemical characteristics of deposits in the vessels and other tissues in woods are some value in identification. These are gummy colored substances found inside the vessels. There are various species of wood with distinct color of deposits."
+          }
+        }
+      }
     },
     "object-62": {
       "type": "discussion",
@@ -8835,7 +9094,7 @@
     },
     "object-96": {
       "type": "choice",
-      "src": "/images/ilo2/Rain_Tree_03.jpg",
+      "src": "/images/ilo2/Rain_Tree_01.jpg",
       "title": "Select Pore Type",
       "answer": "Solitary",
       "options": {
